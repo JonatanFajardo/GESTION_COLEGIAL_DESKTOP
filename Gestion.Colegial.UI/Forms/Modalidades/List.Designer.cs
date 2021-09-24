@@ -56,7 +56,6 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             // pnBackground
             // 
             this.pnBackground.Size = new System.Drawing.Size(1598, 600);
-            this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
             // 
             // button1
             // 
@@ -144,7 +143,6 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "List";
             this.Text = "List";
-            this.Load += new System.EventHandler(this.List_Load);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.txtDescripcion, 0);
             this.Controls.SetChildIndex(this.pnBackground, 0);

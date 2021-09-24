@@ -13,92 +13,73 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
 {
     public partial class Add : Add_Base
     {
-        private static List<string> send;
-        private static tbModalidades send2;
-        //public static List<string> Send { get => send; set => send = value; }
+        // Instancia que contiene la data local y privadamente.
+        private static tbModalidades send = new tbModalidades();
         public Add()
         {
             InitializeComponent();
+        }
 
-        }
-        public Add(tbModalidades Send)
-        {
-            Add add = new Add();
-            send2 = Send;
-            add.load();
-        }
         public void load()
         {
             this.Show();
-            txtDescripcion.Texts = send2.Mda_Descripcion;
+            if (send.Mda_Id == 0)
+            {
+                label1.Text = "Registrar Modalidades";
+            }
+            else
+            {
+                txtDescripcion.Texts = send.Mda_Descripcion;
+                label1.Text = "Modificar Modalidades";
+            }
         }
 
         public static void Send(tbModalidades Send)
         {
             Add add = new Add();
-            send2 = Send;
+            send = Send;
             add.load();
         }
 
-        //public static void Send(List<string> Send)
-        //{
-        //    Add add = new Add();
-        //    add.load(Send);
-        //    send = Send;
-        //}
-
-
         public override void OnClick()
         {
-            Answer obj = new Answer();
-
-
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
             {
-                if (send2 == null)
+                // Condicion que indica el tipo de envio que se hara.
+                send.Mda_Descripcion = txtDescripcion.Texts;
+                if (send.Mda_Id == 0)
                 {
-                    var objEntidad = new tbModalidades()
-                    {
-                        Mda_Descripcion = txtDescripcion.Texts
-                    };
-
-                    Boolean respond = ModalidadesServices.Add(objEntidad);
+                    Boolean respond = ModalidadesServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(enmType.Success);
                         Modalidades.List list = new List();
                         list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
-
+                        this.Hide();
                     }
                     else
                     {
-
                         Alert.Show(enmType.Error);
                     }
                 }
                 else
                 {
-                    var objEntidad = new tbModalidades()
-                    {
-                        Mda_Id = send2.Mda_Id,
-                        Mda_Descripcion = txtDescripcion.Texts
-                    };
-                    Boolean respond = ModalidadesServices.Edit(objEntidad);
+                    Boolean respond = ModalidadesServices.Edit(send);
                     if (!respond)
                     {
-                        Alert.Show(enmType.Success, "El registro se ha modificado satifactoriamente.","Exito");
+                        Alert.Show(enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
                         Modalidades.List list = new List();
                         list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
+                        this.Hide();
                     }
                     else
                     {
                         Alert.Show(enmType.Error);
                     }
                 }
-
             }
             else
             {

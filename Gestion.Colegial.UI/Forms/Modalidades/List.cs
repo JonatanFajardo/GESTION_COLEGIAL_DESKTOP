@@ -106,22 +106,18 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             ShowForm(add);
         }
 
-
-
-        public override void buscar()
-        {
-        }
-
         public override void CellContentDGV(DataGridViewCellEventArgs e)
         {
+
             // Editamos registro.
-                tbModalidades objModalidades = new tbModalidades()
-                {
-                    Mda_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value,
-                    Mda_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 5].Value.ToString()
-                };
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[0].Selected)
             {
+                // Objeto con la data que se selecciono.
+                tbModalidades objModalidades = new tbModalidades()
+                {
+                    Mda_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
+                    Mda_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
+                };
                 Add.Send(objModalidades);
             }
 
@@ -131,11 +127,11 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())
                 {
-                    //tbModalidades objModalidades = new tbModalidades()
-                    //{
-                    //    Mda_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
-                    //    //Mda_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
-                    //};
+                    tbModalidades objModalidades = new tbModalidades()
+                    {
+                        Mda_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
+                        //Mda_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
+                    };
                     Boolean resultService = ModalidadesServices.Remove(objModalidades.Mda_Id);
                     DataGridViewFill();
                     if (resultService)
@@ -143,7 +139,6 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                         Alert.Show(Alert.enmType.Error, "No se ha podido eliminar la fila.", "Error");
                     }
                 }
-                Docente_Add form = new Docente_Add();
             }
 
         }
@@ -157,99 +152,76 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             MessageBox.Show(CamposVacios.ToString());
         }
 
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            DataGridViewFill(txtBuscar.Text);
+        }
+
         #endregion Eventos
 
         #region Metodos
-        //datagrid/ evento/entidades/
-        //indice de inicio/indice que finaliza/--indices que no tomara en cuenta--
-        void dgvToList()
-        {
-
-        }
 
         /// <summary>
         /// This method generates a DataTable.
         /// </summary>
-        static DataTable GetTable()
-        {
-            // Here we create a DataTable with four columns.
-            DataTable table = new DataTable();
-            table.Columns.Add("Dosage", typeof(int));
-            table.Columns.Add("Drug", typeof(string));
-            table.Columns.Add("Patient", typeof(string));
-            table.Columns.Add("Date", typeof(DateTime));
+        //static DataTable GetTable()
+        //{
+        //    // Here we create a DataTable with four columns.
+        //    DataTable table = new DataTable();
+        //    table.Columns.Add("Dosage", typeof(int));
+        //    table.Columns.Add("Drug", typeof(string));
+        //    table.Columns.Add("Patient", typeof(string));
+        //    table.Columns.Add("Date", typeof(DateTime));
 
-            // Here we add five DataRows.
-            table.Rows.Add(25, "Indocin", "David", DateTime.Now);
-            table.Rows.Add(50, "Enebrel", "Sam", DateTime.Now);
-            table.Rows.Add(10, "Hydralazine", "Christoff", DateTime.Now);
-            table.Rows.Add(21, "Combivent", "Janet", DateTime.Now);
-            table.Rows.Add(100, "Dilantin", "Melanie", DateTime.Now);
-            return table;
-        }
-
-
+        //    // Here we add five DataRows.
+        //    table.Rows.Add(25, "Indocin", "David", DateTime.Now);
+        //    table.Rows.Add(50, "Enebrel", "Sam", DateTime.Now);
+        //    table.Rows.Add(10, "Hydralazine", "Christoff", DateTime.Now);
+        //    table.Rows.Add(21, "Combivent", "Janet", DateTime.Now);
+        //    table.Rows.Add(100, "Dilantin", "Melanie", DateTime.Now);
+        //    return table;
+        //}
 
 
-        private void List_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnBackground_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            dataGridViewJN1.DataSource = GetTable();
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    dataGridViewJN1.DataSource = GetTable();
 
 
-            //foreach (DataGridViewRow row in dataGridViewJN1.Rows)
-            //{
-            //    MessageBox.Show(row.Cells[0].Value.ToString());
-            //    MessageBox.Show(row.Cells[1].Value.ToString());
-            //    MessageBox.Show(row.Cells[2].Value.ToString());
-            //}
+        //    for (int i = 0; i < dataGridViewJN1.ColumnCount; i++)
+        //    {
 
-            for (int i = 0; i < dataGridViewJN1.ColumnCount; i++)
-            {
+        //    }
+        //    System.Collections.Generic.List<tbModalidades> lista = new System.Collections.Generic.List<tbModalidades>();
+        //    lista.Add(new tbModalidades()
+        //    {
+        //        //mda_Descripcion = 
+        //    });
+        //    string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+        //    //pictureBox1.Image = Image.FromFile(path+"/Content/image");
+        //    MessageBox.Show(path);
 
-            }
-            System.Collections.Generic.List<tbModalidades> lista = new System.Collections.Generic.List<tbModalidades>();
-            lista.Add(new tbModalidades()
-            {
-                //mda_Descripcion = 
-            });
-            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-            //pictureBox1.Image = Image.FromFile(path+"/Content/image");
-            MessageBox.Show(path);
-
-        }
+        //}
 
         #endregion Metodos
 
 
 
-        private void jnButton1_Click(object sender, EventArgs e)
-        {
-            ///var obj = ModalidadesServices.List("");
-            PdfCustom.DataSource(this.Text, dataGridViewJN1);
-        }
+        //private void jnButton1_Click(object sender, EventArgs e)
+        //{
+        //    ///var obj = ModalidadesServices.List("");
+        //    PdfCustom.DataSource(this.Text, dataGridViewJN1);
+        //}
 
-        private void jnButton2_Click(object sender, EventArgs e)
-        {
-            //string[] ignore = new string[] { "Editar", "Detalle", "Eliminar" };
-            Excel excel = new Excel();
-            ///var obj = ModalidadesServices.List("");
-            ////excel.DataSource(obj);
-        }
+        //private void jnButton2_Click(object sender, EventArgs e)
+        //{
+        //    //string[] ignore = new string[] { "Editar", "Detalle", "Eliminar" };
+        //    Excel excel = new Excel();
+        //    ///var obj = ModalidadesServices.List("");
+        //    ////excel.DataSource(obj);
+        //}
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            DataGridViewFill(txtBuscar.Text);
-        }
+
     }
 
     //public class DataGridHeaderText
