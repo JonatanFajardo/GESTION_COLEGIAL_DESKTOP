@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E785E9D7-E7BD-4DFD-B1FF-3C2426E3CD7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gestion.Colegial.Business</RootNamespace>
+    <AssemblyName>Gestion.Colegial.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\GestionColegial.UI\Resources\References\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.5.0.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.5.0\lib\netstandard2.0\SpreadsheetLight.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.7.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\ControlsPlugin.cs" />
+    <Compile Include="Helpers\Alert\Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\Alert\Alert.Designer.cs">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Alert\AlertEntity.cs" />
+    <Compile Include="Helpers\Alert\ExtendedAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\DataTableHelper.cs" />
+    <Compile Include="Helpers\ExportCustom\PdfCustom.cs" />
+    <Compile Include="Helpers\Export\PDF.cs" />
+    <Compile Include="Helpers\Export\Excel.cs" />
+    <Compile Include="Helpers\Variable.cs" />
+    <Compile Include="Services\AlumnosServices.cs" />
+    <Compile Include="Services\AulasServices.cs" />
+    <Compile Include="Services\B_Alumno.cs" />
+    <Compile Include="Services\B_Docente.cs" />
+    <Compile Include="Services\B_Matricula.cs" />
+    <Compile Include="Services\CargosServices.cs" />
+    <Compile Include="Services\CursosNivelesServices.cs" />
+    <Compile Include="Services\CursosNombresServices.cs" />
+    <Compile Include="Services\CursosServices.cs" />
+    <Compile Include="Services\DiasServices.cs" />
+    <Compile Include="Services\DuracionesServices.cs" />
+    <Compile Include="Services\EmpleadosServices.cs" />
+    <Compile Include="Services\EncargadosServices.cs" />
+    <Compile Include="Services\EstadosServices.cs" />
+    <Compile Include="Services\HomeServices.cs" />
+    <Compile Include="Services\HorarioAlumnosServices.cs" />
+    <Compile Include="Services\HorarioProfesoresServices.cs" />
+    <Compile Include="Services\HorasServices.cs" />
+    <Compile Include="Services\MateriasServices.cs" />
+    <Compile Include="Services\ModalidadesServices.cs" />
+    <Compile Include="Services\B_Usuarios.cs" />
+    <Compile Include="Services\Logica.cs" />
+    <Compile Include="Interfaces\IServices.cs" />
+    <Compile Include="Messagebox\Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\MessageBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\MessageBase.Designer.cs">
+      <DependentUpon>MessageBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\Success.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\Success.Designer.cs">
+      <DependentUpon>Success.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\Warning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\Warning.Designer.cs">
+      <DependentUpon>Warning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\NivelesEducativosServices.cs" />
+    <Compile Include="Services\NotasServices.cs" />
+    <Compile Include="Services\ParcialesServices.cs" />
+    <Compile Include="Services\ParentescosServices.cs" />
+    <Compile Include="Services\PersonasServices.cs" />
+    <Compile Include="Services\SeccionesServices.cs" />
+    <Compile Include="Services\SemestresServices.cs" />
+    <Compile Include="Services\TitulosServices.cs" />
+    <Compile Include="Services\UsuariosServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Image\alert.png" />
+    <Content Include="Content\Image\bgBTN2.png" />
+    <Content Include="Content\Image\button-lg %282%29.png" />
+    <Content Include="Content\Image\button-lg %283%29.png" />
+    <Content Include="Content\Image\button-lg %284%29.png" />
+    <Content Include="Content\Image\button-lg %285%29.png" />
+    <Content Include="Content\Image\button-lg %286%29.png" />
+    <Content Include="Content\Image\button-lg.png" />
+    <Content Include="Content\Image\cancelar-Gray.png" />
+    <Content Include="Content\Image\correct.png" />
+    <Content Include="Content\Image\error.png" />
+    <Content Include="Content\Image\logo-login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\Datatable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gestion.Colegial.Commons\Gestion.Colegial.Commons.csproj">
+      <Project>{283c4c91-f893-4f13-93dd-b240e8119866}</Project>
+      <Name>Gestion.Colegial.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestion.Colegial.DataAccess\Gestion.Colegial.DataAccess.csproj">
+      <Project>{d10394dd-1ebf-4411-b727-83380b8b4a8c}</Project>
+      <Name>Gestion.Colegial.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JNControls\JNControls.csproj">
+      <Project>{2d107c0a-c141-4aab-bc40-847377266c06}</Project>
+      <Name>JNControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

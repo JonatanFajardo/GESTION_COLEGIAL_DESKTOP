@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{283C4C91-F893-4F13-93DD-B240E8119866}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gestion.Colegial.Commons</RootNamespace>
+    <AssemblyName>Gestion.Colegial.Commons</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\UserCache.cs" />
+    <Compile Include="Entities\ComboboxValue.cs" />
+    <Compile Include="Entities\ListResult.cs" />
+    <Compile Include="Entities\PR_tbModalidades_Find_Result.cs" />
+    <Compile Include="Entities\PR_tbModalidades_List_Result.cs" />
+    <Compile Include="Entities\SideBar.cs" />
+    <Compile Include="Entities\tbAlumnos.cs" />
+    <Compile Include="Entities\tbAulas.cs" />
+    <Compile Include="Entities\tbCargos.cs" />
+    <Compile Include="Entities\tbCursos.cs" />
+    <Compile Include="Entities\tbCursosNiveles.cs" />
+    <Compile Include="Entities\tbCursosNombres.cs" />
+    <Compile Include="Entities\tbDias.cs" />
+    <Compile Include="Entities\tbDuraciones.cs" />
+    <Compile Include="Entities\tbEmpleados.cs" />
+    <Compile Include="Entities\tbEncargados.cs" />
+    <Compile Include="Entities\tbEncargados_tbAlumnos.cs" />
+    <Compile Include="Entities\tbEstados.cs" />
+    <Compile Include="Entities\tbHorarioAlumnos.cs" />
+    <Compile Include="Entities\tbHorarioProfesores.cs" />
+    <Compile Include="Entities\tbHoras.cs" />
+    <Compile Include="Entities\tbMaterias.cs" />
+    <Compile Include="Entities\tbMenu.cs" />
+    <Compile Include="Entities\tbModalidades.cs" />
+    <Compile Include="Entities\tbNivelesEducativos.cs" />
+    <Compile Include="Entities\tbNotas.cs" />
+    <Compile Include="Entities\tbParciales.cs" />
+    <Compile Include="Entities\tbParentescos.cs" />
+    <Compile Include="Entities\tbPersonas.cs" />
+    <Compile Include="Entities\tbSecciones.cs" />
+    <Compile Include="Entities\tbSemestres.cs" />
+    <Compile Include="Entities\tbSubMenu.cs" />
+    <Compile Include="Entities\tbTitulos.cs" />
+    <Compile Include="Entities\tbUsuarios.cs" />
+    <Compile Include="Extensiones\Answer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
