@@ -11,9 +11,9 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             InitializeComponent();
             JNDataGridView2 jNDataGridView2 = new JNDataGridView2();
             jNDataGridView2.CLICLEADO += new EventHandler(JNDataGridView2_CLICLEADO);
-            
-            
-            
+
+
+
         }
 
         private void JNDataGridView2_CLICLEADO(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
 
         }
 
-      
+
         private void Form1_Load(object sender, EventArgs e)
         {
         }

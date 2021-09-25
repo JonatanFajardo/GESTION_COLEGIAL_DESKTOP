@@ -2,12 +2,9 @@
 using Gestion.Colegial.Business.Helpers.Alert;
 using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.Commons.Entities;
-using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.UI.FormsBase;
 using Gestion.Colegial.UI.Helpers.Controles;
 using System;
-using System.Collections.Generic;
-using static Gestion.Colegial.Business.Helpers.Alert.Alert;
 
 namespace Gestion.Colegial.UI.Forms.Modalidades
 {
@@ -53,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                     Boolean respond = ModalidadesServices.Add(send);
                     if (!respond)
                     {
-                        Alert.Show(enmType.Success);
+                        Alert.Show(Alert.enmType.Success);
                         Modalidades.List list = new List();
                         list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
@@ -61,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                     }
                     else
                     {
-                        Alert.Show(enmType.Error);
+                        Alert.Show(Alert.enmType.Error);
                     }
                 }
                 else
@@ -69,7 +66,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                     Boolean respond = ModalidadesServices.Edit(send);
                     if (!respond)
                     {
-                        Alert.Show(enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
+                        Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
                         Modalidades.List list = new List();
                         list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
@@ -77,7 +74,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                     }
                     else
                     {
-                        Alert.Show(enmType.Error);
+                        Alert.Show(Alert.enmType.Error);
                     }
                 }
             }

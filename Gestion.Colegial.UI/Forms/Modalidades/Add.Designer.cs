@@ -41,10 +41,10 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             this.pnBackground.Controls.Add(this.txtDescripcion);
             this.pnBackground.Controls.Add(this.label7);
             this.pnBackground.Size = new System.Drawing.Size(480, 260);
-            this.pnBackground.Controls.SetChildIndex(this.btnCancelar, 0);
-            this.pnBackground.Controls.SetChildIndex(this.btnAgregar, 0);
             this.pnBackground.Controls.SetChildIndex(this.label7, 0);
             this.pnBackground.Controls.SetChildIndex(this.txtDescripcion, 0);
+            this.pnBackground.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.pnBackground.Controls.SetChildIndex(this.btnAgregar, 0);
             // 
             // pnHeader
             // 
@@ -125,7 +125,8 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
         }
 
         #endregion
-        private System.Windows.Forms.Label label7;
+
         private JNControls.Controles.JNTexBox txtDescripcion;
+        private System.Windows.Forms.Label label7;
     }
 }

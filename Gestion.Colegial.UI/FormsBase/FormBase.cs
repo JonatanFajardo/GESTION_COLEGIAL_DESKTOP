@@ -24,14 +24,14 @@ namespace Gestion.Colegial.UI.FormsBase
             //dgvWidth(dataGridViewJN1);
 
             // Cargamos con data el combobox de length.
-            
+
         }
 
         /*===============================================
                           FUNCIONES
         ================================================*/
 
-       
+
         /// <summary>
         /// Aplica estilo al DataGridView indicado.
         /// </summary>

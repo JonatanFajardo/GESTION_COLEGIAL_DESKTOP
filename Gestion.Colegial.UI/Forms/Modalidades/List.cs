@@ -1,6 +1,7 @@
-﻿using Gestion.Colegial.Business.Helpers.Export;
+﻿using Gestion.Colegial.Business.Helpers.Alert;
+using Gestion.Colegial.Business.Helpers.Export;
 using Gestion.Colegial.Business.Helpers.ExportCustom;
-using Gestion.Colegial.Business.Helpers;
+using Gestion.Colegial.Business.Messagebox;
 using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.UI.FormsBase;
@@ -11,19 +12,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using Gestion.Colegial.Business.Messagebox;
-using Gestion.Colegial.Business.Helpers.Alert;
 
 namespace Gestion.Colegial.UI.Forms.Modalidades
 {
     public partial class List : FormBase
     {
-
-        private string _pathclass;
-        public string pathClass { get => _pathclass; set => _pathclass = value; }
-
-
-
         /// <summary>
         /// Color primario de los botones
         /// </summary>
@@ -35,28 +28,20 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
 
 
             dataGridViewJN1.RowTemplate.DividerHeight = 1;
-            dataGridViewJN1.RowTemplate.Resizable = DataGridViewTriState.False;
 
             //header
-            dataGridViewJN1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewJN1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridViewJN1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(85, 85, 170);
             dataGridViewJN1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewJN1.ColumnHeadersHeight = 45;
 
-
-
             dataGridViewJN1.RowTemplate.DividerHeight = 1 / 3;//tamaño de linea row;
-            dataGridViewJN1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewJN1.GridColor = Color.FromArgb(210, 210, 210);//tamaño de linea row;
-
-
-            dataGridViewJN1.RowTemplate.Height = 35;//tamaño body
 
             dataGridViewJN1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             DataGridViewFill();
 
+            // Configuraciones DGV
+
+            // Agregado de botones de accion.
             List<DGVHeader> actionButtons = new List<DGVHeader>()
             {
                 new DGVHeader(){Name = " ", Size = 65 },
@@ -65,14 +50,13 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             };
             dataGridViewJN1.AddBtn(actionButtons);
 
-            // Se cambia el nombres del header.
+            // Setea nombres del header.
             List<DGVHeader> listHeader = new List<DGVHeader>()
             {
                 new DGVHeader(){Name = "Linea"},
                 new DGVHeader(){Name = "Descripción"}
             };
             dataGridViewJN1.SetHeaderText(listHeader);
-
         }
 
         /// <summary>
@@ -90,6 +74,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                 //amount = selected,
                 search = buscar
             };
+            // Peticion de la data
             DataTable data = ModalidadesServices.List(buscar);
             //if (data==null)
             //{
@@ -97,15 +82,48 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             //    dataGridViewJN1.Rows.Add()
             //}
 
+            // Cargando DGV
             dataGridViewJN1.DataSource = data;// obj.Data;
         }
 
+
+        #region FuncionalidadesDGV
+        private void jnButton1_Click(object sender, EventArgs e)
+        {
+            ///var obj = ModalidadesServices.List("");
+            PdfCustom.DataSource(this.Text, dataGridViewJN1);
+        }
+
+        private void jnButton2_Click(object sender, EventArgs e)
+        {
+            //string[] ignore = new string[] { "Editar", "Detalle", "Eliminar" };
+            Excel excel = new Excel();
+            ///var obj = ModalidadesServices.List("");
+            ////excel.DataSource(obj);
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            DataGridViewFill(txtBuscar.Text);
+        }
+        #endregion  FuncionalidadesDGV
+
+
+        #region AccionesCRUD
+
+        /// <summary>
+        /// Agrega un nuevo registro.
+        /// </summary>
         public override void Agregar()
         {
             Add add = new Add();
             ShowForm(add);
         }
 
+        /// <summary>
+        /// Edita o elimina registros en funcion de lo seleccionado en el DGV.
+        /// </summary>
+        /// <param name="e">Evento.</param>
         public override void CellContentDGV(DataGridViewCellEventArgs e)
         {
 
@@ -144,22 +162,6 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
         }
 
 
-        #region Eventos
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Boolean CamposVacios;
-            CamposVacios = Validation.CamposVacios(this);
-            MessageBox.Show(CamposVacios.ToString());
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            DataGridViewFill(txtBuscar.Text);
-        }
-
-        #endregion Eventos
-
-        #region Metodos
 
         /// <summary>
         /// This method generates a DataTable.
@@ -203,23 +205,20 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
 
         //}
 
-        #endregion Metodos
+        #endregion AccionesCRUD
 
 
 
-        //private void jnButton1_Click(object sender, EventArgs e)
-        //{
-        //    ///var obj = ModalidadesServices.List("");
-        //    PdfCustom.DataSource(this.Text, dataGridViewJN1);
-        //}
 
-        //private void jnButton2_Click(object sender, EventArgs e)
-        //{
-        //    //string[] ignore = new string[] { "Editar", "Detalle", "Eliminar" };
-        //    Excel excel = new Excel();
-        //    ///var obj = ModalidadesServices.List("");
-        //    ////excel.DataSource(obj);
-        //}
+        #region Eventos
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Boolean CamposVacios;
+            CamposVacios = Validation.CamposVacios(this);
+            MessageBox.Show(CamposVacios.ToString());
+        }
+
+        #endregion Eventos
 
 
     }

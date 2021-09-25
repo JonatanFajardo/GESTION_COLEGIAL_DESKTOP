@@ -1,13 +1,88 @@
-﻿using Gestion.Colegial.UI.FormsBase;
+﻿using Gestion.Colegial.Business.Extensions;
+using Gestion.Colegial.Business.Helpers.Alert;
+using Gestion.Colegial.Business.Services;
+using Gestion.Colegial.Commons.Entities;
+using Gestion.Colegial.UI.FormsBase;
+using Gestion.Colegial.UI.Helpers.Controles;
+using System;
 
 
 namespace Gestion.Colegial.UI.Forms.Parentescos
 {
     public partial class Add : Add_Base
     {
+        // Instancia que contiene la data local y privadamente.
+        private static tbParentescos send = new tbParentescos();
         public Add()
         {
             InitializeComponent();
+        }
+
+        public void load()
+        {
+            this.Show();
+            if (send.Par_Id == 0)
+            {
+                label1.Text = "Registrar Parentescos";
+            }
+            else
+            {
+                txtDescripcion.Texts = send.Par_Descripcion;
+                label1.Text = "Modificar Parentescos";
+            }
+        }
+
+        public static void Send(tbParentescos Send)
+        {
+            Add add = new Add();
+            send = Send;
+            add.load();
+        }
+
+        public override void OnClick()
+        {
+            var validation = Validation.CamposVacios(pnBackground);
+            if (!validation)
+            {
+                // Condicion que indica el tipo de envio que se hara.
+                send.Par_Descripcion = txtDescripcion.Texts;
+                if (send.Par_Id == 0)
+                {
+                    Boolean respond = ParentescosServices.Add(send);
+                    if (!respond)
+                    {
+                        Alert.Show(Alert.enmType.Success);
+                        Parentescos.List list = new List();
+                        list.DataGridViewFill();
+                        ControlsPlugin.CleanIfCompleted(pnBackground);
+                        this.Hide();
+                    }
+                    else
+                    {
+                        Alert.Show(Alert.enmType.Error);
+                    }
+                }
+                else
+                {
+                    Boolean respond = ParentescosServices.Edit(send);
+                    if (!respond)
+                    {
+                        Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
+                        Parentescos.List list = new List();
+                        list.DataGridViewFill();
+                        ControlsPlugin.CleanIfCompleted(pnBackground);
+                        this.Hide();
+                    }
+                    else
+                    {
+                        Alert.Show(Alert.enmType.Error);
+                    }
+                }
+            }
+            else
+            {
+
+            }
         }
     }
 }

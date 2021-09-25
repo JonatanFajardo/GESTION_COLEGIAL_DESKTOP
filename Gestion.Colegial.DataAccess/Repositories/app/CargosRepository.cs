@@ -42,7 +42,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbCargos_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Car_Id", DbType = DbType.Int32, Value = entidad.Car_Id},
                 new SqlParameter(){ParameterName= "@Car_Descripcion", DbType = DbType.String, Value = entidad.Car_Descripcion},
                 new SqlParameter(){ParameterName= "@Car_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Car_UsuarioRegistra}
             };

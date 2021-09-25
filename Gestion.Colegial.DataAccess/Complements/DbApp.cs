@@ -68,9 +68,9 @@ namespace Gestion.Colegial.DataAccess.Complements
             }
             catch (Exception error)
             {
-                Answer answer = new Answer();
-                answer.Incidents(error);
-                ErrorLogRepository.Add(answer);
+                //Answer answer = new Answer();
+                //answer.Incidents(error);
+                ErrorLogRepository.Add("", error);
                 return true;
             }
         }
