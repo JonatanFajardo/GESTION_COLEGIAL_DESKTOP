@@ -340,6 +340,7 @@ namespace Gestion.Colegial.UI.FormsBase
             this.jnButton1.Text = "jnButton1";
             this.jnButton1.TextColor = System.Drawing.Color.Black;
             this.jnButton1.UseVisualStyleBackColor = false;
+            this.jnButton1.Click += new System.EventHandler(this.jnButton1_Click);
             // 
             // BaseMain
             // 

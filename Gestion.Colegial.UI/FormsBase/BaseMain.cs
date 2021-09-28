@@ -25,9 +25,9 @@ namespace Gestion.Colegial.UI.FormsBase
             List<SideBar> MenuList = new List<SideBar>()
             {
                 new SideBar() { Item = "Inicio" },
-                new SideBar() { Item = "Personas", SubItem = new[] { "Estudiantes", "Encargados", "Docentes" } },
-                new SideBar() { Item = "Horario", SubItem = new[] { "Alumno", "Docente", "Dia" } },
-                new SideBar() { Item = "Modalida" }
+                new SideBar() { Item = "Personas", SubItem = new[] { "Estudiantes", "Encargados", "Docentes", "Empleados", "Parentescos", "Cargos" } },
+                new SideBar() { Item = "Horario", SubItem = new[] { "Horario Alumnos", "Horario Profesores", "Horas", "Dia" } },
+                new SideBar() { Item = "Logistica" }
 
             };
             menuSource = MenuList;
@@ -372,6 +372,12 @@ namespace Gestion.Colegial.UI.FormsBase
         private void jnMenu1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void jnButton1_Click(object sender, EventArgs e)
+        {
+            Forms.Modalidades.List lis = new Forms.Modalidades.List();
+            lis.Show();
         }
     }
 }

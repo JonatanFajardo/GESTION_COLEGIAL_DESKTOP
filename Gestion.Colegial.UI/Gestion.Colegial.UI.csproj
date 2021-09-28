@@ -335,10 +335,10 @@
     <Compile Include="Forms\Horas\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login\Login.cs">
+    <Compile Include="Forms\Account\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login\Login.Designer.cs">
+    <Compile Include="Forms\Account\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Home\Main.cs">
@@ -485,6 +485,7 @@
     <Compile Include="Forms\Titulos\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalVariable.cs" />
     <Compile Include="Helpers\Controles\Figura.cs" />
     <Compile Include="Helpers\Controles\Validation.cs" />
     <Compile Include="Program.cs" />
@@ -500,6 +501,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsBase\FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Account\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Add\Calificaciones_Add.resx">
       <DependentUpon>Calificaciones_Add.cs</DependentUpon>
@@ -640,6 +644,7 @@
     <Content Include="Content\image\forms\lupa.png" />
     <Content Include="Content\image\menu-button.png" />
     <Content Include="Content\image\menu.png" />
+    <Content Include="Content\image\logo-login.jpg" />
     <Content Include="Resources\Image\alert.png" />
     <Content Include="Resources\Image\bgBTN2.png" />
     <Content Include="Resources\Image\button-lg %282%29.png" />

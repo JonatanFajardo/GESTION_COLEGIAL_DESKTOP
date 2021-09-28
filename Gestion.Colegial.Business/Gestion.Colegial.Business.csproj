@@ -81,7 +81,9 @@
     <Compile Include="Helpers\ExportCustom\PdfCustom.cs" />
     <Compile Include="Helpers\Export\PDF.cs" />
     <Compile Include="Helpers\Export\Excel.cs" />
+    <Compile Include="Helpers\SecurityEncryptation.cs" />
     <Compile Include="Helpers\Variable.cs" />
+    <Compile Include="Services\AccountServices.cs" />
     <Compile Include="Services\AlumnosServices.cs" />
     <Compile Include="Services\AulasServices.cs" />
     <Compile Include="Services\B_Alumno.cs" />

@@ -12,8 +12,8 @@ namespace Gestion.Colegial.DataAccess.Helpers
         private static string _path;
         private static string _folderName;
 
-        public static string Path { get => _path; set => _path = value; }
-        public static string FolderName { get => _folderName; set => _folderName = value; }
+        public static string Path { set => _path = value; }
+        public static string FolderName { set => _folderName = value; }
 
 
         /// <summary>

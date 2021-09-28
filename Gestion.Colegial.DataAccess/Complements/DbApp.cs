@@ -38,7 +38,43 @@ namespace Gestion.Colegial.DataAccess.Complements
             catch (Exception error)
             {
                 answer.Incidents(error);
-                ErrorLogRepository.Add(answer);
+                ErrorLogRepository.Add(error);
+                return null;
+            }
+        }
+
+        public static DataTable List(string commandText, dynamic parameters)
+        {
+            Answer answer = new Answer();
+            try
+            {
+                DataTable table = new DataTable();
+                SqlDataReader reader;
+                using (SqlConnection conn = new SqlConnection(Connection.Sql()))
+                {
+                    using (SqlCommand cmd = new SqlCommand(commandText, conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddRange(parameters);
+                        //cmd.Parameters.AddWithValue("@numberPagina", entidad.numberPagina);
+                        //cmd.Parameters.AddWithValue("@amount", entidad.amount);
+                        //cmd.Parameters.AddWithValue("@search", entidad.search);
+                        conn.Open();
+                        reader = cmd.ExecuteReader();
+                        table.Load(reader);
+                        reader.Close();
+                        if (table == null)
+                        {
+                            return null;
+                        }
+                        return table;
+                    };
+                }
+            }
+            catch (Exception error)
+            {
+                answer.Incidents(error);
+                ErrorLogRepository.Add(error);
                 return null;
             }
         }
@@ -70,7 +106,7 @@ namespace Gestion.Colegial.DataAccess.Complements
             {
                 //Answer answer = new Answer();
                 //answer.Incidents(error);
-                ErrorLogRepository.Add("", error);
+                ErrorLogRepository.Add(error);
                 return true;
             }
         }
@@ -101,7 +137,7 @@ namespace Gestion.Colegial.DataAccess.Complements
             {
                 Answer answer = new Answer();
                 answer.Incidents(error);
-                ErrorLogRepository.Add(answer);
+                ErrorLogRepository.Add(error);
                 return true;
             }
         }

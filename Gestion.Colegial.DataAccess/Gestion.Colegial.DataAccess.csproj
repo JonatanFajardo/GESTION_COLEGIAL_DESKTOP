@@ -67,6 +67,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\app\AccountRepository.cs" />
     <Compile Include="Repositories\app\AlumnosRepository.cs" />
     <Compile Include="Repositories\app\AulasRepository.cs" />
     <Compile Include="Repositories\app\CargosRepository.cs" />

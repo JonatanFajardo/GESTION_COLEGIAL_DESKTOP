@@ -9,7 +9,8 @@ namespace Gestion.Colegial.Commons.Entities
         public int Emp_Id { get; set; }
         public string Usu_Name { get; set; }
         public Nullable<int> Con_Id { get; set; }
-        public byte[] Usu_ContrasenaRecuperacion { get; set; }
+        public string Usu_Contraseña { get; set; }
+        public string Usu_ContrasenaRecuperacion { get; set; }
         public int Rol_Id { get; set; }
         public string Usu_Ip { get; set; }
         public bool Usu_EsActivo { get; set; }

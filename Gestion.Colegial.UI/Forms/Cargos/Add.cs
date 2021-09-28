@@ -15,6 +15,8 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         public Add()
         {
             InitializeComponent();
+            
+            
         }
 
         public void load()
@@ -40,6 +42,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
 
         public override void OnClick()
         {
+            GlobalVariable.tbUsuario.Usu_Id += 1;
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
             {

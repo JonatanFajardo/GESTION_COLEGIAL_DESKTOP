@@ -47,6 +47,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                 send.Mda_Descripcion = txtDescripcion.Texts;
                 if (send.Mda_Id == 0)
                 {
+                    send.Mda_UsuarioRegistra = GlobalVariable.tbUsuario.Usu_Id;
                     Boolean respond = ModalidadesServices.Add(send);
                     if (!respond)
                     {

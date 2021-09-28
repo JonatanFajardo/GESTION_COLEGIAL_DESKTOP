@@ -85,7 +85,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 
         public Boolean Add(tbModalidades entidad)
         {
-            entidad.Mda_UsuarioRegistra = 1;
+            //entidad.Mda_UsuarioRegistra = 1;
             const string commandText = "PR_tbModalidades_Insert";
             SqlParameter[] sqlParameters = {
             new SqlParameter(){ParameterName= "@Mda_Descripcion", DbType = DbType.String, Value = entidad.Mda_Descripcion },

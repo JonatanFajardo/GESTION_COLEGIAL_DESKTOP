@@ -19,6 +19,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         public List()
         {
             InitializeComponent();
+
             dataGridViewJN1.RowTemplate.DividerHeight = 1;
 
             //header
@@ -108,6 +109,8 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         /// </summary>
         public override void Agregar()
         {
+            System.Windows.Forms.MessageBox.Show(GlobalVariable.tbUsuario.Usu_Id.ToString());
+
             Add add = new Add();
             ShowForm(add);
         }
