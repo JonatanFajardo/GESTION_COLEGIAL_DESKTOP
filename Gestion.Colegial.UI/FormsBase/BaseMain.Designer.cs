@@ -51,7 +51,7 @@ namespace Gestion.Colegial.UI.FormsBase
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.jnButton1 = new JNControls.Controles.JNButton();
+            this.pnChildForm = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pnMenu.SuspendLayout();
@@ -322,32 +322,20 @@ namespace Gestion.Colegial.UI.FormsBase
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // jnButton1
+            // pnChildForm
             // 
-            this.jnButton1.BackColor = System.Drawing.Color.LightGray;
-            this.jnButton1.BackgroundColor = System.Drawing.Color.LightGray;
-            this.jnButton1.BorderColor = System.Drawing.Color.LightGray;
-            this.jnButton1.BorderRadius = 14;
-            this.jnButton1.BorderSize = 1;
-            this.jnButton1.FlatAppearance.BorderSize = 0;
-            this.jnButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.jnButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jnButton1.ForeColor = System.Drawing.Color.Black;
-            this.jnButton1.Location = new System.Drawing.Point(492, 228);
-            this.jnButton1.Name = "jnButton1";
-            this.jnButton1.Size = new System.Drawing.Size(120, 30);
-            this.jnButton1.TabIndex = 20;
-            this.jnButton1.Text = "jnButton1";
-            this.jnButton1.TextColor = System.Drawing.Color.Black;
-            this.jnButton1.UseVisualStyleBackColor = false;
-            this.jnButton1.Click += new System.EventHandler(this.jnButton1_Click);
+            this.pnChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnChildForm.Location = new System.Drawing.Point(260, 88);
+            this.pnChildForm.Name = "pnChildForm";
+            this.pnChildForm.Size = new System.Drawing.Size(882, 463);
+            this.pnChildForm.TabIndex = 20;
             // 
             // BaseMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1142, 551);
-            this.Controls.Add(this.jnButton1);
+            this.Controls.Add(this.pnChildForm);
             this.Controls.Add(this.pnHeader);
             this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.panel3);
@@ -395,7 +383,7 @@ namespace Gestion.Colegial.UI.FormsBase
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
-        private JNControls.Controles.JNButton jnButton1;
         private JNControls.Controles.JNMenu jnMenu1;
+        private System.Windows.Forms.Panel pnChildForm;
     }
 }

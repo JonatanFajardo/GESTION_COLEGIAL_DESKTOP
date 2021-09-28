@@ -169,7 +169,7 @@ namespace Gestion.Colegial.UI.FormsBase
                     return;
                 }
             }
-            form.Show();
+            form.ShowDialog();
             return;
 
         }

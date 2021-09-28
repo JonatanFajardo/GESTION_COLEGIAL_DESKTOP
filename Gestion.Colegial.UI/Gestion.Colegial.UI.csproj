@@ -184,18 +184,6 @@
     <Compile Include="Forms\Cursos\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Cursos_tbMaterias\Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Cursos_tbMaterias\Add.Designer.cs">
-      <DependentUpon>Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Cursos_tbMaterias\List.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Cursos_tbMaterias\List.Designer.cs">
-      <DependentUpon>List.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\DateExamples.cs" />
     <Compile Include="Forms\Dias\Add.cs">
       <SubType>Form</SubType>
@@ -239,18 +227,6 @@
     <Compile Include="Forms\Empleados\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Empleados_tbMaterias\Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Empleados_tbMaterias\Add.Designer.cs">
-      <DependentUpon>Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Empleados_tbMaterias\List.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Empleados_tbMaterias\List.Designer.cs">
-      <DependentUpon>List.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Encargado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,18 +243,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Encargados\List.Designer.cs">
-      <DependentUpon>List.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Encargados_tbAlumnos\Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Encargados_tbAlumnos\Add.Designer.cs">
-      <DependentUpon>Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Encargados_tbAlumnos\List.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Encargados_tbAlumnos\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Estados\Add.cs">

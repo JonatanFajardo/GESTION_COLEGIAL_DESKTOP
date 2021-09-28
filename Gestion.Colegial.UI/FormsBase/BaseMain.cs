@@ -53,6 +53,116 @@ namespace Gestion.Colegial.UI.FormsBase
         {
             //menuSource.Reverse();
             ShowHidenSubItems(menuSource, sender);
+            ShowFormButton(sender);
+        }
+
+        /// <summary>
+        /// Muestra el formulario especificado para cada boton.
+        /// </summary>
+        /// <param name="source"></param>
+        private void ShowFormButton(object source)
+        {
+
+            //Verificamos que no venga nula para no provocar una excepcion
+            if (source != null)
+            {
+                string valor = (((JNButton)source).Text);
+
+                switch (valor)
+                {
+                    case "Estados":
+                        OpenChildForm(new Forms.Estados.List());
+                        break;
+                    case "HorarioAlumnos":
+                        OpenChildForm(new Forms.HorarioAlumnos.List());
+                        break;
+                    case "HorarioProfesores":
+                        OpenChildForm(new Forms.HorarioProfesores.List());
+                        break;
+                    case "Horas":
+                        OpenChildForm(new Forms.Horas.List());
+                        break;
+                    case "Materias":
+                        OpenChildForm(new Forms.Materias.List());
+                        break;
+                    case "Matricula":
+                        OpenChildForm(new Forms.Matricula.List());
+                        break;
+                    case "Modalidades":
+                        OpenChildForm(new Forms.Modalidades.List());
+                        break;
+                    case "NivelesEducativos":
+                        OpenChildForm(new Forms.NivelesEducativos.List());
+                        break;
+                    case "Notas":
+                        OpenChildForm(new Forms.Notas.List());
+                        break;
+                    case "Parciales":
+                        OpenChildForm(new Forms.Parciales.List());
+                        break;
+                    case "Parentescos":
+                        OpenChildForm(new Forms.Parentescos.List());
+                        break;
+                    case "Personas":
+                        OpenChildForm(new Forms.Personas.List());
+                        break;
+                    case "Secciones":
+                        OpenChildForm(new Forms.Secciones.List());
+                        break;
+                    case "Semestres":
+                        OpenChildForm(new Forms.Semestres.List());
+                        break;
+                    case "Titulos":
+                        OpenChildForm(new Forms.Titulos.List());
+                        break;
+                    case "Alumnos":
+                        OpenChildForm(new Forms.Alumnos.List());
+                        break;
+                    case "Aulas":
+                        OpenChildForm(new Forms.Aulas.List());
+                        break;
+                    case "Cargos":
+                        OpenChildForm(new Forms.Cargos.List());
+                        break;
+                    case "Cursos":
+                        OpenChildForm(new Forms.Cursos.List());
+                        break;
+                    case "CursosNiveles":
+                        OpenChildForm(new Forms.CursosNiveles.List());
+                        break;
+                    case "CursosNombres":
+                        OpenChildForm(new Forms.CursosNombres.List());
+                        break;
+                    case "Dias":
+                        OpenChildForm(new Forms.Dias.List());
+                        break;
+                    case "Duraciones":
+                        OpenChildForm(new Forms.Duraciones.List());
+                        break;
+                    case "Empleados":
+                        OpenChildForm(new Forms.Empleados.List());
+                        break;
+                    case "Encargados":
+                        OpenChildForm(new Forms.Encargados.List());
+                        break;
+                }
+
+
+
+                //Form oform = new Form();
+
+                //oform = (Form)Activator.CreateInstance("cs", "cs." + "formularioModalidades").Unwrap();
+
+                //oform.Name = "formularioModalidades";
+
+                //oform.ShowDialog();
+
+                //Recorremos y agregamos los botones principales
+                //for (int i = 0; i < ; i++)
+                //{
+
+                //}
+            }
         }
 
         #region Menu
@@ -78,7 +188,7 @@ namespace Gestion.Colegial.UI.FormsBase
                             boton2.Text = subitem;
                             boton2.ForeColor = Color.White;
                             boton2.BorderRadius = 14;
-                            boton2.BorderRadius = 5;
+                            // boton2.BorderRadius = 5;
                             boton2.Padding = new Padding(16, 0, 0, 0);
                             boton2.BackColor = Color.FromArgb(44, 52, 59);
                             Visible = false;
@@ -199,17 +309,6 @@ namespace Gestion.Colegial.UI.FormsBase
         }
         #endregion Menu
 
-
-
-
-
-
-
-
-
-
-
-
         //private void HideSubmenu()
         //{
         //    if (pnSubItems2.Visible == true)
@@ -247,7 +346,6 @@ namespace Gestion.Colegial.UI.FormsBase
         //    }
         //}
 
-
         private void EfectoScroll(Panel panel)
         {
             //pnMenuBottom.HorizontalScroll.Maximum = 0;
@@ -256,45 +354,7 @@ namespace Gestion.Colegial.UI.FormsBase
             //pnMenuBottom.AutoScroll = true;
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            //if (pnMenuBottom.Width == 258)
-            //{
-            //    MostrarMenu_Tick.Enabled = true;
-            //}
-            //else if (pnMenuBottom.Width==55)
-            //{
-            //    pnMenu.Enabled = true;
-            //}
-        }
-
-        private void OcultarMenu(object sender, EventArgs e)
-        {
-            //if (pnMenu.Width <= 55)
-            //{
-            //    OcultarMenu.Enabled = false;
-            //}
-            //else
-            //{
-            //    pnMenu.Width = pnMenu.Width - 10;
-            //    //  int s = pnMenu.Width;
-            //    //MessageBox.Show(s.ToString());
-            //}
-        }
-
-        private void MostrarMenu(object sender, EventArgs e)
-        {
-            //if (pnMenu.Width >= 225)
-            //{
-            //    tmMostrarMenu.Enabled = false;
-            //}
-            //else
-            //{
-            //    pnMenu.Width = pnMenu.Width + 10;
-
-            //}
-        }
-
+        #region BotonesdeRegion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
@@ -330,11 +390,7 @@ namespace Gestion.Colegial.UI.FormsBase
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-
-        // public override void DynamicButton_Click(object sender, EventArgs e)
-        //{
-
-        //}
+        #endregion BotonesdeRegion
 
         public void DynamicButton_Click11(object sender, EventArgs e)
         {
@@ -344,11 +400,12 @@ namespace Gestion.Colegial.UI.FormsBase
             //Query using buttonText
         }
 
+
+        //revisar
         private void BaseMain_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("Test");
             //var listaBtnVerdes = jnMenu1.Controls.OfType<Button>().Where(c => c.BackColor == Color.Green).ToList();
-
-            //MessageBox.Show(jnMenu1.subItem.ToString());
             foreach (var item in this.jnMenu1.Controls)
             {
                 if (item is JNButton)
@@ -369,11 +426,20 @@ namespace Gestion.Colegial.UI.FormsBase
             }
         }
 
-        private void jnMenu1_Load(object sender, EventArgs e)
+        private Form activeForm = null;
+        private void OpenChildForm(Form childForm)
         {
-
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            activeForm.TopLevel = false;
+            activeForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnChildForm.Controls.Add(childForm);
+            pnChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
-
         private void jnButton1_Click(object sender, EventArgs e)
         {
             Forms.Modalidades.List lis = new Forms.Modalidades.List();

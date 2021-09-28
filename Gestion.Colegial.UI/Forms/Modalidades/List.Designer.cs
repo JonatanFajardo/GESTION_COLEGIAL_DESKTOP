@@ -142,7 +142,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             this.Controls.Add(this.button1);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "List";
-            this.Text = "List";
+            this.Text = "Modalidades";
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.txtDescripcion, 0);
             this.Controls.SetChildIndex(this.pnBackground, 0);
