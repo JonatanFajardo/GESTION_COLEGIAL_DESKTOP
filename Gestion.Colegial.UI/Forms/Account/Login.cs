@@ -90,7 +90,9 @@ namespace Gestion.Colegial.UI.Forms.Acount
                 {
                     lblError.Visible = false;
                     FormsBase.BaseMain baseMain = new FormsBase.BaseMain();
-                    GlobalVariable.tbUsuario.Usu_Id = Convert.ToInt32(resultList.Rows[0].ItemArray[0]);
+                    GlobalVariable.Usuario.Usu_Id = Convert.ToInt32(resultList.Rows[0].ItemArray[0]);
+                    GlobalVariable.Usuario.Usu_Nombre = Convert.ToString(resultList.Rows[0].ItemArray[1]);
+                    GlobalVariable.Usuario.Usu_Rol = Convert.ToString(resultList.Rows[0].ItemArray[3]);
                     this.Hide();
                     baseMain.Show();
                 }

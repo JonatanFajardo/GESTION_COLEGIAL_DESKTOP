@@ -38,7 +38,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             List<DGVHeader> actionButtons = new List<DGVHeader>()
             {
                 new DGVHeader(){Name = " ", Size = 65 },
-                new DGVHeader(){Name = "Acciones", Size = 65 },
+                new DGVHeader(){Name = "Accion", Size = 65 },
                 new DGVHeader(){Name = "  ", Size = 65 },
             };
             dataGridViewJN1.AddBtn(actionButtons);
@@ -109,7 +109,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         /// </summary>
         public override void Agregar()
         {
-            System.Windows.Forms.MessageBox.Show(GlobalVariable.tbUsuario.Usu_Id.ToString());
+            System.Windows.Forms.MessageBox.Show(GlobalVariable.Usuario.Usu_Id.ToString());
 
             Add add = new Add();
             ShowForm(add);

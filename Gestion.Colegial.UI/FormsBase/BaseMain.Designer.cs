@@ -49,9 +49,10 @@ namespace Gestion.Colegial.UI.FormsBase
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnHeader = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnChildForm = new System.Windows.Forms.Panel();
+            this.lblRol = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pnMenu.SuspendLayout();
@@ -278,8 +279,9 @@ namespace Gestion.Colegial.UI.FormsBase
             // pnHeader
             // 
             this.pnHeader.BackColor = System.Drawing.Color.White;
+            this.pnHeader.Controls.Add(this.lblUserName);
+            this.pnHeader.Controls.Add(this.lblRol);
             this.pnHeader.Controls.Add(this.btnMenu);
-            this.pnHeader.Controls.Add(this.label1);
             this.pnHeader.Controls.Add(this.pictureBox1);
             this.pnHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHeader.Location = new System.Drawing.Point(260, 32);
@@ -299,17 +301,17 @@ namespace Gestion.Colegial.UI.FormsBase
             this.btnMenu.TabIndex = 2;
             this.btnMenu.TabStop = false;
             // 
-            // label1
+            // lblUserName
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(91)))), ((int)(((byte)(100)))));
-            this.label1.Location = new System.Drawing.Point(658, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Jonatan Fajardo";
+            this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(91)))), ((int)(((byte)(100)))));
+            this.lblUserName.Location = new System.Drawing.Point(533, 6);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(270, 24);
+            this.lblUserName.TabIndex = 1;
+            this.lblUserName.Text = "User Name";
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox1
             // 
@@ -329,6 +331,18 @@ namespace Gestion.Colegial.UI.FormsBase
             this.pnChildForm.Name = "pnChildForm";
             this.pnChildForm.Size = new System.Drawing.Size(882, 463);
             this.pnChildForm.TabIndex = 20;
+            // 
+            // lblRol
+            // 
+            this.lblRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(91)))), ((int)(((byte)(100)))));
+            this.lblRol.Location = new System.Drawing.Point(622, 30);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(178, 23);
+            this.lblRol.TabIndex = 3;
+            this.lblRol.Text = "Rol";
+            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BaseMain
             // 
@@ -354,7 +368,6 @@ namespace Gestion.Colegial.UI.FormsBase
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnHeader.ResumeLayout(false);
-            this.pnHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -380,10 +393,11 @@ namespace Gestion.Colegial.UI.FormsBase
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnHeader;
         private System.Windows.Forms.PictureBox btnMenu;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
         private JNControls.Controles.JNMenu jnMenu1;
         private System.Windows.Forms.Panel pnChildForm;
+        private System.Windows.Forms.Label lblRol;
     }
 }

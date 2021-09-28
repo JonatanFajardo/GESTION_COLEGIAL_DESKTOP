@@ -45,7 +45,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             List<DGVHeader> actionButtons = new List<DGVHeader>()
             {
                 new DGVHeader(){Name = " ", Size = 65 },
-                new DGVHeader(){Name = "Acciones", Size = 65 },
+                new DGVHeader(){Name = "Accion", Size = 65 },
                 new DGVHeader(){Name = "  ", Size = 65 },
             };
             dataGridViewJN1.AddBtn(actionButtons);

@@ -18,15 +18,19 @@ namespace Gestion.Colegial.UI.FormsBase
         public BaseMain()
         {
             InitializeComponent();
+
+ 
+
             //pnSubItems2.Visible = false;
             //Debe de ir en el constructor
             //MessageBox.Show("Test22");
 
-            List<SideBar> MenuList = new List<SideBar>()
+            List <SideBar> MenuList = new List<SideBar>()
             {
                 new SideBar() { Item = "Inicio" },
-                new SideBar() { Item = "Personas", SubItem = new[] { "Estudiantes", "Encargados", "Docentes", "Empleados", "Parentescos", "Cargos" } },
+                new SideBar() { Item = "Personas", SubItem = new[] { "Estudiantes", "Encargados", "Docentes", "Parentescos", "Cargos" } },
                 new SideBar() { Item = "Horario", SubItem = new[] { "Horario Alumnos", "Horario Profesores", "Horas", "Dia" } },
+                new SideBar() { Item = "Cursos", SubItem = new[] { "Cursos Niveles", "Cursos Nombres", "Duraciones", "Materias", "Modalidades", "Niveles Educativos", "Parciales", "Secciones", "Semestres" } },
                 new SideBar() { Item = "Logistica" }
 
             };
@@ -396,7 +400,6 @@ namespace Gestion.Colegial.UI.FormsBase
         {
 
             var buttonText = ((JNButton)sender).Text;
-            MessageBox.Show(buttonText);
             //Query using buttonText
         }
 
@@ -404,7 +407,11 @@ namespace Gestion.Colegial.UI.FormsBase
         //revisar
         private void BaseMain_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            // Cargamos los datos.
+            lblUserName.Text = GlobalVariable.Usuario.Usu_Nombre;
+            lblRol.Text = GlobalVariable.Usuario.Usu_Rol;
+
+
             //var listaBtnVerdes = jnMenu1.Controls.OfType<Button>().Where(c => c.BackColor == Color.Green).ToList();
             foreach (var item in this.jnMenu1.Controls)
             {
