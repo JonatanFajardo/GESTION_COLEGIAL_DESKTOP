@@ -19,13 +19,13 @@ namespace Gestion.Colegial.UI.FormsBase
         {
             InitializeComponent();
 
- 
+
 
             //pnSubItems2.Visible = false;
             //Debe de ir en el constructor
             //MessageBox.Show("Test22");
 
-            List <SideBar> MenuList = new List<SideBar>()
+            List<SideBar> MenuList = new List<SideBar>()
             {
                 new SideBar() { Item = "Inicio" },
                 new SideBar() { Item = "Personas", SubItem = new[] { "Estudiantes", "Encargados", "Docentes", "Parentescos", "Cargos" } },

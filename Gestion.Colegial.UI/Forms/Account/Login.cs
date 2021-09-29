@@ -5,7 +5,6 @@ using Gestion.Colegial.Business.Messagebox;
 using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.Commons.Entities;
 using System;
-using System.Security;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Acount

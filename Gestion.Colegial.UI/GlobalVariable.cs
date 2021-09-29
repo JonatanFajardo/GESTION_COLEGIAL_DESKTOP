@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gestion.Colegial.UI
+﻿namespace Gestion.Colegial.UI
 {
     public static class GlobalVariable
     {

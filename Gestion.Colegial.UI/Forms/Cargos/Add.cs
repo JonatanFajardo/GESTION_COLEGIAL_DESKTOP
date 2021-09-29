@@ -15,21 +15,28 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         public Add()
         {
             InitializeComponent();
-            
-            
+            load();
+
+
         }
 
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Cargos";
+            string Modificar = "Modificar Cargos";
             if (send.Car_Id == 0)
             {
-                label1.Text = "Registrar Cargos";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Car_Descripcion;
-                label1.Text = "Modificar Cargos";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 
@@ -42,7 +49,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
 
         public override void OnClick()
         {
-            GlobalVariable.Usuario.Usu_Id += 1;
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
             {
