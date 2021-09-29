@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Estados
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Estados";
+            string Modificar = "Modificar Estados";
             if (send.Est_Id == 0)
             {
-                label1.Text = "Registrar Estados";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Est_Descripcion;
-                label1.Text = "Modificar Estados";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

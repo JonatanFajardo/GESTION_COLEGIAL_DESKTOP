@@ -21,14 +21,20 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Parentescos";
+            string Modificar = "Modificar Parentescos";
             if (send.Par_Id == 0)
             {
-                label1.Text = "Registrar Parentescos";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Par_Descripcion;
-                label1.Text = "Modificar Parentescos";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

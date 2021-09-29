@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Secciones
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Secciones";
+            string Modificar = "Modificar Secciones";
             if (send.Sec_Id == 0)
             {
-                label1.Text = "Registrar Secciones";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Sec_Descripcion;
-                label1.Text = "Modificar Secciones";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

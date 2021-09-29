@@ -38,6 +38,11 @@ namespace Gestion.Colegial.UI.Forms.Parciales
             // 
             this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
             // 
+            // lblTituloForm
+            // 
+            this.lblTituloForm.Size = new System.Drawing.Size(214, 29);
+            this.lblTituloForm.Text = "Listado Parciales";
+            // 
             // pnBackground
             // 
             this.pnBackground.Size = new System.Drawing.Size(1598, 600);

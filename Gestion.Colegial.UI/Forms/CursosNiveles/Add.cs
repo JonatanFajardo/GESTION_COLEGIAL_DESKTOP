@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.CursosNiveles
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar CursosNiveles";
+            string Modificar = "Modificar CursosNiveles";
             if (send.Cun_Id == 0)
             {
-                label1.Text = "Registrar CursosNiveles";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Cun_Descripcion;
-                label1.Text = "Modificar CursosNiveles";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

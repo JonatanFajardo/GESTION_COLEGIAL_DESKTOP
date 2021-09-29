@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Duraciones";
+            string Modificar = "Modificar Duraciones";
             if (send.Dur_Id == 0)
             {
-                label1.Text = "Registrar Duraciones";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Dur_Descripcion;
-                label1.Text = "Modificar Duraciones";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

@@ -38,6 +38,11 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             // 
             this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
             // 
+            // lblTituloForm
+            // 
+            this.lblTituloForm.Size = new System.Drawing.Size(250, 29);
+            this.lblTituloForm.Text = "Listado Parentescos";
+            // 
             // pnBackground
             // 
             this.pnBackground.Size = new System.Drawing.Size(1598, 600);

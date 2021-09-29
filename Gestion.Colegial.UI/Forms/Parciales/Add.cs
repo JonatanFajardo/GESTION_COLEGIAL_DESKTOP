@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Parciales
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Parciales";
+            string Modificar = "Modificar Parciales";
             if (send.Pac_Id == 0)
             {
-                label1.Text = "Registrar Parciales";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Pac_Descripcion;
-                label1.Text = "Modificar Parciales";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

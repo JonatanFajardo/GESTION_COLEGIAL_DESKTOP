@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Horas
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Horas";
+            string Modificar = "Modificar Horas";
             if (send.Hor_Id == 0)
             {
-                label1.Text = "Registrar Horas";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Hor_Hora;
-                label1.Text = "Modificar Horas";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

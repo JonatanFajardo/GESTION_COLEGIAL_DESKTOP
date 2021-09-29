@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Materias
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Materias";
+            string Modificar = "Modificar Materias";
             if (send.Mat_Id == 0)
             {
-                label1.Text = "Registrar Materias";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Mat_Nombre;
-                label1.Text = "Modificar Materias";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

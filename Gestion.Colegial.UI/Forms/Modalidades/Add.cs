@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Modalidades";
+            string Modificar = "Modificar Modalidades";
             if (send.Mda_Id == 0)
             {
-                label1.Text = "Registrar Modalidades";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Mda_Descripcion;
-                label1.Text = "Modificar Modalidades";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

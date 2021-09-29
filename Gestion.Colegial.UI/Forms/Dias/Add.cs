@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Dias
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Dias";
+            string Modificar = "Modificar Dias";
             if (send.Dia_Id == 0)
             {
-                label1.Text = "Registrar Dias";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Dia_Descripcion;
-                label1.Text = "Modificar Dias";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

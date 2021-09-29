@@ -50,8 +50,8 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             // 
             // lblTituloForm
             // 
-            this.lblTituloForm.Size = new System.Drawing.Size(242, 29);
-            this.lblTituloForm.Text = "Registro modalidad";
+            this.lblTituloForm.Size = new System.Drawing.Size(256, 29);
+            this.lblTituloForm.Text = "Listado Modalidades";
             // 
             // pnBackground
             // 

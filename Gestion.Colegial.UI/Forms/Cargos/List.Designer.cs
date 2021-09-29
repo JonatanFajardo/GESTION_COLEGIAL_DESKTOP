@@ -40,8 +40,8 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             // 
             // lblTituloForm
             // 
-            this.lblTituloForm.Size = new System.Drawing.Size(190, 29);
-            this.lblTituloForm.Text = "Registro Cargo";
+            this.lblTituloForm.Size = new System.Drawing.Size(176, 29);
+            this.lblTituloForm.Text = "Listado Cargo";
             // 
             // pnBackground
             // 

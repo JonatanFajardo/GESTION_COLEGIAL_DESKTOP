@@ -26,15 +26,11 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
         {
             InitializeComponent();
 
-
+            //Estilos DataGridView
             dataGridViewJN1.RowTemplate.DividerHeight = 1;
-
-            //header
             dataGridViewJN1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewJN1.ColumnHeadersHeight = 45;
-
             dataGridViewJN1.RowTemplate.DividerHeight = 1 / 3;//tamaño de linea row;
-
             dataGridViewJN1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             DataGridViewFill();
@@ -161,54 +157,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
 
         }
 
-
-
-        /// <summary>
-        /// This method generates a DataTable.
-        /// </summary>
-        //static DataTable GetTable()
-        //{
-        //    // Here we create a DataTable with four columns.
-        //    DataTable table = new DataTable();
-        //    table.Columns.Add("Dosage", typeof(int));
-        //    table.Columns.Add("Drug", typeof(string));
-        //    table.Columns.Add("Patient", typeof(string));
-        //    table.Columns.Add("Date", typeof(DateTime));
-
-        //    // Here we add five DataRows.
-        //    table.Rows.Add(25, "Indocin", "David", DateTime.Now);
-        //    table.Rows.Add(50, "Enebrel", "Sam", DateTime.Now);
-        //    table.Rows.Add(10, "Hydralazine", "Christoff", DateTime.Now);
-        //    table.Rows.Add(21, "Combivent", "Janet", DateTime.Now);
-        //    table.Rows.Add(100, "Dilantin", "Melanie", DateTime.Now);
-        //    return table;
-        //}
-
-
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    dataGridViewJN1.DataSource = GetTable();
-
-
-        //    for (int i = 0; i < dataGridViewJN1.ColumnCount; i++)
-        //    {
-
-        //    }
-        //    System.Collections.Generic.List<tbModalidades> lista = new System.Collections.Generic.List<tbModalidades>();
-        //    lista.Add(new tbModalidades()
-        //    {
-        //        //mda_Descripcion = 
-        //    });
-        //    string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-        //    //pictureBox1.Image = Image.FromFile(path+"/Content/image");
-        //    MessageBox.Show(path);
-
-        //}
-
         #endregion AccionesCRUD
-
-
-
 
         #region Eventos
         private void button1_Click(object sender, EventArgs e)

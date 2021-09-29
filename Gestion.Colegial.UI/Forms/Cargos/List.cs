@@ -7,19 +7,9 @@ using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.UI.FormsBase;
 using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
-using Gestion.Colegial.Business.Helpers.Alert;
-using Gestion.Colegial.Business.Helpers.Export;
-using Gestion.Colegial.Business.Helpers.ExportCustom;
-using Gestion.Colegial.Business.Messagebox;
-using Gestion.Colegial.Business.Services;
-using Gestion.Colegial.Commons.Entities;
-using Gestion.Colegial.UI.FormsBase;
-using Gestion.Colegial.UI.Helpers.Controles;
-using JNControls.Controles;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Cargos
@@ -30,14 +20,11 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         {
             InitializeComponent();
 
+            //Estilos DataGridView
             dataGridViewJN1.RowTemplate.DividerHeight = 1;
-
-            //header
             dataGridViewJN1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewJN1.ColumnHeadersHeight = 45;
-
             dataGridViewJN1.RowTemplate.DividerHeight = 1 / 3;//tamaño de linea row;
-
             dataGridViewJN1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             DataGridViewFill();

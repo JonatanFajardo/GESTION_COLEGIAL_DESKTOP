@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Semestres
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Semestres";
+            string Modificar = "Modificar Semestres";
             if (send.Sem_Id == 0)
             {
-                label1.Text = "Registrar Semestres";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Sem_Descripcion;
-                label1.Text = "Modificar Semestres";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 

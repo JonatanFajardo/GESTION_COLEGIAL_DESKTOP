@@ -20,14 +20,20 @@ namespace Gestion.Colegial.UI.Forms.Titulos
         public void load()
         {
             this.Show();
+
+            // Se asigna valores a titulo del formulario segun su accion.
+            string Registrar = "Registrar Titulos";
+            string Modificar = "Modificar Titulos";
             if (send.Tit_Id == 0)
             {
-                label1.Text = "Registrar Titulos";
+                label1.Text = Registrar;
+                this.Text = Registrar;
             }
             else
             {
                 txtDescripcion.Texts = send.Tit_Descripcion;
-                label1.Text = "Modificar Titulos";
+                label1.Text = Modificar;
+                this.Text = Modificar;
             }
         }
 
