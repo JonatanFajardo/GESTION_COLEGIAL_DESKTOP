@@ -70,6 +70,12 @@
     <Compile Include="FormsBase\BaseMain.Designer.cs">
       <DependentUpon>BaseMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsBase\DetailBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsBase\DetailBase.Designer.cs">
+      <DependentUpon>DetailBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsBase\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     <Compile Include="Forms\Cargos\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Cargos\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cargos\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Cargos\List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,12 @@
     </Compile>
     <Compile Include="Forms\CursosNiveles\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CursosNiveles\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CursosNiveles\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CursosNiveles\List.cs">
       <SubType>Form</SubType>
@@ -191,6 +209,12 @@
     <Compile Include="Forms\Dias\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dias\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dias\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dias\List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +232,12 @@
     </Compile>
     <Compile Include="Forms\Duraciones\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Duraciones\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Duraciones\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Duraciones\List.cs">
       <SubType>Form</SubType>
@@ -251,6 +281,12 @@
     <Compile Include="Forms\Estados\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Estados\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Estados\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Estados\List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +329,12 @@
     <Compile Include="Forms\Horas\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Horas\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horas\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Horas\List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +358,12 @@
     </Compile>
     <Compile Include="Forms\Materias\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materias\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materias\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Materias\List.cs">
       <SubType>Form</SubType>
@@ -341,6 +389,12 @@
     <Compile Include="Forms\Modalidades\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Modalidades\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modalidades\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modalidades\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,6 +412,12 @@
     </Compile>
     <Compile Include="Forms\NivelesEducativos\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NivelesEducativos\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NivelesEducativos\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NivelesEducativos\List.cs">
       <SubType>Form</SubType>
@@ -383,6 +443,12 @@
     <Compile Include="Forms\Parciales\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Parciales\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parciales\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Parciales\List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -394,6 +460,12 @@
     </Compile>
     <Compile Include="Forms\Parentescos\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parentescos\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parentescos\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Parentescos\List.cs">
       <SubType>Form</SubType>
@@ -419,6 +491,12 @@
     <Compile Include="Forms\Secciones\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Secciones\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Secciones\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Secciones\List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -431,6 +509,12 @@
     <Compile Include="Forms\Semestres\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Semestres\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Semestres\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Semestres\List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -442,6 +526,12 @@
     </Compile>
     <Compile Include="Forms\Titulos\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Titulos\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Titulos\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Titulos\List.cs">
       <SubType>Form</SubType>
@@ -459,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsBase\BaseMain.resx">
       <DependentUpon>BaseMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsBase\DetailBase.resx">
+      <DependentUpon>DetailBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsBase\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -493,11 +586,17 @@
     <EmbeddedResource Include="Forms\Cargos\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cargos\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cargos\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CursosNiveles\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CursosNiveles\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CursosNiveles\List.resx">
       <DependentUpon>List.cs</DependentUpon>
@@ -511,11 +610,17 @@
     <EmbeddedResource Include="Forms\Dias\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dias\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dias\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Duraciones\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Duraciones\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Duraciones\List.resx">
       <DependentUpon>List.cs</DependentUpon>
@@ -525,6 +630,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Estados\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Estados\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Estados\List.resx">
       <DependentUpon>List.cs</DependentUpon>
@@ -538,11 +646,17 @@
     <EmbeddedResource Include="Forms\Horas\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horas\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Horas\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Materias\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materias\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Materias\List.resx">
       <DependentUpon>List.cs</DependentUpon>
@@ -556,6 +670,9 @@
     <EmbeddedResource Include="Forms\Modalidades\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modalidades\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modalidades\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -564,6 +681,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NivelesEducativos\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NivelesEducativos\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NivelesEducativos\List.resx">
       <DependentUpon>List.cs</DependentUpon>
@@ -574,11 +694,17 @@
     <EmbeddedResource Include="Forms\Parciales\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parciales\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Parciales\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Parentescos\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parentescos\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Parentescos\List.resx">
       <DependentUpon>List.cs</DependentUpon>
@@ -586,14 +712,23 @@
     <EmbeddedResource Include="Forms\Secciones\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Secciones\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Secciones\List.resx">
       <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Semestres\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Semestres\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Titulos\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Titulos\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Titulos\List.resx">
       <DependentUpon>List.cs</DependentUpon>

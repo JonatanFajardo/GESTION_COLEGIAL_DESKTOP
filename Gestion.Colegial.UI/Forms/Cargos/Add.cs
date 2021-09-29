@@ -16,8 +16,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         {
             InitializeComponent();
             load();
-
-
         }
 
         public void load()
@@ -54,6 +52,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Car_Descripcion = txtDescripcion.Texts;
+                send.Car_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Car_Id == 0)
                 {
                     Boolean respond = CargosServices.Add(send);
@@ -72,6 +71,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 }
                 else
                 {
+                    send.Car_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = CargosServices.Edit(send);
                     if (!respond)
                     {

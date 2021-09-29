@@ -104,8 +104,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         /// </summary>
         public override void Agregar()
         {
-            System.Windows.Forms.MessageBox.Show(GlobalVariable.Usuario.Usu_Id.ToString());
-
             Add add = new Add();
             ShowForm(add);
         }
@@ -207,5 +205,9 @@ namespace Gestion.Colegial.UI.Forms.Cargos
 
         #endregion Eventos
 
+        private void pnBackground_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

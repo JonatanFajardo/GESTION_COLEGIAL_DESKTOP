@@ -1,7 +1,7 @@
 ﻿
-namespace Gestion.Colegial.UI.Forms.Cargos
+namespace Gestion.Colegial.UI.Forms.Secciones
 {
-    partial class List
+    partial class Detail
     {
         /// <summary>
         /// Required designer variable.
@@ -29,37 +29,19 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         /// </summary>
         private void InitializeComponent()
         {
-            this.jnPanel1.SuspendLayout();
-            this.pnBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             this.SuspendLayout();
             // 
-            // jnPanel1
-            // 
-            this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
-            // 
-            // lblTituloForm
-            // 
-            this.lblTituloForm.Size = new System.Drawing.Size(176, 29);
-            this.lblTituloForm.Text = "Listado Cargo";
-            // 
-            // pnBackground
-            // 
-            this.pnBackground.Size = new System.Drawing.Size(1598, 600);
-            this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
-            // 
-            // List
+            // Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1598, 600);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "List";
-            this.Text = "List";
-            this.jnPanel1.ResumeLayout(false);
-            this.jnPanel1.PerformLayout();
-            this.pnBackground.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Detail";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Detail";
             this.ResumeLayout(false);
 
         }

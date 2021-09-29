@@ -70,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                 }
                 else
                 {
+                    send.Mda_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = ModalidadesServices.Edit(send);
                     if (!respond)
                     {
