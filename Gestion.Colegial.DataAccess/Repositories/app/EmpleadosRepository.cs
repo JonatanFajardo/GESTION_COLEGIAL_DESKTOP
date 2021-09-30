@@ -41,12 +41,10 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbEmpleados_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Emp_Id", DbType = DbType.Int32, Value = entidad.Emp_Id},
                 new SqlParameter(){ParameterName= "@Emp_Codigo", DbType = DbType.String, Value = entidad.Emp_Codigo},
                 new SqlParameter(){ParameterName= "@Per_Id", DbType = DbType.Int32, Value = entidad.Per_Id},
                 new SqlParameter(){ParameterName= "@Tit_Id", DbType = DbType.Int32, Value = entidad.Tit_Id},
-                new SqlParameter(){ParameterName= "@Car_Id", DbType = DbType.Int32, Value = entidad.Car_Id},
-                new SqlParameter(){ParameterName= "@Emp_EsActivo", DbType = DbType.String , Value = entidad.Emp_EsActivo}
+                new SqlParameter(){ParameterName= "@Car_Id", DbType = DbType.Int32, Value = entidad.Car_Id}
             };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
             return result;
@@ -63,7 +61,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Car_Id", DbType = DbType.Int32, Value = entidad.Car_Id},
                 new SqlParameter(){ParameterName= "@Emp_EsActivo", DbType = DbType.String , Value = entidad.Emp_EsActivo},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

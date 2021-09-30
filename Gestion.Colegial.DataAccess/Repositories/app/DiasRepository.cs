@@ -41,10 +41,9 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbDias_Insert";
             SqlParameter[] sqlParameters = {
-        new SqlParameter(){ParameterName= "@Dia_Id", DbType = DbType.Int32, Value = entidad.Dia_Id},
-        new SqlParameter(){ParameterName= "@Dia_Descripcion", DbType = DbType.String, Value = entidad.Dia_Descripcion},
-        new SqlParameter(){ParameterName= "@Dia_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Dia_UsuarioRegistra}
-};
+                new SqlParameter(){ParameterName= "@Dia_Descripcion", DbType = DbType.String, Value = entidad.Dia_Descripcion},
+                new SqlParameter(){ParameterName= "@Dia_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Dia_UsuarioRegistra}
+            };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
             return result;
         }
@@ -53,11 +52,11 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbDias_Update";
             SqlParameter[] sqlParameters = {
-        new SqlParameter(){ParameterName= "@Dia_Id", DbType = DbType.Int32, Value = entidad.Dia_Id},
-        new SqlParameter(){ParameterName= "@Dia_Descripcion", DbType = DbType.String, Value = entidad.Dia_Descripcion},
-        new SqlParameter(){ParameterName= "@Dia_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Dia_UsuarioModifica},
-};
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+                new SqlParameter(){ParameterName= "@Dia_Id", DbType = DbType.Int32, Value = entidad.Dia_Id},
+                new SqlParameter(){ParameterName= "@Dia_Descripcion", DbType = DbType.String, Value = entidad.Dia_Descripcion},
+                new SqlParameter(){ParameterName= "@Dia_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Dia_UsuarioModifica},
+            };
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

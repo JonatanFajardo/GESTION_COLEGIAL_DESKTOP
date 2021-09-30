@@ -41,8 +41,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbHoras_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Hor_Id", DbType = DbType.Int32, Value = entidad.Hor_Id},
-                new SqlParameter(){ParameterName= "@Hor_Hora", DbType = DbType.           String , Value = entidad.Hor_Hora},
+                new SqlParameter(){ParameterName= "@Hor_Hora", DbType = DbType.String , Value = entidad.Hor_Hora},
                 new SqlParameter(){ParameterName= "@Hor_UsuarioRegistra", DbType = DbType.Int32 , Value = entidad.Hor_UsuarioRegistra}
             };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
@@ -58,7 +57,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Hor_Hora", DbType = DbType.String , Value = entidad.Hor_Hora},
                 new SqlParameter(){ParameterName= "@Hor_UsuarioModifica", DbType = DbType.Int32 , Value = entidad.Hor_UsuarioModifica},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

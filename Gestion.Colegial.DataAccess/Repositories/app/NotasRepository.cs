@@ -41,13 +41,11 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbNotas_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Not_Id", DbType = DbType.Int32, Value = entidad.Not_Id},
                 new SqlParameter(){ParameterName= "@Not_Nota", DbType = DbType.Int32, Value = entidad.Not_Nota},
                 new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = entidad.Mat_Id},
                 new SqlParameter(){ParameterName= "@Sem_Id", DbType = DbType.Int32, Value = entidad.Sem_Id},
                 new SqlParameter(){ParameterName= "@Pac_Id", DbType = DbType.Int32, Value = entidad.Pac_Id},
                 new SqlParameter(){ParameterName= "@Not_Año", DbType = DbType.Date, Value = entidad.Not_Año},
-                new SqlParameter(){ParameterName= "@EsActivo", DbType = DbType.String, Value = entidad.Not_EsActivo},
                 new SqlParameter(){ParameterName= "@Not_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Not_UsuarioRegistra}
             };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
@@ -67,7 +65,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Not_EsActivo", DbType = DbType.String, Value = entidad.Not_EsActivo},
                 new SqlParameter(){ParameterName= "@Not_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Not_UsuarioModifica},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

@@ -42,7 +42,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbCursosNombres_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Cno_Id", DbType = DbType.Int32, Value = entidad.Cno_Id},
                 new SqlParameter(){ParameterName= "@Cno_Descripcion", DbType = DbType.String, Value = entidad.Cno_Descripcion},
                 new SqlParameter(){ParameterName= "@Cno_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Cno_UsuarioRegistra}
             };
@@ -58,7 +57,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Cno_Descripcion", DbType = DbType.String, Value = entidad.Cno_Descripcion},
                 new SqlParameter(){ParameterName= "@Cno_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Cno_UsuarioModifica},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

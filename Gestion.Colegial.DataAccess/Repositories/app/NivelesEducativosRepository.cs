@@ -42,9 +42,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbNivelesEducativos_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Niv_Id", DbType = DbType.Int32, Value = entidad.Niv_Id},
                 new SqlParameter(){ParameterName= "@Niv_Descripcion", DbType = DbType.String, Value = entidad.Niv_Descripcion},
-                new SqlParameter(){ParameterName= "@EsActivo", DbType = DbType.String, Value = entidad.Niv_EsActivo},
                 new SqlParameter(){ParameterName= "@Niv_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Niv_UsuarioRegistra}
             };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
@@ -60,7 +58,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@EsActivo", DbType = DbType.String, Value = entidad.Niv_EsActivo},
                 new SqlParameter(){ParameterName= "@Niv_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Niv_UsuarioModifica},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

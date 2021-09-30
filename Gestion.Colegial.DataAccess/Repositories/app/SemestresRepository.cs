@@ -42,11 +42,9 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbSemestres_Insert";
             SqlParameter[] sqlParameters = {
-        new SqlParameter(){ParameterName= "@Sem_Id", DbType = DbType.Int32, Value = entidad.Sem_Id},
-        new SqlParameter(){ParameterName= "@Sem_Descripcion", DbType = DbType.String, Value = entidad.Sem_Descripcion},
-        new SqlParameter(){ParameterName= "@Sem_EsActivo", DbType = DbType.String, Value = entidad.Sem_EsActivo},
-        new SqlParameter(){ParameterName= "@Sem_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Sem_UsuarioRegistra}
-};
+                new SqlParameter(){ParameterName= "@Sem_Descripcion", DbType = DbType.String, Value = entidad.Sem_Descripcion},
+                new SqlParameter(){ParameterName= "@Sem_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Sem_UsuarioRegistra}
+            };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
             return result;
         }
@@ -55,12 +53,12 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbSemestres_Update";
             SqlParameter[] sqlParameters = {
-        new SqlParameter(){ParameterName= "@Sem_Id", DbType = DbType.Int32, Value = entidad.Sem_Id},
-        new SqlParameter(){ParameterName= "@Sem_Descripcion", DbType = DbType.String, Value = entidad.Sem_Descripcion},
-        new SqlParameter(){ParameterName= "@Sem_EsActivo", DbType = DbType.String, Value = entidad.Sem_EsActivo},
-        new SqlParameter(){ParameterName= "@Sem_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Sem_UsuarioModifica},
-};
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+                new SqlParameter(){ParameterName= "@Sem_Id", DbType = DbType.Int32, Value = entidad.Sem_Id},
+                new SqlParameter(){ParameterName= "@Sem_Descripcion", DbType = DbType.String, Value = entidad.Sem_Descripcion},
+                new SqlParameter(){ParameterName= "@Sem_EsActivo", DbType = DbType.String, Value = entidad.Sem_EsActivo},
+                new SqlParameter(){ParameterName= "@Sem_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Sem_UsuarioModifica},
+            };
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

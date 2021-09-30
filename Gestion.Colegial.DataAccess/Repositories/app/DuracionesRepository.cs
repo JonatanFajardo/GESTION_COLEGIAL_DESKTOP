@@ -10,7 +10,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
     {
         public DataTable List(string sear)
         {
-            const string commandText = "PR_tbDias_List";
+            const string commandText = "PR_tbDuraciones_List";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@sear", DbType = DbType.String, Value = sear },
             };
@@ -20,7 +20,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 
         public DataTable Find(string identifier)
         {
-            const string commandText = "PR_tbDias_Find";
+            const string commandText = "PR_tbDuraciones_Find";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Dur_Id", DbType = DbType.Int32, Value = identifier },
             };
@@ -30,7 +30,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 
         public DataTable Detail(string identifier)
         {
-            const string commandText = "PR_tbDias_Detail";
+            const string commandText = "PR_tbDuraciones_Detail";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Dur_Id", DbType = DbType.Int32, Value = identifier },
             };
@@ -41,9 +41,8 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbDuraciones_Insert";
             SqlParameter[] sqlParameters = {
-        new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entidad.Dur_Id},
-        new SqlParameter(){ParameterName= "@Dur_Descripcion", DbType = DbType.String, Value = entidad.Dur_Descripcion},
-        new SqlParameter(){ParameterName= "@Dur_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Dur_UsuarioRegistra}
+                new SqlParameter(){ParameterName= "@Dur_Descripcion", DbType = DbType.String, Value = entidad.Dur_Descripcion},
+                new SqlParameter(){ParameterName= "@Dur_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Dur_UsuarioRegistra}
 };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
             return result;
@@ -57,7 +56,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Dur_Descripcion", DbType = DbType.String, Value = entidad.Dur_Descripcion},
                 new SqlParameter(){ParameterName= "@Dur_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Dur_UsuarioModifica},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

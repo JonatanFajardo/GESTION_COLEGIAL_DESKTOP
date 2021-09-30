@@ -42,11 +42,9 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbAlumnos_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Alu_Id", DbType = DbType.Int32, Value = entidad.Alu_Id},
                 new SqlParameter(){ParameterName= "@Per_Id", DbType = DbType.Int32, Value = entidad.Per_Id},
                 new SqlParameter(){ParameterName= "@Cur_Id", DbType = DbType.Int32, Value = entidad.Cur_Id},
                 new SqlParameter(){ParameterName= "@Est_Id", DbType = DbType.Int32, Value = entidad.Est_Id},
-                new SqlParameter(){ParameterName= "@Alu_EsActivo", DbType = DbType.String , Value = entidad.Alu_EsActivo}
             };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
             return result;
@@ -62,7 +60,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Est_Id", DbType = DbType.Int32, Value = entidad.Est_Id},
                 new SqlParameter(){ParameterName= "@Alu_EsActivo", DbType = DbType.String , Value = entidad.Alu_EsActivo},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

@@ -41,7 +41,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbSecciones_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Sec_Id", DbType = DbType.Int32, Value = entidad.Sec_Id},
                 new SqlParameter(){ParameterName= "@Sec_Descripcion", DbType = DbType.String, Value = entidad.Sec_Descripcion},
                 new SqlParameter(){ParameterName= "@Sec_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Sec_UsuarioRegistra}
             };
@@ -57,7 +56,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Sec_Descripcion", DbType = DbType.String, Value = entidad.Sec_Descripcion},
                 new SqlParameter(){ParameterName= "@Sec_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Sec_UsuarioModifica},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

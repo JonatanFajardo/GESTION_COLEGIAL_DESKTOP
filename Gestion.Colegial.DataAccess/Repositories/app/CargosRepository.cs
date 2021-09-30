@@ -57,7 +57,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Car_Descripcion", DbType = DbType.String, Value = entidad.Car_Descripcion},
                 new SqlParameter(){ParameterName= "@Car_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Car_UsuarioModifica},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

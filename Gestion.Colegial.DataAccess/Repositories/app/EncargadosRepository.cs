@@ -42,11 +42,8 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbEncargados_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Enc_Id", DbType = DbType.Int32, Value = entidad.Enc_Id},
                 new SqlParameter(){ParameterName= "@Per_Id", DbType = DbType.Int32, Value = entidad.Per_Id},
-                new SqlParameter(){ParameterName= "@Enc_Ocupacion", DbType = DbType.String, Value = entidad.Enc_Ocupacion},
-                new SqlParameter(){ParameterName= "@Enc_EsActivo", DbType = DbType.String, Value = entidad.Enc_EsActivo}
-                //new SqlParameter(){ParameterName= "@Enc_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Enc_UsuarioRegistra}
+                new SqlParameter(){ParameterName= "@Enc_Ocupacion", DbType = DbType.String, Value = entidad.Enc_Ocupacion}
             };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
             return result;
@@ -60,9 +57,8 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Per_Id", DbType = DbType.Int32, Value = entidad.Per_Id},
                 new SqlParameter(){ParameterName= "@Enc_Ocupacion", DbType = DbType.String, Value = entidad.Enc_Ocupacion},
                 new SqlParameter(){ParameterName= "@Enc_EsActivo", DbType = DbType.String, Value = entidad.Enc_EsActivo}
-                //new SqlParameter(){ParameterName= "@Enc_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Enc_UsuarioModifica},
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

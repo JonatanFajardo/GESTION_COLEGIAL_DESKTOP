@@ -10,7 +10,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
     {
         public DataTable List(string sear)
         {
-            const string commandText = "PR_tbHoras_List";
+            const string commandText = "PR_tbMaterias_List";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@sear", DbType = DbType.String, Value = sear },
             };
@@ -20,9 +20,9 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 
         public DataTable Find(string identifier)
         {
-            const string commandText = "PR_tbHoras_Find";
+            const string commandText = "PR_tbMaterias_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Hor_Id", DbType = DbType.Int32, Value = identifier },
+                new SqlParameter() { ParameterName = "@Mat_Id", DbType = DbType.Int32, Value = identifier },
             };
             DataTable result = DbApp.Find(identifier, commandText, sqlParameters);
             return result;
@@ -30,9 +30,9 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 
         public DataTable Detail(string identifier)
         {
-            const string commandText = "PR_tbHoras_Detail";
+            const string commandText = "PR_tbMaterias_Detail";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Hor_Id", DbType = DbType.Int32, Value = identifier },
+                new SqlParameter() { ParameterName = "@Mat_Id", DbType = DbType.Int32, Value = identifier },
             };
             DataTable result = DbApp.Detail(identifier, commandText, sqlParameters);
             return result;
@@ -42,10 +42,8 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbMaterias_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = entidad.Mat_Id},
                 new SqlParameter(){ParameterName= "@Mat_Nombre", DbType = DbType.String, Value = entidad.Mat_Nombre},
                 new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entidad.Dur_Id},
-                new SqlParameter(){ParameterName= "@EsActivo", DbType = DbType.String, Value = entidad.EsActivo},
                 new SqlParameter(){ParameterName= "@Mat_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Mat_UsuarioRegistra}
             };
             Boolean result = DbApp.Insert(commandText, sqlParameters);
@@ -67,9 +65,9 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 
         public bool Remove(int identifier)
         {
-            const String commandText = "PR_tbHoras_Delete";
+            const String commandText = "PR_tbMaterias_Delete";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Hor_Id", DbType = DbType.Int32, Value = identifier},
+                new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = identifier},
             };
             Boolean result = DbApp.Update(commandText, sqlParameters);
             return result;
