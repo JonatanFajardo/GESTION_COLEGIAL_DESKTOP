@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.CursosNiveles
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Cun_Descripcion = txtDescripcion.Texts;
+                send.Cun_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Cun_Id == 0)
                 {
                     Boolean respond = CursosNivelesServices.Add(send);
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.CursosNiveles
                 }
                 else
                 {
+                    send.Cun_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = CursosNivelesServices.Edit(send);
                     if (!respond)
                     {

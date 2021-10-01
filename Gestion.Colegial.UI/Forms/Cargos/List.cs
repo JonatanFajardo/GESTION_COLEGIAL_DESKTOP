@@ -64,6 +64,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 //amount = selected,
                 search = buscar
             };
+            
             // Peticion de la data
             DataTable data = CargosServices.List(buscar);
             //if (data==null)

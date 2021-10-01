@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Parciales
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Pac_Descripcion = txtDescripcion.Texts;
+                send.Pac_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Pac_Id == 0)
                 {
                     Boolean respond = ParcialesServices.Add(send);
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Parciales
                 }
                 else
                 {
+                    send.Pac_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = ParcialesServices.Edit(send);
                     if (!respond)
                     {

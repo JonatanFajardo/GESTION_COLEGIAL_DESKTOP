@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Dia_Descripcion = txtDescripcion.Texts;
+                send.Dia_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Dia_Id == 0)
                 {
                     Boolean respond = DiasServices.Add(send);
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
                 }
                 else
                 {
+                    send.Dia_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = DiasServices.Edit(send);
                     if (!respond)
                     {

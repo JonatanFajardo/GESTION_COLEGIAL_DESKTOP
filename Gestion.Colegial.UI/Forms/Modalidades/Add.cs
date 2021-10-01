@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Mda_Descripcion = txtDescripcion.Texts;
+                send.Mda_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Mda_Id == 0)
                 {
                     send.Mda_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;

@@ -93,5 +93,10 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             }
         }
 
+        private void Add_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            //Cargos.List list = new List();
+            //list.DataGridViewFill();
+        }
     }
 }

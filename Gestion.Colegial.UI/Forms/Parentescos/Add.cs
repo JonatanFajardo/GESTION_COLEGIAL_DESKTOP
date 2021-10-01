@@ -52,6 +52,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Par_Descripcion = txtDescripcion.Texts;
+                send.Par_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Par_Id == 0)
                 {
                     Boolean respond = ParentescosServices.Add(send);
@@ -70,6 +71,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
                 }
                 else
                 {
+                    send.Par_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = ParentescosServices.Edit(send);
                     if (!respond)
                     {

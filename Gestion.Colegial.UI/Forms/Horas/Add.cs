@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Hor_Hora = txtDescripcion.Texts;
+                send.Hor_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Hor_Id == 0)
                 {
                     Boolean respond = HorasServices.Add(send);
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
                 }
                 else
                 {
+                    send.Hor_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = HorasServices.Edit(send);
                     if (!respond)
                     {

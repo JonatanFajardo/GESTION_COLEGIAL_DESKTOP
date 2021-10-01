@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Sec_Descripcion = txtDescripcion.Texts;
+                send.Sec_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Sec_Id == 0)
                 {
                     Boolean respond = SeccionesServices.Add(send);
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
                 }
                 else
                 {
+                    send.Sec_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = SeccionesServices.Edit(send);
                     if (!respond)
                     {

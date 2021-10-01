@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Sem_Descripcion = txtDescripcion.Texts;
+                send.Sem_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Sem_Id == 0)
                 {
                     Boolean respond = SemestresServices.Add(send);
@@ -70,6 +71,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
                 else
                 {
                     Boolean respond = SemestresServices.Edit(send);
+                    send.Sem_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

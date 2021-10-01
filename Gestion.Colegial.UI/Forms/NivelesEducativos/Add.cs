@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Niv_Descripcion = txtDescripcion.Texts;
+                send.Niv_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Niv_Id == 0)
                 {
                     Boolean respond = NivelesEducativosServices.Add(send);
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
                 }
                 else
                 {
+                    send.Niv_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = NivelesEducativosServices.Edit(send);
                     if (!respond)
                     {

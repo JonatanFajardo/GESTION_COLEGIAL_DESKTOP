@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Est_Descripcion = txtDescripcion.Texts;
+                send.Est_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Est_Id == 0)
                 {
                     Boolean respond = EstadosServices.Add(send);
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
                 }
                 else
                 {
+                    send.Est_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = EstadosServices.Edit(send);
                     if (!respond)
                     {

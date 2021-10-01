@@ -110,6 +110,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.ClientSize = new System.Drawing.Size(480, 320);
             this.Name = "Add";
             this.Text = "Add";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_FormClosing);
             this.pnBackground.ResumeLayout(false);
             this.pnBackground.PerformLayout();
             this.pnHeader.ResumeLayout(false);

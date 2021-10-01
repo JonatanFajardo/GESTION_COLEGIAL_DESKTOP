@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Dur_Descripcion = txtDescripcion.Texts;
+                send.Dur_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Dur_Id == 0)
                 {
                     Boolean respond = DuracionesServices.Add(send);
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
                 }
                 else
                 {
+                    send.Dur_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = DuracionesServices.Edit(send);
                     if (!respond)
                     {

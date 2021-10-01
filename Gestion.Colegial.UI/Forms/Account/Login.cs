@@ -1,7 +1,6 @@
 ﻿using Gestion.Colegial.Business.Helpers;
 using Gestion.Colegial.Business.Helpers.Alert;
 using Gestion.Colegial.Business.Messagebox;
-//using Gestion.Colegial.Commons.Clases;
 using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.Commons.Entities;
 using System;
@@ -77,14 +76,9 @@ namespace Gestion.Colegial.UI.Forms.Acount
             Boolean result = AccountServices.Autentication(entityAutentication);
             if (!result)
             {
-                var entityList = new tbUsuarios()
-                {
-
-                };
-
-
-                // Evaluamos si el registro no viene vacio.
+                // Obtenemos los datos del usuario.
                 var resultList = AccountServices.List(entityAutentication);
+                // Evaluamos si el registro no viene vacio.
                 if (resultList != null)
                 {
                     lblError.Visible = false;

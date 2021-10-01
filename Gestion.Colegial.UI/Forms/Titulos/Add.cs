@@ -51,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Tit_Descripcion = txtDescripcion.Texts;
+                send.Tit_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Tit_Id == 0)
                 {
                     Boolean respond = TitulosServices.Add(send);
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
                 }
                 else
                 {
+                    send.Tit_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = TitulosServices.Edit(send);
                     if (!respond)
                     {
