@@ -67,7 +67,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const string commandText = "PR_tbModalidades_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@sear1", DbType = DbType.Int32, Value = identifier },
+                new SqlParameter() { ParameterName = "@Mda_Id", DbType = DbType.Int32, Value = identifier },
             };
             DataTable result = DbApp.Find(identifier, commandText, sqlParameters);
             return result;
@@ -77,7 +77,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const string commandText = "PR_tbModalidades_Detail";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@sear1", DbType = DbType.Int32, Value = identifier },
+                new SqlParameter() { ParameterName = "@Mda_Id", DbType = DbType.Int32, Value = identifier },
             };
             DataTable result = DbApp.Detail(identifier, commandText, sqlParameters);
             return result;
