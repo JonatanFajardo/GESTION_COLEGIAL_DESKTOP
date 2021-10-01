@@ -46,7 +46,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             // pnBackground
             // 
             this.pnBackground.Size = new System.Drawing.Size(1598, 600);
-            this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
             // 
             // List
             // 

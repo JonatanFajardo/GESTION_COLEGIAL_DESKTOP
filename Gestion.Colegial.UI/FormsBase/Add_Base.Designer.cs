@@ -50,7 +50,7 @@
             this.pnHeader.Name = "pnHeader";
             this.pnHeader.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.pnHeader.Size = new System.Drawing.Size(478, 60);
-            this.pnHeader.TabIndex = 204;
+            this.pnHeader.TabIndex = 0;
             // 
             // label1
             // 
@@ -86,8 +86,7 @@
             this.pnBackground.Location = new System.Drawing.Point(0, 60);
             this.pnBackground.Name = "pnBackground";
             this.pnBackground.Size = new System.Drawing.Size(478, 623);
-            this.pnBackground.TabIndex = 205;
-            //this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
+            this.pnBackground.TabIndex = 0;
             // 
             // btnCancelar
             // 
@@ -133,6 +132,7 @@
             // 
             // Add_Base
             // 
+            this.AcceptButton = this.btnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;

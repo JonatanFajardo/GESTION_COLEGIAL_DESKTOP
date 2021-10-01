@@ -52,12 +52,13 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             // btnAgregar
             // 
             this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(214, 162);
+            this.btnAgregar.Location = new System.Drawing.Point(199, 150);
+            this.btnAgregar.TabIndex = 1;
             // 
             // btnCancelar
             // 
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(329, 162);
+            this.btnCancelar.Location = new System.Drawing.Point(314, 150);
             // 
             // txtDescripcion
             // 
@@ -80,7 +81,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             this.txtDescripcion.PlaceholderText = "";
             this.txtDescripcion.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtDescripcion.Size = new System.Drawing.Size(365, 35);
-            this.txtDescripcion.TabIndex = 10;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.Texts = "";
             this.txtDescripcion.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtDescripcion.UnderlinedStyle = false;

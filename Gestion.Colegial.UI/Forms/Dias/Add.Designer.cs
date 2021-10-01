@@ -57,6 +57,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.Location = new System.Drawing.Point(196, 157);
             this.btnAgregar.Size = new System.Drawing.Size(112, 42);
+            this.btnAgregar.TabIndex = 1;
             // 
             // btnCancelar
             // 
@@ -85,6 +86,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
             this.txtDescripcion.BorderFocusColor = System.Drawing.Color.Silver;
             this.txtDescripcion.BorderRadius = 8;
             this.txtDescripcion.BorderSize = 1;
+            this.txtDescripcion.CleanCompleted = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDescripcion.Location = new System.Drawing.Point(57, 80);
@@ -97,7 +99,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
             this.txtDescripcion.PlaceholderText = "";
             this.txtDescripcion.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtDescripcion.Size = new System.Drawing.Size(365, 35);
-            this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.Texts = "";
             this.txtDescripcion.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtDescripcion.UnderlinedStyle = false;

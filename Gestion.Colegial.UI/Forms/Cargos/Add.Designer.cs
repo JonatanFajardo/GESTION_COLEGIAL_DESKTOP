@@ -57,6 +57,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.Location = new System.Drawing.Point(196, 157);
             this.btnAgregar.Size = new System.Drawing.Size(112, 42);
+            this.btnAgregar.TabIndex = 1;
             // 
             // btnCancelar
             // 
@@ -98,7 +99,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.txtDescripcion.PlaceholderText = "";
             this.txtDescripcion.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtDescripcion.Size = new System.Drawing.Size(365, 35);
-            this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.Texts = "";
             this.txtDescripcion.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtDescripcion.UnderlinedStyle = false;

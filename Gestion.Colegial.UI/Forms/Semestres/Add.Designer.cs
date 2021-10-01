@@ -34,6 +34,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             this.label7 = new System.Windows.Forms.Label();
             this.txtDescripcion = new JNControls.Controles.JNTexBox();
             this.pnBackground.SuspendLayout();
+            this.pnHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnBackground
@@ -55,7 +56,8 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.Location = new System.Drawing.Point(196, 157);
-            this.btnAgregar.Size = new System.Drawing.Size(112, 42); 
+            this.btnAgregar.Size = new System.Drawing.Size(112, 42);
+            this.btnAgregar.TabIndex = 1;
             // 
             // btnCancelar
             // 
@@ -84,6 +86,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             this.txtDescripcion.BorderFocusColor = System.Drawing.Color.Silver;
             this.txtDescripcion.BorderRadius = 8;
             this.txtDescripcion.BorderSize = 1;
+            this.txtDescripcion.CleanCompleted = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDescripcion.Location = new System.Drawing.Point(57, 80);
@@ -94,11 +97,11 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             this.txtDescripcion.PasswordChar = false;
             this.txtDescripcion.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtDescripcion.PlaceholderText = "";
-            this.txtDescripcion.Require = JNTexBox.TrueFalse.True;
+            this.txtDescripcion.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtDescripcion.Size = new System.Drawing.Size(365, 35);
-            this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.Texts = "";
-            this.txtDescripcion.TypeDate = JNTexBox.Estados.Ninguno;
+            this.txtDescripcion.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtDescripcion.UnderlinedStyle = false;
             // 
             // Add
@@ -110,6 +113,8 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             this.Text = "Add";
             this.pnBackground.ResumeLayout(false);
             this.pnBackground.PerformLayout();
+            this.pnHeader.ResumeLayout(false);
+            this.pnHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }

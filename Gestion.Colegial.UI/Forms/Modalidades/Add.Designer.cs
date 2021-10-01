@@ -56,14 +56,13 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.Location = new System.Drawing.Point(196, 157);
             this.btnAgregar.Size = new System.Drawing.Size(112, 42);
-            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.TabIndex = 1;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.Location = new System.Drawing.Point(314, 157);
-            this.btnCancelar.TabIndex = 3;
             // 
             // label1
             // 
@@ -104,7 +103,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             this.txtDescripcion.PlaceholderText = "";
             this.txtDescripcion.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtDescripcion.Size = new System.Drawing.Size(365, 35);
-            this.txtDescripcion.TabIndex = 8;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.Texts = "";
             this.txtDescripcion.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtDescripcion.UnderlinedStyle = false;

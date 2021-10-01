@@ -52,12 +52,13 @@ namespace Gestion.Colegial.UI.Forms.Parciales
             // btnAgregar
             // 
             this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(212, 153);
+            this.btnAgregar.Location = new System.Drawing.Point(212, 167);
+            this.btnAgregar.TabIndex = 1;
             // 
             // btnCancelar
             // 
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(327, 153);
+            this.btnCancelar.Location = new System.Drawing.Point(327, 167);
             // 
             // txtDescripcion
             // 
@@ -80,7 +81,7 @@ namespace Gestion.Colegial.UI.Forms.Parciales
             this.txtDescripcion.PlaceholderText = "";
             this.txtDescripcion.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtDescripcion.Size = new System.Drawing.Size(365, 35);
-            this.txtDescripcion.TabIndex = 14;
+            this.txtDescripcion.TabIndex = 0;
             this.txtDescripcion.Texts = "";
             this.txtDescripcion.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtDescripcion.UnderlinedStyle = false;

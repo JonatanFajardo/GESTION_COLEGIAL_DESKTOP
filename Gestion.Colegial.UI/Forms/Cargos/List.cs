@@ -206,9 +206,5 @@ namespace Gestion.Colegial.UI.Forms.Cargos
 
         #endregion Eventos
 
-        private void pnBackground_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
