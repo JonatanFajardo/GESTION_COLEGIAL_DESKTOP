@@ -105,7 +105,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         /// </summary>
         public override void Agregar()
         {
-            Add add = new Add();
+            Add add = new Add(this);
             ShowForm(add);
         }
 

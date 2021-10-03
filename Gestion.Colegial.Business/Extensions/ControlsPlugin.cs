@@ -11,9 +11,12 @@ namespace Gestion.Colegial.Business.Extensions
     public static class ControlsPlugin
     {
         /// <summary>
-        /// Padre en el cual se encuentra el control.
+        /// Permite limpiar los controles.
         /// </summary>
-        /// <param name="control"></param>
+        /// <remarks>
+        /// Se debe de indicar como true la propiedad de Required.
+        /// </remarks>
+        /// <param name="control">Padre en el cual se encuentra el control.</param>
         public static void CleanIfCompleted(Control control)
         {
             foreach (var itemControl in control.Controls)

@@ -10,12 +10,16 @@ namespace Gestion.Colegial.UI.Forms.Cargos
 {
     public partial class Add : Add_Base
     {
+        Cargos.List _list;
         // Instancia que contiene la data local y privadamente.
         private static tbCargos send = new tbCargos();
-        public Add()
+        
+        public Add(){}
+        public Add(List list)
         {
             InitializeComponent();
             load();
+            _list = list;
         }
 
         public void load()
@@ -33,11 +37,10 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             else
             {
                 txtDescripcion.Texts = send.Car_Descripcion;
-                this.Text = Modificar;
+                label1.Text = Modificar;
                 this.Text = Modificar;
             }
         }
-
         public static void Send(tbCargos Send)
         {
             Add add = new Add();
@@ -45,6 +48,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             add.load();
         }
 
+        
         public override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
@@ -59,8 +63,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
-                        Cargos.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }

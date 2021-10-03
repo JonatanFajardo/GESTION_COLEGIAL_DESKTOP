@@ -93,6 +93,12 @@
     <Compile Include="Controles\JNTexBox.Designer.cs">
       <DependentUpon>JNTexBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\JNTransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\JNTransparentPanel.Designer.cs">
+      <DependentUpon>JNTransparentPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\jnTexboxExtend.cs" />
     <Compile Include="Helpers\MyRectangle.cs" />
     <Compile Include="Helpers\Theme.cs" />
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\JNTexBox.resx">
       <DependentUpon>JNTexBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\JNTransparentPanel.resx">
+      <DependentUpon>JNTransparentPanel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
