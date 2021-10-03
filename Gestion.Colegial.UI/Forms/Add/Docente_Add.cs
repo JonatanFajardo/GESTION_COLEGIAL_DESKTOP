@@ -62,7 +62,7 @@ namespace Gestion.Colegial.UI.Forms
         // }
 
         // public Boolean Actualizar = false;
-        // public override void OnClick()
+        // public async override void OnClick()
         // {
         //     //DateExamples.llenarFormulario(this);
         //     //condicion del sexo

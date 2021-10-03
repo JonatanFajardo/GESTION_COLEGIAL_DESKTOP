@@ -3,12 +3,13 @@ using Gestion.Colegial.DataAccess.Repositories.bitacoras;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Complements
 {
     public static class DbApp
     {
-        public static DataTable List(string buscar, string commandText, dynamic parameters)
+        public static async Task<DataTable> List(string buscar, string commandText, dynamic parameters)
         {
             Answer answer = new Answer();
             try
@@ -43,7 +44,7 @@ namespace Gestion.Colegial.DataAccess.Complements
             }
         }
 
-        public static DataTable List(string commandText, dynamic parameters)
+        public static async Task<DataTable> List(string commandText, dynamic parameters)
         {
             Answer answer = new Answer();
             try
@@ -80,7 +81,7 @@ namespace Gestion.Colegial.DataAccess.Complements
         }
 
 
-        public static Boolean Insert(string commandText, dynamic parameters)
+        public static async Task<Boolean> Insert(string commandText, dynamic parameters)
         {
             try
             {
@@ -111,7 +112,7 @@ namespace Gestion.Colegial.DataAccess.Complements
             }
         }
 
-        public static Boolean Update(string commandText, dynamic parameters)
+        public static async Task<Boolean> Update(string commandText, dynamic parameters)
         {
             try
             {
@@ -142,12 +143,12 @@ namespace Gestion.Colegial.DataAccess.Complements
             }
         }
 
-        public static DataTable Find(string buscar, string commandText, dynamic parameters)
+        public static async Task<DataTable> Find(string buscar, string commandText, dynamic parameters)
         {
             throw new NotImplementedException();
         }
 
-        public static DataTable Detail(string buscar, string commandText, dynamic parameters)
+        public static async Task<DataTable> Detail(string buscar, string commandText, dynamic parameters)
         {
             throw new NotImplementedException();
         }

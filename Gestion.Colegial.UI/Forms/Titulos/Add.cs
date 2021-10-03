@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
                 send.Tit_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Tit_Id == 0)
                 {
-                    Boolean respond = TitulosServices.Add(send);
+                    Boolean respond = await TitulosServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -76,7 +76,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
                 else
                 {
                     send.Tit_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = TitulosServices.Edit(send);
+                    Boolean respond = await TitulosServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

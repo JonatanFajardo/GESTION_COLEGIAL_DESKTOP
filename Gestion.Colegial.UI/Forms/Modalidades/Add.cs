@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -61,7 +61,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                 if (send.Mda_Id == 0)
                 {
                     send.Mda_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = ModalidadesServices.Add(send);
+                    Boolean respond = await ModalidadesServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -77,7 +77,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                 else
                 {
                     send.Mda_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = ModalidadesServices.Edit(send);
+                    Boolean respond = await ModalidadesServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

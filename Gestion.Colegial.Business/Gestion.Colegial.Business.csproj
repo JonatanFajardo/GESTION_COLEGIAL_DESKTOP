@@ -86,9 +86,6 @@
     <Compile Include="Services\AccountServices.cs" />
     <Compile Include="Services\AlumnosServices.cs" />
     <Compile Include="Services\AulasServices.cs" />
-    <Compile Include="Services\B_Alumno.cs" />
-    <Compile Include="Services\B_Docente.cs" />
-    <Compile Include="Services\B_Matricula.cs" />
     <Compile Include="Services\CargosServices.cs" />
     <Compile Include="Services\CursosNivelesServices.cs" />
     <Compile Include="Services\CursosNombresServices.cs" />
@@ -104,7 +101,6 @@
     <Compile Include="Services\HorasServices.cs" />
     <Compile Include="Services\MateriasServices.cs" />
     <Compile Include="Services\ModalidadesServices.cs" />
-    <Compile Include="Services\B_Usuarios.cs" />
     <Compile Include="Services\Logica.cs" />
     <Compile Include="Interfaces\IServices.cs" />
     <Compile Include="Messagebox\Error.cs">

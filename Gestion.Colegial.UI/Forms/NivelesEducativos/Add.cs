@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
                 send.Niv_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Niv_Id == 0)
                 {
-                    Boolean respond = NivelesEducativosServices.Add(send);
+                    Boolean respond = await NivelesEducativosServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -76,7 +76,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
                 else
                 {
                     send.Niv_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = NivelesEducativosServices.Edit(send);
+                    Boolean respond = await NivelesEducativosServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

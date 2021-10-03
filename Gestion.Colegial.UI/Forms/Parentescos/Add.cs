@@ -51,7 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -61,7 +61,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
                 send.Par_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Par_Id == 0)
                 {
-                    Boolean respond = ParentescosServices.Add(send);
+                    Boolean respond = await ParentescosServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -77,7 +77,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
                 else
                 {
                     send.Par_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = ParentescosServices.Edit(send);
+                    Boolean respond = await ParentescosServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
                 send.Sec_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Sec_Id == 0)
                 {
-                    Boolean respond = SeccionesServices.Add(send);
+                    Boolean respond = await SeccionesServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -76,7 +76,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
                 else
                 {
                     send.Sec_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = SeccionesServices.Edit(send);
+                    Boolean respond = await SeccionesServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

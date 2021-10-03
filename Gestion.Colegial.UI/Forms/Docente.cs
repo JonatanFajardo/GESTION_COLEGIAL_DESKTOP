@@ -62,7 +62,7 @@ namespace Gestion.Colegial.UI.Forms
 
         //}
         ////== METODO QUE ELIMINA FILAS
-        //public override void CellContentDGV(DataGridViewCellEventArgs e)
+        //public async override void CellContentDGV(DataGridViewCellEventArgs e)
         //{//obtenemos indice y borramos registros
 
         //    //MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
@@ -116,14 +116,14 @@ namespace Gestion.Colegial.UI.Forms
         //    }
         //}
 
-        //public override void Agregar()
+        //public async override void Agregar()
         //{
         //    Docente_Add form = new Docente_Add();
         //    IsOpenForm(form);
         //    //form.Show();
         //}
 
-        //public override void buscar()
+        //public async override void buscar()
         //{
 
         //}

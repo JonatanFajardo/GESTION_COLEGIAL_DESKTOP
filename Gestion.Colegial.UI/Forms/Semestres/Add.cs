@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
                 send.Sem_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Sem_Id == 0)
                 {
-                    Boolean respond = SemestresServices.Add(send);
+                    Boolean respond = await SemestresServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -75,7 +75,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
                 }
                 else
                 {
-                    Boolean respond = SemestresServices.Edit(send);
+                    Boolean respond = await SemestresServices.Edit(send);
                     send.Sem_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
                     if (!respond)
                     {

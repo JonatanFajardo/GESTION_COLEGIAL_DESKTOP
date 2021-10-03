@@ -55,7 +55,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
         /// <param name="buscar"></param>
         /// <param name="selected"></param>
         /// <param name="numberPagina"></param>
-        public void DataGridViewFill(string buscar = "")
+        public async void DataGridViewFill(string buscar = "")
         {
             // Cargamos DataGridView.
             ListResult listResult = new ListResult()
@@ -65,7 +65,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
                 search = buscar
             };
             // Peticion de la data
-            DataTable data = DuracionesServices.List(buscar);
+            DataTable data = await DuracionesServices.List(buscar);
             //if (data==null)
             //{
             //    DataRow dataRow = dataGridViewJN1.NewRowIndex
@@ -104,7 +104,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
         /// <summary>
         /// Agrega un nuevo registro.
         /// </summary>
-        public override void Agregar()
+        public async override void Agregar()
         {
             Add add = new Add(this);
             ShowForm(add);
@@ -114,7 +114,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
         /// Edita o elimina registros en funcion de lo seleccionado en el DGV.
         /// </summary>
         /// <param name="e">Evento.</param>
-        public override void CellContentDGV(DataGridViewCellEventArgs e)
+        public async override void CellContentDGV(DataGridViewCellEventArgs e)
         {
 
             // Editamos registro.
@@ -140,7 +140,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
                         Dur_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
                         //Dur_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
                     };
-                    Boolean resultService = DuracionesServices.Remove(objDuraciones.Dur_Id);
+                    Boolean resultService = await DuracionesServices.Remove(objDuraciones.Dur_Id);
                     DataGridViewFill();
                     if (resultService)
                     {

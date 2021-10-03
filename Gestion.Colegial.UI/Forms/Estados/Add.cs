@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
                 send.Est_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Est_Id == 0)
                 {
-                    Boolean respond = EstadosServices.Add(send);
+                    Boolean respond = await EstadosServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -76,7 +76,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
                 else
                 {
                     send.Est_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = EstadosServices.Edit(send);
+                    Boolean respond = await EstadosServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

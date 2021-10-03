@@ -55,7 +55,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
         /// <param name="buscar"></param>
         /// <param name="selected"></param>
         /// <param name="numberPagina"></param>
-        public void DataGridViewFill(string buscar = "")
+        public async void DataGridViewFill(string buscar = "")
         {
             // Cargamos DataGridView.
             ListResult listResult = new ListResult()
@@ -65,7 +65,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
                 search = buscar
             };
             // Peticion de la data
-            DataTable data = HorasServices.List(buscar);
+            DataTable data = await HorasServices.List(buscar);
             //if (data==null)
             //{
             //    DataRow dataRow = dataGridViewJN1.NewRowIndex
@@ -104,7 +104,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
         /// <summary>
         /// Agrega un nuevo registro.
         /// </summary>
-        public override void Agregar()
+        public async override void Agregar()
         {
             Add add = new Add(this);
             ShowForm(add);
@@ -114,7 +114,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
         /// Edita o elimina registros en funcion de lo seleccionado en el DGV.
         /// </summary>
         /// <param name="e">Evento.</param>
-        public override void CellContentDGV(DataGridViewCellEventArgs e)
+        public async override void CellContentDGV(DataGridViewCellEventArgs e)
         {
 
             // Editamos registro.
@@ -140,7 +140,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
                         Hor_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
                         //Hor_Hora = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
                     };
-                    Boolean resultService = HorasServices.Remove(objHoras.Hor_Id);
+                    Boolean resultService = await HorasServices.Remove(objHoras.Hor_Id);
                     DataGridViewFill();
                     if (resultService)
                     {

@@ -2,6 +2,7 @@
 using Gestion.Colegial.DataAccess.Repositories.app;
 using System;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace Gestion.Colegial.Business.Services
 {
@@ -11,25 +12,25 @@ namespace Gestion.Colegial.Business.Services
 
         private static CargosRepository objDato = new CargosRepository();
 
-        public static DataTable List(string sear)
+        public static async Task<DataTable> List(string sear)
         {
-            var obj = objDato.List(sear);
+            var obj = await objDato.List(sear);
             return obj;
         }
 
-        public static Boolean Add(tbCargos entidad)
+        public static async Task<Boolean>Add(tbCargos entidad)
         {
-            return objDato.Add(entidad);
+            return await objDato.Add(entidad);
         }
 
-        public static Boolean Edit(tbCargos entidad)
+        public static async Task<Boolean> Edit(tbCargos entidad)
         {
-            return objDato.Edit(entidad);
+            return await objDato.Edit(entidad);
         }
 
-        public static Boolean Remove(int entidad)
+        public static async Task<Boolean> Remove(int entidad)
         {
-            return objDato.Remove(entidad);
+            return await objDato.Remove(entidad);
         }
 
         #endregion Metodos

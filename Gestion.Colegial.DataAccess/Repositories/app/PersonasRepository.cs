@@ -3,42 +3,43 @@ using Gestion.Colegial.DataAccess.Complements;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Repositories.app
 {
     public class PersonasRepository : Interfaces.IRepositories<tbPersonas>
     {
-        public DataTable List(string sear)
+        public async Task<DataTable> List(string sear)
         {
             const string commandText = "PR_tbPersonas_List";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@sear", DbType = DbType.String, Value = sear },
             };
-            DataTable result = DbApp.List(sear, commandText, sqlParameters);
+            DataTable result = await DbApp.List(sear, commandText, sqlParameters);
             return result;
         }
 
-        public DataTable Find(string identifier)
+        public async Task<DataTable> Find(string identifier)
         {
             const string commandText = "PR_tbPersonas_Find";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Per_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = DbApp.Find(identifier, commandText, sqlParameters);
+            DataTable result = await DbApp.Find(identifier, commandText, sqlParameters);
             return result;
         }
 
-        public DataTable Detail(string identifier)
+        public async Task<DataTable> Detail(string identifier)
         {
             const string commandText = "PR_tbPersonas_Detail";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Per_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = DbApp.Detail(identifier, commandText, sqlParameters);
+            DataTable result = await DbApp.Detail(identifier, commandText, sqlParameters);
             return result;
         }
 
-        public Boolean Add(tbPersonas entidad)
+        public async Task<Boolean> Add(tbPersonas entidad)
         {
             const String commandText = "PR_tbPersonas_Insert";
             SqlParameter[] sqlParameters = {
@@ -54,11 +55,11 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Per_Sexo", DbType = DbType.String, Value = entidad.Per_Sexo},
                 new SqlParameter(){ParameterName= "@Per_UsuarioRegistro", DbType = DbType.Int32 , Value = entidad.Per_UsuarioRegistra}
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = await DbApp.Insert(commandText, sqlParameters);
             return result;
         }
 
-        public Boolean Edit(tbPersonas entidad)
+        public async Task<Boolean> Edit(tbPersonas entidad)
         {
             const String commandText = "PR_tbPersonas_Update";
             SqlParameter[] sqlParameters = {
@@ -76,17 +77,17 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Per_EsActivo", DbType = DbType.String, Value = entidad.Per_EsActivo},
                 new SqlParameter(){ParameterName= "@Per_UsuarioModifica", DbType = DbType.Int32 , Value = entidad.Per_UsuarioModifica},
             };
-            Boolean result = DbApp.Update(commandText, sqlParameters);
+            Boolean result = await DbApp.Update(commandText, sqlParameters);
             return result;
         }        
 
-        public bool Remove(int identifier)
+        public async Task<Boolean> Remove(int identifier)
         {
             const String commandText = "PR_tbPersonas_Delete";
             SqlParameter[] sqlParameters = {
                 new SqlParameter(){ParameterName= "@Per_Id", DbType = DbType.Int32, Value = identifier},
             };
-            Boolean result = DbApp.Update(commandText, sqlParameters);
+            Boolean result = await DbApp.Update(commandText, sqlParameters);
             return result;
         }
     }

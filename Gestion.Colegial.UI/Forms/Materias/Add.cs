@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Materias
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -59,7 +59,7 @@ namespace Gestion.Colegial.UI.Forms.Materias
                 send.Mat_Nombre = txtDescripcion.Texts;
                 if (send.Mat_Id == 0)
                 {
-                    Boolean respond = MateriasServices.Add(send);
+                    Boolean respond = await MateriasServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -74,7 +74,7 @@ namespace Gestion.Colegial.UI.Forms.Materias
                 }
                 else
                 {
-                    Boolean respond = MateriasServices.Edit(send);
+                    Boolean respond = await MateriasServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

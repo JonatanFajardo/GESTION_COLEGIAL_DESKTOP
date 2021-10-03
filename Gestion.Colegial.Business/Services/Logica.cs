@@ -91,7 +91,7 @@ namespace Gestion.Colegial.Business.Services
         /// validamos que los TexBoxJN no esten vacios en caso de que la propiedad este en true
         /// </summary>
         /// <param name="TexBoxjn"></param>
-        //public static Boolean validarCamposVacios(Control TexBoxjn)
+        //public static async Task<Boolean> validarCamposVacios(Control TexBoxjn)
         //{
 
         //    Boolean validar = false;

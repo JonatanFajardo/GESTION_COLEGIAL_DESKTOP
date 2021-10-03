@@ -55,7 +55,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
         /// <param name="buscar"></param>
         /// <param name="selected"></param>
         /// <param name="numberPagina"></param>
-        public void DataGridViewFill(string buscar = "")
+        public async void DataGridViewFill(string buscar = "")
         {
             // Cargamos DataGridView.
             ListResult listResult = new ListResult()
@@ -65,7 +65,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
                 search = buscar
             };
             // Peticion de la data
-            DataTable data = NivelesEducativosServices.List(buscar);
+            DataTable data = await NivelesEducativosServices.List(buscar);
             //if (data==null)
             //{
             //    DataRow dataRow = dataGridViewJN1.NewRowIndex
@@ -104,7 +104,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
         /// <summary>
         /// Agrega un nuevo registro.
         /// </summary>
-        public override void Agregar()
+        public async override void Agregar()
         {
             Add add = new Add(this);
             ShowForm(add);
@@ -114,7 +114,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
         /// Edita o elimina registros en funcion de lo seleccionado en el DGV.
         /// </summary>
         /// <param name="e">Evento.</param>
-        public override void CellContentDGV(DataGridViewCellEventArgs e)
+        public async override void CellContentDGV(DataGridViewCellEventArgs e)
         {
 
             // Editamos registro.
@@ -140,7 +140,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
                         Niv_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
                         //Niv_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
                     };
-                    Boolean resultService = NivelesEducativosServices.Remove(objNivelesEducativos.Niv_Id);
+                    Boolean resultService = await NivelesEducativosServices.Remove(objNivelesEducativos.Niv_Id);
                     DataGridViewFill();
                     if (resultService)
                     {

@@ -15,8 +15,6 @@ namespace Gestion.Colegial.UI.Forms.Acount
             InitializeComponent();
         }
 
-        B_Usuarios objDatos = new B_Usuarios();
-
         private void guardar()
         {
             //Boolean validar = objDatos.Login(txtDescripcion.Text, JNTexBox2.Text);
@@ -64,7 +62,7 @@ namespace Gestion.Colegial.UI.Forms.Acount
 
         }
 
-        private void btnLog_Click(object sender, EventArgs e)
+        private async void btnLog_Click(object sender, EventArgs e)
         {
             var entityAutentication = new tbUsuarios()
             {
@@ -73,11 +71,11 @@ namespace Gestion.Colegial.UI.Forms.Acount
 
             };
             // Evaluamos si existe el usuario en la db.
-            Boolean result = AccountServices.Autentication(entityAutentication);
+            Boolean result = await AccountServices.Autentication(entityAutentication);
             if (!result)
             {
                 // Obtenemos los datos del usuario.
-                var resultList = AccountServices.List(entityAutentication);
+                var resultList =  await AccountServices.List(entityAutentication);
                 // Evaluamos si el registro no viene vacio.
                 if (resultList != null)
                 {

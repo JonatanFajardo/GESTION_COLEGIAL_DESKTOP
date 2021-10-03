@@ -13,9 +13,9 @@ namespace Gestion.Colegial.Business.Services
     {
         private static AccountRepository objDato = new AccountRepository();
 
-        public static Boolean Autentication(tbUsuarios entity)
+        public static async Task<Boolean> Autentication(tbUsuarios entity)
         {
-            DataTable obj = objDato.Autentication(entity);
+            DataTable obj = await objDato.Autentication(entity);
             if (obj != null)
             {
                 int objInt = Convert.ToInt32(obj.Rows[0].ItemArray[0]);
@@ -36,9 +36,9 @@ namespace Gestion.Colegial.Business.Services
             }
         }
 
-        public static DataTable List(tbUsuarios entity)
+        public static async Task<DataTable> List(tbUsuarios entity)
         {
-            var obj = objDato.List(entity);
+            var obj = await objDato.List(entity);
             return obj;
         }
 

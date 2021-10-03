@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
                 send.Dia_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Dia_Id == 0)
                 {
-                    Boolean respond = DiasServices.Add(send);
+                    Boolean respond = await DiasServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -76,7 +76,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
                 else
                 {
                     send.Dia_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = DiasServices.Edit(send);
+                    Boolean respond = await DiasServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

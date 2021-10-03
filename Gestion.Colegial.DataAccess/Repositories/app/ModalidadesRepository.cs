@@ -5,6 +5,7 @@ using Gestion.Colegial.DataAccess.Repositories.bitacoras;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Repositories.app
 {
@@ -53,37 +54,37 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         //    }
         //}
 
-        public DataTable List(string sear)
+        public async Task<DataTable> List(string sear)
         {
             const string commandText = "PR_tbModalidades_List";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@sear", DbType = DbType.String, Value = sear },
             };
-            DataTable result = DbApp.List(sear, commandText, sqlParameters);
+            DataTable result = await DbApp.List(sear, commandText, sqlParameters);
             return result;
         }
 
-        public DataTable Find(string identifier)
+        public async Task<DataTable> Find(string identifier)
         {
             const string commandText = "PR_tbModalidades_Find";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Mda_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = DbApp.Find(identifier, commandText, sqlParameters);
+            DataTable result = await DbApp.Find(identifier, commandText, sqlParameters);
             return result;
         }
 
-        public DataTable Detail(string identifier)
+        public async Task<DataTable> Detail(string identifier)
         {
             const string commandText = "PR_tbModalidades_Detail";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Mda_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = DbApp.Detail(identifier, commandText, sqlParameters);
+            DataTable result = await DbApp.Detail(identifier, commandText, sqlParameters);
             return result;
         }
 
-        public Boolean Add(tbModalidades entidad)
+        public async Task<Boolean> Add(tbModalidades entidad)
         {
             //entidad.Mda_UsuarioRegistra = 1;
             const string commandText = "PR_tbModalidades_Insert";
@@ -91,11 +92,11 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             new SqlParameter(){ParameterName= "@Mda_Descripcion", DbType = DbType.String, Value = entidad.Mda_Descripcion },
             new SqlParameter(){ParameterName= "@Mda_UsuarioRegistra", DbType = DbType.Int32, Value = entidad.Mda_UsuarioRegistra }
             };
-            Boolean result = DbApp.Insert(commandText, sqlParameters);
+            Boolean result = await DbApp.Insert(commandText, sqlParameters);
             return result;
         }
 
-        public Boolean Edit(tbModalidades entidad)
+        public async Task<Boolean> Edit(tbModalidades entidad)
         {
             entidad.Mda_UsuarioModifica = 1;
             const string commandText = "PR_tbModalidades_Update";
@@ -104,17 +105,17 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Mda_Descripcion", DbType = DbType.String, Value = entidad.Mda_Descripcion },
                 new SqlParameter(){ParameterName= "@Mda_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Mda_UsuarioModifica }
             };
-            Boolean result = DbApp.Update(commandText, sqlParameters);
+            Boolean result = await DbApp.Update(commandText, sqlParameters);
             return result;
         }
 
-        public Boolean Remove(int delete)
+        public async Task<Boolean> Remove(int delete)
         {
             const String commandText = "PR_tbModalidades_Delete";
             SqlParameter[] sqlParameters = {
                 new SqlParameter(){ParameterName= "@Mda_Id", DbType = DbType.Int32, Value = delete},
             };
-            Boolean result = DbApp.Update(commandText, sqlParameters);
+            Boolean result = await DbApp.Update(commandText, sqlParameters);
             return result;
         }
 

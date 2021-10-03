@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
                 send.Dur_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Dur_Id == 0)
                 {
-                    Boolean respond = DuracionesServices.Add(send);
+                    Boolean respond = await DuracionesServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -76,7 +76,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
                 else
                 {
                     send.Dur_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = DuracionesServices.Edit(send);
+                    Boolean respond = await DuracionesServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

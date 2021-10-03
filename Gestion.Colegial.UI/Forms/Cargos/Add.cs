@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         }
 
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 send.Car_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Car_Id == 0)
                 {
-                    Boolean respond = CargosServices.Add(send);
+                    Boolean respond = await CargosServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -76,7 +76,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 else
                 {
                     send.Car_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = CargosServices.Edit(send);
+                    Boolean respond = await CargosServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

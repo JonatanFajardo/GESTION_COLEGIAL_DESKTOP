@@ -50,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
             add.load();
         }
 
-        public override void OnClick()
+        public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
                 send.Hor_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                 if (send.Hor_Id == 0)
                 {
-                    Boolean respond = HorasServices.Add(send);
+                    Boolean respond = await HorasServices.Add(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
@@ -76,7 +76,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
                 else
                 {
                     send.Hor_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = HorasServices.Edit(send);
+                    Boolean respond = await HorasServices.Edit(send);
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");

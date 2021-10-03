@@ -12,14 +12,14 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 {
     public class AccountRepository
     {
-        public DataTable Autentication(tbUsuarios entity)
+        public async Task<DataTable> Autentication(tbUsuarios entity)
         {
             const string commandText = "PR_tbUsuarios_Autentication_Segurity";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Usu_Name", DbType = DbType.String, Value = entity.Usu_Name },
                 new SqlParameter() { ParameterName = "@Usu_Contraseña", DbType = DbType.String, Value = entity.Usu_Contraseña },
             };
-            DataTable result = DbApp.List(commandText, sqlParameters);
+            DataTable result = await DbApp.List(commandText, sqlParameters);
             return result;
             //DataTable table = new DataTable();
             //SqlDataReader reader;
@@ -47,14 +47,14 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         }
 
 
-        public DataTable List(tbUsuarios entity)
+        public async Task<DataTable> List(tbUsuarios entity)
         {
             const string commandText = "PR_tbUsuarios_List_Segurity";
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Usu_Name", DbType = DbType.String, Value = entity.Usu_Name },
                 new SqlParameter() { ParameterName = "@Usu_Contraseña", DbType = DbType.String, Value = entity.Usu_Contraseña },
             };
-            DataTable result = DbApp.List(commandText, sqlParameters);
+            DataTable result = await DbApp.List(commandText, sqlParameters);
             return result;
         }
 
