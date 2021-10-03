@@ -4,9 +4,15 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
 {
     public partial class Add : Add_Base
     {
-        public Add()
+        // Instancia del formulario principal de la seccion list.
+        Alumnos.List _list;
+        
+        public Add(){}
+        public Add(List list)
         {
             InitializeComponent();
+            //load();
+            _list = list;
         }
     }
 }

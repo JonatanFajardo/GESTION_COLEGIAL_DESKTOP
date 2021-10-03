@@ -13,9 +13,15 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
     {
         // Instancia que contiene la data local y privadamente.
         private static tbParentescos send = new tbParentescos();
-        public Add()
+        // Instancia del formulario principal de la seccion list.
+        Parentescos.List _list;
+        
+        public Add(){}
+        public Add(List list)
         {
             InitializeComponent();
+            load();
+            _list = list;
         }
 
         public void load()
@@ -59,8 +65,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
-                        Parentescos.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }
@@ -76,8 +81,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
-                        Parentescos.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }

@@ -10,11 +10,12 @@ namespace Gestion.Colegial.UI.Forms.Cargos
 {
     public partial class Add : Add_Base
     {
-        Cargos.List _list;
         // Instancia que contiene la data local y privadamente.
         private static tbCargos send = new tbCargos();
-        
-        public Add(){}
+        // Instancia del formularkio principal de la seccion list.
+        Cargos.List _list;
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();
@@ -25,14 +26,14 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         public void load()
         {
             this.Show();
-            
+
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Cargos";
             string Modificar = "Modificar Cargos";
             if (send.Car_Id == 0)
             {
                 label1.Text = Registrar;
-                this.Text = Registrar; 
+                this.Text = Registrar;
             }
             else
             {
@@ -48,7 +49,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             add.load();
         }
 
-        
+
         public override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
@@ -79,8 +80,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
-                        Cargos.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }
@@ -94,12 +94,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             {
 
             }
-        }
-
-        private void Add_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
-        {
-            //Cargos.List list = new List();
-            //list.DataGridViewFill();
         }
     }
 }

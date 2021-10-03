@@ -107,9 +107,6 @@ namespace Gestion.Colegial.UI.FormsBase
                     case "Parentescos":
                         OpenChildForm(new Forms.Parentescos.List());
                         break;
-                    case "Personas":
-                        OpenChildForm(new Forms.Personas.List());
-                        break;
                     case "Secciones":
                         OpenChildForm(new Forms.Secciones.List());
                         break;

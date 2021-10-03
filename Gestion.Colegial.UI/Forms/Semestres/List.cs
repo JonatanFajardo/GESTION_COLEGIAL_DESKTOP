@@ -106,7 +106,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
         /// </summary>
         public override void Agregar()
         {
-            Add add = new Add();
+            Add add = new Add(this);
             ShowForm(add);
         }
 

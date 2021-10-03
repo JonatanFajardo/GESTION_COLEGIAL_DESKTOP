@@ -99,7 +99,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
         /// </summary>
         public override void Agregar()
         {
-            Add add = new Add();
+            Add add = new Add(this);
             ShowForm(add);
         }
 

@@ -12,9 +12,15 @@ namespace Gestion.Colegial.UI.Forms.Horas
     {
         // Instancia que contiene la data local y privadamente.
         private static tbHoras send = new tbHoras();
-        public Add()
+        // Instancia del formulario principal de la seccion list.
+        Horas.List _list;
+        
+        public Add(){}
+        public Add(List list)
         {
             InitializeComponent();
+            load();
+            _list = list;
         }
 
         public void load()
@@ -58,8 +64,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
-                        Horas.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }
@@ -75,8 +80,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
-                        Horas.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }

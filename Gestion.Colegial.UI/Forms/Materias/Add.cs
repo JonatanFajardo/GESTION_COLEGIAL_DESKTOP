@@ -12,9 +12,15 @@ namespace Gestion.Colegial.UI.Forms.Materias
     {
         // Instancia que contiene la data local y privadamente.
         private static tbMaterias send = new tbMaterias();
-        public Add()
+        // Instancia del formulario principal de la seccion list.
+        Materias.List _list;
+        
+        public Add(){}
+        public Add(List list)
         {
             InitializeComponent();
+            load();
+            _list = list;
         }
 
         public void load()
@@ -57,8 +63,7 @@ namespace Gestion.Colegial.UI.Forms.Materias
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
-                        Materias.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }
@@ -73,8 +78,7 @@ namespace Gestion.Colegial.UI.Forms.Materias
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
-                        Materias.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }

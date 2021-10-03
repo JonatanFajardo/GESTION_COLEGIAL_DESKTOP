@@ -12,9 +12,15 @@ namespace Gestion.Colegial.UI.Forms.Secciones
     {
         // Instancia que contiene la data local y privadamente.
         private static tbSecciones send = new tbSecciones();
-        public Add()
+        // Instancia del formulario principal de la seccion list.
+        Secciones.List _list;
+        
+        public Add(){}
+        public Add(List list)
         {
             InitializeComponent();
+            load();
+            _list = list;
         }
 
         public void load()
@@ -58,8 +64,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success);
-                        Secciones.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }
@@ -75,8 +80,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
                     if (!respond)
                     {
                         Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
-                        Secciones.List list = new List();
-                        list.DataGridViewFill();
+                        _list.DataGridViewFill();
                         ControlsPlugin.CleanIfCompleted(pnBackground);
                         this.Hide();
                     }

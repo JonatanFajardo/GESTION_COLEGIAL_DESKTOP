@@ -473,18 +473,6 @@
     <Compile Include="Forms\Parentescos\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Personas\Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Personas\Add.Designer.cs">
-      <DependentUpon>Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Personas\List.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Personas\List.Designer.cs">
-      <DependentUpon>List.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Secciones\Add.cs">
       <SubType>Form</SubType>
     </Compile>
