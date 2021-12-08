@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Repositories.app
 {
-    public class ParentescosRepository : Interfaces.IRepositories<tbParentescos>
+    public class ParentescosRepository : BaseRepository, Interfaces.IRepositories<tbParentescos>
     {
         public async Task<DataTable> List(string sear)
         {
@@ -15,7 +15,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@sear", DbType = DbType.String, Value = sear },
             };
-            DataTable result = await DbApp.List(sear, commandText, sqlParameters);
+            DataTable result = await Select(sear, commandText, sqlParameters);
             return result;
         }
 
@@ -25,7 +25,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Par_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await DbApp.Find(identifier, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -35,7 +35,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Par_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await DbApp.Detail(identifier, commandText, sqlParameters);
+            DataTable result = await Details(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -46,7 +46,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             new SqlParameter(){ParameterName= "@Par_Descripcion", DbType = DbType.String, Value = entidad.Par_Descripcion},
             new SqlParameter(){ParameterName= "@Par_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Par_UsuarioRegistra}
             };
-            Boolean result = await DbApp.Insert(commandText, sqlParameters);
+            Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
         public async Task<Boolean> Edit(tbParentescos entidad)
@@ -57,7 +57,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             new SqlParameter(){ParameterName= "@Par_Descripcion", DbType = DbType.String, Value = entidad.Par_Descripcion},
             new SqlParameter(){ParameterName= "@Par_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Par_UsuarioModifica}
             };
-            Boolean result = await DbApp.Update(commandText, sqlParameters);
+            Boolean result = await Update(commandText, sqlParameters);
             return result;
         }
 
@@ -67,7 +67,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter(){ParameterName= "@Par_Id", DbType = DbType.Int32, Value = identifier},
             };
-            Boolean result = await DbApp.Update(commandText, sqlParameters);
+            Boolean result = await Update(commandText, sqlParameters);
             return result;
         }
     }

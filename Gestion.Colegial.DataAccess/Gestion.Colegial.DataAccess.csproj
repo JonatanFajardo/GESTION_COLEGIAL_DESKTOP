@@ -60,7 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Complements\DbApp.cs" />
     <Compile Include="Helpers\Create.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -70,6 +69,7 @@
     <Compile Include="Repositories\app\AccountRepository.cs" />
     <Compile Include="Repositories\app\AlumnosRepository.cs" />
     <Compile Include="Repositories\app\AulasRepository.cs" />
+    <Compile Include="Repositories\app\BaseRepository.cs" />
     <Compile Include="Repositories\app\CargosRepository.cs" />
     <Compile Include="Repositories\app\CursosNivelesRepository.cs" />
     <Compile Include="Repositories\app\CursosNombresRepository.cs" />
@@ -158,6 +158,9 @@
       <Project>{283c4c91-f893-4f13-93dd-b240e8119866}</Project>
       <Name>Gestion.Colegial.Commons</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Complements\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

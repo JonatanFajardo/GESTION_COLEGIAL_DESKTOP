@@ -1,6 +1,6 @@
 ﻿namespace Gestion.Colegial.DataAccess
 {
-    internal class Connection
+    public class Connection
     {
 
         // Cadena

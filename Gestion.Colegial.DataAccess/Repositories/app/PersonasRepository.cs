@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Repositories.app
 {
-    public class PersonasRepository : Interfaces.IRepositories<tbPersonas>
+    public class PersonasRepository : BaseRepository, Interfaces.IRepositories<tbPersonas>
     {
         public async Task<DataTable> List(string sear)
         {
@@ -15,7 +15,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@sear", DbType = DbType.String, Value = sear },
             };
-            DataTable result = await DbApp.List(sear, commandText, sqlParameters);
+            DataTable result = await Select(sear, commandText, sqlParameters);
             return result;
         }
 
@@ -25,7 +25,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Per_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await DbApp.Find(identifier, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -35,7 +35,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Per_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await DbApp.Detail(identifier, commandText, sqlParameters);
+            DataTable result = await Details(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -55,7 +55,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Per_Sexo", DbType = DbType.String, Value = entidad.Per_Sexo},
                 new SqlParameter(){ParameterName= "@Per_UsuarioRegistro", DbType = DbType.Int32 , Value = entidad.Per_UsuarioRegistra}
             };
-            Boolean result = await DbApp.Insert(commandText, sqlParameters);
+            Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
 
@@ -77,7 +77,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Per_EsActivo", DbType = DbType.String, Value = entidad.Per_EsActivo},
                 new SqlParameter(){ParameterName= "@Per_UsuarioModifica", DbType = DbType.Int32 , Value = entidad.Per_UsuarioModifica},
             };
-            Boolean result = await DbApp.Update(commandText, sqlParameters);
+            Boolean result = await Update(commandText, sqlParameters);
             return result;
         }        
 
@@ -87,7 +87,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter(){ParameterName= "@Per_Id", DbType = DbType.Int32, Value = identifier},
             };
-            Boolean result = await DbApp.Update(commandText, sqlParameters);
+            Boolean result = await Update(commandText, sqlParameters);
             return result;
         }
     }

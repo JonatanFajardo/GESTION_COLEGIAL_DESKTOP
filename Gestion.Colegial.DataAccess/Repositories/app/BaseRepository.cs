@@ -1,15 +1,18 @@
 ﻿using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.DataAccess.Repositories.bitacoras;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Gestion.Colegial.DataAccess.Complements
+namespace Gestion.Colegial.DataAccess.Repositories.app
 {
-    public static class DbApp
+    public class BaseRepository
     {
-        public static async Task<DataTable> List(string buscar, string commandText, dynamic parameters)
+        public static async Task<DataTable> Select(string buscar, string commandText, dynamic parameters)
         {
             Answer answer = new Answer();
             try
@@ -44,7 +47,7 @@ namespace Gestion.Colegial.DataAccess.Complements
             }
         }
 
-        public static async Task<DataTable> List(string commandText, dynamic parameters)
+        public static async Task<DataTable> Select(string commandText, dynamic parameters)
         {
             Answer answer = new Answer();
             try
@@ -143,12 +146,12 @@ namespace Gestion.Colegial.DataAccess.Complements
             }
         }
 
-        public static async Task<DataTable> Find(string buscar, string commandText, dynamic parameters)
+        public static async Task<DataTable> Search(string buscar, string commandText, dynamic parameters)
         {
             throw new NotImplementedException();
         }
 
-        public static async Task<DataTable> Detail(string buscar, string commandText, dynamic parameters)
+        public static async Task<DataTable> Details(string buscar, string commandText, dynamic parameters)
         {
             throw new NotImplementedException();
         }

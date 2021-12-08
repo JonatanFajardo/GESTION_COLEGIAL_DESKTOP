@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Repositories.app
 {
-    public class EmpleadosRepository : Interfaces.IRepositories<tbEmpleados>
+    public class EmpleadosRepository : BaseRepository, Interfaces.IRepositories<tbEmpleados>
     {
         public async Task<DataTable> List(string sear)
         {
@@ -15,7 +15,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@sear", DbType = DbType.String, Value = sear },
             };
-            DataTable result = await DbApp.List(sear, commandText, sqlParameters);
+            DataTable result = await Select(sear, commandText, sqlParameters);
             return result;
         }
 
@@ -25,7 +25,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Emp_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await DbApp.Find(identifier, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -35,7 +35,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Emp_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await DbApp.Detail(identifier, commandText, sqlParameters);
+            DataTable result = await Details(identifier, commandText, sqlParameters);
             return result;
         }
         public async Task<Boolean> Add(tbEmpleados entidad)
@@ -47,7 +47,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Tit_Id", DbType = DbType.Int32, Value = entidad.Tit_Id},
                 new SqlParameter(){ParameterName= "@Car_Id", DbType = DbType.Int32, Value = entidad.Car_Id}
             };
-            Boolean result = await DbApp.Insert(commandText, sqlParameters);
+            Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
 
@@ -62,7 +62,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Car_Id", DbType = DbType.Int32, Value = entidad.Car_Id},
                 new SqlParameter(){ParameterName= "@Emp_EsActivo", DbType = DbType.String , Value = entidad.Emp_EsActivo},
             };
-            Boolean result = await DbApp.Update(commandText, sqlParameters);
+            Boolean result = await Update(commandText, sqlParameters);
             return result;
         }
 
@@ -72,7 +72,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter(){ParameterName= "@Emp_Id", DbType = DbType.Int32, Value = identifier},
             };
-            Boolean result = await DbApp.Update(commandText, sqlParameters);
+            Boolean result = await Update(commandText, sqlParameters);
             return result;
         }
     }
