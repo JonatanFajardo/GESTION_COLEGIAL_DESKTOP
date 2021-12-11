@@ -1,5 +1,5 @@
 ﻿using Gestion.Colegial.Commons.Entities;
-using Gestion.Colegial.DataAccess.Complements;
+using Gestion.Colegial;
 using System;
 using System.Data;
 using System.Data.SqlClient;

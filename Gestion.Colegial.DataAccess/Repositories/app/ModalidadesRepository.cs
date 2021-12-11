@@ -1,6 +1,5 @@
 ﻿using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
-using Gestion.Colegial.DataAccess.Complements;
 using Gestion.Colegial.DataAccess.Repositories.bitacoras;
 using System;
 using System.Data;

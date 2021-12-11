@@ -2,16 +2,17 @@
 {
     public class Connection
     {
-
         // Cadena
-        private readonly static string CN = Properties.Settings.Default.CN;
+        private static string sql = Properties.Settings.Default.CN;
+        protected static string Sql { get => sql; }
+
         //private SqlConnection CN = new SqlConnection("Data Source=SERVIDOREB;Initial Catalog=Gestion.Colegial;Integrated Security=True;Pooling=False");
 
         // Metodos
-        public static string Sql()
-        {
-            return CN;
-        }
+        //public static string Sql()
+        //{
+        //    return CN;
+        //}
 
     }
 }

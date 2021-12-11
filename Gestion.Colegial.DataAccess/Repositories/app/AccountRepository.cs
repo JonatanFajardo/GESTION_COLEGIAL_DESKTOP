@@ -1,5 +1,4 @@
 ﻿using Gestion.Colegial.Commons.Entities;
-using Gestion.Colegial.DataAccess.Complements;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Repositories.app
 {
-    public class AccountRepository
+    public class AccountRepository:BaseRepository
     {
         public async Task<DataTable> Autentication(tbUsuarios entity)
         {

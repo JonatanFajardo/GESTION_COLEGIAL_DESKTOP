@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Repositories.app
 {
-    public class BaseRepository
+    public class BaseRepository : Connection
     {
-        public static async Task<DataTable> Select(string buscar, string commandText, dynamic parameters)
+        protected static async Task<DataTable> Select(string buscar, string commandText, dynamic parameters)
         {
             Answer answer = new Answer();
             try
             {
                 DataTable table = new DataTable();
                 SqlDataReader reader;
-                using (SqlConnection conn = new SqlConnection(Connection.Sql()))
+                using (SqlConnection conn = new SqlConnection(Sql))
                 {
                     using (SqlCommand cmd = new SqlCommand(commandText, conn))
                     {
@@ -47,14 +47,14 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             }
         }
 
-        public static async Task<DataTable> Select(string commandText, dynamic parameters)
+        protected static async Task<DataTable> Select(string commandText, dynamic parameters)
         {
             Answer answer = new Answer();
             try
             {
                 DataTable table = new DataTable();
                 SqlDataReader reader;
-                using (SqlConnection conn = new SqlConnection(Connection.Sql()))
+                using (SqlConnection conn = new SqlConnection(Sql))
                 {
                     using (SqlCommand cmd = new SqlCommand(commandText, conn))
                     {
@@ -84,11 +84,11 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         }
 
 
-        public static async Task<Boolean> Insert(string commandText, dynamic parameters)
+        protected static async Task<Boolean> Insert(string commandText, dynamic parameters)
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.Sql()))
+                using (SqlConnection con = new SqlConnection(Sql))
                 {
                     using (SqlCommand command = new SqlCommand(commandText, con))
                     {
@@ -115,11 +115,11 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             }
         }
 
-        public static async Task<Boolean> Update(string commandText, dynamic parameters)
+        protected static async Task<Boolean> Update(string commandText, dynamic parameters)
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(Connection.Sql()))
+                using (SqlConnection con = new SqlConnection(Sql))
                 {
                     using (SqlCommand command = new SqlCommand(commandText, con))
                     {
@@ -146,12 +146,12 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             }
         }
 
-        public static async Task<DataTable> Search(string buscar, string commandText, dynamic parameters)
+        protected static async Task<DataTable> Search(string buscar, string commandText, dynamic parameters)
         {
             throw new NotImplementedException();
         }
 
-        public static async Task<DataTable> Details(string buscar, string commandText, dynamic parameters)
+        protected static async Task<DataTable> Details(string buscar, string commandText, dynamic parameters)
         {
             throw new NotImplementedException();
         }
