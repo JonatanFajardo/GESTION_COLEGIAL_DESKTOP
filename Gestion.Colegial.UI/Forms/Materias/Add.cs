@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Materias
         private static tbMaterias send = new tbMaterias();
         // Instancia del formulario principal de la seccion list.
         Materias.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

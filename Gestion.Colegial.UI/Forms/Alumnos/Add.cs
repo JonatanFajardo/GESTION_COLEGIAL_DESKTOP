@@ -1,4 +1,7 @@
-﻿using Gestion.Colegial.UI.FormsBase;
+﻿using Gestion.Colegial.Business.Services;
+using Gestion.Colegial.Commons.Extensions;
+using Gestion.Colegial.UI.FormsBase;
+using System;
 
 namespace Gestion.Colegial.UI.Forms.Alumnos
 {
@@ -6,13 +9,20 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
     {
         // Instancia del formulario principal de la seccion list.
         Alumnos.List _list;
-        
-        public Add(){}
-        public Add(List list)
+        int _id;
+
+        public Add() { }
+        public Add(int id, List list)
         {
             InitializeComponent();
-            //load();
+            _id = id;
             _list = list;
+            //load(id);
         }
+
+        //private async void load(int id)
+        //{
+        //    Answer ServiceResult = await AlumnosServices.
+        //}
     }
 }

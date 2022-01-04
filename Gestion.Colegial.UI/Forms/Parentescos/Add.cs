@@ -15,8 +15,8 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
         private static tbParentescos send = new tbParentescos();
         // Instancia del formulario principal de la seccion list.
         Parentescos.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

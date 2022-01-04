@@ -22,7 +22,7 @@ namespace Gestion.Colegial.Business.Services
             return obj;
         }
 
-        public static async Task<Boolean>Add(tbModalidades entidad)
+        public static async Task<Boolean> Add(tbModalidades entidad)
         {
             return await objDato.Add(entidad);
         }

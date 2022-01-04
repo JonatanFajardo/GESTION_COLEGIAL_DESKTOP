@@ -1,10 +1,7 @@
 ﻿using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.DataAccess.Repositories.app;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Gestion.Colegial.Business.Services
@@ -28,7 +25,7 @@ namespace Gestion.Colegial.Business.Services
                 {
                     return true;
                 }
-               //return true;
+                //return true;
             }
             else
             {

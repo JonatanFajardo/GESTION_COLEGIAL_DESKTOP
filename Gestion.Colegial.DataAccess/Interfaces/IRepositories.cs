@@ -13,11 +13,27 @@ namespace Gestion.Colegial.DataAccess.Interfaces
         /// <param name="sear"></param>
         /// <returns></returns>
         Task<DataTable> List(string sear);
+
         /// <summary>
         /// Permite Agregar un nuevo registro.
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
+        /// 
+
+        ///// <summary>
+        ///// Busca un registro en base al identificador de este.
+        ///// </summary>
+        ///// <param name="entity"></param>
+        ///// <returns></returns>
+        //Task<DataTable> Find(int value);
+
+        /// <summary>
+        /// Busca un registro en base a la informacion que este contiene.
+        /// </summary>
+        /// <param name="identifier"></param>
+        /// <returns></returns>
+        Task<DataTable> Find(string identifier);
         Task<Boolean> Add(T entity);
         /// <summary>
         /// Permite la modificacion de un registro.

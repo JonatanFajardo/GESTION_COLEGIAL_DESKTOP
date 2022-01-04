@@ -31,18 +31,25 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         {
             this.jnButton3 = new JNControls.Controles.JNButton();
             this.jnButton4 = new JNControls.Controles.JNButton();
-            this.pnBackground.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.BgSearch)).BeginInit();
             this.jnPanel1.SuspendLayout();
+            this.pnBackground.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // jnPanel1
             // 
             this.jnPanel1.Controls.Add(this.jnButton3);
             this.jnPanel1.Controls.Add(this.jnButton4);
+            this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
+            this.jnPanel1.Controls.SetChildIndex(this.txtBuscar, 0);
+            this.jnPanel1.Controls.SetChildIndex(this.btnBuscar, 0);
             this.jnPanel1.Controls.SetChildIndex(this.jnButton4, 0);
             this.jnPanel1.Controls.SetChildIndex(this.jnButton3, 0);
+            // 
+            // pnBackground
+            // 
+            this.pnBackground.Size = new System.Drawing.Size(1598, 600);
+            this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
             // 
             // jnButton3
             // 
@@ -86,14 +93,14 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1268, 568);
+            this.ClientSize = new System.Drawing.Size(1598, 600);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "List";
             this.Text = "List";
-            this.pnBackground.ResumeLayout(false);
-            this.pnBackground.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.BgSearch)).EndInit();
             this.jnPanel1.ResumeLayout(false);
+            this.jnPanel1.PerformLayout();
+            this.pnBackground.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             this.ResumeLayout(false);
 
         }

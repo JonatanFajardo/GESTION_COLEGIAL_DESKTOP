@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Estados
         private static tbEstados send = new tbEstados();
         // Instancia del formulario principal de la seccion list.
         Estados.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Semestres
         private static tbSemestres send = new tbSemestres();
         // Instancia del formulario principal de la seccion list.
         Semestres.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

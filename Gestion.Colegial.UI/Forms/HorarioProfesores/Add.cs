@@ -6,8 +6,8 @@ namespace Gestion.Colegial.UI.Forms.HorarioProfesores
     {
         // Instancia del formulario principal de la seccion list.
         HorarioProfesores.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

@@ -12,23 +12,23 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const string commandText = "PR_tbNotas_List";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@sear", DbType = DbType.String, Value = sear },
+                new SqlParameter() { ParameterName = "@Search", DbType = DbType.String, Value = sear },
             };
             DataTable result = await Select(sear, commandText, sqlParameters);
             return result;
         }
 
-        public async Task<DataTable> Find(string identifier)
+        public async Task<DataTable> Find(string value)
         {
             const string commandText = "PR_tbNotas_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Not_Id", DbType = DbType.Int32, Value = identifier },
+                new SqlParameter() { ParameterName = "@Not_Id", DbType = DbType.Int32, Value = value },
             };
-            DataTable result = await Search(identifier, commandText, sqlParameters);
+            DataTable result = await Search(value, commandText, sqlParameters);
             return result;
         }
 
-        public async Task<DataTable> Detail(string identifier)
+        public async Task<DataTable> Detail(int identifier)
         {
             const string commandText = "PR_tbNotas_Detail";
             SqlParameter[] sqlParameters = {

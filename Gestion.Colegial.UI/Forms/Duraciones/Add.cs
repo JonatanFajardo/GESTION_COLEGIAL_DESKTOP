@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
         private static tbDuraciones send = new tbDuraciones();
         // Instancia del formulario principal de la seccion list.
         Duraciones.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

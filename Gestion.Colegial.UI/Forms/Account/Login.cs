@@ -75,7 +75,7 @@ namespace Gestion.Colegial.UI.Forms.Acount
             if (!result)
             {
                 // Obtenemos los datos del usuario.
-                var resultList =  await AccountServices.List(entityAutentication);
+                var resultList = await AccountServices.List(entityAutentication);
                 // Evaluamos si el registro no viene vacio.
                 if (resultList != null)
                 {

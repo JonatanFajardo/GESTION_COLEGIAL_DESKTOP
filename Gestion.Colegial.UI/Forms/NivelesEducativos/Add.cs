@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
         private static tbNivelesEducativos send = new tbNivelesEducativos();
         // Instancia del formulario principal de la seccion list.
         NivelesEducativos.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

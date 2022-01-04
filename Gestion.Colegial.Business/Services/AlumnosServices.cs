@@ -17,7 +17,13 @@ namespace Gestion.Colegial.Business.Services
             return obj;
         }
 
-        public static async Task<Boolean>Add(tbAlumnos entidad)
+        //public static async Task<DataTable> ListOne(string sear)
+        //{
+        //    var obj = await objDato.(sear);
+        //    return obj;
+        //}
+
+        public static async Task<Boolean> Add(tbAlumnos entidad)
         {
             return await objDato.Add(entidad);
         }

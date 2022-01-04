@@ -13,7 +13,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.bitacoras
             string nameFile = $"Log_{DateTime.Now.Year}_{DateTime.Now.Month}_{DateTime.Now.Day}";
             string content = "";
 
-            content += "[FECHA] "+DateTime.Now + " [DIRECCION] " + pathFolder + " [MENSAJE] " + exception.Message + " [EXEPCION_INTERNA] " + exception.InnerException + Environment.NewLine;
+            content += "[FECHA] " + DateTime.Now + " [DIRECCION] " + pathFolder + " [MENSAJE] " + exception.Message + " [EXEPCION_INTERNA] " + exception.InnerException + Environment.NewLine;
 
             Create.Path = pathFolder;
             Create.FolderName = "Log";
@@ -23,7 +23,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.bitacoras
 
         public static void Add(Answer answer)
         {
-           
+
 
         }
 

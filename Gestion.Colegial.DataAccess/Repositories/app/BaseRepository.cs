@@ -1,11 +1,8 @@
 ﻿using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.DataAccess.Repositories.bitacoras;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Repositories.app
@@ -146,12 +143,17 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             }
         }
 
-        protected static async Task<DataTable> Search(string buscar, string commandText, dynamic parameters)
+        protected static async Task<DataTable> Search(int identifier, string commandText, dynamic parameters)
         {
             throw new NotImplementedException();
         }
 
-        protected static async Task<DataTable> Details(string buscar, string commandText, dynamic parameters)
+        protected static async Task<DataTable> Search(string value, string commandText, dynamic parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected static async Task<DataTable> Details(int buscar, string commandText, dynamic parameters)
         {
             throw new NotImplementedException();
         }

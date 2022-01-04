@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Horas
         private static tbHoras send = new tbHoras();
         // Instancia del formulario principal de la seccion list.
         Horas.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

@@ -13,17 +13,20 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         // Instancia que contiene la data local y privadamente.
         private static tbCargos send = new tbCargos();
         // Instancia del formularkio principal de la seccion list.
-        Cargos.List _list;
+        private Cargos.List _list;
+
+        private int _id;
 
         public Add() { }
-        public Add(List list)
+        public Add(int id, List list)
         {
             InitializeComponent();
-            load();
             _list = list;
+            _id = id;
+            load(id);
         }
 
-        public void load()
+        public void load(int id)
         {
             this.Show();
 
@@ -42,7 +45,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 this.Text = Modificar;
             }
         }
-        public static void Send(tbCargos Send)
+        public static void Send(int id, )
         {
             Add add = new Add();
             send = Send;

@@ -6,8 +6,8 @@ namespace Gestion.Colegial.UI.Forms.Encargados
     {
         // Instancia del formulario principal de la seccion list.
         Encargados.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

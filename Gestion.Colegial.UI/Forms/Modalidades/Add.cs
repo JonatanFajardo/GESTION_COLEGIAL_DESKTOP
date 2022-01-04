@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
         private static tbModalidades send = new tbModalidades();
         // Instancia del formulario principal de la seccion list.
         Modalidades.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

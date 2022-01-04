@@ -14,11 +14,10 @@ namespace Gestion.Colegial.Business.Services
 
         public static async Task<DataTable> List(string sear)
         {
-            var obj = await objDato.List(sear);
-            return obj;
+            return await objDato.List(sear);
         }
 
-        public static async Task<Boolean>Add(tbCargos entidad)
+        public static async Task<Boolean> Add(tbCargos entidad)
         {
             return await objDato.Add(entidad);
         }

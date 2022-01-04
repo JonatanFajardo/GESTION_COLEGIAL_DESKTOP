@@ -64,15 +64,9 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 //amount = selected,
                 search = buscar
             };
-            
+
             // Peticion de la data
             DataTable data = await CargosServices.List(buscar);
-            //if (data==null)
-            //{
-            //    DataRow dataRow = dataGridViewJN1.NewRowIndex
-            //    dataGridViewJN1.Rows.Add()
-            //}
-
             // Cargando DGV
             dataGridViewJN1.DataSource = data;// obj.Data;
         }
@@ -120,12 +114,16 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[0].Selected)
             {
                 // Objeto con la data que se selecciono.
+                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
+                Add add = new Add(id, this);
+                add.Show();
+                Add.Send(id, this);
+
                 tbCargos objCargos = new tbCargos()
                 {
                     Car_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
                     Car_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
                 };
-                Add.Send(objCargos);
             }
 
             // Eliminamos registro.

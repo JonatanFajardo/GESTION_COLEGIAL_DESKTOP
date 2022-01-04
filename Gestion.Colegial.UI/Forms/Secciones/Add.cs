@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Secciones
         private static tbSecciones send = new tbSecciones();
         // Instancia del formulario principal de la seccion list.
         Secciones.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

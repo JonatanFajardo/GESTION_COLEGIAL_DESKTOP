@@ -6,8 +6,8 @@ namespace Gestion.Colegial.UI.Forms.Empleados
     {
         // Instancia del formulario principal de la seccion list.
         Empleados.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

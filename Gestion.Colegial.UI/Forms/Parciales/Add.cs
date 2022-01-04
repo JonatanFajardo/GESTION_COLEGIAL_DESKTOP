@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Parciales
         private static tbParciales send = new tbParciales();
         // Instancia del formulario principal de la seccion list.
         Parciales.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

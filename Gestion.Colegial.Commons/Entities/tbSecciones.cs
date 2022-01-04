@@ -2,7 +2,6 @@
 namespace Gestion.Colegial.Commons.Entities
 {
     using System;
-    using System.Collections.Generic;
 
     public partial class tbSecciones
     {

@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.CursosNiveles
         private static tbCursosNiveles send = new tbCursosNiveles();
         // Instancia del formulario principal de la seccion list.
         CursosNiveles.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

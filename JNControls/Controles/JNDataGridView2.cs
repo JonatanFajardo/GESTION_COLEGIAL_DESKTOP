@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace JNControls.Controles
@@ -15,7 +8,7 @@ namespace JNControls.Controles
         public JNDataGridView2()
         {
             InitializeComponent();
-            
+
         }
 
         //public delegate EventHandler(object sender, EventArgs e);

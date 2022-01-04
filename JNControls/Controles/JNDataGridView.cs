@@ -33,7 +33,7 @@ namespace JNControls.Controles
 
 
             base.RowTemplate.Height = 35;//tamaño body
-            
+
 
 
             // this.ColumnHeadersVisible = false;
@@ -49,7 +49,7 @@ namespace JNControls.Controles
             //this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             base.MultiSelect = false;
             base.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;//acomplamos el ancho de la columna al texto que ay en ella
-            
+
 
 
             //no
@@ -74,7 +74,7 @@ namespace JNControls.Controles
             this.AllowUserToAddRows = false;
             this.AllowUserToDeleteRows = false;
 
-            
+
         }
 
 

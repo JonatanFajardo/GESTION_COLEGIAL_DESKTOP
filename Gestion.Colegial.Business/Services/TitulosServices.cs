@@ -18,7 +18,7 @@ namespace Gestion.Colegial.Business.Services
             return obj;
         }
 
-        public static async Task<Boolean>Add(tbTitulos entidad)
+        public static async Task<Boolean> Add(tbTitulos entidad)
         {
             return await objDato.Add(entidad);
         }

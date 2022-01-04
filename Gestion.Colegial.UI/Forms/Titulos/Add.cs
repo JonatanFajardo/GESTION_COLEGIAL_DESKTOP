@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Titulos
         private static tbTitulos send = new tbTitulos();
         // Instancia del formulario principal de la seccion list.
         Titulos.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

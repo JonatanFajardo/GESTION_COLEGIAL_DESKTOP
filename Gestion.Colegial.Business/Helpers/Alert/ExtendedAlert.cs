@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gestion.Colegial.Business.Helpers.Alert
+﻿namespace Gestion.Colegial.Business.Helpers.Alert
 {
-    public class ExtendedAlert:Alert
+    public class ExtendedAlert : Alert
     {
-        
+
 
         //public static string TypeMessage(enmType enmType)
         //{

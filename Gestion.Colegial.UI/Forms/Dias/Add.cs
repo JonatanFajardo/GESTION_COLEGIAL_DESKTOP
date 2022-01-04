@@ -14,8 +14,8 @@ namespace Gestion.Colegial.UI.Forms.Dias
         private static tbDias send = new tbDias();
         // Instancia del formulario principal de la seccion list.
         Dias.List _list;
-        
-        public Add(){}
+
+        public Add() { }
         public Add(List list)
         {
             InitializeComponent();

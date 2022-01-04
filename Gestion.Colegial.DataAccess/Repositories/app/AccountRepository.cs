@@ -1,15 +1,11 @@
 ﻿using Gestion.Colegial.Commons.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Gestion.Colegial.DataAccess.Repositories.app
 {
-    public class AccountRepository:BaseRepository
+    public class AccountRepository : BaseRepository
     {
         public async Task<DataTable> Autentication(tbUsuarios entity)
         {

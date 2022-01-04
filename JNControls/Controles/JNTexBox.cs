@@ -322,7 +322,7 @@ namespace JNControls.Controles
 
         [Category("JN Controls")]
         [Description("Establecer como true si quiere que el control se limpie despues de una accion especificada.")]
-        public bool CleanCompleted  { get; set; }
+        public bool CleanCompleted { get; set; }
 
         [Category("JN Controls")]
         [Description("Color que se muestra en el contorno del control si este no cumple con las validaciones indicadas.")]
