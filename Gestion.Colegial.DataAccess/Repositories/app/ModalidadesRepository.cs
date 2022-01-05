@@ -61,13 +61,13 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<DataTable> Find(string value)
+        public async Task<DataTable> ListOne(int identifier)
         {
             const string commandText = "PR_tbModalidades_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Mda_Id", DbType = DbType.Int32, Value = value },
+                new SqlParameter() { ParameterName = "@Mda_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await Search(value, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -81,26 +81,26 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<Boolean> Add(tbModalidades entidad)
+        public async Task<Boolean> Add(tbModalidades entity)
         {
-            //entidad.Mda_UsuarioRegistra = 1;
+            //entity.Mda_UsuarioRegistra = 1;
             const string commandText = "PR_tbModalidades_Insert";
             SqlParameter[] sqlParameters = {
-            new SqlParameter(){ParameterName= "@Mda_Descripcion", DbType = DbType.String, Value = entidad.Mda_Descripcion },
-            new SqlParameter(){ParameterName= "@Mda_UsuarioRegistra", DbType = DbType.Int32, Value = entidad.Mda_UsuarioRegistra }
+            new SqlParameter(){ParameterName= "@Mda_Descripcion", DbType = DbType.String, Value = entity.Mda_Descripcion },
+            new SqlParameter(){ParameterName= "@Mda_UsuarioRegistra", DbType = DbType.Int32, Value = entity.Mda_UsuarioRegistra }
             };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
 
-        public async Task<Boolean> Edit(tbModalidades entidad)
+        public async Task<Boolean> Edit(tbModalidades entity)
         {
-            entidad.Mda_UsuarioModifica = 1;
+            entity.Mda_UsuarioModifica = 1;
             const string commandText = "PR_tbModalidades_Update";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Mda_Id", DbType = DbType.Int32, Value = entidad.Mda_Id },
-                new SqlParameter(){ParameterName= "@Mda_Descripcion", DbType = DbType.String, Value = entidad.Mda_Descripcion },
-                new SqlParameter(){ParameterName= "@Mda_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Mda_UsuarioModifica }
+                new SqlParameter(){ParameterName= "@Mda_Id", DbType = DbType.Int32, Value = entity.Mda_Id },
+                new SqlParameter(){ParameterName= "@Mda_Descripcion", DbType = DbType.String, Value = entity.Mda_Descripcion },
+                new SqlParameter(){ParameterName= "@Mda_UsuarioModifica", DbType = DbType.Int32, Value = entity.Mda_UsuarioModifica }
             };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

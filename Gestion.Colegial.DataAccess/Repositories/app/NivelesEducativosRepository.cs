@@ -18,13 +18,13 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<DataTable> Find(string value)
+        public async Task<DataTable> ListOne(int identifier)
         {
             const string commandText = "PR_tbNivelesEducativos_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Niv_Id", DbType = DbType.Int32, Value = value },
+                new SqlParameter() { ParameterName = "@Niv_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await Search(value, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -38,25 +38,25 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<Boolean> Add(tbNivelesEducativos entidad)
+        public async Task<Boolean> Add(tbNivelesEducativos entity)
         {
             const String commandText = "PR_tbNivelesEducativos_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Niv_Descripcion", DbType = DbType.String, Value = entidad.Niv_Descripcion},
-                new SqlParameter(){ParameterName= "@Niv_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Niv_UsuarioRegistra}
+                new SqlParameter(){ParameterName= "@Niv_Descripcion", DbType = DbType.String, Value = entity.Niv_Descripcion},
+                new SqlParameter(){ParameterName= "@Niv_UsuarioRegistra", DbType = DbType.Int32  , Value = entity.Niv_UsuarioRegistra}
             };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
 
-        public async Task<Boolean> Edit(tbNivelesEducativos entidad)
+        public async Task<Boolean> Edit(tbNivelesEducativos entity)
         {
             const String commandText = "PR_tbNivelesEducativos_Update";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Niv_Id", DbType = DbType.Int32, Value = entidad.Niv_Id},
-                new SqlParameter(){ParameterName= "@Niv_Descripcion", DbType = DbType.String, Value = entidad.Niv_Descripcion},
-                new SqlParameter(){ParameterName= "@EsActivo", DbType = DbType.String, Value = entidad.Niv_EsActivo},
-                new SqlParameter(){ParameterName= "@Niv_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Niv_UsuarioModifica},
+                new SqlParameter(){ParameterName= "@Niv_Id", DbType = DbType.Int32, Value = entity.Niv_Id},
+                new SqlParameter(){ParameterName= "@Niv_Descripcion", DbType = DbType.String, Value = entity.Niv_Descripcion},
+                new SqlParameter(){ParameterName= "@EsActivo", DbType = DbType.String, Value = entity.Niv_EsActivo},
+                new SqlParameter(){ParameterName= "@Niv_UsuarioModifica", DbType = DbType.Int32, Value = entity.Niv_UsuarioModifica},
             };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

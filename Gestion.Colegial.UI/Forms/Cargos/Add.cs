@@ -5,6 +5,7 @@ using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.UI.FormsBase;
 using Gestion.Colegial.UI.Helpers.Controles;
 using System;
+using System.Collections.Generic;
 
 namespace Gestion.Colegial.UI.Forms.Cargos
 {
@@ -18,15 +19,26 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         private int _id;
 
         public Add() { }
-        public Add(int id, List list)
+        public Add(List list)
         {
             InitializeComponent();
             _list = list;
+        }
+        public Add(List list, int id)
+        {
+            _list = list;
             _id = id;
-            load(id);
+            load();
+            FillControls(id);
         }
 
-        public void load(int id)
+        private async void FillControls(int id)
+        {
+            tbCargos ServiceInsert = await CargosServices.ListOne(id);
+            txtDescripcion.Texts = ServiceInsert.Car_Descripcion;
+        }
+
+        public void load()
         {
             this.Show();
 
@@ -45,12 +57,14 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 this.Text = Modificar;
             }
         }
-        public static void Send(int id, )
-        {
-            Add add = new Add();
-            send = Send;
-            add.load();
-        }
+        //public void Send(int id, List list)
+        //{
+        //    Add add = new Add();
+        //    _id = id;
+        //    _list = list;
+        //    //_send = Send;
+        //    add.load();
+        //}
 
 
         public async override void OnClick()

@@ -35,22 +35,22 @@ namespace Gestion.Colegial.DataAccess.Clases
         //        return null;
         //    }
         //}
-        //public void insert(tbAlumnos entidad)
+        //public void insert(tbAlumnos entity)
         //{
         //    try
         //    {
         //        table = new DataTable();
         //        cmd = new SqlCommand("Alumnos_Insert");
         //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.Parameters.AddWithValue("@VAlu_PrimerNombre", entidad.Alu_PrimerNombre);
-        //        cmd.Parameters.AddWithValue("@VAlu_SegundoNombre", entidad.Alu_SegundoNombre);
-        //        cmd.Parameters.AddWithValue("@VAlu_PrimerApellido", entidad.Alu_PrimerApellido);
-        //        cmd.Parameters.AddWithValue("@VAlu_SegundoApellido", entidad.Alu_SegundoApellido);
-        //        cmd.Parameters.AddWithValue("@VAlu_Dni", entidad.Alu_Dni);
-        //        cmd.Parameters.AddWithValue("@VAlu_CorreoElectronico", entidad.Alu_CorreoElectronico);
-        //        cmd.Parameters.AddWithValue("@VAlu_NTelefono", entidad.Alu_NTelefono);
-        //        cmd.Parameters.AddWithValue("@VAlu_Fecha_Nacimiento", entidad.Alu_Fecha_Nacimiento);
-        //        cmd.Parameters.AddWithValue("@VAlu_Sexo", entidad.Alu_Sexo);
+        //        cmd.Parameters.AddWithValue("@VAlu_PrimerNombre", entity.Alu_PrimerNombre);
+        //        cmd.Parameters.AddWithValue("@VAlu_SegundoNombre", entity.Alu_SegundoNombre);
+        //        cmd.Parameters.AddWithValue("@VAlu_PrimerApellido", entity.Alu_PrimerApellido);
+        //        cmd.Parameters.AddWithValue("@VAlu_SegundoApellido", entity.Alu_SegundoApellido);
+        //        cmd.Parameters.AddWithValue("@VAlu_Dni", entity.Alu_Dni);
+        //        cmd.Parameters.AddWithValue("@VAlu_CorreoElectronico", entity.Alu_CorreoElectronico);
+        //        cmd.Parameters.AddWithValue("@VAlu_NTelefono", entity.Alu_NTelefono);
+        //        cmd.Parameters.AddWithValue("@VAlu_Fecha_Nacimiento", entity.Alu_Fecha_Nacimiento);
+        //        cmd.Parameters.AddWithValue("@VAlu_Sexo", entity.Alu_Sexo);
         //        cmd.ExecuteNonQuery();
         //        cmd.Connection = conexion.CerrarConexion();     
         //    }
@@ -60,7 +60,7 @@ namespace Gestion.Colegial.DataAccess.Clases
         //    }
         //}
 
-        //public void update(tbAlumno entidad)
+        //public void update(tbAlumno entity)
         //{
         //    try
         //    {
@@ -68,15 +68,15 @@ namespace Gestion.Colegial.DataAccess.Clases
         //        cmd = new SqlCommand("Alumnos_Update");
         //        cmd.Connection = conexion.AbrirConexion();
         //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.Parameters.AddWithValue("@VAlu_PrimerNombre", entidad.Alu_PrimerNombre);
-        //        cmd.Parameters.AddWithValue("@VAlu_SegundoNombre", entidad.Alu_SegundoNombre);
-        //        cmd.Parameters.AddWithValue("@VAlu_PrimerApellido", entidad.Alu_PrimerApellido);
-        //        cmd.Parameters.AddWithValue("@VAlu_SegundoApellido", entidad.Alu_SegundoApellido);
-        //        cmd.Parameters.AddWithValue("@VAlu_Dni", entidad.Alu_Dni);
-        //        cmd.Parameters.AddWithValue("@VAlu_CorreoElectronico", entidad.Alu_CorreoElectronico);
-        //        cmd.Parameters.AddWithValue("@VAlu_NTelefono", entidad.Alu_NTelefono);
-        //        cmd.Parameters.AddWithValue("@VAlu_Fecha_Nacimiento", entidad.Alu_Fecha_Nacimiento);
-        //        cmd.Parameters.AddWithValue("@VAlu_Sexo", entidad.Alu_Sexo);
+        //        cmd.Parameters.AddWithValue("@VAlu_PrimerNombre", entity.Alu_PrimerNombre);
+        //        cmd.Parameters.AddWithValue("@VAlu_SegundoNombre", entity.Alu_SegundoNombre);
+        //        cmd.Parameters.AddWithValue("@VAlu_PrimerApellido", entity.Alu_PrimerApellido);
+        //        cmd.Parameters.AddWithValue("@VAlu_SegundoApellido", entity.Alu_SegundoApellido);
+        //        cmd.Parameters.AddWithValue("@VAlu_Dni", entity.Alu_Dni);
+        //        cmd.Parameters.AddWithValue("@VAlu_CorreoElectronico", entity.Alu_CorreoElectronico);
+        //        cmd.Parameters.AddWithValue("@VAlu_NTelefono", entity.Alu_NTelefono);
+        //        cmd.Parameters.AddWithValue("@VAlu_Fecha_Nacimiento", entity.Alu_Fecha_Nacimiento);
+        //        cmd.Parameters.AddWithValue("@VAlu_Sexo", entity.Alu_Sexo);
         //        cmd.ExecuteNonQuery();
         //        cmd.Connection = conexion.CerrarConexion();
         //    }

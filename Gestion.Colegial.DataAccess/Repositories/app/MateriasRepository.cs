@@ -18,13 +18,13 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<DataTable> Find(string value)
+        public async Task<DataTable> ListOne(int identifier)
         {
             const string commandText = "PR_tbMaterias_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Mat_Id", DbType = DbType.Int32, Value = value },
+                new SqlParameter() { ParameterName = "@Mat_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await Search(value, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -38,26 +38,26 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<Boolean> Add(tbMaterias entidad)
+        public async Task<Boolean> Add(tbMaterias entity)
         {
             const String commandText = "PR_tbMaterias_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Mat_Nombre", DbType = DbType.String, Value = entidad.Mat_Nombre},
-                new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entidad.Dur_Id},
-                new SqlParameter(){ParameterName= "@Mat_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Mat_UsuarioRegistra}
+                new SqlParameter(){ParameterName= "@Mat_Nombre", DbType = DbType.String, Value = entity.Mat_Nombre},
+                new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entity.Dur_Id},
+                new SqlParameter(){ParameterName= "@Mat_UsuarioRegistra", DbType = DbType.Int32  , Value = entity.Mat_UsuarioRegistra}
             };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
-        public async Task<Boolean> Edit(tbMaterias entidad)
+        public async Task<Boolean> Edit(tbMaterias entity)
         {
             const String commandText = "PR_tbMaterias_Update";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = entidad.Mat_Id},
-                new SqlParameter(){ParameterName= "@Mat_Nombre", DbType = DbType.String, Value = entidad.Mat_Nombre},
-                new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entidad.Dur_Id},
-                new SqlParameter(){ParameterName= "@EsActivo", DbType = DbType.String, Value = entidad.EsActivo},
-                new SqlParameter(){ParameterName= "@Mat_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Mat_UsuarioModifica},
+                new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = entity.Mat_Id},
+                new SqlParameter(){ParameterName= "@Mat_Nombre", DbType = DbType.String, Value = entity.Mat_Nombre},
+                new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entity.Dur_Id},
+                new SqlParameter(){ParameterName= "@EsActivo", DbType = DbType.String, Value = entity.EsActivo},
+                new SqlParameter(){ParameterName= "@Mat_UsuarioModifica", DbType = DbType.Int32, Value = entity.Mat_UsuarioModifica},
             };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;

@@ -18,13 +18,13 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<DataTable> Find(string value)
+        public async Task<DataTable> ListOne(int identifier)
         {
             const string commandText = "PR_tbDias_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Dia_Id", DbType = DbType.Int32, Value = value },
+                new SqlParameter() { ParameterName = "@Dia_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await Search(value, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -37,24 +37,24 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             DataTable result = await Details(identifier, commandText, sqlParameters);
             return result;
         }
-        public async Task<Boolean> Add(tbDias entidad)
+        public async Task<Boolean> Add(tbDias entity)
         {
             const String commandText = "PR_tbDias_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Dia_Descripcion", DbType = DbType.String, Value = entidad.Dia_Descripcion},
-                new SqlParameter(){ParameterName= "@Dia_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Dia_UsuarioRegistra}
+                new SqlParameter(){ParameterName= "@Dia_Descripcion", DbType = DbType.String, Value = entity.Dia_Descripcion},
+                new SqlParameter(){ParameterName= "@Dia_UsuarioRegistra", DbType = DbType.Int32  , Value = entity.Dia_UsuarioRegistra}
             };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
 
-        public async Task<Boolean> Edit(tbDias entidad)
+        public async Task<Boolean> Edit(tbDias entity)
         {
             const String commandText = "PR_tbDias_Update";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Dia_Id", DbType = DbType.Int32, Value = entidad.Dia_Id},
-                new SqlParameter(){ParameterName= "@Dia_Descripcion", DbType = DbType.String, Value = entidad.Dia_Descripcion},
-                new SqlParameter(){ParameterName= "@Dia_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Dia_UsuarioModifica},
+                new SqlParameter(){ParameterName= "@Dia_Id", DbType = DbType.Int32, Value = entity.Dia_Id},
+                new SqlParameter(){ParameterName= "@Dia_Descripcion", DbType = DbType.String, Value = entity.Dia_Descripcion},
+                new SqlParameter(){ParameterName= "@Dia_UsuarioModifica", DbType = DbType.Int32, Value = entity.Dia_UsuarioModifica},
             };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

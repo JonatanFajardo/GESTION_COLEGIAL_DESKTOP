@@ -53,22 +53,22 @@ namespace Gestion.Colegial.DataAccess.Clases
         //    }
         //}
 
-        //public void insert(E_Docente entidad)
+        //public void insert(E_Docente entity)
         //{
         //    try
         //    {
         //        cmd = new SqlCommand("Catedraticos_Insert");
         //        cmd.Connection = conexion.AbrirConexion();
         //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.Parameters.AddWithValue("@VCat_PrimerNombre", entidad.Cat_PrimerNombre);
-        //        cmd.Parameters.AddWithValue("@VCat_SegundoNombre", entidad.Cat_SegundoNombre);
-        //        cmd.Parameters.AddWithValue("@VCat_PrimerApellido", entidad.Cat_PrimerApellido);
-        //        cmd.Parameters.AddWithValue("@VCat_SegundoApellido", entidad.Cat_SegundoApellido);
-        //        cmd.Parameters.AddWithValue("@VCat_Dni", entidad.Cat_Dni);
-        //        cmd.Parameters.AddWithValue("@VCat_CorreoElectronico", entidad.Cat_CorreoElectronico);
-        //        cmd.Parameters.AddWithValue("@VCat_NTelefono", entidad.Cat_NTelefono);
-        //        cmd.Parameters.AddWithValue("@VCat_Fecha_Nacimiento", entidad.Cat_Fecha_Nacimiento);
-        //        cmd.Parameters.AddWithValue("@VCat_Sexo", entidad.Cat_Sexo);
+        //        cmd.Parameters.AddWithValue("@VCat_PrimerNombre", entity.Cat_PrimerNombre);
+        //        cmd.Parameters.AddWithValue("@VCat_SegundoNombre", entity.Cat_SegundoNombre);
+        //        cmd.Parameters.AddWithValue("@VCat_PrimerApellido", entity.Cat_PrimerApellido);
+        //        cmd.Parameters.AddWithValue("@VCat_SegundoApellido", entity.Cat_SegundoApellido);
+        //        cmd.Parameters.AddWithValue("@VCat_Dni", entity.Cat_Dni);
+        //        cmd.Parameters.AddWithValue("@VCat_CorreoElectronico", entity.Cat_CorreoElectronico);
+        //        cmd.Parameters.AddWithValue("@VCat_NTelefono", entity.Cat_NTelefono);
+        //        cmd.Parameters.AddWithValue("@VCat_Fecha_Nacimiento", entity.Cat_Fecha_Nacimiento);
+        //        cmd.Parameters.AddWithValue("@VCat_Sexo", entity.Cat_Sexo);
         //        cmd.ExecuteNonQuery();
         //        cmd.Connection = conexion.CerrarConexion();
         //    }
@@ -77,7 +77,7 @@ namespace Gestion.Colegial.DataAccess.Clases
         //        MessageBox.Show($"Error: Datos/Clases/D_Docente:Insert :--: {error.Message}");
         //    }
         //}
-        //public void update(E_Docente entidad)
+        //public void update(E_Docente entity)
         //{
 
         //    try
@@ -85,15 +85,15 @@ namespace Gestion.Colegial.DataAccess.Clases
         //        table = new DataTable();
         //        cmd = new SqlCommand("Catedraticos_Update");
         //        cmd.Connection = conexion.AbrirConexion();
-        //        cmd.Parameters.AddWithValue("@VCat_PrimerNombre", entidad.Cat_PrimerNombre);
-        //        cmd.Parameters.AddWithValue("@VCat_SegundoNombre", entidad.Cat_SegundoNombre);
-        //        cmd.Parameters.AddWithValue("@VCat_PrimerApellido", entidad.Cat_PrimerApellido);
-        //        cmd.Parameters.AddWithValue("@VCat_SegundoApellido", entidad.Cat_SegundoApellido);
-        //        cmd.Parameters.AddWithValue("@VCat_Dni", entidad.Cat_Dni);
-        //        cmd.Parameters.AddWithValue("@VCat_CorreoElectronico", entidad.Cat_CorreoElectronico);
-        //        cmd.Parameters.AddWithValue("@VCat_NTelefono", entidad.Cat_NTelefono);
-        //        cmd.Parameters.AddWithValue("@VCat_Fecha_Nacimiento", entidad.Cat_Fecha_Nacimiento);
-        //        cmd.Parameters.AddWithValue("@VCat_Sexo", entidad.Cat_Sexo);
+        //        cmd.Parameters.AddWithValue("@VCat_PrimerNombre", entity.Cat_PrimerNombre);
+        //        cmd.Parameters.AddWithValue("@VCat_SegundoNombre", entity.Cat_SegundoNombre);
+        //        cmd.Parameters.AddWithValue("@VCat_PrimerApellido", entity.Cat_PrimerApellido);
+        //        cmd.Parameters.AddWithValue("@VCat_SegundoApellido", entity.Cat_SegundoApellido);
+        //        cmd.Parameters.AddWithValue("@VCat_Dni", entity.Cat_Dni);
+        //        cmd.Parameters.AddWithValue("@VCat_CorreoElectronico", entity.Cat_CorreoElectronico);
+        //        cmd.Parameters.AddWithValue("@VCat_NTelefono", entity.Cat_NTelefono);
+        //        cmd.Parameters.AddWithValue("@VCat_Fecha_Nacimiento", entity.Cat_Fecha_Nacimiento);
+        //        cmd.Parameters.AddWithValue("@VCat_Sexo", entity.Cat_Sexo);
         //        cmd.ExecuteNonQuery();
         //        cmd.Connection = conexion.CerrarConexion();
         //    }

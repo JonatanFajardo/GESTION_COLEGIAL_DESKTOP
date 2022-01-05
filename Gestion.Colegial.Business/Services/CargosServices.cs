@@ -1,7 +1,11 @@
-﻿using Gestion.Colegial.Commons.Entities;
+﻿using Gestion.Colegial.Business.Extensions;
+using Gestion.Colegial.Commons.Entities;
+using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.DataAccess.Repositories.app;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Gestion.Colegial.Business.Services
@@ -12,24 +16,44 @@ namespace Gestion.Colegial.Business.Services
 
         private static CargosRepository objDato = new CargosRepository();
 
-        public static async Task<DataTable> List(string sear)
+        public static async Task<DataTable> List(string sear = "")
         {
-            return await objDato.List(sear);
+            try
+            {
+                return  await objDato.List(sear);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
-        public static async Task<Boolean> Add(tbCargos entidad)
+        public static async Task<tbCargos> ListOne(int identifier)
         {
-            return await objDato.Add(entidad);
+            try
+            {
+                DataTable result = await objDato.ListOne(identifier);
+                return result.Mapear<tbCargos>().FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
-        public static async Task<Boolean> Edit(tbCargos entidad)
+        public static async Task<Boolean> Add(tbCargos entity)
         {
-            return await objDato.Edit(entidad);
+            return await objDato.Add(entity);
         }
 
-        public static async Task<Boolean> Remove(int entidad)
+        public static async Task<Boolean> Edit(tbCargos entity)
         {
-            return await objDato.Remove(entidad);
+            return await objDato.Edit(entity);
+        }
+
+        public static async Task<Boolean> Remove(int identifier)
+        {
+            return await objDato.Remove(identifier);
         }
 
         #endregion Metodos

@@ -18,19 +18,19 @@ namespace Gestion.Colegial.Business.Services
             return obj;
         }
 
-        public static async Task<Boolean> Add(tbSecciones entidad)
+        public static async Task<Boolean> Add(tbSecciones entity)
         {
-            return await objDato.Add(entidad);
+            return await objDato.Add(entity);
         }
 
-        public static async Task<Boolean> Edit(tbSecciones entidad)
+        public static async Task<Boolean> Edit(tbSecciones entity)
         {
-            return await objDato.Edit(entidad);
+            return await objDato.Edit(entity);
         }
 
-        public static async Task<Boolean> Remove(int entidad)
+        public static async Task<Boolean> Remove(int identifier)
         {
-            return await objDato.Remove(entidad);
+            return await objDato.Remove(identifier);
         }
 
         #endregion Metodos

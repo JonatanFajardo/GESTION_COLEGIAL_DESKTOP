@@ -18,13 +18,13 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<DataTable> Find(string value)
+        public async Task<DataTable> ListOne(int identifier)
         {
             const string commandText = "PR_tbDuraciones_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Dur_Id", DbType = DbType.Int32, Value = value },
+                new SqlParameter() { ParameterName = "@Dur_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await Search(value, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -37,24 +37,24 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             DataTable result = await Details(identifier, commandText, sqlParameters);
             return result;
         }
-        public async Task<Boolean> Add(tbDuraciones entidad)
+        public async Task<Boolean> Add(tbDuraciones entity)
         {
             const String commandText = "PR_tbDuraciones_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Dur_Descripcion", DbType = DbType.String, Value = entidad.Dur_Descripcion},
-                new SqlParameter(){ParameterName= "@Dur_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Dur_UsuarioRegistra}
+                new SqlParameter(){ParameterName= "@Dur_Descripcion", DbType = DbType.String, Value = entity.Dur_Descripcion},
+                new SqlParameter(){ParameterName= "@Dur_UsuarioRegistra", DbType = DbType.Int32  , Value = entity.Dur_UsuarioRegistra}
 };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
 
-        public async Task<Boolean> Edit(tbDuraciones entidad)
+        public async Task<Boolean> Edit(tbDuraciones entity)
         {
             const String commandText = "PR_tbDuraciones_Update";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entidad.Dur_Id},
-                new SqlParameter(){ParameterName= "@Dur_Descripcion", DbType = DbType.String, Value = entidad.Dur_Descripcion},
-                new SqlParameter(){ParameterName= "@Dur_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Dur_UsuarioModifica},
+                new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entity.Dur_Id},
+                new SqlParameter(){ParameterName= "@Dur_Descripcion", DbType = DbType.String, Value = entity.Dur_Descripcion},
+                new SqlParameter(){ParameterName= "@Dur_UsuarioModifica", DbType = DbType.Int32, Value = entity.Dur_UsuarioModifica},
             };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

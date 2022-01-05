@@ -18,13 +18,13 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<DataTable> Find(string value)
+        public async Task<DataTable> ListOne(int identifier)
         {
             const string commandText = "PR_tbParentescos_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Par_Id", DbType = DbType.Int32, Value = value },
+                new SqlParameter() { ParameterName = "@Par_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await Search(value, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -38,23 +38,23 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<Boolean> Add(tbParentescos entidad)
+        public async Task<Boolean> Add(tbParentescos entity)
         {
             const String commandText = "PR_tbParentescos_Insert";
             SqlParameter[] sqlParameters = {
-            new SqlParameter(){ParameterName= "@Par_Descripcion", DbType = DbType.String, Value = entidad.Par_Descripcion},
-            new SqlParameter(){ParameterName= "@Par_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Par_UsuarioRegistra}
+            new SqlParameter(){ParameterName= "@Par_Descripcion", DbType = DbType.String, Value = entity.Par_Descripcion},
+            new SqlParameter(){ParameterName= "@Par_UsuarioRegistra", DbType = DbType.Int32  , Value = entity.Par_UsuarioRegistra}
             };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
-        public async Task<Boolean> Edit(tbParentescos entidad)
+        public async Task<Boolean> Edit(tbParentescos entity)
         {
             const String commandText = "PR_tbParentescos_Update";
             SqlParameter[] sqlParameters = {
-            new SqlParameter(){ParameterName= "@Par_Id", DbType = DbType.Int32, Value = entidad.Par_Id},
-            new SqlParameter(){ParameterName= "@Par_Descripcion", DbType = DbType.String, Value = entidad.Par_Descripcion},
-            new SqlParameter(){ParameterName= "@Par_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Par_UsuarioModifica}
+            new SqlParameter(){ParameterName= "@Par_Id", DbType = DbType.Int32, Value = entity.Par_Id},
+            new SqlParameter(){ParameterName= "@Par_Descripcion", DbType = DbType.String, Value = entity.Par_Descripcion},
+            new SqlParameter(){ParameterName= "@Par_UsuarioModifica", DbType = DbType.Int32, Value = entity.Par_UsuarioModifica}
             };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

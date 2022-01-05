@@ -18,13 +18,13 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<DataTable> Find(string value)
+        public async Task<DataTable> ListOne(int identifier)
         {
             const string commandText = "PR_tbNotas_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@Not_Id", DbType = DbType.Int32, Value = value },
+                new SqlParameter() { ParameterName = "@Not_Id", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await Search(value, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -37,33 +37,33 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             DataTable result = await Details(identifier, commandText, sqlParameters);
             return result;
         }
-        public async Task<Boolean> Add(tbNotas entidad)
+        public async Task<Boolean> Add(tbNotas entity)
         {
             const String commandText = "PR_tbNotas_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Not_Nota", DbType = DbType.Int32, Value = entidad.Not_Nota},
-                new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = entidad.Mat_Id},
-                new SqlParameter(){ParameterName= "@Sem_Id", DbType = DbType.Int32, Value = entidad.Sem_Id},
-                new SqlParameter(){ParameterName= "@Pac_Id", DbType = DbType.Int32, Value = entidad.Pac_Id},
-                new SqlParameter(){ParameterName= "@Not_Año", DbType = DbType.Date, Value = entidad.Not_Año},
-                new SqlParameter(){ParameterName= "@Not_UsuarioRegistra", DbType = DbType.Int32  , Value = entidad.Not_UsuarioRegistra}
+                new SqlParameter(){ParameterName= "@Not_Nota", DbType = DbType.Int32, Value = entity.Not_Nota},
+                new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = entity.Mat_Id},
+                new SqlParameter(){ParameterName= "@Sem_Id", DbType = DbType.Int32, Value = entity.Sem_Id},
+                new SqlParameter(){ParameterName= "@Pac_Id", DbType = DbType.Int32, Value = entity.Pac_Id},
+                new SqlParameter(){ParameterName= "@Not_Año", DbType = DbType.Date, Value = entity.Not_Año},
+                new SqlParameter(){ParameterName= "@Not_UsuarioRegistra", DbType = DbType.Int32  , Value = entity.Not_UsuarioRegistra}
             };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
 
-        public async Task<Boolean> Edit(tbNotas entidad)
+        public async Task<Boolean> Edit(tbNotas entity)
         {
             const String commandText = "PR_tbNotas_Update";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Not_Id", DbType = DbType.Int32, Value = entidad.Not_Id},
-                new SqlParameter(){ParameterName= "@Not_Nota", DbType = DbType.Int32, Value = entidad.Not_Nota},
-                new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = entidad.Mat_Id},
-                new SqlParameter(){ParameterName= "@Sem_Id", DbType = DbType.Int32, Value = entidad.Sem_Id},
-                new SqlParameter(){ParameterName= "@Pac_Id", DbType = DbType.Int32, Value = entidad.Pac_Id},
-                new SqlParameter(){ParameterName= "@Not_Año", DbType = DbType.Date, Value = entidad.Not_Año},
-                new SqlParameter(){ParameterName= "@Not_EsActivo", DbType = DbType.String, Value = entidad.Not_EsActivo},
-                new SqlParameter(){ParameterName= "@Not_UsuarioModifica", DbType = DbType.Int32, Value = entidad.Not_UsuarioModifica},
+                new SqlParameter(){ParameterName= "@Not_Id", DbType = DbType.Int32, Value = entity.Not_Id},
+                new SqlParameter(){ParameterName= "@Not_Nota", DbType = DbType.Int32, Value = entity.Not_Nota},
+                new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = entity.Mat_Id},
+                new SqlParameter(){ParameterName= "@Sem_Id", DbType = DbType.Int32, Value = entity.Sem_Id},
+                new SqlParameter(){ParameterName= "@Pac_Id", DbType = DbType.Int32, Value = entity.Pac_Id},
+                new SqlParameter(){ParameterName= "@Not_Año", DbType = DbType.Date, Value = entity.Not_Año},
+                new SqlParameter(){ParameterName= "@Not_EsActivo", DbType = DbType.String, Value = entity.Not_EsActivo},
+                new SqlParameter(){ParameterName= "@Not_UsuarioModifica", DbType = DbType.Int32, Value = entity.Not_UsuarioModifica},
             };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

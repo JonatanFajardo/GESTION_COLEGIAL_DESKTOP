@@ -115,9 +115,8 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             {
                 // Objeto con la data que se selecciono.
                 int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
-                Add add = new Add(id, this);
+                Add add = new Add(this, id);
                 add.Show();
-                Add.Send(id, this);
 
                 tbCargos objCargos = new tbCargos()
                 {

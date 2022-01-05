@@ -33,7 +33,7 @@ namespace Gestion.Colegial.DataAccess.Interfaces
         /// </summary>
         /// <param name="identifier"></param>
         /// <returns></returns>
-        Task<DataTable> Find(string identifier);
+        Task<DataTable> ListOne(int identifier);
         Task<Boolean> Add(T entity);
         /// <summary>
         /// Permite la modificacion de un registro.

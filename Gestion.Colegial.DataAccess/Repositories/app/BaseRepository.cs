@@ -21,9 +21,9 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                     using (SqlCommand cmd = new SqlCommand(commandText, conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        //cmd.Parameters.AddWithValue("@numberPagina", entidad.numberPagina);
-                        //cmd.Parameters.AddWithValue("@amount", entidad.amount);
-                        //cmd.Parameters.AddWithValue("@search", entidad.search);
+                        //cmd.Parameters.AddWithValue("@numberPagina", entity.numberPagina);
+                        //cmd.Parameters.AddWithValue("@amount", entity.amount);
+                        //cmd.Parameters.AddWithValue("@search", entity.search);
                         conn.Open();
                         reader = cmd.ExecuteReader();
                         table.Load(reader);
@@ -57,9 +57,9 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddRange(parameters);
-                        //cmd.Parameters.AddWithValue("@numberPagina", entidad.numberPagina);
-                        //cmd.Parameters.AddWithValue("@amount", entidad.amount);
-                        //cmd.Parameters.AddWithValue("@search", entidad.search);
+                        //cmd.Parameters.AddWithValue("@numberPagina", entity.numberPagina);
+                        //cmd.Parameters.AddWithValue("@amount", entity.amount);
+                        //cmd.Parameters.AddWithValue("@search", entity.search);
                         conn.Open();
                         reader = cmd.ExecuteReader();
                         table.Load(reader);

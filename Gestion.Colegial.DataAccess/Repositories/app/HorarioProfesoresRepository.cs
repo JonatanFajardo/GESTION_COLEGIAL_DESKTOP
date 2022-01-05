@@ -18,13 +18,13 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<DataTable> Find(string value)
+        public async Task<DataTable> ListOne(int identifier)
         {
             const string commandText = "PR_tbHorarioProfesores_Find";
             SqlParameter[] sqlParameters = {
-                new SqlParameter() { ParameterName = "@sear1", DbType = DbType.Int32, Value = value },
+                new SqlParameter() { ParameterName = "@sear1", DbType = DbType.Int32, Value = identifier },
             };
-            DataTable result = await Search(value, commandText, sqlParameters);
+            DataTable result = await Search(identifier, commandText, sqlParameters);
             return result;
         }
 
@@ -38,33 +38,33 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-        public async Task<Boolean> Add(tbHorarioProfesores entidad)
+        public async Task<Boolean> Add(tbHorarioProfesores entity)
         {
             const String commandText = "PR_tbHorarioProfesores_Insert";
             SqlParameter[] sqlParameters = {
-            new SqlParameter(){ParameterName= "@Cur_Id", DbType = DbType.Int32, Value = entidad.Cur_Id},
-            new SqlParameter(){ParameterName= "@Cun_Id", DbType = DbType.Int32, Value = entidad.Cun_Id},
-            new SqlParameter(){ParameterName= "@HoPr_HoraInicio", DbType = DbType.Int32, Value = entidad.HoPr_HoraInicio},
-            new SqlParameter(){ParameterName= "@HoPr_HoraFinaliza", DbType = DbType.Int32, Value = entidad.HoPr_HoraFinaliza},
-            new SqlParameter(){ParameterName= "@Dia_Id", DbType = DbType.Int32, Value = entidad.Dia_Id},
-            new SqlParameter(){ParameterName= "@HoPr_UsuarioRegistra", DbType = DbType.Int32 , Value = entidad.HoPr_UsuarioRegistra},
+            new SqlParameter(){ParameterName= "@Cur_Id", DbType = DbType.Int32, Value = entity.Cur_Id},
+            new SqlParameter(){ParameterName= "@Cun_Id", DbType = DbType.Int32, Value = entity.Cun_Id},
+            new SqlParameter(){ParameterName= "@HoPr_HoraInicio", DbType = DbType.Int32, Value = entity.HoPr_HoraInicio},
+            new SqlParameter(){ParameterName= "@HoPr_HoraFinaliza", DbType = DbType.Int32, Value = entity.HoPr_HoraFinaliza},
+            new SqlParameter(){ParameterName= "@Dia_Id", DbType = DbType.Int32, Value = entity.Dia_Id},
+            new SqlParameter(){ParameterName= "@HoPr_UsuarioRegistra", DbType = DbType.Int32 , Value = entity.HoPr_UsuarioRegistra},
         };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
 
 
-        public async Task<Boolean> Edit(tbHorarioProfesores entidad)
+        public async Task<Boolean> Edit(tbHorarioProfesores entity)
         {
             const String commandText = "PR_tbHorarioProfesores_Update";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@HoPr_Id", DbType = DbType.Int32, Value = entidad.HoPr_Id},
-                new SqlParameter(){ParameterName= "@Cur_Id", DbType = DbType.Int32, Value = entidad.Cur_Id},
-                new SqlParameter(){ParameterName= "@Cun_Id", DbType = DbType.Int32, Value = entidad.Cun_Id},
-                new SqlParameter(){ParameterName= "@HoPr_HoraInicio", DbType = DbType.Int32, Value = entidad.HoPr_HoraInicio},
-                new SqlParameter(){ParameterName= "@HoPr_HoraFinaliza", DbType = DbType.Int32, Value = entidad.HoPr_HoraFinaliza},
-                new SqlParameter(){ParameterName= "@Dia_Id", DbType = DbType.Int32, Value = entidad.Dia_Id},
-                new SqlParameter(){ParameterName= "@HoPr_UsuarioModifica", DbType = DbType.Int32 , Value = entidad.HoPr_UsuarioModifica},
+                new SqlParameter(){ParameterName= "@HoPr_Id", DbType = DbType.Int32, Value = entity.HoPr_Id},
+                new SqlParameter(){ParameterName= "@Cur_Id", DbType = DbType.Int32, Value = entity.Cur_Id},
+                new SqlParameter(){ParameterName= "@Cun_Id", DbType = DbType.Int32, Value = entity.Cun_Id},
+                new SqlParameter(){ParameterName= "@HoPr_HoraInicio", DbType = DbType.Int32, Value = entity.HoPr_HoraInicio},
+                new SqlParameter(){ParameterName= "@HoPr_HoraFinaliza", DbType = DbType.Int32, Value = entity.HoPr_HoraFinaliza},
+                new SqlParameter(){ParameterName= "@Dia_Id", DbType = DbType.Int32, Value = entity.Dia_Id},
+                new SqlParameter(){ParameterName= "@HoPr_UsuarioModifica", DbType = DbType.Int32 , Value = entity.HoPr_UsuarioModifica},
                 };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

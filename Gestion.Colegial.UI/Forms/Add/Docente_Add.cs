@@ -75,16 +75,16 @@ namespace Gestion.Colegial.UI.Forms
         //     {
         //         try
         //         {
-        //             objEntidad.Cat_PrimerNombre = txtPrimerN.Text;
-        //             objEntidad.Cat_SegundoNombre = txtSegundoN.Text;
-        //             objEntidad.Cat_PrimerApellido = txtApellidoP.Text;
-        //             objEntidad.Cat_SegundoApellido = txtApellidoM.Text;
-        //             objEntidad.Cat_Dni = txtNidentida.Text;
-        //             objEntidad.Cat_CorreoElectronico = txtCorreoE.Text;
-        //             objEntidad.Cat_NTelefono = txtNumeroT.Text;
-        //             objEntidad.Cat_Fecha_Nacimiento = DateTime.Parse(dtFecha.Value.ToShortDateString());
-        //             objEntidad.Cat_Sexo = sex;
-        //             objLogica.insert(objEntidad);
+        //             objentity.Cat_PrimerNombre = txtPrimerN.Text;
+        //             objentity.Cat_SegundoNombre = txtSegundoN.Text;
+        //             objentity.Cat_PrimerApellido = txtApellidoP.Text;
+        //             objentity.Cat_SegundoApellido = txtApellidoM.Text;
+        //             objentity.Cat_Dni = txtNidentida.Text;
+        //             objentity.Cat_CorreoElectronico = txtCorreoE.Text;
+        //             objentity.Cat_NTelefono = txtNumeroT.Text;
+        //             objentity.Cat_Fecha_Nacimiento = DateTime.Parse(dtFecha.Value.ToShortDateString());
+        //             objentity.Cat_Sexo = sex;
+        //             objLogica.insert(objentity);
         //             docente.buscarTabla("");
         //             Logica.Limpiar(this, pnBackground);
         //             Success.ShowDialog("Se Inserto el registro"); 

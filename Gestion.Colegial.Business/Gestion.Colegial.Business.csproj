@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ControlsPlugin.cs" />
+    <Compile Include="Extensions\Mapeo.cs" />
     <Compile Include="Helpers\Alert\Alert.cs">
       <SubType>Form</SubType>
     </Compile>

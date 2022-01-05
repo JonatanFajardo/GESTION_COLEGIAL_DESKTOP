@@ -12,25 +12,25 @@ namespace Gestion.Colegial.Business.Services
 
         private static CursosRepository objDato = new CursosRepository();
 
-        public static async Task<DataTable> List(string sear)
+        public static async Task<DataTable> List(string sear = "")
         {
             var obj = await objDato.List(sear);
             return obj;
         }
 
-        public static async Task<Boolean> Add(tbCursos entidad)
+        public static async Task<Boolean> Add(tbCursos entity)
         {
-            return await objDato.Add(entidad);
+            return await objDato.Add(entity);
         }
 
-        public static async Task<Boolean> Edit(tbCursos entidad)
+        public static async Task<Boolean> Edit(tbCursos entity)
         {
-            return await objDato.Edit(entidad);
+            return await objDato.Edit(entity);
         }
 
-        public static async Task<Boolean> Remove(int entidad)
+        public static async Task<Boolean> Remove(int identifier)
         {
-            return await objDato.Remove(entidad);
+            return await objDato.Remove(identifier);
         }
 
         #endregion Metodos
