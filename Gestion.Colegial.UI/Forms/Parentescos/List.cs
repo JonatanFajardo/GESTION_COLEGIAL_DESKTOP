@@ -10,7 +10,6 @@ using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Parentescos

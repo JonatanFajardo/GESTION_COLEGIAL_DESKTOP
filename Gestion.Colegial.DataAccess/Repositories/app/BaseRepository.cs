@@ -1,6 +1,4 @@
-﻿using Gestion.Colegial.Commons.Extensions;
-using Gestion.Colegial.DataAccess.Repositories.bitacoras;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;

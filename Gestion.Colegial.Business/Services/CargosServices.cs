@@ -2,8 +2,7 @@
 using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.DataAccess.Repositories.app;
-using Gestion.Colegial.DataAccess.Repositories.bitacoras;
-using System; 
+using System;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -73,7 +72,7 @@ namespace Gestion.Colegial.Business.Services
             }
             catch (Exception error)
             {
-                ErrorLogRepository.Incidents(error);
+                ErrorLog.Incidents(error);
                 goto ErrorResult;
             }
 

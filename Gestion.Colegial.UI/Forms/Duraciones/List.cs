@@ -10,7 +10,6 @@ using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Duraciones
@@ -71,7 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else
                 MessageBox.Show(data.Message);
-            
+
         }
 
 

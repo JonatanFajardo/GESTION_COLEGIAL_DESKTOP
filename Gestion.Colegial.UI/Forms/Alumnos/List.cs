@@ -1,6 +1,5 @@
 ﻿using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.UI.FormsBase;
-using System;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Alumnos
@@ -30,10 +29,10 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
 
         public async override void CellContentDGV(DataGridViewCellEventArgs e)
         {
-            
+
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[0].Selected)
             {
-                int id =  (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 Add add = new Add(id, this);
                 add.Show();
             }

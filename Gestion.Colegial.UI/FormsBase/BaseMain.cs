@@ -29,7 +29,7 @@ namespace Gestion.Colegial.UI.FormsBase
             {
                 new SideBar() { Item = "Inicio" },
                 new SideBar() { Item = "Personas", SubItem = new[] { "Estudiantes", "Encargados", "Docentes", "Parentescos", "Cargos" } },
-                new SideBar() { Item = "Horario", SubItem = new[] { "Horario Alumnos", "Horario Profesores", "Horas", "Dia" } },
+                new SideBar() { Item = "Horario", SubItem = new[] { "Horario Alumnos", "Horario Profesores", "Horas", "Dias" } },
                 new SideBar() { Item = "Cursos", SubItem = new[] { "Cursos Niveles", "Cursos Nombres", "Duraciones", "Materias", "Modalidades", "Niveles Educativos", "Parciales", "Secciones", "Semestres" } },
                 new SideBar() { Item = "Logistica" }
 

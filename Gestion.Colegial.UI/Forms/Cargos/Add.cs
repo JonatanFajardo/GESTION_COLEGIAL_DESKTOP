@@ -6,7 +6,6 @@ using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.UI.FormsBase;
 using Gestion.Colegial.UI.Helpers.Controles;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Cargos
@@ -133,7 +132,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         }
 
         private void Add_Load(object sender, EventArgs e)
-        { 
+        {
         }
 
         private void pnHeader_Paint(object sender, PaintEventArgs e)

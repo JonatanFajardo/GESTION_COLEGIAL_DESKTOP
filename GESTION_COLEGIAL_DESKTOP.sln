@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion.Colegial.DataAccess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion.Colegial.Commons", "Gestion.Colegial.Commons\Gestion.Colegial.Commons.csproj", "{283C4C91-F893-4F13-93DD-B240E8119866}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{9683593E-8388-4EAB-8CC5-AF07E647A177}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Commons", "00-Commons", "{BA90FC0C-39DF-4C35-A278-AD7CE524A47C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-DataAccess", "01-DataAccess", "{1A1FA6F6-0956-4891-87E7-68110FD1F482}"
@@ -24,8 +22,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-UserInterface", "03-UserInterface", "{A7F14D71-A0D4-4604-86BE-2D239D41BE2E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Controls", "04-Controls", "{76E47EB9-9960-475E-8FCB-7704004EFF79}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{152E264E-52FF-4F07-BE65-073E1074CE3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,14 +49,6 @@ Global
 		{283C4C91-F893-4F13-93DD-B240E8119866}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{283C4C91-F893-4F13-93DD-B240E8119866}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{283C4C91-F893-4F13-93DD-B240E8119866}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9683593E-8388-4EAB-8CC5-AF07E647A177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9683593E-8388-4EAB-8CC5-AF07E647A177}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9683593E-8388-4EAB-8CC5-AF07E647A177}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9683593E-8388-4EAB-8CC5-AF07E647A177}.Release|Any CPU.Build.0 = Release|Any CPU
-		{152E264E-52FF-4F07-BE65-073E1074CE3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{152E264E-52FF-4F07-BE65-073E1074CE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{152E264E-52FF-4F07-BE65-073E1074CE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{152E264E-52FF-4F07-BE65-073E1074CE3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

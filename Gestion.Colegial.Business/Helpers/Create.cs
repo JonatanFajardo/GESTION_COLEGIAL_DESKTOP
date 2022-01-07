@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace Gestion.Colegial.Business.Helpers
 {
-    internal class Create
+    public class Create
     {
         private static string _path;
         private static string _folderName;

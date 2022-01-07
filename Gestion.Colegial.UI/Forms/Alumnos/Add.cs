@@ -1,7 +1,4 @@
-﻿using Gestion.Colegial.Business.Services;
-using Gestion.Colegial.Commons.Extensions;
-using Gestion.Colegial.UI.FormsBase;
-using System;
+﻿using Gestion.Colegial.UI.FormsBase;
 
 namespace Gestion.Colegial.UI.Forms.Alumnos
 {
