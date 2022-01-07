@@ -7,7 +7,7 @@ namespace Gestion.Colegial.UI.Forms.Notas
         // Instancia del formulario principal de la seccion list.
         Notas.List _list;
 
-        public Add() { }
+        public Add() { InitializeComponent(); }
         public Add(List list)
         {
             InitializeComponent();

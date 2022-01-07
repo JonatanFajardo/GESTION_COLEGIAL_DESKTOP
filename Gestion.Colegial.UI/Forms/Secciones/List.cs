@@ -4,6 +4,7 @@ using Gestion.Colegial.Business.Helpers.ExportCustom;
 using Gestion.Colegial.Business.Messagebox;
 using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.Commons.Entities;
+using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.UI.FormsBase;
 using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
@@ -33,13 +34,6 @@ namespace Gestion.Colegial.UI.Forms.Secciones
             };
             dataGridViewJN1.AddBtn(actionButtons);
 
-            // Setea nombres del header.
-            List<DGVHeader> listHeader = new List<DGVHeader>()
-            {
-                new DGVHeader(){Name = "Linea"},
-                new DGVHeader(){Name = "Descripción"}
-            };
-            dataGridViewJN1.SetHeaderText(listHeader);
         }
 
         /// <summary>
@@ -58,15 +52,12 @@ namespace Gestion.Colegial.UI.Forms.Secciones
                 search = buscar
             };
             // Peticion de la data
-            DataTable data = await SeccionesServices.List(buscar);
-            //if (data==null)
-            //{
-            //    DataRow dataRow = dataGridViewJN1.NewRowIndex
-            //    dataGridViewJN1.Rows.Add()
-            //}
-
-            // Cargando DGV
-            dataGridViewJN1.DataSource = data;// obj.Data;
+            Answer data = await SeccionesServices.List(buscar);
+            if (!data.Access)
+                dataGridViewJN1.DataSource = data.Data;// obj.Data;
+            else
+                MessageBox.Show(data.Message);
+            
         }
 
 

@@ -32,5 +32,15 @@ namespace Gestion.Colegial.UI.FormsBase
         {
             this.Close();
         }
+
+        private void pnBackground_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Add_Base_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

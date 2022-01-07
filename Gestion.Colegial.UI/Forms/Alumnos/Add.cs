@@ -11,7 +11,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         Alumnos.List _list;
         int _id;
 
-        public Add() { }
+        public Add() { InitializeComponent(); }
         public Add(int id, List list)
         {
             InitializeComponent();

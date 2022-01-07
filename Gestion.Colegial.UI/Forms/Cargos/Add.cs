@@ -2,10 +2,12 @@
 using Gestion.Colegial.Business.Helpers.Alert;
 using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.Commons.Entities;
+using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.UI.FormsBase;
 using Gestion.Colegial.UI.Helpers.Controles;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Cargos
 {
@@ -34,8 +36,15 @@ namespace Gestion.Colegial.UI.Forms.Cargos
 
         private async void FillControls(int id)
         {
-            tbCargos ServiceInsert = await CargosServices.ListOne(id);
-            txtDescripcion.Texts = ServiceInsert.Car_Descripcion;
+            Answer ServiceInsert = await CargosServices.ListOne(id);
+            if (!ServiceInsert.Access)
+            {
+                tbCargos cargosEntity = ServiceInsert.Data;
+                //txtDescripcion.Texts = cargosEntity.Car_Descripcio;
+            }
+            else
+                MessageBox.Show(ServiceInsert.Message);
+
         }
 
         public void load()
@@ -111,6 +120,25 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             {
 
             }
+        }
+
+        private void pnBackground_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void jnTexBox1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Add_Load(object sender, EventArgs e)
+        { 
+        }
+
+        private void pnHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

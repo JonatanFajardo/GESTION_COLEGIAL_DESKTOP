@@ -15,7 +15,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
         // Instancia del formulario principal de la seccion list.
         NivelesEducativos.List _list;
 
-        public Add() { }
+        public Add() { InitializeComponent(); }
         public Add(List list)
         {
             InitializeComponent();

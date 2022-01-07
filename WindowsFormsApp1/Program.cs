@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gestion.Colegial.UI
+namespace WindowsFormsApp1
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -13,7 +16,7 @@ namespace Gestion.Colegial.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormsBase.BaseMain());
+            Application.Run(new Form1());
         }
     }
 }

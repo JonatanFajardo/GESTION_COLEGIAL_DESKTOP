@@ -42,6 +42,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.pnBackground.Controls.Add(this.txtDescripcion);
             this.pnBackground.Controls.Add(this.label7);
             this.pnBackground.Size = new System.Drawing.Size(480, 260);
+            this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
             this.pnBackground.Controls.SetChildIndex(this.btnCancelar, 0);
             this.pnBackground.Controls.SetChildIndex(this.btnAgregar, 0);
             this.pnBackground.Controls.SetChildIndex(this.label7, 0);
@@ -50,6 +51,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             // pnHeader
             // 
             this.pnHeader.Size = new System.Drawing.Size(480, 60);
+            this.pnHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnHeader_Paint);
             // 
             // btnAgregar
             // 
@@ -74,7 +76,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.label7.Location = new System.Drawing.Point(54, 44);
             this.label7.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 24);
+            this.label7.Size = new System.Drawing.Size(104, 22);
             this.label7.TabIndex = 343;
             this.label7.Text = "Descripcion";
             // 
@@ -111,6 +113,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.ClientSize = new System.Drawing.Size(480, 320);
             this.Name = "Add";
             this.Text = "Add";
+            this.Load += new System.EventHandler(this.Add_Load);
             this.pnBackground.ResumeLayout(false);
             this.pnBackground.PerformLayout();
             this.pnHeader.ResumeLayout(false);

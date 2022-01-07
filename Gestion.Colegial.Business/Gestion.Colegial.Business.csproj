@@ -66,6 +66,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ErrorLog.cs" />
+    <Compile Include="Extensions\OperationMessage.cs" />
     <Compile Include="Extensions\ControlsPlugin.cs" />
     <Compile Include="Extensions\Mapeo.cs" />
     <Compile Include="Helpers\Alert\Alert.cs">
@@ -78,6 +80,7 @@
     <Compile Include="Helpers\Alert\ExtendedAlert.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Helpers\Create.cs" />
     <Compile Include="Helpers\DataTableHelper.cs" />
     <Compile Include="Helpers\ExportCustom\PdfCustom.cs" />
     <Compile Include="Helpers\Export\PDF.cs" />

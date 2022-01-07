@@ -7,7 +7,7 @@ namespace Gestion.Colegial.UI.Forms.Matricula
         // Instancia del formulario principal de la seccion list.
         Matricula.List _list;
 
-        public Add() { }
+        public Add() { InitializeComponent(); }
         public Add(List list)
         {
             InitializeComponent();

@@ -2,8 +2,8 @@
 using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.DataAccess.Repositories.app;
-using System;
-using System.Collections.Generic;
+using Gestion.Colegial.DataAccess.Repositories.bitacoras;
+using System; 
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,29 +16,72 @@ namespace Gestion.Colegial.Business.Services
 
         private static CargosRepository objDato = new CargosRepository();
 
-        public static async Task<DataTable> List(string sear = "")
+        public static async Task<Answer> List(string sear = "")
         {
+            //try
+            //{
+            //    return obj;
+            //}
+            //catch (Exception error)
+            //{
+            //    MessageBox.Show(OperationMessage.Error);
+            //    ErrorLogRepository.Incidents(error);
+            //    return null;
+            //}
             try
             {
-                return  await objDato.List(sear);
+                Answer answer = new Answer();
+                DataTable result = await objDato.List(sear);
+                result.Columns[0].ColumnName = "Linea";
+                result.Columns[1].ColumnName = "Descripción";
+                answer.Data = result;
+                if (answer.Data is null)
+                {
+                    goto ErrorResult;
+                }
+                answer.Access = false;
+                answer.Message = OperationMessage.Ok;
+                return answer;
             }
-            catch (Exception)
+            catch (Exception error)
             {
-                return null;
+                ErrorLog.Incidents(error);
+                goto ErrorResult;
             }
+
+        ErrorResult:
+            Answer answerError = new Answer();
+            answerError.Message = OperationMessage.Error;
+            answerError.Access = true;
+            return answerError;
         }
 
-        public static async Task<tbCargos> ListOne(int identifier)
+        public static async Task<Answer> ListOne(int identifier)
         {
             try
             {
+                Answer answer = new Answer();
                 DataTable result = await objDato.ListOne(identifier);
-                return result.Mapear<tbCargos>().FirstOrDefault();
+                answer.Data = result.Mapear<tbCargos>().FirstOrDefault();
+                if (answer.Data is null)
+                {
+                    goto ErrorResult;
+                }
+                answer.Access = false;
+                answer.Message = OperationMessage.Ok;
+                return answer;
             }
-            catch (Exception)
+            catch (Exception error)
             {
-                return null;
+                ErrorLogRepository.Incidents(error);
+                goto ErrorResult;
             }
+
+        ErrorResult:
+            Answer answerError = new Answer();
+            answerError.Message = OperationMessage.Error;
+            answerError.Access = true;
+            return answerError;
         }
 
         public static async Task<Boolean> Add(tbCargos entity)

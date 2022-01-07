@@ -4,7 +4,7 @@
     {
         // Cadena
         private static string sql = Properties.Settings.Default.CN;
-        protected static string Sql { get => sql; }
+        public static string Sql { get => sql; }
 
         //private SqlConnection CN = new SqlConnection("Data Source=SERVIDOREB;Initial Catalog=Gestion.Colegial;Integrated Security=True;Pooling=False");
 

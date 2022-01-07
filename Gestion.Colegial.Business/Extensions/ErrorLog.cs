@@ -1,11 +1,15 @@
-﻿using Gestion.Colegial.Commons.Extensions;
-using Gestion.Colegial.DataAccess.Helpers;
+﻿using Gestion.Colegial.Business.Helpers;
+using Gestion.Colegial.Commons.Extensions;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Gestion.Colegial.DataAccess.Repositories.bitacoras
+namespace Gestion.Colegial.Business.Extensions
 {
-    public class ErrorLogRepository
+    internal class ErrorLog
     {
         public static void Incidents(Exception exception)
         {
@@ -26,8 +30,5 @@ namespace Gestion.Colegial.DataAccess.Repositories.bitacoras
 
 
         }
-
     }
-
-
 }

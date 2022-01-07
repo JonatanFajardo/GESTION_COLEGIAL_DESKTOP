@@ -16,7 +16,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
         // Instancia del formulario principal de la seccion list.
         Parentescos.List _list;
 
-        public Add() { }
+        public Add() { InitializeComponent(); }
         public Add(List list)
         {
             InitializeComponent();

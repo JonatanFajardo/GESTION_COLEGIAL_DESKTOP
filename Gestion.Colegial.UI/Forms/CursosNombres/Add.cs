@@ -7,7 +7,7 @@ namespace Gestion.Colegial.UI.Forms.CursosNombres
         // Instancia del formulario principal de la seccion list.
         CursosNombres.List _list;
 
-        public Add() { }
+        public Add() { InitializeComponent(); }
         public Add(List list)
         {
             InitializeComponent();

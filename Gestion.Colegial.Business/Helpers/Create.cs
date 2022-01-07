@@ -1,8 +1,13 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Gestion.Colegial.DataAccess.Helpers
+namespace Gestion.Colegial.Business.Helpers
 {
-    public class Create
+    internal class Create
     {
         private static string _path;
         private static string _folderName;
@@ -87,7 +92,6 @@ namespace Gestion.Colegial.DataAccess.Helpers
             streamWriter.Close();
             return 0;
         }
-
 
 
     }

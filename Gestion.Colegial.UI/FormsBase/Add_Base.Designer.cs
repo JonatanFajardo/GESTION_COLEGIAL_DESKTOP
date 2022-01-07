@@ -49,7 +49,7 @@
             this.pnHeader.Location = new System.Drawing.Point(0, 0);
             this.pnHeader.Name = "pnHeader";
             this.pnHeader.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.pnHeader.Size = new System.Drawing.Size(478, 60);
+            this.pnHeader.Size = new System.Drawing.Size(534, 60);
             this.pnHeader.TabIndex = 0;
             // 
             // label1
@@ -68,7 +68,7 @@
             this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(435, 16);
+            this.pictureBox10.Location = new System.Drawing.Point(491, 16);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(21, 21);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -85,12 +85,12 @@
             this.pnBackground.ForeColor = System.Drawing.Color.Gray;
             this.pnBackground.Location = new System.Drawing.Point(0, 60);
             this.pnBackground.Name = "pnBackground";
-            this.pnBackground.Size = new System.Drawing.Size(478, 623);
+            this.pnBackground.Size = new System.Drawing.Size(534, 290);
             this.pnBackground.TabIndex = 0;
+            this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancelar.BackColor = System.Drawing.Color.White;
             this.btnCancelar.BackgroundColor = System.Drawing.Color.White;
             this.btnCancelar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(175)))), ((int)(((byte)(32)))));
@@ -100,7 +100,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(175)))), ((int)(((byte)(32)))));
-            this.btnCancelar.Location = new System.Drawing.Point(347, 533);
+            this.btnCancelar.Location = new System.Drawing.Point(391, 219);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 42);
             this.btnCancelar.TabIndex = 2;
@@ -111,7 +111,6 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(175)))), ((int)(((byte)(32)))));
             this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(175)))), ((int)(((byte)(32)))));
             this.btnAgregar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(175)))), ((int)(((byte)(32)))));
@@ -121,7 +120,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(232, 533);
+            this.btnAgregar.Location = new System.Drawing.Point(276, 219);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(109, 42);
             this.btnAgregar.TabIndex = 0;
@@ -136,13 +135,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(478, 683);
+            this.ClientSize = new System.Drawing.Size(534, 350);
             this.Controls.Add(this.pnBackground);
             this.Controls.Add(this.pnHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Add_Base";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Base";
+            this.Load += new System.EventHandler(this.Add_Base_Load);
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();

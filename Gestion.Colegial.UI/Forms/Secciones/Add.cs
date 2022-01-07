@@ -15,7 +15,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
         // Instancia del formulario principal de la seccion list.
         Secciones.List _list;
 
-        public Add() { }
+        public Add() { InitializeComponent(); }
         public Add(List list)
         {
             InitializeComponent();
