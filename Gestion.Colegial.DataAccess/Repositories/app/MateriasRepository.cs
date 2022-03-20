@@ -56,8 +56,9 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Mat_Id", DbType = DbType.Int32, Value = entity.Mat_Id},
                 new SqlParameter(){ParameterName= "@Mat_Nombre", DbType = DbType.String, Value = entity.Mat_Nombre},
                 new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entity.Dur_Id},
-                new SqlParameter(){ParameterName= "@EsActivo", DbType = DbType.String, Value = entity.EsActivo},
-                new SqlParameter(){ParameterName= "@Mat_UsuarioModifica", DbType = DbType.Int32, Value = entity.Mat_UsuarioModifica},
+                new SqlParameter(){ParameterName= "@Mat_EsActivo", DbType = DbType.Boolean, Value = entity.Mat_EsActivo},
+                new SqlParameter(){ParameterName= "@Mat_UsuarioModifica", DbType = DbType.Int32  , Value = entity.Mat_UsuarioModifica}
+
             };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;

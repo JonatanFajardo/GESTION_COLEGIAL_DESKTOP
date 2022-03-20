@@ -48,11 +48,11 @@ namespace Gestion.Colegial.UI.FormsBase
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnHeader = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnChildForm = new System.Windows.Forms.Panel();
-            this.lblRol = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pnMenu.SuspendLayout();
@@ -84,7 +84,7 @@ namespace Gestion.Colegial.UI.FormsBase
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(20, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(299, 24);
+            this.label7.Size = new System.Drawing.Size(283, 22);
             this.label7.TabIndex = 18;
             this.label7.Text = "Gestion Educacional de Honduras";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -290,17 +290,6 @@ namespace Gestion.Colegial.UI.FormsBase
             this.pnHeader.Size = new System.Drawing.Size(882, 56);
             this.pnHeader.TabIndex = 19;
             // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(19, 17);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(35, 33);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMenu.TabIndex = 2;
-            this.btnMenu.TabStop = false;
-            // 
             // lblUserName
             // 
             this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -312,6 +301,29 @@ namespace Gestion.Colegial.UI.FormsBase
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "User Name";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblRol
+            // 
+            this.lblRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(91)))), ((int)(((byte)(100)))));
+            this.lblRol.Location = new System.Drawing.Point(622, 30);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(178, 23);
+            this.lblRol.TabIndex = 3;
+            this.lblRol.Text = "Rol";
+            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(19, 17);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(35, 33);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMenu.TabIndex = 2;
+            this.btnMenu.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -331,18 +343,6 @@ namespace Gestion.Colegial.UI.FormsBase
             this.pnChildForm.Name = "pnChildForm";
             this.pnChildForm.Size = new System.Drawing.Size(882, 463);
             this.pnChildForm.TabIndex = 20;
-            // 
-            // lblRol
-            // 
-            this.lblRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(91)))), ((int)(((byte)(100)))));
-            this.lblRol.Location = new System.Drawing.Point(622, 30);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(178, 23);
-            this.lblRol.TabIndex = 3;
-            this.lblRol.Text = "Rol";
-            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BaseMain
             // 

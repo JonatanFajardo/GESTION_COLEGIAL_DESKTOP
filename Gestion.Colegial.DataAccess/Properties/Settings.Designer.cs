@@ -12,7 +12,7 @@ namespace Gestion.Colegial.DataAccess.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.0.3.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,8 +26,8 @@ namespace Gestion.Colegial.DataAccess.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JOHN-EB\\SQLEXPRESS;Initial Catalog=GestionColegial_V2.0;Persist Secur" +
-            "ity Info=True;User ID=JonnaH;Password=admin")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JOHN-EB;Initial Catalog=GestionColegial_desktop_V2.0;Persist Security" +
+            " Info=True;User ID=JonnaH;Password=admin")]
         public string CN {
             get {
                 return ((string)(this["CN"]));

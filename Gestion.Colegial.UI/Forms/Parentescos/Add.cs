@@ -31,7 +31,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Parentescos";
             string Modificar = "Modificar Parentescos";
-            if (send.Par_Id == 0)
+            if (send.Par_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -59,7 +59,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
                 // Condicion que indica el tipo de envio que se hara.
                 send.Par_Descripcion = txtDescripcion.Texts;
                 send.Par_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Par_Id == 0)
+                if (send.Par_Id.Equals(0))
                 {
                     Boolean respond = await ParentescosServices.Add(send);
                     if (!respond)

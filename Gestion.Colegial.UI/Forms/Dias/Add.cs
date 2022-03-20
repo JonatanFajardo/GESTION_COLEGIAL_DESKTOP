@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Dias";
             string Modificar = "Modificar Dias";
-            if (send.Dia_Id == 0)
+            if (send.Dia_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
                 // Condicion que indica el tipo de envio que se hara.
                 send.Dia_Descripcion = txtDescripcion.Texts;
                 send.Dia_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Dia_Id == 0)
+                if (send.Dia_Id.Equals(0))
                 {
                     Boolean respond = await DiasServices.Add(send);
                     if (!respond)

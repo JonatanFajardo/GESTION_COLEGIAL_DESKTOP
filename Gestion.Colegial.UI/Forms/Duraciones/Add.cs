@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Duraciones";
             string Modificar = "Modificar Duraciones";
-            if (send.Dur_Id == 0)
+            if (send.Dur_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
                 // Condicion que indica el tipo de envio que se hara.
                 send.Dur_Descripcion = txtDescripcion.Texts;
                 send.Dur_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Dur_Id == 0)
+                if (send.Dur_Id.Equals(0))
                 {
                     Boolean respond = await DuracionesServices.Add(send);
                     if (!respond)

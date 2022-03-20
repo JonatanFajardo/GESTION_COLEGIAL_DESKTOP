@@ -613,8 +613,17 @@
     <EmbeddedResource Include="Forms\Duraciones\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Empleados\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Empleados\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Encargados\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Encargados\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Estados\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>

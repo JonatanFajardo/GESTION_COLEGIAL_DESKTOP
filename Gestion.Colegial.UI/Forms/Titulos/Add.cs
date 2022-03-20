@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Titulos";
             string Modificar = "Modificar Titulos";
-            if (send.Tit_Id == 0)
+            if (send.Tit_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
                 // Condicion que indica el tipo de envio que se hara.
                 send.Tit_Descripcion = txtDescripcion.Texts;
                 send.Tit_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Tit_Id == 0)
+                if (send.Tit_Id.Equals(0))
                 {
                     Boolean respond = await TitulosServices.Add(send);
                     if (!respond)

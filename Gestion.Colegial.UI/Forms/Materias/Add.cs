@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Materias
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Materias";
             string Modificar = "Modificar Materias";
-            if (send.Mat_Id == 0)
+            if (send.Mat_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -57,7 +57,7 @@ namespace Gestion.Colegial.UI.Forms.Materias
             {
                 // Condicion que indica el tipo de envio que se hara.
                 send.Mat_Nombre = txtDescripcion.Texts;
-                if (send.Mat_Id == 0)
+                if (send.Mat_Id.Equals(0))
                 {
                     Boolean respond = await MateriasServices.Add(send);
                     if (!respond)

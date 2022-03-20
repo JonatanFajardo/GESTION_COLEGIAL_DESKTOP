@@ -14,5 +14,10 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             //load();
             _list = list;
         }
+
+        private void label11_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

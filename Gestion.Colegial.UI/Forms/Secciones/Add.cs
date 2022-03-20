@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Secciones";
             string Modificar = "Modificar Secciones";
-            if (send.Sec_Id == 0)
+            if (send.Sec_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
                 // Condicion que indica el tipo de envio que se hara.
                 send.Sec_Descripcion = txtDescripcion.Texts;
                 send.Sec_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Sec_Id == 0)
+                if (send.Sec_Id.Equals(0))
                 {
                     Boolean respond = await SeccionesServices.Add(send);
                     if (!respond)

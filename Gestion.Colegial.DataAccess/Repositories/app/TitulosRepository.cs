@@ -70,5 +70,12 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             Boolean result = await Update(commandText, sqlParameters);
             return result;
         }
+
+        public async Task<DataTable> Dropdown()
+        {
+            const string commandText = "PR_tbTitulos_Dropdown";
+            DataTable result = await Select(commandText);
+            return result;
+        }
     }
 }

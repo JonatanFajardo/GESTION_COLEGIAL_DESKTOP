@@ -53,7 +53,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Cargos";
             string Modificar = "Modificar Cargos";
-            if (send.Car_Id == 0)
+            if (send.Car_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -83,7 +83,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 // Condicion que indica el tipo de envio que se hara.
                 send.Car_Descripcion = txtDescripcion.Texts;
                 send.Car_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Car_Id == 0)
+                if (send.Car_Id.Equals(0))
                 {
                     Boolean respond = await CargosServices.Add(send);
                     if (!respond)

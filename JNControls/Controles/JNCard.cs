@@ -8,5 +8,15 @@ namespace JNControls.Controles
         {
             InitializeComponent();
         }
+
+        private void pictureBox2_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

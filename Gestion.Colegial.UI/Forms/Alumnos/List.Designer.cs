@@ -49,7 +49,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
             // pnBackground
             // 
             this.pnBackground.Size = new System.Drawing.Size(1598, 600);
-            this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
+            //this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
             // 
             // jnButton3
             // 

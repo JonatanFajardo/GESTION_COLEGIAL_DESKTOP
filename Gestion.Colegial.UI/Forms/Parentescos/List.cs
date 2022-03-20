@@ -41,7 +41,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             dataGridViewJN1.AddBtn(actionButtons);
 
             // Setea nombres del header.
-            //List<DGVHeader> listHeader = new List<DGVHeader>()
+            // List<DGVHeader> listHeader = new List<DGVHeader>()
             //{
             //    new DGVHeader(){Name = "Linea"},
             //    new DGVHeader(){Name = "Descripción"}
@@ -73,7 +73,6 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
                 MessageBox.Show(data.Message);
 
         }
-
 
         #region FuncionalidadesDGV
         private void jnButton1_Click(object sender, EventArgs e)

@@ -58,7 +58,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Per_Id", DbType = DbType.Int32, Value = entity.Per_Id},
                 new SqlParameter(){ParameterName= "@Cur_Id", DbType = DbType.Int32, Value = entity.Cur_Id},
                 new SqlParameter(){ParameterName= "@Est_Id", DbType = DbType.Int32, Value = entity.Est_Id},
-                new SqlParameter(){ParameterName= "@Alu_EsActivo", DbType = DbType.String , Value = entity.Alu_EsActivo},
+                new SqlParameter(){ParameterName= "@Alu_EsActivo", DbType = DbType.Boolean , Value = entity.Per.Per_EsActivo},
             };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

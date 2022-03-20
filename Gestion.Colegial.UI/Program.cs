@@ -13,7 +13,7 @@ namespace Gestion.Colegial.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormsBase.BaseMain());
+            Application.Run(new Forms.Acount.Login());
         }
     }
 }

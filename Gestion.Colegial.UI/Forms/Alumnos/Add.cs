@@ -1,4 +1,6 @@
-﻿using Gestion.Colegial.UI.FormsBase;
+﻿using Gestion.Colegial.Business.Services;
+using Gestion.Colegial.Commons.Extensions;
+using Gestion.Colegial.UI.FormsBase;
 
 namespace Gestion.Colegial.UI.Forms.Alumnos
 {
@@ -19,7 +21,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
 
         //private async void load(int id)
         //{
-        //    Answer ServiceResult = await AlumnosServices.
+        //    Answer ServiceResult = await AlumnosServices.add
         //}
     }
 }

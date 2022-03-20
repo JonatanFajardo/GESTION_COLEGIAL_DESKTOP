@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Semestres";
             string Modificar = "Modificar Semestres";
-            if (send.Sem_Id == 0)
+            if (send.Sem_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
                 // Condicion que indica el tipo de envio que se hara.
                 send.Sem_Descripcion = txtDescripcion.Texts;
                 send.Sem_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Sem_Id == 0)
+                if (send.Sem_Id.Equals(0))
                 {
                     Boolean respond = await SemestresServices.Add(send);
                     if (!respond)

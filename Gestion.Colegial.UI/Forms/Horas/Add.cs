@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Horas";
             string Modificar = "Modificar Horas";
-            if (send.Hor_Id == 0)
+            if (send.Hor_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
                 // Condicion que indica el tipo de envio que se hara.
                 send.Hor_Hora = txtDescripcion.Texts;
                 send.Hor_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Hor_Id == 0)
+                if (send.Hor_Id.Equals(0))
                 {
                     Boolean respond = await HorasServices.Add(send);
                     if (!respond)

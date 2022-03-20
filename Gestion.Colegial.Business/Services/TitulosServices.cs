@@ -61,5 +61,10 @@ namespace Gestion.Colegial.Business.Services
 
         #endregion Metodos
 
+        public async Task<DataTable> Dropdown()
+        {
+            DataTable result = await objDato.Dropdown();
+            return result;
+        }
     }
 }

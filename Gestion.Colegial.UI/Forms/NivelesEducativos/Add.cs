@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar NivelesEducativos";
             string Modificar = "Modificar NivelesEducativos";
-            if (send.Niv_Id == 0)
+            if (send.Niv_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
                 // Condicion que indica el tipo de envio que se hara.
                 send.Niv_Descripcion = txtDescripcion.Texts;
                 send.Niv_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Niv_Id == 0)
+                if (send.Niv_Id.Equals(0))
                 {
                     Boolean respond = await NivelesEducativosServices.Add(send);
                     if (!respond)

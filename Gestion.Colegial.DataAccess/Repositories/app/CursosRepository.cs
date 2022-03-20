@@ -42,11 +42,8 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             const String commandText = "PR_tbCursos_Insert";
             SqlParameter[] sqlParameters = {
-                new SqlParameter(){ParameterName= "@Cno_Id", DbType = DbType.Int32, Value = entity.Cno_Id},
-                new SqlParameter(){ParameterName= "@Aul_Id", DbType = DbType.Int32, Value = entity.Aul_Id},
-                new SqlParameter(){ParameterName= "@Sec_Id", DbType = DbType.Int32, Value = entity.Sec_Id},
+                new SqlParameter(){ParameterName= "@Cur_Nombre", DbType = DbType.String, Value = entity.Cur_Nombre},
                 new SqlParameter(){ParameterName= "@Niv_Id", DbType = DbType.Int32, Value = entity.Niv_Id},
-                new SqlParameter(){ParameterName= "@Mda_Id", DbType = DbType.Int32, Value = entity.Mda_Id},
                 new SqlParameter(){ParameterName= "@Cur_UsuarioRegistra", DbType = DbType.Int32  , Value = entity.Cur_UsuarioRegistra}
             };
             Boolean result = await Insert(commandText, sqlParameters);
@@ -58,13 +55,10 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             const String commandText = "PR_tbCursos_Update";
             SqlParameter[] sqlParameters = {
                 new SqlParameter(){ParameterName= "@Cur_Id", DbType = DbType.Int32, Value = entity.Cur_Id},
-                new SqlParameter(){ParameterName= "@Cno_Id", DbType = DbType.Int32, Value = entity.Cno_Id},
-                new SqlParameter(){ParameterName= "@Aul_Id", DbType = DbType.Int32, Value = entity.Aul_Id},
-                new SqlParameter(){ParameterName= "@Sec_Id", DbType = DbType.Int32, Value = entity.Sec_Id},
+                new SqlParameter(){ParameterName= "@Cur_Nombre", DbType = DbType.Int32, Value = entity.Cur_Nombre},
                 new SqlParameter(){ParameterName= "@Niv_Id", DbType = DbType.Int32, Value = entity.Niv_Id},
-                new SqlParameter(){ParameterName= "@Mda_Id", DbType = DbType.Int32, Value = entity.Mda_Id},
                 new SqlParameter(){ParameterName= "@Cur_EsActivo", DbType = DbType.String, Value = entity.Cur_EsActivo},
-                new SqlParameter(){ParameterName= "@Cur_UsuarioModifica", DbType = DbType.Int32, Value = entity.Cur_UsuarioModifica},
+                new SqlParameter(){ParameterName= "@Cur_UsuarioModifica", DbType = DbType.Int32, Value = entity.Cur_UsuarioModifica}
             };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

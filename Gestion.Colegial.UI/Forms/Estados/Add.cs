@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Estados";
             string Modificar = "Modificar Estados";
-            if (send.Est_Id == 0)
+            if (send.Est_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
                 // Condicion que indica el tipo de envio que se hara.
                 send.Est_Descripcion = txtDescripcion.Texts;
                 send.Est_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Est_Id == 0)
+                if (send.Est_Id.Equals(0))
                 {
                     Boolean respond = await EstadosServices.Add(send);
                     if (!respond)

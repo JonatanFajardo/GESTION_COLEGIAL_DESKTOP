@@ -152,11 +152,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox10;
         public System.Windows.Forms.Panel pnBackground;
         public System.Windows.Forms.Panel pnHeader;
         public JNControls.Controles.JNButton btnAgregar;
         public JNControls.Controles.JNButton btnCancelar;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.PictureBox pictureBox10;
     }
 }

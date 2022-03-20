@@ -31,14 +31,16 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         /// </summary>
         private void InitializeComponent()
         {
-            this.label7 = new System.Windows.Forms.Label();
             this.txtDescripcion = new JNControls.Controles.JNTexBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnBackground.SuspendLayout();
             this.pnHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // pnBackground
             // 
+            this.pnBackground.AutoScroll = true;
             this.pnBackground.Controls.Add(this.txtDescripcion);
             this.pnBackground.Controls.Add(this.label7);
             this.pnBackground.Size = new System.Drawing.Size(480, 260);
@@ -55,43 +57,34 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(196, 157);
+            this.btnAgregar.Location = new System.Drawing.Point(191, 158);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 50);
             this.btnAgregar.Size = new System.Drawing.Size(112, 42);
             this.btnAgregar.TabIndex = 1;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(314, 157);
+            this.btnCancelar.Location = new System.Drawing.Point(309, 158);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 50);
             // 
-            // label7
+            // pictureBox10
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label7.Location = new System.Drawing.Point(54, 44);
-            this.label7.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 22);
-            this.label7.TabIndex = 343;
-            this.label7.Text = "Descripcion";
+            this.pictureBox10.Location = new System.Drawing.Point(-198, 16);
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Window;
             this.txtDescripcion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtDescripcion.BorderColorError = System.Drawing.Color.Brown;
+            this.txtDescripcion.BorderColorError = System.Drawing.Color.Red;
             this.txtDescripcion.BorderFocusColor = System.Drawing.Color.Silver;
-            this.txtDescripcion.BorderRadius = 8;
+            this.txtDescripcion.BorderRadius = 0;
             this.txtDescripcion.BorderSize = 1;
             this.txtDescripcion.CleanCompleted = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDescripcion.Location = new System.Drawing.Point(57, 80);
+            this.txtDescripcion.Location = new System.Drawing.Point(53, 83);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = false;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -99,12 +92,25 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.txtDescripcion.PasswordChar = false;
             this.txtDescripcion.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtDescripcion.PlaceholderText = "";
-            this.txtDescripcion.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
+            this.txtDescripcion.Require = JNControls.Controles.JNTexBox.TrueFalse.False;
             this.txtDescripcion.Size = new System.Drawing.Size(365, 35);
-            this.txtDescripcion.TabIndex = 0;
+            this.txtDescripcion.TabIndex = 344;
             this.txtDescripcion.Texts = "";
             this.txtDescripcion.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtDescripcion.UnderlinedStyle = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.label7.Location = new System.Drawing.Point(49, 42);
+            this.label7.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 22);
+            this.label7.TabIndex = 345;
+            this.label7.Text = "Descripcion";
             // 
             // Add
             // 
@@ -118,12 +124,14 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.pnBackground.PerformLayout();
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private JNTexBox txtDescripcion;
         private System.Windows.Forms.Label label7;
-        private JNControls.Controles.JNTexBox txtDescripcion;
     }
 }

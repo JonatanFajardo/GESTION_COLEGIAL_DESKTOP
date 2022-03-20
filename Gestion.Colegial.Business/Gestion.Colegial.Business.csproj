@@ -66,6 +66,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\Utilities.cs" />
     <Compile Include="Extensions\ErrorLog.cs" />
     <Compile Include="Extensions\OperationMessage.cs" />
     <Compile Include="Extensions\ControlsPlugin.cs" />
@@ -152,6 +153,7 @@
     <Content Include="Content\Image\button-lg %286%29.png" />
     <Content Include="Content\Image\button-lg.png" />
     <Content Include="Content\Image\cancelar-Gray.png" />
+    <Content Include="Content\Image\card-body.png" />
     <Content Include="Content\Image\correct.png" />
     <Content Include="Content\Image\error.png" />
     <Content Include="Content\Image\logo-login.jpg" />

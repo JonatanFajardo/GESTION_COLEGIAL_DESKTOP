@@ -30,7 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Modalidades";
             string Modificar = "Modificar Modalidades";
-            if (send.Mda_Id == 0)
+            if (send.Mda_Id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                 // Condicion que indica el tipo de envio que se hara.
                 send.Mda_Descripcion = txtDescripcion.Texts;
                 send.Mda_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Mda_Id == 0)
+                if (send.Mda_Id.Equals(0))
                 {
                     send.Mda_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
                     Boolean respond = await ModalidadesServices.Add(send);

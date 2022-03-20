@@ -7,6 +7,12 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 {
     public class BaseRepository
     {
+        /// <summary>
+        /// Crea una petición a la base de datos para obtener registros dados por el procedimiento.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queryString"></param>
+        /// <returns></returns>
         protected static async Task<DataTable> Select(string buscar, string commandText, dynamic parameters)
         {
             DataTable table = new DataTable();
@@ -16,6 +22,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 using (SqlCommand cmd = new SqlCommand(commandText, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddRange(parameters);
                     //cmd.Parameters.AddWithValue("@numberPagina", entity.numberPagina);
                     //cmd.Parameters.AddWithValue("@amount", entity.amount);
                     //cmd.Parameters.AddWithValue("@search", entity.search);
@@ -58,25 +65,55 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             }
         }
 
+        
+        protected static async Task<DataTable> Select(string commandText)
+        {
+            DataTable table = new DataTable();
+            SqlDataReader reader;
+            using (SqlConnection conn = new SqlConnection(Connection.Sql))
+            {
+                using (SqlCommand cmd = new SqlCommand(commandText, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    conn.Open();
+                    reader = cmd.ExecuteReader();
+                    table.Load(reader);
+                    reader.Close();
+                    if (table == null)
+                    {
+                        return null;
+                    }
+                    return table;
+                };
+            }
+        }
 
         protected static async Task<Boolean> Insert(string commandText, dynamic parameters)
         {
-            using (SqlConnection con = new SqlConnection(Connection.Sql))
-            {
-                using (SqlCommand command = new SqlCommand(commandText, con))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddRange(parameters);
 
-                    con.Open();
-                    int result = command.ExecuteNonQuery();
-                    if (result < 1)
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Connection.Sql))
+                {
+                    using (SqlCommand command = new SqlCommand(commandText, con))
                     {
-                        //answer.Message = "Ninguna fila Registrada";
-                        return true;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddRange(parameters);
+
+                        con.Open();
+                        int resultSql = await command.ExecuteNonQueryAsync();
+                        //resultSql.Read();
+                        if (resultSql < 1)
+                            return true;
+
+                        return false;
                     }
-                    return false;
                 }
+            }
+            catch (Exception e)
+            {
+
+                throw;
             }
         }
 
@@ -90,23 +127,14 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                     command.Parameters.AddRange(parameters);
 
                     con.Open();
-                    int result = command.ExecuteNonQuery();
-                    if (result < 1)
-                    {
-                        //answer.Message = "Ninguna fila Registrada";
+                    SqlDataReader resultSql = await command.ExecuteReaderAsync();
+                    resultSql.Read();
+                    if (resultSql.RecordsAffected < 1)
                         return true;
-                    }
+                    
                     return false;
                 }
             }
-            //}
-            //catch (Exception error)
-            //{
-            //    Answer answer = new Answer();
-            //    answer.Incidents(error);
-            //    ErrorLogRepository.Incidents(error);
-            //    return true;
-            //}
         }
 
         protected static async Task<DataTable> Search(int identifier, string commandText, dynamic parameters)
