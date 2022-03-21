@@ -19,14 +19,14 @@ namespace Gestion.Colegial.Commons.Entities
         /// Indica el identificador único de la persona.
         /// </summary>
         public int Per_Id { get; set; }
-        public int? Niv_Id { get; set; }
-        public int? Cun_Id { get; set; }
-        public int? Mda_Id { get; set; }
+        public int Niv_Id { get; set; }
+        public int Cun_Id { get; set; }
+        public int Mda_Id { get; set; }
         /// <summary>
         /// Indica el identificador único del curso.
         /// </summary>
         public int Cur_Id { get; set; }
-        public int? Sec_Id { get; set; }
+        public int Sec_Id { get; set; }
         /// <summary>
         /// Indica el identificador único del estado.
         /// </summary>

@@ -30,7 +30,11 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             DataGridViewFill();
 
             // Configuraciones DGV
-            this.dataGridViewJN1.Columns[0].Visible = false;
+            if (dataGridViewJN1.ColumnCount != 0)
+            {
+                this.dataGridViewJN1.Columns[0].Visible = false;
+
+            }
 
             // Agregado de botones de accion.
             List<DGVHeader> actionButtons = new List<DGVHeader>()

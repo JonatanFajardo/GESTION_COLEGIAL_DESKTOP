@@ -14,7 +14,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter() { ParameterName = "@Usu_Name", DbType = DbType.String, Value = entity.Usu_Name },
                 new SqlParameter() { ParameterName = "@Usu_Contraseña", DbType = DbType.String, Value = entity.Usu_Contraseña },
             };
-            DataTable result = await Select(commandText, sqlParameters);
+            DataTable result = await Read(commandText, sqlParameters);
             return result;
             //DataTable table = new DataTable();
             //SqlDataReader reader;
@@ -49,7 +49,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter() { ParameterName = "@Usu_Name", DbType = DbType.String, Value = entity.Usu_Name },
                 new SqlParameter() { ParameterName = "@Usu_Contraseña", DbType = DbType.String, Value = entity.Usu_Contraseña },
             };
-            DataTable result = await Select(commandText, sqlParameters);
+            DataTable result = await Read(commandText, sqlParameters);
             return result;
         }
 

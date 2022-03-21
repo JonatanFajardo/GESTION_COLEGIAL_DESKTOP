@@ -10,6 +10,7 @@ using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Semestres
@@ -39,7 +40,6 @@ namespace Gestion.Colegial.UI.Forms.Semestres
                 new DGVHeader(){Name = "  ", Size = 65 },
             };
             dataGridViewJN1.AddBtn(actionButtons);
-
         }
 
         /// <summary>
@@ -157,5 +157,18 @@ namespace Gestion.Colegial.UI.Forms.Semestres
 
         #endregion Eventos
 
+        private async void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            Answer data = await SemestresServices.List();
+            DataView dv = data.Data.DefaultView;
+            dv.RowFilter = $"Descripción like '%{txtBuscar.Text}%'";
+            dataGridViewJN1.DataSource = dv.ToTable();
+        }
+
+        private async void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+        }
     }
 }

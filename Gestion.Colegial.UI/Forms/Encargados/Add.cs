@@ -42,7 +42,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             Answer ServiceInsert = await EncargadosServices.ListOne(id);
             if (!ServiceInsert.Access)
             {
-                tbEncargados Entity = ServiceInsert.Data;
+                PR_tbEncargados_FindResult Entity = ServiceInsert.Data;
                 txtEnc_Ocupacion.Texts = Entity.Enc_Ocupacion;
                 txtPer_Identidad.Texts = Entity.Per_Identidad.ToString();
                 txtPer_PrimerNombre.Texts = Entity.Per_PrimerNombre;

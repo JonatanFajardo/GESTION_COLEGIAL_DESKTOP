@@ -7,13 +7,13 @@ namespace Gestion.Colegial.Commons.Entities
 {
     public partial class PR_tbAlumnos_DetailResult
     {
-        public int? Alu_Id { get; set; }
+        public int Alu_Id { get; set; }
         public string Per_Identidad { get; set; }
         public string Per_PrimerNombre { get; set; }
         public string Per_SegundoNombre { get; set; }
         public string Per_ApellidoPaterno { get; set; }
         public string Per_ApellidoMaterno { get; set; }
-        public DateTime? Per_FechaNacimiento { get; set; }
+        public DateTime Per_FechaNacimiento { get; set; }
         public string Per_CorreoElectronico { get; set; }
         public string Per_Telefono { get; set; }
         public string Per_Direccion { get; set; }
@@ -26,8 +26,8 @@ namespace Gestion.Colegial.Commons.Entities
         public string Sec_Descripcion { get; set; }
         public string Per_EsActivo { get; set; }
         public string Alu_UsuarioRegistraNombre { get; set; }
-        public DateTime? Per_FechaRegistra { get; set; }
+        public DateTime Per_FechaRegistra { get; set; }
         public string Alu_UsuarioModificaNombre { get; set; }
-        public DateTime? Per_FechaModifica { get; set; }
+        public DateTime Per_FechaModifica { get; set; }
     }
 }

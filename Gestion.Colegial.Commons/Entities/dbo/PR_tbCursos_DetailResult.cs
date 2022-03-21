@@ -7,7 +7,7 @@ namespace Gestion.Colegial.Commons.Entities
 {
     public partial class PR_tbCursos_DetailResult
     {
-        public int? Cur_Id { get; set; }
+        public int Cur_Id { get; set; }
         public string Cur_Nombre { get; set; }
         public string Aul_Descripcion { get; set; }
         public string Sec_Descripcion { get; set; }
@@ -15,8 +15,8 @@ namespace Gestion.Colegial.Commons.Entities
         public string Mda_Descripcion { get; set; }
         public string Cur_EsActivo { get; set; }
         public string Cur_UsuarioRegistraNombre { get; set; }
-        public DateTime? Cur_FechaRegistra { get; set; }
+        public DateTime Cur_FechaRegistra { get; set; }
         public string Cur_UsuarioModificaNombre { get; set; }
-        public DateTime? Cur_FechaModifica { get; set; }
+        public DateTime Cur_FechaModifica { get; set; }
     }
 }

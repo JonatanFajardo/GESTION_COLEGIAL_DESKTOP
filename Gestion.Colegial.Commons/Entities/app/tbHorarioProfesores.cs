@@ -33,8 +33,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool HoPr_EsEliminado { get; set; }
         public int HoPr_UsuarioRegistra { get; set; }
         public DateTime HoPr_FechaRegistra { get; set; }
-        public int? HoPr_UsuarioModifica { get; set; }
-        public DateTime? HoPr_FechaModifica { get; set; }
+        public int HoPr_UsuarioModifica { get; set; }
+        public DateTime HoPr_FechaModifica { get; set; }
 
         public virtual tbCursosNiveles Cun { get; set; }
         public virtual tbCursos Cur { get; set; }

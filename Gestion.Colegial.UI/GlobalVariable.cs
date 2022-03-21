@@ -4,7 +4,7 @@
     {
         public static class Usuario
         {
-            public static int Usu_Id { get; set; }
+            public static int Usu_Id = 1;
             public static int Emp_Id { get; set; }
             public static string Usu_Nombre { get; set; }
             //public static string Usu_SegundoNombre { get; set; }

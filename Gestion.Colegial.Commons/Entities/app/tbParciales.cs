@@ -22,8 +22,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool Pac_EsEliminado { get; set; }
         public int Pac_UsuarioRegistra { get; set; }
         public DateTime Pac_FechaRegistra { get; set; }
-        public int? Pac_UsuarioModifica { get; set; }
-        public DateTime? Pac_FechaModifica { get; set; }
+        public int Pac_UsuarioModifica { get; set; }
+        public DateTime Pac_FechaModifica { get; set; }
 
         public virtual tbUsuarios Pac_UsuarioModificaNavigation { get; set; }
         public virtual tbUsuarios Pac_UsuarioRegistraNavigation { get; set; }

@@ -12,8 +12,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool Cno_EsEliminado { get; set; }
         public int Cno_UsuarioRegistra { get; set; }
         public DateTime Cno_FechaRegistra { get; set; }
-        public int? Cno_UsuarioModifica { get; set; }
-        public DateTime? Cno_FechaModifica { get; set; }
+        public int Cno_UsuarioModifica { get; set; }
+        public DateTime Cno_FechaModifica { get; set; }
 
         public virtual tbUsuarios Cno_UsuarioModificaNavigation { get; set; }
         public virtual tbUsuarios Cno_UsuarioRegistraNavigation { get; set; }

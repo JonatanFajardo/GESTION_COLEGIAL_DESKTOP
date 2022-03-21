@@ -13,7 +13,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         /// <typeparam name="T"></typeparam>
         /// <param name="queryString"></param>
         /// <returns></returns>
-        protected static async Task<DataTable> Select(string buscar, string commandText, dynamic parameters)
+        protected static async Task<DataTable> Read(string buscar, string commandText, dynamic parameters)
         {
             DataTable table = new DataTable();
             SqlDataReader reader;
@@ -39,7 +39,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             }
         }
 
-        protected static async Task<DataTable> Select(string commandText, dynamic parameters)
+        protected static async Task<DataTable> Read(string commandText, dynamic parameters)
         {
             DataTable table = new DataTable();
             SqlDataReader reader;
@@ -66,7 +66,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         }
 
         
-        protected static async Task<DataTable> Select(string commandText)
+        protected static async Task<DataTable> Read(string commandText)
         {
             DataTable table = new DataTable();
             SqlDataReader reader;

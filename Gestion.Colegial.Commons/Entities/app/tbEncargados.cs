@@ -71,8 +71,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool Per_EsEliminado { get; set; }
         public int Per_UsuarioRegistra { get; set; }
         public DateTime Per_FechaRegistra { get; set; }
-        public int? Per_UsuarioModifica { get; set; }
-        public DateTime? Per_FechaModifica { get; set; }
+        public int Per_UsuarioModifica { get; set; }
+        public DateTime Per_FechaModifica { get; set; }
         public virtual tbPersonas Per { get; set; }
         public virtual ICollection<tbEncargados_tbAlumnos> tbEncargados_tbAlumnos { get; set; }
     }

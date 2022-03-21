@@ -1,9 +1,12 @@
 ﻿using Gestion.Colegial.Business.Extensions;
+using Gestion.Colegial.Business.Utilities;
 using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.DataAccess.Repositories.app;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Gestion.Colegial.Business.Services
@@ -12,21 +15,51 @@ namespace Gestion.Colegial.Business.Services
     {
         #region Metodos
 
-        private static ParentescosRepository objDato = new ParentescosRepository();
+        // Parentescos 
 
-        public static async Task<Answer> List(string sear)
+        public static async Task<Answer> List(string sear = "")
         {
             try
             {
-                Answer answer = new Answer();
-                DataTable result = await objDato.List(sear);
+                //Peticion.
+                List<PR_tbParentescos_ListResult> ApiResult = await ApiRequests.List<PR_tbParentescos_ListResult>(ApiUrl.Parentescos.List);
+                if (ApiResult is null)
+                    goto ErrorResult;
+                //Configuramos datatable.
+                DataTable result = new DataTable();
+                result = ApiResult.ToList().ToDataTable();
                 result.Columns[0].ColumnName = "Linea";
                 result.Columns[1].ColumnName = "Descripción";
+                //Encapsulamos informacion de respuesta.
+                Answer answer = new Answer();
                 answer.Data = result;
-                if (answer.Data is null)
-                {
+                answer.Access = false;
+                answer.Message = OperationMessage.Ok;
+                return answer;
+            }
+            catch (Exception error)
+            {
+                ErrorLog.Incidents(error);
+                goto ErrorResult;
+            }
+
+        ErrorResult:
+            Answer answerError = new Answer();
+            answerError.Message = OperationMessage.Error;
+            answerError.Access = true;
+            return answerError;
+        }
+
+        public static async Task<Answer> ListOne(int identifier)
+        {
+            try
+            {
+                PR_tbParentescos_FindResult ApiResult = await ApiRequests.Find<PR_tbParentescos_FindResult>(ApiUrl.Parentescos.Find, identifier);
+                if (ApiResult is null)
                     goto ErrorResult;
-                }
+
+                Answer answer = new Answer();
+                answer.Data = ApiResult;
                 answer.Access = false;
                 answer.Message = OperationMessage.Ok;
                 return answer;
@@ -46,17 +79,37 @@ namespace Gestion.Colegial.Business.Services
 
         public static async Task<Boolean> Add(tbParentescos entity)
         {
-            return await objDato.Add(entity);
+            try
+            {
+            return await ApiRequests.Create(ApiUrl.Parentescos.Create, entity);}
+            catch (Exception error)
+            {
+               return ErrorLog.Incidents(error);
+            }
         }
 
         public static async Task<Boolean> Edit(tbParentescos entity)
         {
-            return await objDato.Edit(entity);
+            try
+            {
+            return await ApiRequests.Edit(ApiUrl.Parentescos.Create, entity);
+        }
+            catch (Exception error)
+            {
+               return ErrorLog.Incidents(error);
+            }
         }
 
         public static async Task<Boolean> Remove(int identifier)
         {
-            return await objDato.Remove(identifier);
+            try
+            {
+            return await ApiRequests.Delete(ApiUrl.Alumnos.Delete, identifier);
+            }
+            catch (Exception error)
+            {
+               return ErrorLog.Incidents(error);
+            }
         }
 
         #endregion Metodos

@@ -1,4 +1,5 @@
-﻿using Gestion.Colegial.Commons.Entities;
+﻿using Gestion.Colegial.Business.Extensions;
+using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.DataAccess.Repositories.app;
 using System;
 using System.Data;
@@ -10,7 +11,7 @@ namespace Gestion.Colegial.Business.Services
     {
         #region Metodos
 
-        private static HorarioAlumnosRepository objDato = new HorarioAlumnosRepository();
+        // HorarioAlumnos HorarioAlumnos
 
         public static async Task<DataTable> List(string sear)
         {
@@ -20,17 +21,37 @@ namespace Gestion.Colegial.Business.Services
 
         public static async Task<Boolean> Add(tbHorarioAlumnos entity)
         {
-            return await objDato.Add(entity);
+            try
+            {
+            return await ApiRequests.Create(ApiUrl.Semestres.Create, entity);}
+            catch (Exception error)
+            {
+               return ErrorLog.Incidents(error);
+            }
         }
 
         public static async Task<Boolean> Edit(tbHorarioAlumnos entity)
         {
-            return await objDato.Edit(entity);
+            try
+            {
+            return await ApiRequests.Edit(ApiUrl.Semestres.Update, entity);
+        }
+            catch (Exception error)
+            {
+               return ErrorLog.Incidents(error);
+            }
         }
 
         public static async Task<Boolean> Remove(int identifier)
         {
-            return await objDato.Remove(identifier);
+            try
+            {
+            return await ApiRequests.Delete(ApiUrl.Alumnos.Delete, identifier);
+            }
+            catch (Exception error)
+            {
+               return ErrorLog.Incidents(error);
+            }
         }
 
         #endregion Metodos

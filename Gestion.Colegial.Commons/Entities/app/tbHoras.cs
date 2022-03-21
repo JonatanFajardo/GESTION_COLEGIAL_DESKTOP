@@ -25,8 +25,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool Hor_EsEliminado { get; set; }
         public int Hor_UsuarioRegistra { get; set; }
         public DateTime Hor_FechaRegistra { get; set; }
-        public int? Hor_UsuarioModifica { get; set; }
-        public DateTime? Hor_FechaModifica { get; set; }
+        public int Hor_UsuarioModifica { get; set; }
+        public DateTime Hor_FechaModifica { get; set; }
 
         public virtual ICollection<tbHorarioAlumnos> tbHorarioAlumnosHoAl_HoraFinalizaNavigation { get; set; }
         public virtual ICollection<tbHorarioAlumnos> tbHorarioAlumnosHoAl_HoraInicioNavigation { get; set; }

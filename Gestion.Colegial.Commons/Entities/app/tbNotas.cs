@@ -12,12 +12,12 @@ namespace Gestion.Colegial.Commons.Entities
         public int Sem_Id { get; set; }
         public int Pac_Id { get; set; }
         public DateTime Not_Año { get; set; }
-        public bool? Not_EsActivo { get; set; }
+        public bool Not_EsActivo { get; set; }
         public bool Not_EsEliminado { get; set; }
         public int Not_UsuarioRegistra { get; set; }
         public DateTime Not_FechaRegistra { get; set; }
-        public int? Not_UsuarioModifica { get; set; }
-        public DateTime? Not_FechaModifica { get; set; }
+        public int Not_UsuarioModifica { get; set; }
+        public DateTime Not_FechaModifica { get; set; }
 
         public virtual tbMaterias Mat { get; set; }
         public virtual tbUsuarios Not_UsuarioModificaNavigation { get; set; }

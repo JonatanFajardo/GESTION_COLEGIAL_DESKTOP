@@ -22,8 +22,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool Dur_EsEliminado { get; set; }
         public int Dur_UsuarioRegistra { get; set; }
         public DateTime Dur_FechaRegistra { get; set; }
-        public int? Dur_UsuarioModifica { get; set; }
-        public DateTime? Dur_FechaModifica { get; set; }
+        public int Dur_UsuarioModifica { get; set; }
+        public DateTime Dur_FechaModifica { get; set; }
 
         public virtual tbUsuarios Dur_UsuarioModificaNavigation { get; set; }
         public virtual tbUsuarios Dur_UsuarioRegistraNavigation { get; set; }

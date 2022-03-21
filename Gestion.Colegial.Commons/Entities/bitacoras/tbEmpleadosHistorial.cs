@@ -8,13 +8,13 @@ namespace Gestion.Colegial.Commons.Entities
     {
         public int Emp_Id { get; set; }
         public string Emp_Codigo { get; set; }
-        public int? Per_Id { get; set; }
-        public int? Tit_Id { get; set; }
-        public int? Car_Id { get; set; }
-        public bool? EsActivo { get; set; }
-        public bool? EsEliminado { get; set; }
+        public int Per_Id { get; set; }
+        public int Tit_Id { get; set; }
+        public int Car_Id { get; set; }
+        public bool EsActivo { get; set; }
+        public bool EsEliminado { get; set; }
         public string Accion { get; set; }
-        public DateTime? Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public string Usuario { get; set; }
         public string HostName { get; set; }
     }

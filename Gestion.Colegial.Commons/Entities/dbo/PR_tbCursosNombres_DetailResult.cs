@@ -10,8 +10,8 @@ namespace Gestion.Colegial.Commons.Entities
         public string Cno_Id { get; set; }
         public string Cno_Descripcion { get; set; }
         public string Cno_UsuarioRegistraNombre { get; set; }
-        public DateTime? Cno_FechaRegistra { get; set; }
+        public DateTime Cno_FechaRegistra { get; set; }
         public string Cno_UsuarioModificaNombre { get; set; }
-        public DateTime? Cno_FechaModifica { get; set; }
+        public DateTime Cno_FechaModifica { get; set; }
     }
 }

@@ -60,12 +60,12 @@ namespace Gestion.Colegial.Commons.Entities
         /// <summary>
         /// Indica el estado actual de la persona.
         /// </summary>
-        public bool? Per_EsActivo { get; set; }
+        public bool Per_EsActivo { get; set; }
         public bool Per_EsEliminado { get; set; }
         public int Per_UsuarioRegistra { get; set; }
         public DateTime Per_FechaRegistra { get; set; }
-        public int? Per_UsuarioModifica { get; set; }
-        public DateTime? Per_FechaModifica { get; set; }
+        public int Per_UsuarioModifica { get; set; }
+        public DateTime Per_FechaModifica { get; set; }
 
         public virtual tbUsuarios Per_UsuarioModificaNavigation { get; set; }
         public virtual tbUsuarios Per_UsuarioRegistraNavigation { get; set; }

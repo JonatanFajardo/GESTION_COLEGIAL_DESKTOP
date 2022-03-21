@@ -12,8 +12,7 @@ namespace Gestion.Colegial.Business.Services
     public class CargosServices
     {
         #region Metodos
-
-        private static CargosRepository objDato = new CargosRepository();
+        // Cargos 
 
         public static async Task<Answer> List(string sear = "")
         {
@@ -35,9 +34,8 @@ namespace Gestion.Colegial.Business.Services
                 result.Columns[1].ColumnName = "Descripción";
                 answer.Data = result;
                 if (answer.Data is null)
-                {
                     goto ErrorResult;
-                }
+
                 answer.Access = false;
                 answer.Message = OperationMessage.Ok;
                 return answer;
@@ -63,9 +61,8 @@ namespace Gestion.Colegial.Business.Services
                 DataTable result = await objDato.ListOne(identifier);
                 answer.Data = result.Mapear<tbCargos>().FirstOrDefault();
                 if (answer.Data is null)
-                {
                     goto ErrorResult;
-                }
+
                 answer.Access = false;
                 answer.Message = OperationMessage.Ok;
                 return answer;
@@ -85,17 +82,38 @@ namespace Gestion.Colegial.Business.Services
 
         public static async Task<Boolean> Add(tbCargos entity)
         {
-            return await objDato.Add(entity);
+            try
+            {
+                return await ApiRequests.Create(ApiUrl.Cargos.Create, entity);
+            }
+            catch (Exception error)
+            {
+                return ErrorLog.Incidents(error);
+            }
         }
 
         public static async Task<Boolean> Edit(tbCargos entity)
         {
-            return await objDato.Edit(entity);
+            try
+            {
+                return await ApiRequests.Edit(ApiUrl.Cargos.Update, entity);
+            }
+            catch (Exception error)
+            {
+                return ErrorLog.Incidents(error);
+            }
         }
 
         public static async Task<Boolean> Remove(int identifier)
         {
-            return await objDato.Remove(identifier);
+            try
+            {
+                return await ApiRequests.Delete(ApiUrl.Alumnos.Delete, identifier);
+            }
+            catch (Exception error)
+            {
+                return ErrorLog.Incidents(error);
+            }
         }
 
         #endregion Metodos

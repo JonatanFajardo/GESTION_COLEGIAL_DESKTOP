@@ -20,7 +20,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         //                      METODOS   
         //====================================================//
 
-        //public static Boolean Select(string commandText, dynamic parameters)
+        //public static Boolean Read(string commandText, dynamic parameters)
         //{
         //    try
         //    {
@@ -57,7 +57,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             SqlParameter[] sqlParameters = {
                 new SqlParameter() { ParameterName = "@Search", DbType = DbType.String, Value = sear },
             };
-            DataTable result = await Select(sear, commandText, sqlParameters);
+            DataTable result = await Read(sear, commandText, sqlParameters);
             return result;
         }
 

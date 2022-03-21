@@ -24,8 +24,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool Mda_EsEliminado { get; set; }
         public int Mda_UsuarioRegistra { get; set; }
         public DateTime Mda_FechaRegistra { get; set; }
-        public int? Mda_UsuarioModifica { get; set; }
-        public DateTime? Mda_FechaModifica { get; set; }
+        public int Mda_UsuarioModifica { get; set; }
+        public DateTime Mda_FechaModifica { get; set; }
 
         public virtual tbUsuarios Mda_UsuarioModificaNavigation { get; set; }
         public virtual tbUsuarios Mda_UsuarioRegistraNavigation { get; set; }

@@ -7,15 +7,15 @@ namespace Gestion.Colegial.Commons.Entities
 {
     public partial class PR_tbAlumnos_FindResult
     {
-        public int? Niv_Id { get; set; }
+        public int Niv_Id { get; set; }
         public string Niv_Descripcion { get; set; }
-        public int? Cun_Id { get; set; }
+        public int Cun_Id { get; set; }
         public string Cun_Descripcion { get; set; }
-        public int? Mda_Id { get; set; }
+        public int Mda_Id { get; set; }
         public string Mda_Descripcion { get; set; }
         public int Cur_Id { get; set; }
         public string Cur_Nombre { get; set; }
-        public int? Sec_Id { get; set; }
+        public int Sec_Id { get; set; }
         public string Sec_Descripcion { get; set; }
         public int Est_Id { get; set; }
         public string Est_Descripcion { get; set; }

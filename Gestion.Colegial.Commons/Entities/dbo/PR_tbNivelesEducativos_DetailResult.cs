@@ -7,12 +7,12 @@ namespace Gestion.Colegial.Commons.Entities
 {
     public partial class PR_tbNivelesEducativos_DetailResult
     {
-        public int? Niv_Id { get; set; }
+        public int Niv_Id { get; set; }
         public string Niv_Descripcion { get; set; }
         public string Niv_EsActivo { get; set; }
         public string Niv_UsuarioRegistraNombre { get; set; }
-        public DateTime? Niv_FechaRegistra { get; set; }
+        public DateTime Niv_FechaRegistra { get; set; }
         public string Niv_UsuarioModificaNombre { get; set; }
-        public DateTime? Niv_FechaModifica { get; set; }
+        public DateTime Niv_FechaModifica { get; set; }
     }
 }

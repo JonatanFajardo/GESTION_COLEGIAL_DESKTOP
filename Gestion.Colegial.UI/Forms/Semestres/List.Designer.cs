@@ -38,6 +38,11 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             // 
             this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            // 
             // lblTituloForm
             // 
             this.lblTituloForm.Size = new System.Drawing.Size(230, 29);

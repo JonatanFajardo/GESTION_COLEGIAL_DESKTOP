@@ -21,8 +21,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool Cun_EsEliminado { get; set; }
         public int Cun_UsuarioRegistra { get; set; }
         public DateTime Cun_FechaRegistra { get; set; }
-        public int? Cun_UsuarioModifica { get; set; }
-        public DateTime? Cun_FechaModifica { get; set; }
+        public int Cun_UsuarioModifica { get; set; }
+        public DateTime Cun_FechaModifica { get; set; }
 
         public virtual tbNivelesEducativos Niv { get; set; }
         public virtual ICollection<tbAlumnos> tbAlumnos { get; set; }

@@ -7,11 +7,11 @@ namespace Gestion.Colegial.Commons.Entities
 {
     public partial class PR_tbCargos_DetailResult
     {
-        public int? Car_Id { get; set; }
+        public int Car_Id { get; set; }
         public string Car_Descripcion { get; set; }
         public string Car_UsuarioRegistraNombre { get; set; }
-        public DateTime? Car_FechaRegistra { get; set; }
+        public DateTime Car_FechaRegistra { get; set; }
         public string Car_UsuarioModificaNombre { get; set; }
-        public DateTime? Car_FechaModifica { get; set; }
+        public DateTime Car_FechaModifica { get; set; }
     }
 }

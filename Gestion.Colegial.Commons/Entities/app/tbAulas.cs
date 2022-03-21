@@ -22,8 +22,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool Aul_EsEliminado { get; set; }
         public int Aul_UsuarioRegistra { get; set; }
         public DateTime Aul_FechaRegistra { get; set; }
-        public int? Aul_UsuarioModifica { get; set; }
-        public DateTime? Aul_FechaModifica { get; set; }
+        public int Aul_UsuarioModifica { get; set; }
+        public DateTime Aul_FechaModifica { get; set; }
 
         public virtual tbUsuarios Aul_UsuarioModificaNavigation { get; set; }
         public virtual tbUsuarios Aul_UsuarioRegistraNavigation { get; set; }

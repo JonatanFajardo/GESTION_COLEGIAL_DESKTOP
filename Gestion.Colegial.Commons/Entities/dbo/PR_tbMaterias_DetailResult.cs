@@ -7,13 +7,13 @@ namespace Gestion.Colegial.Commons.Entities
 {
     public partial class PR_tbMaterias_DetailResult
     {
-        public int? Mat_Id { get; set; }
+        public int Mat_Id { get; set; }
         public string Mat_Nombre { get; set; }
         public string Dur_Descripcion { get; set; }
         public string Mat_EsActivo { get; set; }
         public string Mat_UsuarioRegistraNombre { get; set; }
-        public DateTime? Mat_FechaRegistra { get; set; }
+        public DateTime Mat_FechaRegistra { get; set; }
         public string Mat_UsuarioModificaNombre { get; set; }
-        public DateTime? Mat_FechaModifica { get; set; }
+        public DateTime Mat_FechaModifica { get; set; }
     }
 }

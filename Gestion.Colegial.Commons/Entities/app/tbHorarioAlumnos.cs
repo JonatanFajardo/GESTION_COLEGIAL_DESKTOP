@@ -37,8 +37,8 @@ namespace Gestion.Colegial.Commons.Entities
         public bool HoAl_EsEliminado { get; set; }
         public int HoAl_UsuarioRegistra { get; set; }
         public DateTime HoAl_FechaRegistra { get; set; }
-        public int? HoAl_UsuarioModifica { get; set; }
-        public DateTime? HoAl_FechaModifica { get; set; }
+        public int HoAl_UsuarioModifica { get; set; }
+        public DateTime HoAl_FechaModifica { get; set; }
 
         public virtual tbCursosNiveles Cun { get; set; }
         public virtual tbDias Dia { get; set; }

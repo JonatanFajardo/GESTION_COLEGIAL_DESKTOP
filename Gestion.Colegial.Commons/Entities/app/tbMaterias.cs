@@ -29,12 +29,12 @@ namespace Gestion.Colegial.Commons.Entities
         /// <summary>
         /// Valor que indica si este registro sera visible.
         /// </summary>
-        public bool? Mat_EsActivo { get; set; }
+        public bool Mat_EsActivo { get; set; }
         public bool Mat_EsEliminado { get; set; }
         public int Mat_UsuarioRegistra { get; set; }
         public DateTime Mat_FechaRegistra { get; set; }
-        public int? Mat_UsuarioModifica { get; set; }
-        public DateTime? Mat_FechaModifica { get; set; }
+        public int Mat_UsuarioModifica { get; set; }
+        public DateTime Mat_FechaModifica { get; set; }
 
         public virtual tbDuraciones Dur { get; set; }
         public virtual tbUsuarios Mat_UsuarioModificaNavigation { get; set; }

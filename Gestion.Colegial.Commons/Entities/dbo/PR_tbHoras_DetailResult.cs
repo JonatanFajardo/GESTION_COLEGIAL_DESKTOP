@@ -7,11 +7,11 @@ namespace Gestion.Colegial.Commons.Entities
 {
     public partial class PR_tbHoras_DetailResult
     {
-        public int? Hor_Id { get; set; }
+        public int Hor_Id { get; set; }
         public string Hor_Hora { get; set; }
         public string Hor_UsuarioRegistraNombre { get; set; }
-        public DateTime? Hor_FechaRegistra { get; set; }
+        public DateTime Hor_FechaRegistra { get; set; }
         public string Hor_UsuarioModificaNombre { get; set; }
-        public DateTime? Hor_FechaModifica { get; set; }
+        public DateTime Hor_FechaModifica { get; set; }
     }
 }

@@ -28,12 +28,12 @@ namespace Gestion.Colegial.Commons.Entities
         /// Identificador del nivel del curso.
         /// </summary>
         public int Niv_Id { get; set; }
-        public bool? Cur_EsActivo { get; set; }
+        public bool Cur_EsActivo { get; set; }
         public bool Cur_EsEliminado { get; set; }
         public int Cur_UsuarioRegistra { get; set; }
         public DateTime Cur_FechaRegistra { get; set; }
-        public int? Cur_UsuarioModifica { get; set; }
-        public DateTime? Cur_FechaModifica { get; set; }
+        public int Cur_UsuarioModifica { get; set; }
+        public DateTime Cur_FechaModifica { get; set; }
         //Array de enteros para los id de los checkbox
         public int[] Modalidades { get; set; }
         public int[] CursoNiveles { get; set; }

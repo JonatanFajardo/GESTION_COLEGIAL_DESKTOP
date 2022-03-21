@@ -7,22 +7,22 @@ namespace Gestion.Colegial.Commons.Entities
 {
     public partial class PR_tbEncargados_DetailResult
     {
-        public int? Enc_Id { get; set; }
+        public int Enc_Id { get; set; }
         public string Per_Identidad { get; set; }
         public string Per_PrimerNombre { get; set; }
         public string Per_SegundoNombre { get; set; }
         public string Per_ApellidoPaterno { get; set; }
         public string Per_ApellidoMaterno { get; set; }
-        public DateTime? Per_FechaNacimiento { get; set; }
+        public DateTime Per_FechaNacimiento { get; set; }
         public string Per_CorreoElectronico { get; set; }
         public string Per_Telefono { get; set; }
         public string Per_Direccion { get; set; }
         public string Per_Sexo { get; set; }
         public string Per_EsActivo { get; set; }
         public string Enc_UsuarioRegistraNombre { get; set; }
-        public DateTime? Per_FechaRegistra { get; set; }
+        public DateTime Per_FechaRegistra { get; set; }
         public string Enc_UsuarioModificaNombre { get; set; }
-        public DateTime? Per_FechaModifica { get; set; }
+        public DateTime Per_FechaModifica { get; set; }
         public string Enc_Ocupacion { get; set; }
     }
 }

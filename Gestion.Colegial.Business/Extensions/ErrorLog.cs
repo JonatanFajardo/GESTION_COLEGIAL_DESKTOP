@@ -7,7 +7,7 @@ namespace Gestion.Colegial.Business.Extensions
 {
     internal class ErrorLog
     {
-        public static void Incidents(Exception exception)
+        public static Boolean Incidents(Exception exception)
         {
             string pathFolder = Directory.GetCurrentDirectory();
             string nameFile = $"Log_{DateTime.Now.Year}_{DateTime.Now.Month}_{DateTime.Now.Day}";
@@ -19,6 +19,9 @@ namespace Gestion.Colegial.Business.Extensions
             Create.FolderName = "Log";
             Create.Folder();
             Create.File(nameFile, "txt", content);
+
+            // Este valor es personalidable segun el proyecto. 
+            return true;
         }
 
         public static void Incidents(Answer answer)

@@ -21,12 +21,12 @@ namespace Gestion.Colegial.Commons.Entities
         /// Información de el nivel del alumno.
         /// </summary>
         public string Niv_Descripcion { get; set; }
-        public bool? Niv_EsActivo { get; set; }
+        public bool Niv_EsActivo { get; set; }
         public bool Niv_EsEliminado { get; set; }
         public int Niv_UsuarioRegistra { get; set; }
         public DateTime Niv_FechaRegistra { get; set; }
-        public int? Niv_UsuarioModifica { get; set; }
-        public DateTime? Niv_FechaModifica { get; set; }
+        public int Niv_UsuarioModifica { get; set; }
+        public DateTime Niv_FechaModifica { get; set; }
 
         public virtual tbUsuarios Niv_UsuarioModificaNavigation { get; set; }
         public virtual tbUsuarios Niv_UsuarioRegistraNavigation { get; set; }
