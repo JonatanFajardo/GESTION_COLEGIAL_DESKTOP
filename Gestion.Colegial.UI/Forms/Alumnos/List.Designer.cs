@@ -46,10 +46,13 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
             this.jnPanel1.Controls.SetChildIndex(this.jnButton4, 0);
             this.jnPanel1.Controls.SetChildIndex(this.jnButton3, 0);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
+            // 
             // pnBackground
             // 
             this.pnBackground.Size = new System.Drawing.Size(1598, 600);
-            //this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
             // 
             // jnButton3
             // 

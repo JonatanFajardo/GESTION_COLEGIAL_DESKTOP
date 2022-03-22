@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Horas
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await HorasServices.List(buscar);
+            Answer data = await HorasServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

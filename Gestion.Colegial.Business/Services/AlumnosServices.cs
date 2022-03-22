@@ -16,7 +16,7 @@ namespace Gestion.Colegial.Business.Services
         #region Metodos
 
         // Alumnos Alumnos
-        public static async Task<Answer> List(string sear = "")
+        public static async Task<Answer> List()
         {
             try
             {

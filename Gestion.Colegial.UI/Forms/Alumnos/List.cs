@@ -10,6 +10,7 @@ using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Alumnos
@@ -66,9 +67,29 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
             };
 
             // Peticion de la data
-            Answer data = await CargosServices.List(buscar);
+            Answer data = await CargosServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
+            else
+                MessageBox.Show(data.Message);
+        }
+
+        /// <summary>
+        /// Carga los datos al datagridview con los datos especificados.
+        /// </summary>
+        /// <param name="columna">Columna buscada.</param>
+        /// <param name="search">Informacion a buscar en la columna.</param>
+        public async void DataGridViewFill(string columna, string search)
+        {
+
+            // Peticion de la data
+            Answer data = await SemestresServices.List();
+            if (!data.Access)
+            {
+                DataView dv = data.Data.DefaultView;
+                dv.RowFilter = $"{columna} like '%{search}%'";
+                dataGridViewJN1.DataSource = dv.ToTable();
+            }
             else
                 MessageBox.Show(data.Message);
         }
@@ -204,5 +225,10 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         }
 
         #endregion Eventos
+
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            DataGridViewFill("Descripción", txtBuscar.Text);
+        }
     }
 }

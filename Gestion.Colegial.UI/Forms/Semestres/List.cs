@@ -58,16 +58,32 @@ namespace Gestion.Colegial.UI.Forms.Semestres
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await SemestresServices.List(buscar);
+            Answer data = await SemestresServices.List();
             if (!data.Access)
-                dataGridViewJN1.DataSource = data.Data;// obj.Data;
+                dataGridViewJN1.DataSource = data.Data;
             else
                 MessageBox.Show(data.Message);
-            //if (data==null)
-            //{
-            //    DataRow dataRow = dataGridViewJN1.NewRowIndex
-            //    dataGridViewJN1.Rows.Add()
-            //}
+        }
+
+
+        /// <summary>
+        /// Carga los datos al datagridview con los datos especificados.
+        /// </summary>
+        /// <param name="columna">Columna buscada.</param>
+        /// <param name="search">Informacion a buscar en la columna.</param>
+        public async void DataGridViewFill(string columna, string search)
+        {
+
+            // Peticion de la data
+            Answer data = await SemestresServices.List();
+            if (!data.Access)
+            {
+                DataView dv = data.Data.DefaultView;
+                dv.RowFilter = $"{columna} like '%{search}%'";
+                dataGridViewJN1.DataSource = dv.ToTable();
+            }
+            else
+                MessageBox.Show(data.Message);
         }
 
 
@@ -159,11 +175,10 @@ namespace Gestion.Colegial.UI.Forms.Semestres
 
         private async void txtBuscar_TextChanged_1(object sender, EventArgs e)
         {
-            Answer data = await SemestresServices.List();
-            DataView dv = data.Data.DefaultView;
-            dv.RowFilter = $"Descripción like '%{txtBuscar.Text}%'";
-            dataGridViewJN1.DataSource = dv.ToTable();
+
+            DataGridViewFill("Descripción", txtBuscar.Text);
         }
+
 
         private async void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {

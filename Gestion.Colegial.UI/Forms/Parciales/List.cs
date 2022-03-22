@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Parciales
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await ParcialesServices.List(buscar);
+            Answer data = await ParcialesServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

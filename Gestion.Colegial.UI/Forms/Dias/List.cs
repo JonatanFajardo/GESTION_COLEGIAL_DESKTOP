@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Dias
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await DiasServices.List(buscar);
+            Answer data = await DiasServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

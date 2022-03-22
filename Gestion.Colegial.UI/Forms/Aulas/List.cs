@@ -14,5 +14,9 @@ namespace Gestion.Colegial.UI.Forms.Aulas
 
         }
 
+        private void txtBuscar_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

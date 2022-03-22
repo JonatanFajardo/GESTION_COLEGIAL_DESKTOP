@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await EstadosServices.List(buscar);
+            Answer data = await EstadosServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

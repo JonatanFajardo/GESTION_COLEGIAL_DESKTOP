@@ -64,7 +64,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await ModalidadesServices.List(buscar);
+            Answer data = await ModalidadesServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

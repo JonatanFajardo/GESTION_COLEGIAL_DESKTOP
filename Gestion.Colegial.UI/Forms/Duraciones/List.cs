@@ -65,7 +65,7 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await DuracionesServices.List(buscar);
+            Answer data = await DuracionesServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

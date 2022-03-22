@@ -20,7 +20,7 @@ namespace Gestion.Colegial.Business.Services
 
         // Modalidades 
 
-        public static async Task<Answer> List(string sear = "")
+        public static async Task<Answer> List()
         {
             try
             {

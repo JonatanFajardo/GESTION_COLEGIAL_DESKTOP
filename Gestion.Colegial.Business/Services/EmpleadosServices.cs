@@ -17,7 +17,7 @@ namespace Gestion.Colegial.Business.Services
 
         // Empleados 
 
-        public static async Task<Answer> List(string sear = "")
+        public static async Task<Answer> List()
         {
             try
             {

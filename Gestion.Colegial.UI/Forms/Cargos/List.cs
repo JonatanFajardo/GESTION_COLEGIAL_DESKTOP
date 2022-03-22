@@ -66,7 +66,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             };
 
             // Peticion de la data
-            Answer data = await CargosServices.List(buscar);
+            Answer data = await CargosServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

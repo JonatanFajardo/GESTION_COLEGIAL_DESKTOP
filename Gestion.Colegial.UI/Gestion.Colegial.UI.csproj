@@ -571,6 +571,9 @@
     <EmbeddedResource Include="Forms\Aulas\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Aulas\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cargos\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>

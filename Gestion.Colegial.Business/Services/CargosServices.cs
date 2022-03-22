@@ -1,8 +1,10 @@
 ﻿using Gestion.Colegial.Business.Extensions;
+using Gestion.Colegial.Business.Utilities;
 using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.DataAccess.Repositories.app;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,28 +16,22 @@ namespace Gestion.Colegial.Business.Services
         #region Metodos
         // Cargos 
 
-        public static async Task<Answer> List(string sear = "")
+        public static async Task<Answer> List()
         {
-            //try
-            //{
-            //    return obj;
-            //}
-            //catch (Exception error)
-            //{
-            //    MessageBox.Show(OperationMessage.Error);
-            //    ErrorLogRepository.Incidents(error);
-            //    return null;
-            //}
             try
             {
-                Answer answer = new Answer();
-                DataTable result = await objDato.List(sear);
+                //Peticion.
+                List<PR_tbCargos_ListResult> ApiResult = await ApiRequests.List<PR_tbCargos_ListResult>(ApiUrl.Cargos.List);
+                if (ApiResult is null)
+                    goto ErrorResult;
+                //Configuramos datatable.
+                DataTable result = new DataTable();
+                result = ApiResult.ToList().ToDataTable();
                 result.Columns[0].ColumnName = "Linea";
                 result.Columns[1].ColumnName = "Descripción";
+                //Encapsulamos informacion de respuesta.
+                Answer answer = new Answer();
                 answer.Data = result;
-                if (answer.Data is null)
-                    goto ErrorResult;
-
                 answer.Access = false;
                 answer.Message = OperationMessage.Ok;
                 return answer;
@@ -57,12 +53,12 @@ namespace Gestion.Colegial.Business.Services
         {
             try
             {
-                Answer answer = new Answer();
-                DataTable result = await objDato.ListOne(identifier);
-                answer.Data = result.Mapear<tbCargos>().FirstOrDefault();
-                if (answer.Data is null)
+                PR_tbCargos_FindResult ApiResult = await ApiRequests.Find<PR_tbCargos_FindResult>(ApiUrl.Cargos.Find, identifier);
+                if (ApiResult is null)
                     goto ErrorResult;
 
+                Answer answer = new Answer();
+                answer.Data = ApiResult;
                 answer.Access = false;
                 answer.Message = OperationMessage.Ok;
                 return answer;
@@ -108,7 +104,7 @@ namespace Gestion.Colegial.Business.Services
         {
             try
             {
-                return await ApiRequests.Delete(ApiUrl.Alumnos.Delete, identifier);
+                return await ApiRequests.Delete(ApiUrl.Cargos.Delete, identifier);
             }
             catch (Exception error)
             {

@@ -17,7 +17,7 @@ namespace Gestion.Colegial.Business.Services
         #region Metodos
 
         // Semestres 
-        public static async Task<Answer> List(string sear = "")
+        public static async Task<Answer> List()
         {
             try
             {
@@ -106,7 +106,7 @@ namespace Gestion.Colegial.Business.Services
             {
                 return ErrorLog.Incidents(error);
             }
-        }
+         }
 
         public static async Task<Boolean> Remove(int identifier)
         {

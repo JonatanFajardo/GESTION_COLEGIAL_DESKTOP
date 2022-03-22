@@ -66,7 +66,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             };
 
             // Peticion de la data
-            Answer data = await ParentescosServices.List(buscar);
+            Answer data = await ParentescosServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

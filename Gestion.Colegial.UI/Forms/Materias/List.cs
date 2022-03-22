@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Materias
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await MateriasServices.List(buscar);
+            Answer data = await MateriasServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

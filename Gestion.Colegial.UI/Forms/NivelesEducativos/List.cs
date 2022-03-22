@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.NivelesEducativos
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await NivelesEducativosServices.List(buscar);
+            Answer data = await NivelesEducativosServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

@@ -64,7 +64,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             };
 
             // Peticion de la data
-            Answer data = await EncargadosServices.List(buscar);
+            Answer data = await EncargadosServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else

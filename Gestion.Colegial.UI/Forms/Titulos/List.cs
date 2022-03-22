@@ -58,7 +58,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
                 search = buscar
             };
             // Peticion de la data
-            Answer data = await TitulosServices.List(buscar);
+            Answer data = await TitulosServices.List();
             if (!data.Access)
                 dataGridViewJN1.DataSource = data.Data;// obj.Data;
             else
