@@ -10,6 +10,7 @@ using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Encargados
@@ -71,6 +72,25 @@ namespace Gestion.Colegial.UI.Forms.Encargados
                 MessageBox.Show(data.Message);
         }
 
+        /// <summary>
+        /// Carga los datos al datagridview con los datos especificados.
+        /// </summary>
+        /// <param name="columna">Columna buscada.</param>
+        /// <param name="search">Informacion a buscar en la columna.</param>
+        public async void DataGridViewFill(string columna, string search)
+        {
+
+            // Peticion de la data
+            Answer data = await EncargadosServices.List();
+            if (!data.Access)
+            {
+                DataView dv = data.Data.DefaultView;
+                dv.RowFilter = $"{columna} like '%{search}%'";
+                dataGridViewJN1.DataSource = dv.ToTable();
+            }
+            else
+                MessageBox.Show(data.Message);
+        }
         #region FuncionalidadesDGV
         private void jnButton1_Click(object sender, EventArgs e)
         {
@@ -114,8 +134,8 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[0].Selected)
             {
                 // Objeto con la data que se selecciono.
-                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
-                Encargados.Add add = new Add(this, id);
+                int identifierUpdate = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
+                Encargados.Add add = new Add(this, identifierUpdate);
                 add.Show();
             }
 
@@ -125,8 +145,8 @@ namespace Gestion.Colegial.UI.Forms.Encargados
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())
                 {
-                    int identifier = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value;
-                    Boolean resultService = await EncargadosServices.Remove(identifier);
+                    int identifierDelete = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value;
+                    Boolean resultService = await EncargadosServices.Remove(identifierDelete);
                     DataGridViewFill();
                     if (resultService)
                     {

@@ -1,10 +1,13 @@
 ﻿using Gestion.Colegial.Business.Extensions;
 using Gestion.Colegial.Business.Helpers.Alert;
+using Gestion.Colegial.Business.Messagebox;
 using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.Commons.Entities;
+using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.UI.FormsBase;
 using Gestion.Colegial.UI.Helpers.Controles;
 using System;
+using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Semestres
 {
@@ -96,5 +99,10 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             }
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            ControlsPlugin.CleanIfCompleted(pnBackground);
+            this.Close();
+        }
     }
 }

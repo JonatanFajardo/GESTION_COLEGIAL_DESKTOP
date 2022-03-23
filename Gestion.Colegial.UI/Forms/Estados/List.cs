@@ -116,7 +116,9 @@ namespace Gestion.Colegial.UI.Forms.Estados
                     Est_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
                     Est_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
                 };
-                Add.Send(objEstados);
+                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
+                Add add = new Add(this, id);
+                add.Show();
             }
 
             // Eliminamos registro.

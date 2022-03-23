@@ -131,9 +131,6 @@ namespace Gestion.Colegial.UI.FormsBase
                     case "CursosNiveles":
                         OpenChildForm(new Forms.CursosNiveles.List());
                         break;
-                    case "CursosNombres":
-                        OpenChildForm(new Forms.CursosNombres.List());
-                        break;
                     case "Dias":
                         OpenChildForm(new Forms.Dias.List());
                         break;

@@ -1,5 +1,6 @@
 ﻿using Gestion.Colegial.Business.Extensions;
 using Gestion.Colegial.Business.Helpers.Alert;
+using Gestion.Colegial.Business.Messagebox;
 using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
@@ -19,27 +20,30 @@ namespace Gestion.Colegial.UI.Forms.Cargos
 
         private int _id;
 
-        public Add() { }
+        public Add() { InitializeComponent(); }
         public Add(List list)
         {
             InitializeComponent();
             _list = list;
+            load();
         }
         public Add(List list, int id)
         {
+            InitializeComponent();
             _list = list;
             _id = id;
-            load();
             FillControls(id);
+            load();
         }
 
+        //Pide los datos a la db y los llena.
         private async void FillControls(int id)
         {
             Answer ServiceInsert = await CargosServices.ListOne(id);
             if (!ServiceInsert.Access)
             {
-                tbCargos cargosEntity = ServiceInsert.Data;
-                //txtDescripcion.Texts = cargosEntity.Car_Descripcio;
+                PR_tbCargos_FindResult Entity = ServiceInsert.Data;
+                txtDescripcion.Texts = Entity.Car_Descripcion;
             }
             else
                 MessageBox.Show(ServiceInsert.Message);
@@ -53,90 +57,63 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Cargos";
             string Modificar = "Modificar Cargos";
-            if (send.Car_Id.Equals(0))
+            if (_id.Equals(0))
             {
                 label1.Text = Registrar;
                 this.Text = Registrar;
             }
             else
             {
-                txtDescripcion.Texts = send.Car_Descripcion;
                 label1.Text = Modificar;
                 this.Text = Modificar;
             }
         }
-        //public void Send(int id, List list)
-        //{
-        //    Add add = new Add();
-        //    _id = id;
-        //    _list = list;
-        //    //_send = Send;
-        //    add.load();
-        //}
-
 
         public async override void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
-            if (!validation)
+
+            //Validaciones generales
+            if (validation)
             {
-                // Condicion que indica el tipo de envio que se hara.
-                send.Car_Descripcion = txtDescripcion.Texts;
+                Warning.ShowDialog($"Rectifique las validaciones e intente nuevamente");
+                return;
+            }
+
+            // Condicion que indica el tipo de envio que se hara.
+            send.Car_Id = _id;
+            send.Car_Descripcion = txtDescripcion.Texts;
+
+            if (_id.Equals(0))
+            {
                 send.Car_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                if (send.Car_Id.Equals(0))
-                {
-                    Boolean respond = await CargosServices.Add(send);
-                    if (!respond)
-                    {
-                        Alert.Show(Alert.enmType.Success);
-                        _list.DataGridViewFill();
-                        ControlsPlugin.CleanIfCompleted(pnBackground);
-                        this.Hide();
-                    }
-                    else
-                    {
-                        Alert.Show(Alert.enmType.Error);
-                    }
-                }
-                else
-                {
-                    send.Car_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                    Boolean respond = await CargosServices.Edit(send);
-                    if (!respond)
-                    {
-                        Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
-                        _list.DataGridViewFill();
-                        ControlsPlugin.CleanIfCompleted(pnBackground);
-                        this.Hide();
-                    }
-                    else
-                    {
-                        Alert.Show(Alert.enmType.Error);
-                    }
-                }
+                Boolean respond = await CargosServices.Add(send);
+                if (respond)
+                    goto Error;
+
+                Alert.Show(Alert.enmType.Success);
+                _list.DataGridViewFill();
+                ControlsPlugin.CleanIfCompleted(pnBackground);
+                this.Hide();
+                return;
             }
             else
             {
+                send.Car_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
+                Boolean respond = await CargosServices.Edit(send);
+                if (respond)
+                    goto Error;
+
+                Alert.Show(Alert.enmType.Success, "El registro se ha modificado satifactoriamente.", "Exito");
+                _list.DataGridViewFill();
+                ControlsPlugin.CleanIfCompleted(pnBackground);
+                this.Hide();
+                return;
 
             }
-        }
-
-        private void pnBackground_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void jnTexBox1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Add_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void pnHeader_Paint(object sender, PaintEventArgs e)
-        {
+        Error:
+            Alert.Show(Alert.enmType.Error);
+            return;
 
         }
     }

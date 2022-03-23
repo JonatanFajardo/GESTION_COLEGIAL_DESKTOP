@@ -44,7 +44,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.pnBackground.Controls.Add(this.txtDescripcion);
             this.pnBackground.Controls.Add(this.label7);
             this.pnBackground.Size = new System.Drawing.Size(480, 260);
-            this.pnBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBackground_Paint);
             this.pnBackground.Controls.SetChildIndex(this.btnCancelar, 0);
             this.pnBackground.Controls.SetChildIndex(this.btnAgregar, 0);
             this.pnBackground.Controls.SetChildIndex(this.label7, 0);
@@ -53,7 +52,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             // pnHeader
             // 
             this.pnHeader.Size = new System.Drawing.Size(480, 60);
-            this.pnHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnHeader_Paint);
             // 
             // btnAgregar
             // 
@@ -119,7 +117,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             this.ClientSize = new System.Drawing.Size(480, 320);
             this.Name = "Add";
             this.Text = "Add";
-            this.Load += new System.EventHandler(this.Add_Load);
             this.pnBackground.ResumeLayout(false);
             this.pnBackground.PerformLayout();
             this.pnHeader.ResumeLayout(false);

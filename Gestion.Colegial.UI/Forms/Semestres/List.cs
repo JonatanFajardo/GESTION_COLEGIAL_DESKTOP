@@ -1,4 +1,5 @@
-﻿using Gestion.Colegial.Business.Helpers.Alert;
+﻿using Gestion.Colegial.Business.Extensions;
+using Gestion.Colegial.Business.Helpers.Alert;
 using Gestion.Colegial.Business.Helpers.Export;
 using Gestion.Colegial.Business.Helpers.ExportCustom;
 using Gestion.Colegial.Business.Messagebox;
@@ -42,6 +43,8 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             dataGridViewJN1.AddBtn(actionButtons);
         }
 
+       
+
         /// <summary>
         /// Carga los datos al datagridview con los datos especificados.
         /// </summary>
@@ -65,7 +68,6 @@ namespace Gestion.Colegial.UI.Forms.Semestres
                 MessageBox.Show(data.Message);
         }
 
-
         /// <summary>
         /// Carga los datos al datagridview con los datos especificados.
         /// </summary>
@@ -85,7 +87,6 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             else
                 MessageBox.Show(data.Message);
         }
-
 
         #region FuncionalidadesDGV
         private void jnButton1_Click(object sender, EventArgs e)
@@ -126,7 +127,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
         /// <param name="e">Evento.</param>
         public async override void CellContentDGV(DataGridViewCellEventArgs e)
         {
-
+            int identifier = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
             // Editamos registro.
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[0].Selected)
             {
@@ -147,7 +148,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
                 {
                     tbSemestres objSemestres = new tbSemestres()
                     {
-                        Sem_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
+                        Sem_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value
                         //Sem_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
                     };
                     Boolean resultService = await SemestresServices.Remove(objSemestres.Sem_Id);

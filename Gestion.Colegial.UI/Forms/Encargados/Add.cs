@@ -77,20 +77,10 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             }
             else
             {
-                //txtOcupacion.Texts = send.Enc_Ocupacion;
                 label1.Text = Modificar;
                 this.Text = Modificar;
             }
         }
-        //public void Send(int id, List list)
-        //{
-        //    Add add = new Add();
-        //    _id = id;
-        //    _list = list;
-        //    //_send = Send;
-        //    add.load();
-        //}
-
 
         public async override void OnClick()
         {

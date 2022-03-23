@@ -35,6 +35,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             this.txtDescripcion = new JNControls.Controles.JNTexBox();
             this.pnBackground.SuspendLayout();
             this.pnHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // pnBackground
@@ -53,7 +54,6 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.Location = new System.Drawing.Point(196, 157);
             this.btnAgregar.Size = new System.Drawing.Size(112, 42);
@@ -61,9 +61,9 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.Location = new System.Drawing.Point(314, 157);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label7
             // 
@@ -74,7 +74,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             this.label7.Location = new System.Drawing.Point(54, 44);
             this.label7.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 24);
+            this.label7.Size = new System.Drawing.Size(104, 22);
             this.label7.TabIndex = 343;
             this.label7.Text = "Descripcion";
             // 
@@ -86,7 +86,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             this.txtDescripcion.BorderFocusColor = System.Drawing.Color.Silver;
             this.txtDescripcion.BorderRadius = 8;
             this.txtDescripcion.BorderSize = 1;
-            this.txtDescripcion.CleanCompleted = false;
+            this.txtDescripcion.CleanCompleted = true;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDescripcion.Location = new System.Drawing.Point(57, 80);
@@ -115,6 +115,7 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             this.pnBackground.PerformLayout();
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ApiRequests.cs" />
+    <Compile Include="Extensions\DGVExtended.cs" />
     <Compile Include="Extensions\Utilities.cs" />
     <Compile Include="Extensions\ErrorLog.cs" />
     <Compile Include="Extensions\OperationMessage.cs" />

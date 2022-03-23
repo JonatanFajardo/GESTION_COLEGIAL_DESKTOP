@@ -30,6 +30,7 @@ namespace Gestion.Colegial.UI.FormsBase
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            //ControlsPlugin.CleanIfCompleted(pnBackground);
             this.Close();
         }
 

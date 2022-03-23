@@ -10,6 +10,7 @@ using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Dias
@@ -66,6 +67,25 @@ namespace Gestion.Colegial.UI.Forms.Dias
 
         }
 
+        /// <summary>
+        /// Carga los datos al datagridview con los datos especificados.
+        /// </summary>
+        /// <param name="columna">Columna buscada.</param>
+        /// <param name="search">Informacion a buscar en la columna.</param>
+        public async void DataGridViewFill(string columna, string search)
+        {
+
+            // Peticion de la data
+            Answer data = await DiasServices.List();
+            if (!data.Access)
+            {
+                DataView dv = data.Data.DefaultView;
+                dv.RowFilter = $"{columna} like '%{search}%'";
+                dataGridViewJN1.DataSource = dv.ToTable();
+            }
+            else
+                MessageBox.Show(data.Message);
+        }
 
         #region FuncionalidadesDGV
         private void jnButton1_Click(object sender, EventArgs e)
@@ -87,7 +107,6 @@ namespace Gestion.Colegial.UI.Forms.Dias
             DataGridViewFill(txtBuscar.Text);
         }
         #endregion  FuncionalidadesDGV
-
 
         #region AccionesCRUD
 
@@ -116,7 +135,9 @@ namespace Gestion.Colegial.UI.Forms.Dias
                     Dia_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
                     Dia_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
                 };
-                Add.Send(objDias);
+                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
+                Add add = new Add(this, id);
+                add.Show();
             }
 
             // Eliminamos registro.
