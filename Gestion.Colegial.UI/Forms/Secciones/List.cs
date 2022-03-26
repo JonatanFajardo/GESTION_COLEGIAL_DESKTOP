@@ -23,7 +23,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
 
             DataGridViewFill();
 
-            
+
 
         }
 
@@ -44,11 +44,11 @@ namespace Gestion.Colegial.UI.Forms.Secciones
             };
             // Peticion de la data
             Answer data = await SeccionesServices.List();
-                            if (!data.Access)
-                {
-                    dataGridViewJN1.DataSource = data.Data;
-                    AddActions();
-                }
+            if (!data.Access)
+            {
+                dataGridViewJN1.DataSource = data.Data;
+                AddActions();
+            }
             else
                 MessageBox.Show(data.Message);
 
@@ -66,6 +66,7 @@ namespace Gestion.Colegial.UI.Forms.Secciones
             Answer data = await SeccionesServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 DataView dv = data.Data.DefaultView;
                 dv.RowFilter = $"{columna} like '%{search}%'";
                 dataGridViewJN1.DataSource = dv.ToTable();

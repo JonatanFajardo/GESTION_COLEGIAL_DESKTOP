@@ -34,6 +34,10 @@ namespace Gestion.Colegial.UI.FormsBase
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnMaximiza = new System.Windows.Forms.Button();
+            this.btnRestaura = new System.Windows.Forms.Button();
+            this.btnMinimiza = new System.Windows.Forms.Button();
             this.pnMenu = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.jnMenu1 = new JNControls.Controles.JNMenu();
@@ -47,14 +51,10 @@ namespace Gestion.Colegial.UI.FormsBase
             this.pnHeader = new System.Windows.Forms.Panel();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
-            this.pnChildForm = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnMaximiza = new System.Windows.Forms.Button();
-            this.btnRestaura = new System.Windows.Forms.Button();
-            this.btnMinimiza = new System.Windows.Forms.Button();
+            this.pnChildForm = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pnMenu.SuspendLayout();
@@ -102,6 +102,73 @@ namespace Gestion.Colegial.UI.FormsBase
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 32);
             this.panel6.TabIndex = 17;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(164, 1);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(32, 32);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.Text = " ";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnMaximiza
+            // 
+            this.btnMaximiza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximiza.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximiza.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximiza.FlatAppearance.BorderSize = 0;
+            this.btnMaximiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximiza.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximiza.Image")));
+            this.btnMaximiza.Location = new System.Drawing.Point(32, -4);
+            this.btnMaximiza.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMaximiza.Name = "btnMaximiza";
+            this.btnMaximiza.Size = new System.Drawing.Size(32, 32);
+            this.btnMaximiza.TabIndex = 13;
+            this.btnMaximiza.Text = " ";
+            this.btnMaximiza.UseVisualStyleBackColor = false;
+            this.btnMaximiza.Click += new System.EventHandler(this.btnMaximiza_Click);
+            // 
+            // btnRestaura
+            // 
+            this.btnRestaura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestaura.BackColor = System.Drawing.Color.Transparent;
+            this.btnRestaura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaura.FlatAppearance.BorderSize = 0;
+            this.btnRestaura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaura.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaura.Image")));
+            this.btnRestaura.Location = new System.Drawing.Point(124, 1);
+            this.btnRestaura.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRestaura.Name = "btnRestaura";
+            this.btnRestaura.Size = new System.Drawing.Size(32, 32);
+            this.btnRestaura.TabIndex = 15;
+            this.btnRestaura.Text = " ";
+            this.btnRestaura.UseVisualStyleBackColor = false;
+            this.btnRestaura.Click += new System.EventHandler(this.btnRestaura_Click);
+            // 
+            // btnMinimiza
+            // 
+            this.btnMinimiza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimiza.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimiza.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimiza.FlatAppearance.BorderSize = 0;
+            this.btnMinimiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimiza.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimiza.Image")));
+            this.btnMinimiza.Location = new System.Drawing.Point(84, 0);
+            this.btnMinimiza.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimiza.Name = "btnMinimiza";
+            this.btnMinimiza.Size = new System.Drawing.Size(32, 32);
+            this.btnMinimiza.TabIndex = 12;
+            this.btnMinimiza.Text = " ";
+            this.btnMinimiza.UseVisualStyleBackColor = false;
+            this.btnMinimiza.Click += new System.EventHandler(this.btnMinimiza_Click);
             // 
             // pnMenu
             // 
@@ -250,20 +317,6 @@ namespace Gestion.Colegial.UI.FormsBase
             this.lblRol.Text = "Rol";
             this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pnChildForm
-            // 
-            this.pnChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnChildForm.Location = new System.Drawing.Point(260, 88);
-            this.pnChildForm.Name = "pnChildForm";
-            this.pnChildForm.Padding = new System.Windows.Forms.Padding(15);
-            this.pnChildForm.Size = new System.Drawing.Size(1340, 812);
-            this.pnChildForm.TabIndex = 20;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 9000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // btnMenu
             // 
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -286,72 +339,19 @@ namespace Gestion.Colegial.UI.FormsBase
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSalir
+            // pnChildForm
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(164, 1);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(32, 32);
-            this.btnSalir.TabIndex = 10;
-            this.btnSalir.Text = " ";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.pnChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnChildForm.Location = new System.Drawing.Point(260, 88);
+            this.pnChildForm.Name = "pnChildForm";
+            this.pnChildForm.Padding = new System.Windows.Forms.Padding(15);
+            this.pnChildForm.Size = new System.Drawing.Size(1340, 812);
+            this.pnChildForm.TabIndex = 20;
             // 
-            // btnMaximiza
+            // timer1
             // 
-            this.btnMaximiza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximiza.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximiza.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximiza.FlatAppearance.BorderSize = 0;
-            this.btnMaximiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximiza.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximiza.Image")));
-            this.btnMaximiza.Location = new System.Drawing.Point(32, -4);
-            this.btnMaximiza.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMaximiza.Name = "btnMaximiza";
-            this.btnMaximiza.Size = new System.Drawing.Size(32, 32);
-            this.btnMaximiza.TabIndex = 13;
-            this.btnMaximiza.Text = " ";
-            this.btnMaximiza.UseVisualStyleBackColor = false;
-            this.btnMaximiza.Click += new System.EventHandler(this.btnMaximiza_Click);
-            // 
-            // btnRestaura
-            // 
-            this.btnRestaura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaura.BackColor = System.Drawing.Color.Transparent;
-            this.btnRestaura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaura.FlatAppearance.BorderSize = 0;
-            this.btnRestaura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaura.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaura.Image")));
-            this.btnRestaura.Location = new System.Drawing.Point(124, 1);
-            this.btnRestaura.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRestaura.Name = "btnRestaura";
-            this.btnRestaura.Size = new System.Drawing.Size(32, 32);
-            this.btnRestaura.TabIndex = 15;
-            this.btnRestaura.Text = " ";
-            this.btnRestaura.UseVisualStyleBackColor = false;
-            this.btnRestaura.Click += new System.EventHandler(this.btnRestaura_Click);
-            // 
-            // btnMinimiza
-            // 
-            this.btnMinimiza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimiza.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimiza.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimiza.FlatAppearance.BorderSize = 0;
-            this.btnMinimiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimiza.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimiza.Image")));
-            this.btnMinimiza.Location = new System.Drawing.Point(84, 0);
-            this.btnMinimiza.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMinimiza.Name = "btnMinimiza";
-            this.btnMinimiza.Size = new System.Drawing.Size(32, 32);
-            this.btnMinimiza.TabIndex = 12;
-            this.btnMinimiza.Text = " ";
-            this.btnMinimiza.UseVisualStyleBackColor = false;
-            this.btnMinimiza.Click += new System.EventHandler(this.btnMinimiza_Click);
+            this.timer1.Interval = 9000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // BaseMain
             // 

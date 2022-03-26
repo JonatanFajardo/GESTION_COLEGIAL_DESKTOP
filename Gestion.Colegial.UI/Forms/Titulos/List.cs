@@ -53,6 +53,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
             Answer data = await TitulosServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 dataGridViewJN1.DataSource = data.Data;
                 AddActions();
             }
@@ -74,6 +75,7 @@ namespace Gestion.Colegial.UI.Forms.Titulos
             Answer data = await TitulosServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 DataView dv = data.Data.DefaultView;
                 dv.RowFilter = $"{columna} like '%{search}%'";
                 dataGridViewJN1.DataSource = dv.ToTable();

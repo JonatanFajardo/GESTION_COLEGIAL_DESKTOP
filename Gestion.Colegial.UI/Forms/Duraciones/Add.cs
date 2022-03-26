@@ -48,6 +48,8 @@ namespace Gestion.Colegial.UI.Forms.Duraciones
             else
                 MessageBox.Show(ServiceInsert.Message);
 
+            pnLoading.Visible = false;
+
         }
 
         public void load()

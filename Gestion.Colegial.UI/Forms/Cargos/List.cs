@@ -40,14 +40,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 new DGVHeader(){Name = "  ", Size = 65 },
             };
             dataGridViewJN1.AddBtn(actionButtons);
-
-            //// Setea nombres del header.
-            //List<DGVHeader> listHeader = new List<DGVHeader>()
-            //{
-            //    new DGVHeader(){Name = "Linea"},
-            //    new DGVHeader(){Name = "Descripción"}
-            //};
-            //dataGridViewJN1.SetHeaderText(listHeader);
         }
 
         /// <summary>
@@ -70,6 +62,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             Answer data = await CargosServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 dataGridViewJN1.DataSource = data.Data;
                 AddActions();
             }
@@ -89,6 +82,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             Answer data = await CargosServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 DataView dv = data.Data.DefaultView;
                 dv.RowFilter = $"{columna} like '%{search}%'";
                 dataGridViewJN1.DataSource = dv.ToTable();

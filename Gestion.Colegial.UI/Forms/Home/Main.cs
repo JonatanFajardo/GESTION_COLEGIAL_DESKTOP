@@ -34,9 +34,6 @@ namespace Gestion.Colegial.UI.Forms.Home
             lbCountEncargados.Text = Encargados.Data.Rows.Count.ToString();
             lbCountEmpleados.Text = Empleados.Data.Rows.Count.ToString();
 
-
-
-
         }
 
     }

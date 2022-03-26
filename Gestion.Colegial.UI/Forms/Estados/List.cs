@@ -50,6 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
             Answer data = await EstadosServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 dataGridViewJN1.DataSource = data.Data;
                 AddActions();
             }
@@ -69,6 +70,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
             Answer data = await SemestresServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 DataView dv = data.Data.DefaultView;
                 dv.RowFilter = $"{columna} like '%{search}%'";
                 dataGridViewJN1.DataSource = dv.ToTable();

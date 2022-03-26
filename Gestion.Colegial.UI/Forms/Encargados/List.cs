@@ -56,6 +56,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
         /// <param name="numberPagina"></param>
         public async void DataGridViewFill(string buscar = "")
         {
+
             // Cargamos DataGridView.
             ListResult listResult = new ListResult()
             {
@@ -68,11 +69,15 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             Answer data = await EncargadosServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 dataGridViewJN1.DataSource = data.Data;
                 AddActions();
             }
             else
+            {
                 MessageBox.Show(data.Message);
+            }
+            pnLoading.Visible = false;
         }
 
         /// <summary>
@@ -87,6 +92,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             Answer data = await EncargadosServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 DataView dv = data.Data.DefaultView;
                 dv.RowFilter = $"{columna} like '%{search}%'";
                 dataGridViewJN1.DataSource = dv.ToTable();
@@ -232,6 +238,11 @@ namespace Gestion.Colegial.UI.Forms.Encargados
         private void txtBuscar_TextChanged_1(object sender, EventArgs e)
         {
             DataGridViewFill("Descripción", txtBuscar.Text);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,14 +29,27 @@ namespace Gestion.Colegial.UI.Forms.Encargados
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(List));
+            this.pbLoading = new System.Windows.Forms.PictureBox();
+            this.pnLoading = new System.Windows.Forms.Panel();
             this.jnPanel1.SuspendLayout();
             this.pnBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
+            this.pnLoading.SuspendLayout();
             this.SuspendLayout();
             // 
             // jnPanel1
             // 
+            this.jnPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.jnPanel1.Controls.Add(this.pnLoading);
+            this.jnPanel1.Dock = System.Windows.Forms.DockStyle.None;
             this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
+            this.jnPanel1.Controls.SetChildIndex(this.txtBuscar, 0);
+            this.jnPanel1.Controls.SetChildIndex(this.btnBuscar, 0);
+            this.jnPanel1.Controls.SetChildIndex(this.pnLoading, 0);
             // 
             // txtBuscar
             // 
@@ -45,6 +58,27 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             // pnBackground
             // 
             this.pnBackground.Size = new System.Drawing.Size(1598, 600);
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbLoading.Image = ((System.Drawing.Image)(resources.GetObject("pbLoading.Image")));
+            this.pbLoading.Location = new System.Drawing.Point(31, 3);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(298, 271);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 93;
+            this.pbLoading.TabStop = false;
+            this.pbLoading.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pnLoading
+            // 
+            this.pnLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnLoading.Controls.Add(this.pbLoading);
+            this.pnLoading.Location = new System.Drawing.Point(539, 194);
+            this.pnLoading.Name = "pnLoading";
+            this.pnLoading.Size = new System.Drawing.Size(358, 271);
+            this.pnLoading.TabIndex = 96;
             // 
             // List
             // 
@@ -58,10 +92,15 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             this.jnPanel1.PerformLayout();
             this.pnBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
+            this.pnLoading.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pbLoading;
+        private System.Windows.Forms.Panel pnLoading;
     }
 }
