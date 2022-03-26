@@ -1,6 +1,4 @@
-﻿using Gestion.Colegial.Business.Services;
-using Gestion.Colegial.Commons.Entities;
-using Gestion.Colegial.Commons.Extensions;
+﻿using Gestion.Colegial.Commons.Entities;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
@@ -34,37 +32,17 @@ namespace Gestion.Colegial.UI.FormsBase
             menuSource = MenuList;
 
 
-            lblYear.Text = DateTime.Now.Year.ToString();
 
         }
 
         protected async override void OnLoad(EventArgs e)
         {
-            base.OnLoad(e);
-            nose(menuSource);
-
-            Answer Alumnos = await HomeService.AlumnosList();
-            Answer Encargados = await HomeService.EncargadosList();
-            Answer Empleados = await HomeService.EmpleadosList();
-
-            if (Alumnos.Access)
-                lbCountAlumnos.Text = "0";
-
-            if (Encargados.Access)
-                lbCountEmpleados.Text = "0";
-
-            if (Empleados.Access)
-                lbCountAlumnos.Text = "0";
-
-
-
-            lbCountAlumnos.Text = Alumnos.Data.Rows.Count.ToString();
-            lbCountEncargados.Text = Encargados.Data.Rows.Count.ToString();
-            lbCountEmpleados.Text = Empleados.Data.Rows.Count.ToString();
-
-
             OpenChildForm(new Forms.Home.Main());
 
+            base.OnLoad(e);
+            MenuLoad(menuSource);
+
+            lblYear.Text = DateTime.Now.Year.ToString();
         }
 
 
@@ -183,7 +161,7 @@ namespace Gestion.Colegial.UI.FormsBase
 
         #region Menu
 
-        public void nose(dynamic Source)
+        public void MenuLoad(dynamic Source)
         {
             //Verificamos que no venga nula para no provocar una excepcion
             if (Source != null)

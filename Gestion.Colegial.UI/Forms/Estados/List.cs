@@ -29,9 +29,6 @@ namespace Gestion.Colegial.UI.Forms.Estados
             dataGridViewJN1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             DataGridViewFill();
-
-
-
         }
 
         /// <summary>
@@ -58,7 +55,6 @@ namespace Gestion.Colegial.UI.Forms.Estados
             }
             else
                 MessageBox.Show(data.Message);
-
         }
 
         /// <summary>
