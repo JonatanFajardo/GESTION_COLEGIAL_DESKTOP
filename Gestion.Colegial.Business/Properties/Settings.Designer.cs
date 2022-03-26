@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gestion.Colegial.UI.Properties {
+namespace Gestion.Colegial.Business.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,6 +20,30 @@ namespace Gestion.Colegial.UI.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://gestioncolegialapi.somee.com/api/")]
+        public string baseUrlOnline {
+            get {
+                return ((string)(this["baseUrlOnline"]));
+            }
+            set {
+                this["baseUrlOnline"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44341/api/")]
+        public string baseUrl {
+            get {
+                return ((string)(this["baseUrl"]));
+            }
+            set {
+                this["baseUrl"] = value;
             }
         }
     }

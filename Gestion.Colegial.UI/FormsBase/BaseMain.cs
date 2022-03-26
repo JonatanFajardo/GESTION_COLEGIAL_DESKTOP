@@ -1,4 +1,6 @@
-﻿using Gestion.Colegial.Commons.Entities;
+﻿using Gestion.Colegial.Business.Services;
+using Gestion.Colegial.Commons.Entities;
+using Gestion.Colegial.Commons.Extensions;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
@@ -20,11 +22,6 @@ namespace Gestion.Colegial.UI.FormsBase
             InitializeComponent();
 
 
-
-            //pnSubItems2.Visible = false;
-            //Debe de ir en el constructor
-            //MessageBox.Show("Test22");
-
             List<SideBar> MenuList = new List<SideBar>()
             {
                 new SideBar() { Item = "Inicio" },
@@ -37,19 +34,37 @@ namespace Gestion.Colegial.UI.FormsBase
             menuSource = MenuList;
 
 
-            //jnMenu1.MenuSource = MenuList;
+            lblYear.Text = DateTime.Now.Year.ToString();
 
-
-
-
-
-            //EfectoScroll(pnMenuBottom);
         }
 
-        protected override void OnLoad(EventArgs e)
+        protected async override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             nose(menuSource);
+
+            Answer Alumnos = await HomeService.AlumnosList();
+            Answer Encargados = await HomeService.EncargadosList();
+            Answer Empleados = await HomeService.EmpleadosList();
+
+            if (Alumnos.Access)
+                lbCountAlumnos.Text = "0";
+
+            if (Encargados.Access)
+                lbCountEmpleados.Text = "0";
+
+            if (Empleados.Access)
+                lbCountAlumnos.Text = "0";
+
+
+
+            lbCountAlumnos.Text = Alumnos.Data.Rows.Count.ToString();
+            lbCountEncargados.Text = Encargados.Data.Rows.Count.ToString();
+            lbCountEmpleados.Text = Empleados.Data.Rows.Count.ToString();
+
+
+            OpenChildForm(new Forms.Home.Main());
+
         }
 
 
@@ -74,6 +89,9 @@ namespace Gestion.Colegial.UI.FormsBase
 
                 switch (valor)
                 {
+                    case "Inicio":
+                        OpenChildForm(new Forms.Home.Main());
+                        break;
                     case "Estados":
                         OpenChildForm(new Forms.Estados.List());
                         break;
@@ -307,42 +325,6 @@ namespace Gestion.Colegial.UI.FormsBase
         }
         #endregion Menu
 
-        //private void HideSubmenu()
-        //{
-        //    if (pnSubItems2.Visible == true)
-        //    {
-        //        pnSubItems2.Visible = false;
-        //    }
-        //}
-        //private void ShowSubmenu(Panel subMenu)
-        //{
-
-        //    foreach (var item in subMenu.Controls)
-        //    {
-        //        if (((Panel)item).Visible == true)
-        //        {
-
-        //        }
-
-
-        //        if (item is Panel)
-        //        {
-        //        }
-        //    }
-
-
-
-        //    if (subMenu.Visible == false)
-        //    {
-        //        HideSubmenu();
-        //        subMenu.Visible = true;
-
-        //    }
-        //    else
-        //    {
-        //        subMenu.Visible = false;
-        //    }
-        //}
 
         private void EfectoScroll(Panel panel)
         {
@@ -445,6 +427,35 @@ namespace Gestion.Colegial.UI.FormsBase
         {
             Forms.Modalidades.List lis = new Forms.Modalidades.List();
             lis.Show();
+        }
+
+        private async void jnPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+            //for (int i = 0; i <= last200values; i++)
+            //{
+            //    lbCountAlumnos.Text = i.ToString();
+            //    timer1.Enabled = false;
+
+            //}
+
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

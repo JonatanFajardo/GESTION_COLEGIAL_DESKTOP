@@ -1,5 +1,4 @@
-﻿using Gestion.Colegial.Business.Extensions;
-using Gestion.Colegial.Business.Helpers.Alert;
+﻿using Gestion.Colegial.Business.Helpers.Alert;
 using Gestion.Colegial.Business.Helpers.Export;
 using Gestion.Colegial.Business.Helpers.ExportCustom;
 using Gestion.Colegial.Business.Messagebox;
@@ -30,20 +29,14 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             dataGridViewJN1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             DataGridViewFill();
-
             // Configuraciones DGV
-
-            // Agregado de botones de accion.
-            List<DGVHeader> actionButtons = new List<DGVHeader>()
+            if (dataGridViewJN1.ColumnCount != 0)
             {
-                new DGVHeader(){Name = " ", Size = 65 },
-                new DGVHeader(){Name = "Acciones", Size = 65 },
-                new DGVHeader(){Name = "  ", Size = 65 },
-            };
-            dataGridViewJN1.AddBtn(actionButtons);
-        }
+                this.dataGridViewJN1.Columns[0].Visible = false;
 
-       
+            }
+
+        }
 
         /// <summary>
         /// Carga los datos al datagridview con los datos especificados.
@@ -63,7 +56,11 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             // Peticion de la data
             Answer data = await SemestresServices.List();
             if (!data.Access)
+            {
+                dataGridViewJN1.Columns.Clear();
                 dataGridViewJN1.DataSource = data.Data;
+                AddActions();
+            }
             else
                 MessageBox.Show(data.Message);
         }
@@ -80,12 +77,27 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             Answer data = await SemestresServices.List();
             if (!data.Access)
             {
+                dataGridViewJN1.Columns.Clear();
                 DataView dv = data.Data.DefaultView;
                 dv.RowFilter = $"{columna} like '%{search}%'";
                 dataGridViewJN1.DataSource = dv.ToTable();
+                AddActions();
+
             }
             else
                 MessageBox.Show(data.Message);
+        }
+
+        /// Agregado de botones de accion.
+        private void AddActions()
+        {
+            List<DGVHeader> actionButtons = new List<DGVHeader>()
+            {
+                new DGVHeader(){Name = " ", Size = 65 },
+                new DGVHeader(){Name = "Acciones", Size = 65 },
+                new DGVHeader(){Name = "  ", Size = 65 },
+            };
+            dataGridViewJN1.AddBtn(actionButtons);
         }
 
         #region FuncionalidadesDGV
@@ -127,31 +139,23 @@ namespace Gestion.Colegial.UI.Forms.Semestres
         /// <param name="e">Evento.</param>
         public async override void CellContentDGV(DataGridViewCellEventArgs e)
         {
-            int identifier = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
+
             // Editamos registro.
-            if (dataGridViewJN1.Rows[e.RowIndex].Cells[0].Selected)
+            if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
             {
-                // Objeto con la data que se selecciono.
-                tbSemestres objSemestres = new tbSemestres()
-                {
-                    Sem_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
-                    Sem_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
-                };
-                Add.Send(objSemestres);
+                int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                Add add = new Add(this, identifier);
+                add.Show();
             }
 
             // Eliminamos registro.
-            if (dataGridViewJN1.Rows[e.RowIndex].Cells[2].Selected)
+            if (dataGridViewJN1.Rows[e.RowIndex].Cells["  "].Selected)
             {
+                int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())
                 {
-                    tbSemestres objSemestres = new tbSemestres()
-                    {
-                        Sem_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value
-                        //Sem_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
-                    };
-                    Boolean resultService = await SemestresServices.Remove(objSemestres.Sem_Id);
+                    Boolean resultService = await SemestresServices.Remove(identifier);
                     DataGridViewFill();
                     if (resultService)
                     {

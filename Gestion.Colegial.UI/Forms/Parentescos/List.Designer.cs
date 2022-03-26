@@ -38,6 +38,10 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             // 
             this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
+            // 
             // lblTituloForm
             // 
             this.lblTituloForm.Size = new System.Drawing.Size(250, 29);

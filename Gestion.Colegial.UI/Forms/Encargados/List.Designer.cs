@@ -38,6 +38,10 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             // 
             this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
+            // 
             // pnBackground
             // 
             this.pnBackground.Size = new System.Drawing.Size(1598, 600);

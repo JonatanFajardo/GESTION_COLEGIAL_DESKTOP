@@ -281,6 +281,18 @@
     <Compile Include="Forms\Estudiante.Designer.cs">
       <DependentUpon>Estudiante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Home\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HorarioAlumnos\Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,12 +340,6 @@
     </Compile>
     <Compile Include="Forms\Account\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Home\Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Home\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Materias\Add.cs">
       <SubType>Form</SubType>
@@ -658,6 +664,9 @@
     <EmbeddedResource Include="Forms\Notas\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Notas\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Parciales\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
@@ -741,6 +750,7 @@
     <Content Include="Content\image\menu-button.png" />
     <Content Include="Content\image\menu.png" />
     <Content Include="Content\image\logo-login.jpg" />
+    <Content Include="Content\image\mochila.jpg" />
     <Content Include="Resources\Image\alert.png" />
     <Content Include="Resources\Image\bgBTN2.png" />
     <Content Include="Resources\Image\button-lg %282%29.png" />

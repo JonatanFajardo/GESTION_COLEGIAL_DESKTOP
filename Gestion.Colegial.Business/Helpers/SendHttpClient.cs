@@ -13,7 +13,7 @@ namespace Gestion.Colegial.Business.Helpers
     public static class SendHttpClient
     {
         //private const string baseUrl = "https://localhost:44341/api/";
-        private const string baseUrl = "http://gestioncolegialapi.somee.com/api/";
+        private static string baseUrl = Properties.Settings.Default.baseUrlOnline;
 
         /// <summary>
         /// Obtiene valores del servicio.
@@ -118,18 +118,26 @@ namespace Gestion.Colegial.Business.Helpers
         /// <returns></returns>
         public static async Task<bool> Put(string url, object model)
         {
-            var httpclient = new HttpClient();
-            var content = JsonConvert.SerializeObject(model);//se convierte a json el contenido a enviar
-            var contentSerialized = new StringContent(content, Encoding.Default, "application/json");//Agregamos informacion adicional al json
-            var httpResponse = await httpclient.PutAsync($"{baseUrl}{url}", contentSerialized);
-            //httpResponse.Wait();
-
-            //var postJob = httpResponse.Result;
-            if (!httpResponse.IsSuccessStatusCode)
+            try
             {
-                return true;
+                var httpclient = new HttpClient();
+                var content = JsonConvert.SerializeObject(model);//se convierte a json el contenido a enviar
+                var contentSerialized = new StringContent(content, Encoding.Default, "application/json");//Agregamos informacion adicional al json
+                var httpResponse = await httpclient.PutAsync($"{baseUrl}{url}", contentSerialized);
+                //httpResponse.Wait();
+
+                //var postJob = httpResponse.Result;
+                if (!httpResponse.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception ee)
+            {
+
+                throw;
+            }
         }
 
         /// <summary>

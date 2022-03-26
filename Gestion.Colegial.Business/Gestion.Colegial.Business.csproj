@@ -70,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ApiRequests.cs" />
-    <Compile Include="Extensions\DGVExtended.cs" />
     <Compile Include="Extensions\Utilities.cs" />
     <Compile Include="Extensions\ErrorLog.cs" />
     <Compile Include="Extensions\OperationMessage.cs" />
@@ -94,6 +93,11 @@
     <Compile Include="Helpers\SecurityEncryptation.cs" />
     <Compile Include="Helpers\SendHttpClient.cs" />
     <Compile Include="Helpers\Variable.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Services\AccountServices.cs" />
     <Compile Include="Services\AlumnosServices.cs" />
     <Compile Include="Services\AulasServices.cs" />
@@ -106,6 +110,7 @@
     <Compile Include="Services\EmpleadosServices.cs" />
     <Compile Include="Services\EncargadosServices.cs" />
     <Compile Include="Services\EstadosServices.cs" />
+    <Compile Include="Services\HomeService.cs" />
     <Compile Include="Services\HomeServices.cs" />
     <Compile Include="Services\HorarioAlumnosServices.cs" />
     <Compile Include="Services\HorarioProfesoresServices.cs" />
@@ -166,7 +171,12 @@
     <Content Include="Content\Image\logo-login.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\Datatable\" />

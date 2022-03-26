@@ -1,8 +1,6 @@
-﻿using Gestion.Colegial.UI.Forms.Estados;
-
-namespace Gestion.Colegial.UI.Forms.Home
+﻿namespace Gestion.Colegial.UI.Forms.Home
 {
-    partial class Main
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +28,10 @@ namespace Gestion.Colegial.UI.Forms.Home
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Main
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1598, 600);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Main";
-            this.Text = "List";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "Form1";
         }
 
         #endregion

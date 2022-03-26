@@ -63,7 +63,6 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             // 
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.Location = new System.Drawing.Point(314, 157);
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label7
             // 

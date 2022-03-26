@@ -2,9 +2,7 @@
 using Gestion.Colegial.Business.Utilities;
 using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
-using Gestion.Colegial.DataAccess.Repositories.app;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -106,7 +104,7 @@ namespace Gestion.Colegial.Business.Services
             {
                 return ErrorLog.Incidents(error);
             }
-         }
+        }
 
         public static async Task<Boolean> Remove(int identifier)
         {

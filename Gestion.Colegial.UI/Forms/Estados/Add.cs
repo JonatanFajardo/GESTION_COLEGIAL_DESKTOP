@@ -55,7 +55,7 @@ namespace Gestion.Colegial.UI.Forms.Estados
 
             // Se asigna valores a titulo del formulario segun su accion.
             string Registrar = "Registrar Estados";
-            string Modificar = "Modificar Estados";
+            string ModifiDia = "ModifiDia Estados";
             if (_id.Equals(0))
             {
                 label1.Text = Registrar;
@@ -63,8 +63,8 @@ namespace Gestion.Colegial.UI.Forms.Estados
             }
             else
             {
-                label1.Text = Modificar;
-                this.Text = Modificar;
+                label1.Text = ModifiDia;
+                this.Text = ModifiDia;
             }
         }
 

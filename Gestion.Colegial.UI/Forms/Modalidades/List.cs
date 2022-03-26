@@ -67,7 +67,10 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             // Peticion de la data
             Answer data = await ModalidadesServices.List();
             if (!data.Access)
-                dataGridViewJN1.DataSource = data.Data;// obj.Data;
+            {
+                dataGridViewJN1.DataSource = data.Data;
+                AddActions();
+            }
             else
                 MessageBox.Show(data.Message);
 
@@ -88,9 +91,22 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
                 DataView dv = data.Data.DefaultView;
                 dv.RowFilter = $"{columna} like '%{search}%'";
                 dataGridViewJN1.DataSource = dv.ToTable();
+                AddActions();
             }
             else
                 MessageBox.Show(data.Message);
+        }
+
+        /// Agregado de botones de accion.
+        private void AddActions()
+        {
+            List<DGVHeader> actionButtons = new List<DGVHeader>()
+            {
+                new DGVHeader(){Name = " ", Size = 65 },
+                new DGVHeader(){Name = "Acciones", Size = 65 },
+                new DGVHeader(){Name = "  ", Size = 65 },
+            };
+            dataGridViewJN1.AddBtn(actionButtons);
         }
 
         #region FuncionalidadesDGV
@@ -110,7 +126,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            DataGridViewFill(txtBuscar.Text);
+            DataGridViewFill("Descripción", txtBuscar.Text);
         }
         #endregion  FuncionalidadesDGV
 
@@ -134,7 +150,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
         {
 
             // Editamos registro.
-            if (dataGridViewJN1.Rows[e.RowIndex].Cells[0].Selected)
+            if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
             {
                 // Objeto con la data que se selecciono.
                 tbModalidades objModalidades = new tbModalidades()
@@ -148,7 +164,7 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             }
 
             // Eliminamos registro.
-            if (dataGridViewJN1.Rows[e.RowIndex].Cells[2].Selected)
+            if (dataGridViewJN1.Rows[e.RowIndex].Cells["  "].Selected)
             {
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())

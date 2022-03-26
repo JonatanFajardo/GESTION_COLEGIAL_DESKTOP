@@ -38,6 +38,10 @@ namespace Gestion.Colegial.UI.Forms.CursosNiveles
             // 
             this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
+            // 
             // lblTituloForm
             // 
             this.lblTituloForm.Size = new System.Drawing.Size(282, 29);

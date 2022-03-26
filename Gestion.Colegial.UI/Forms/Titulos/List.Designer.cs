@@ -34,6 +34,10 @@ namespace Gestion.Colegial.UI.Forms.Titulos
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             this.SuspendLayout();
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
+            // 
             // jnPanel1
             // 
             this.jnPanel1.Size = new System.Drawing.Size(1528, 530);
@@ -55,7 +59,6 @@ namespace Gestion.Colegial.UI.Forms.Titulos
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "List";
             this.Text = "List";
-            this.Load += new System.EventHandler(this.List_Load);
             this.jnPanel1.ResumeLayout(false);
             this.jnPanel1.PerformLayout();
             this.pnBackground.ResumeLayout(false);

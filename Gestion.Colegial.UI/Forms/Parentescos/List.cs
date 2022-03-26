@@ -30,16 +30,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
 
             DataGridViewFill();
 
-            // Configuraciones DGV
 
-            // Agregado de botones de accion.
-            List<DGVHeader> actionButtons = new List<DGVHeader>()
-            {
-                new DGVHeader(){Name = " ", Size = 65 },
-                new DGVHeader(){Name = "Acciones", Size = 65 },
-                new DGVHeader(){Name = "  ", Size = 65 },
-            };
-            dataGridViewJN1.AddBtn(actionButtons);
 
             // Setea nombres del header.
             // List<DGVHeader> listHeader = new List<DGVHeader>()
@@ -69,7 +60,10 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             // Peticion de la data
             Answer data = await ParentescosServices.List();
             if (!data.Access)
-                dataGridViewJN1.DataSource = data.Data;// obj.Data;
+            {
+                dataGridViewJN1.DataSource = data.Data;
+                AddActions();
+            }
             else
                 MessageBox.Show(data.Message);
 
@@ -90,9 +84,22 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
                 DataView dv = data.Data.DefaultView;
                 dv.RowFilter = $"{columna} like '%{search}%'";
                 dataGridViewJN1.DataSource = dv.ToTable();
+                AddActions();
             }
             else
                 MessageBox.Show(data.Message);
+        }
+
+        /// Agregado de botones de accion.
+        private void AddActions()
+        {
+            List<DGVHeader> actionButtons = new List<DGVHeader>()
+            {
+                new DGVHeader(){Name = " ", Size = 65 },
+                new DGVHeader(){Name = "Acciones", Size = 65 },
+                new DGVHeader(){Name = "  ", Size = 65 },
+            };
+            dataGridViewJN1.AddBtn(actionButtons);
         }
         #region FuncionalidadesDGV
         private void jnButton1_Click(object sender, EventArgs e)
@@ -135,7 +142,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
         {
 
             // Editamos registro.
-            if (dataGridViewJN1.Rows[e.RowIndex].Cells[0].Selected)
+            if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
             {
                 // Objeto con la data que se selecciono.
                 tbParentescos objParentescos = new tbParentescos()
@@ -149,7 +156,7 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
             }
 
             // Eliminamos registro.
-            if (dataGridViewJN1.Rows[e.RowIndex].Cells[2].Selected)
+            if (dataGridViewJN1.Rows[e.RowIndex].Cells["  "].Selected)
             {
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())
@@ -181,5 +188,9 @@ namespace Gestion.Colegial.UI.Forms.Parentescos
 
         #endregion Eventos
 
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            DataGridViewFill("Descripción", txtBuscar.Text);
+        }
     }
 }

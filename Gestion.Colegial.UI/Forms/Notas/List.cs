@@ -8,5 +8,10 @@ namespace Gestion.Colegial.UI.Forms.Notas
         {
             InitializeComponent();
         }
+
+        //private void txtBuscar_TextChanged(object sender, System.EventArgs e)
+        //{
+        //    DataGridViewFill("Descripción", txtBuscar.Text);
+        //}
     }
 }
