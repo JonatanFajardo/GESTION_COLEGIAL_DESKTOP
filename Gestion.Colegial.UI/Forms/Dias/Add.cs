@@ -48,8 +48,6 @@ namespace Gestion.Colegial.UI.Forms.Dias
             else
                 MessageBox.Show(ServiceInsert.Message);
 
-            pnLoading.Visible = false;
-
         }
 
         public void load()

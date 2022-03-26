@@ -49,8 +49,6 @@ namespace Gestion.Colegial.UI.Forms.Parciales
             else
                 MessageBox.Show(ServiceInsert.Message);
 
-            pnLoading.Visible = false;
-
         }
 
         public void load()

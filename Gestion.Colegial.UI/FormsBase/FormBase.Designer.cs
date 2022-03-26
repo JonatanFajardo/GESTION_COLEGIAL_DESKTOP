@@ -34,7 +34,10 @@ namespace Gestion.Colegial.UI.FormsBase
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnBackground = new System.Windows.Forms.Panel();
             this.jnPanel1 = new JNControls.Controles.JNPanel();
+            this.pnLoading = new System.Windows.Forms.Panel();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new JNControls.Controles.JNButton();
             this.btnBuscar = new System.Windows.Forms.PictureBox();
             this.dataGridViewJN1 = new JNControls.Controles.JNDataGridView();
@@ -42,14 +45,27 @@ namespace Gestion.Colegial.UI.FormsBase
             this.BgSearch = new System.Windows.Forms.PictureBox();
             this.jnPanel2 = new JNControls.Controles.JNPanel();
             this.lblTituloForm = new System.Windows.Forms.Label();
-            this.pnBackground = new System.Windows.Forms.Panel();
+            this.pnBackground.SuspendLayout();
             this.jnPanel1.SuspendLayout();
+            this.pnLoading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJN1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BgSearch)).BeginInit();
             this.jnPanel2.SuspendLayout();
-            this.pnBackground.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnBackground
+            // 
+            this.pnBackground.AutoScroll = true;
+            this.pnBackground.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnBackground.Controls.Add(this.jnPanel1);
+            this.pnBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnBackground.Location = new System.Drawing.Point(0, 0);
+            this.pnBackground.Name = "pnBackground";
+            this.pnBackground.Padding = new System.Windows.Forms.Padding(35);
+            this.pnBackground.Size = new System.Drawing.Size(1600, 600);
+            this.pnBackground.TabIndex = 19;
             // 
             // jnPanel1
             // 
@@ -58,6 +74,7 @@ namespace Gestion.Colegial.UI.FormsBase
             | System.Windows.Forms.AnchorStyles.Right)));
             this.jnPanel1.BackColor = System.Drawing.Color.White;
             this.jnPanel1.BorderColor = System.Drawing.Color.Maroon;
+            this.jnPanel1.Controls.Add(this.pnLoading);
             this.jnPanel1.Controls.Add(this.btnAgregar);
             this.jnPanel1.Controls.Add(this.btnBuscar);
             this.jnPanel1.Controls.Add(this.dataGridViewJN1);
@@ -69,6 +86,26 @@ namespace Gestion.Colegial.UI.FormsBase
             this.jnPanel1.Name = "jnPanel1";
             this.jnPanel1.Size = new System.Drawing.Size(1530, 530);
             this.jnPanel1.TabIndex = 89;
+            // 
+            // pnLoading
+            // 
+            this.pnLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnLoading.Controls.Add(this.pbLoading);
+            this.pnLoading.Location = new System.Drawing.Point(595, 173);
+            this.pnLoading.Name = "pnLoading";
+            this.pnLoading.Size = new System.Drawing.Size(358, 284);
+            this.pnLoading.TabIndex = 99;
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbLoading.Image = ((System.Drawing.Image)(resources.GetObject("pbLoading.Image")));
+            this.pbLoading.Location = new System.Drawing.Point(31, 6);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(298, 271);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 93;
+            this.pbLoading.TabStop = false;
             // 
             // btnAgregar
             // 
@@ -208,18 +245,6 @@ namespace Gestion.Colegial.UI.FormsBase
             this.lblTituloForm.TabIndex = 1;
             this.lblTituloForm.Text = "FormBase";
             // 
-            // pnBackground
-            // 
-            this.pnBackground.AutoScroll = true;
-            this.pnBackground.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnBackground.Controls.Add(this.jnPanel1);
-            this.pnBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnBackground.Location = new System.Drawing.Point(0, 0);
-            this.pnBackground.Name = "pnBackground";
-            this.pnBackground.Padding = new System.Windows.Forms.Padding(35);
-            this.pnBackground.Size = new System.Drawing.Size(1600, 600);
-            this.pnBackground.TabIndex = 19;
-            // 
             // FormBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,14 +257,16 @@ namespace Gestion.Colegial.UI.FormsBase
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuBase";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.pnBackground.ResumeLayout(false);
             this.jnPanel1.ResumeLayout(false);
             this.jnPanel1.PerformLayout();
+            this.pnLoading.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJN1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BgSearch)).EndInit();
             this.jnPanel2.ResumeLayout(false);
             this.jnPanel2.PerformLayout();
-            this.pnBackground.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -255,5 +282,7 @@ namespace Gestion.Colegial.UI.FormsBase
         public System.Windows.Forms.Panel pnBackground;
         public System.Windows.Forms.PictureBox btnBuscar;
         protected JNControls.Controles.JNDataGridView dataGridViewJN1;
+        public System.Windows.Forms.Panel pnLoading;
+        public System.Windows.Forms.PictureBox pbLoading;
     }
 }

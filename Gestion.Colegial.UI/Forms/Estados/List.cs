@@ -56,6 +56,8 @@ namespace Gestion.Colegial.UI.Forms.Estados
             }
             else
                 MessageBox.Show(data.Message);
+
+            pnLoading.Visible = false;
         }
 
         /// <summary>
@@ -78,6 +80,8 @@ namespace Gestion.Colegial.UI.Forms.Estados
             }
             else
                 MessageBox.Show(data.Message);
+
+            pnLoading.Visible = false;
         }
 
         /// Agregado de botones de accion.

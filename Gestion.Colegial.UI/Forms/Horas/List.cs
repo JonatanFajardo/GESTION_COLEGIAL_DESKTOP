@@ -29,9 +29,6 @@ namespace Gestion.Colegial.UI.Forms.Horas
             dataGridViewJN1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             DataGridViewFill();
-
-
-
         }
 
         /// <summary>
@@ -60,6 +57,8 @@ namespace Gestion.Colegial.UI.Forms.Horas
             else
                 MessageBox.Show(data.Message);
 
+            pnLoading.Visible = false;
+
         }
 
         /// <summary>
@@ -82,6 +81,8 @@ namespace Gestion.Colegial.UI.Forms.Horas
             }
             else
                 MessageBox.Show(data.Message);
+
+            pnLoading.Visible = false;
         }
 
         /// Agregado de botones de accion.

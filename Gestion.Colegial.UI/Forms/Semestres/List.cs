@@ -63,6 +63,9 @@ namespace Gestion.Colegial.UI.Forms.Semestres
             }
             else
                 MessageBox.Show(data.Message);
+
+            pnLoading.Visible = false;
+
         }
 
         /// <summary>
@@ -82,10 +85,12 @@ namespace Gestion.Colegial.UI.Forms.Semestres
                 dv.RowFilter = $"{columna} like '%{search}%'";
                 dataGridViewJN1.DataSource = dv.ToTable();
                 AddActions();
-
             }
+
             else
                 MessageBox.Show(data.Message);
+
+            pnLoading.Visible = false;
         }
 
         /// Agregado de botones de accion.
