@@ -151,15 +151,9 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
             {
                 // Objeto con la data que se selecciono.
-                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
-                Add add = new Add(this, id);
+                int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                Add add = new Add(this, identifier);
                 add.Show();
-
-                tbCargos objCargos = new tbCargos()
-                {
-                    Car_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
-                    Car_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
-                };
             }
 
             // Eliminamos registro.
@@ -168,12 +162,8 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())
                 {
-                    tbCargos objCargos = new tbCargos()
-                    {
-                        Car_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
-                        //Mda_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
-                    };
-                    Boolean resultService = await CargosServices.Remove(objCargos.Car_Id);
+                    int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                    Boolean resultService = await CargosServices.Remove(identifier);
                     DataGridViewFill();
                     if (resultService)
                     {

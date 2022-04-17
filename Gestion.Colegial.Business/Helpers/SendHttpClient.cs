@@ -12,8 +12,8 @@ namespace Gestion.Colegial.Business.Helpers
     /// </summary>
     public static class SendHttpClient
     {
-        //private const string baseUrl = "https://localhost:44341/api/";
-        private static string baseUrl = Properties.Settings.Default.baseUrlOnline;
+        private const string baseUrl = "https://localhost:44341/api/";
+        //private static string baseUrl = Properties.Settings.Default.baseUrlOnline;
 
         /// <summary>
         /// Obtiene valores del servicio.

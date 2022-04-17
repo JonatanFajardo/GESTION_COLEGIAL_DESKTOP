@@ -19,5 +19,10 @@ namespace Gestion.Colegial.Business.Services
         {
             return await EmpleadosServices.List();
         }
+
+        public static async Task<Answer> EventosList()
+        {
+            return await EventosServices.List();
+        }
     }
 }

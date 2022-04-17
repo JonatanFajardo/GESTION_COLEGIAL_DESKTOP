@@ -147,13 +147,8 @@ namespace Gestion.Colegial.UI.Forms.Titulos
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
             {
                 // Objeto con la data que se selecciono.
-                tbTitulos objTitulos = new tbTitulos()
-                {
-                    Tit_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
-                    Tit_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
-                };
-                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
-                Add add = new Add(this, id);
+                int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                Add add = new Add(this, identifier);
                 add.Show();
             }
 
@@ -163,12 +158,10 @@ namespace Gestion.Colegial.UI.Forms.Titulos
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())
                 {
-                    tbTitulos objTitulos = new tbTitulos()
-                    {
-                        Tit_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
-                        //Tit_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
-                    };
-                    Boolean resultService = await TitulosServices.Remove(objTitulos.Tit_Id);
+                    int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                    Add add = new Add(this, identifier);
+                    add.Show();
+                    Boolean resultService = await TitulosServices.Remove(identifier);
                     DataGridViewFill();
                     if (resultService)
                     {

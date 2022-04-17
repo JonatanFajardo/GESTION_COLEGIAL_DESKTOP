@@ -144,13 +144,8 @@ namespace Gestion.Colegial.UI.Forms.Materias
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
             {
                 // Objeto con la data que se selecciono.
-                tbMaterias objMaterias = new tbMaterias()
-                {
-                    Mat_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
-                    Mat_Nombre = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
-                };
-                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
-                Add add = new Add(this, id);
+                int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                Add add = new Add(this, identifier);
                 add.Show();
             }
 
@@ -160,12 +155,8 @@ namespace Gestion.Colegial.UI.Forms.Materias
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())
                 {
-                    tbMaterias objMaterias = new tbMaterias()
-                    {
-                        Mat_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
-                        //Mat_Nombre = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
-                    };
-                    Boolean resultService = await MateriasServices.Remove(objMaterias.Mat_Id);
+                    int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                    Boolean resultService = await MateriasServices.Remove(identifier);
                     DataGridViewFill();
                     if (resultService)
                     {

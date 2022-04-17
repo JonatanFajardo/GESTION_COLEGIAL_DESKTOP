@@ -146,6 +146,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\NivelesEducativosServices.cs" />
     <Compile Include="Services\NotasServices.cs" />
+    <Compile Include="Services\EventosServices.cs" />
     <Compile Include="Services\ParcialesServices.cs" />
     <Compile Include="Services\ParentescosServices.cs" />
     <Compile Include="Services\PersonasServices.cs" />

@@ -158,8 +158,8 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
             {
                 // Objeto con la data que se selecciono.
-                int identifierUpdate = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
-                Encargados.Add add = new Add(this, identifierUpdate);
+                int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                Add add = new Add(this, identifier);
                 add.Show();
             }
 
@@ -169,8 +169,8 @@ namespace Gestion.Colegial.UI.Forms.Encargados
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())
                 {
-                    int identifierDelete = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value;
-                    Boolean resultService = await EncargadosServices.Remove(identifierDelete);
+                    int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                    Boolean resultService = await EncargadosServices.Remove(identifier);
                     DataGridViewFill();
                     if (resultService)
                     {

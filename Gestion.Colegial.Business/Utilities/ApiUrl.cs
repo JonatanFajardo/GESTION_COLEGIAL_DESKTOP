@@ -274,6 +274,16 @@
             public const string Update = Base + "/Edit";
             public const string Delete = Base + "/Remove";
         }
+        public class Eventos
+        {
+            public const string Base = "Eventos";
+            public const string List = Base + "/List";
+            public const string Find = Base + "/Find";
+            public const string Detail = Base + "/Detail";
+            public const string Create = Base + "/Create";
+            public const string Update = Base + "/Edit";
+            public const string Delete = Base + "/Remove";
+        }
 
     }
 }

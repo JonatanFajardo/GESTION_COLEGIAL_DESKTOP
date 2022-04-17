@@ -141,13 +141,8 @@ namespace Gestion.Colegial.UI.Forms.Horas
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
             {
                 // Objeto con la data que se selecciono.
-                tbHoras objHoras = new tbHoras()
-                {
-                    Hor_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
-                    Hor_Hora = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
-                };
-                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
-                Add add = new Add(this, id);
+                int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                Add add = new Add(this, identifier);
                 add.Show();
             }
 
@@ -157,12 +152,8 @@ namespace Gestion.Colegial.UI.Forms.Horas
                 Warning.ShowDialog("Desea eliminar esta fila?");
                 if (Warning.isOk())
                 {
-                    tbHoras objHoras = new tbHoras()
-                    {
-                        Hor_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
-                        //Hor_Hora = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
-                    };
-                    Boolean resultService = await HorasServices.Remove(objHoras.Hor_Id);
+                    int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+                    Boolean resultService = await HorasServices.Remove(identifier);
                     DataGridViewFill();
                     if (resultService)
                     {

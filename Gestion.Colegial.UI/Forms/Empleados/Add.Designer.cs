@@ -52,7 +52,8 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label2 = new System.Windows.Forms.Label();
             this.txtEnc_Ocupacion = new JNControls.Controles.JNTexBox();
             this.txt = new System.Windows.Forms.Label();
-            this.jnCard2 = new JNControls.Controles.JNCard();
+            this.cbEsActivo = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnBackground.SuspendLayout();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -61,7 +62,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             // pnBackground
             // 
             this.pnBackground.AutoScroll = true;
-            this.pnBackground.Controls.Add(this.jnCard2);
+            this.pnBackground.Controls.Add(this.cbEsActivo);
             this.pnBackground.Controls.Add(this.dtpPer_FechaNacimiento);
             this.pnBackground.Controls.Add(this.txtPer_Sexo);
             this.pnBackground.Controls.Add(this.label12);
@@ -85,7 +86,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.pnBackground.Controls.Add(this.label2);
             this.pnBackground.Controls.Add(this.txtEnc_Ocupacion);
             this.pnBackground.Controls.Add(this.txt);
+            this.pnBackground.Controls.Add(this.panel1);
             this.pnBackground.Size = new System.Drawing.Size(1268, 508);
+            this.pnBackground.Controls.SetChildIndex(this.panel1, 0);
+            this.pnBackground.Controls.SetChildIndex(this.btnAgregar, 0);
+            this.pnBackground.Controls.SetChildIndex(this.btnCancelar, 0);
             this.pnBackground.Controls.SetChildIndex(this.txt, 0);
             this.pnBackground.Controls.SetChildIndex(this.txtEnc_Ocupacion, 0);
             this.pnBackground.Controls.SetChildIndex(this.label2, 0);
@@ -109,9 +114,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.pnBackground.Controls.SetChildIndex(this.label12, 0);
             this.pnBackground.Controls.SetChildIndex(this.txtPer_Sexo, 0);
             this.pnBackground.Controls.SetChildIndex(this.dtpPer_FechaNacimiento, 0);
-            this.pnBackground.Controls.SetChildIndex(this.jnCard2, 0);
-            this.pnBackground.Controls.SetChildIndex(this.btnAgregar, 0);
-            this.pnBackground.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.pnBackground.Controls.SetChildIndex(this.cbEsActivo, 0);
             // 
             // pnHeader
             // 
@@ -120,25 +123,25 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             // btnAgregar
             // 
             this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(654, 424);
+            this.btnAgregar.Location = new System.Drawing.Point(795, 666);
             // 
             // btnCancelar
             // 
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(769, 424);
+            this.btnCancelar.Location = new System.Drawing.Point(910, 666);
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(2693, 16);
+            this.pictureBox10.Location = new System.Drawing.Point(3427, 16);
             // 
             // dtpPer_FechaNacimiento
             // 
             this.dtpPer_FechaNacimiento.CalendarForeColor = System.Drawing.Color.Coral;
             this.dtpPer_FechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPer_FechaNacimiento.Location = new System.Drawing.Point(285, 452);
+            this.dtpPer_FechaNacimiento.Location = new System.Drawing.Point(227, 348);
             this.dtpPer_FechaNacimiento.Name = "dtpPer_FechaNacimiento";
             this.dtpPer_FechaNacimiento.Size = new System.Drawing.Size(350, 22);
-            this.dtpPer_FechaNacimiento.TabIndex = 441;
+            this.dtpPer_FechaNacimiento.TabIndex = 394;
             // 
             // txtPer_Sexo
             // 
@@ -151,7 +154,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_Sexo.CleanCompleted = false;
             this.txtPer_Sexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_Sexo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_Sexo.Location = new System.Drawing.Point(717, 536);
+            this.txtPer_Sexo.Location = new System.Drawing.Point(659, 432);
             this.txtPer_Sexo.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_Sexo.Multiline = false;
             this.txtPer_Sexo.Name = "txtPer_Sexo";
@@ -161,7 +164,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_Sexo.PlaceholderText = "";
             this.txtPer_Sexo.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtPer_Sexo.Size = new System.Drawing.Size(365, 35);
-            this.txtPer_Sexo.TabIndex = 444;
+            this.txtPer_Sexo.TabIndex = 397;
             this.txtPer_Sexo.Texts = "";
             this.txtPer_Sexo.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_Sexo.UnderlinedStyle = false;
@@ -172,11 +175,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label12.Location = new System.Drawing.Point(714, 500);
+            this.label12.Location = new System.Drawing.Point(656, 396);
             this.label12.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 22);
-            this.label12.TabIndex = 457;
+            this.label12.TabIndex = 410;
             this.label12.Text = "Sexo";
             // 
             // txtPer_Direccion
@@ -190,7 +193,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_Direccion.CleanCompleted = false;
             this.txtPer_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_Direccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_Direccion.Location = new System.Drawing.Point(280, 628);
+            this.txtPer_Direccion.Location = new System.Drawing.Point(222, 524);
             this.txtPer_Direccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_Direccion.Multiline = true;
             this.txtPer_Direccion.Name = "txtPer_Direccion";
@@ -200,7 +203,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_Direccion.PlaceholderText = "";
             this.txtPer_Direccion.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtPer_Direccion.Size = new System.Drawing.Size(802, 97);
-            this.txtPer_Direccion.TabIndex = 445;
+            this.txtPer_Direccion.TabIndex = 398;
             this.txtPer_Direccion.Texts = "";
             this.txtPer_Direccion.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_Direccion.UnderlinedStyle = false;
@@ -211,11 +214,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label9.Location = new System.Drawing.Point(277, 592);
+            this.label9.Location = new System.Drawing.Point(219, 488);
             this.label9.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 22);
-            this.label9.TabIndex = 456;
+            this.label9.TabIndex = 409;
             this.label9.Text = "Dirección";
             // 
             // txtPer_Telefono
@@ -229,7 +232,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_Telefono.CleanCompleted = false;
             this.txtPer_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_Telefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_Telefono.Location = new System.Drawing.Point(278, 536);
+            this.txtPer_Telefono.Location = new System.Drawing.Point(220, 432);
             this.txtPer_Telefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_Telefono.Multiline = false;
             this.txtPer_Telefono.Name = "txtPer_Telefono";
@@ -239,7 +242,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_Telefono.PlaceholderText = "";
             this.txtPer_Telefono.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtPer_Telefono.Size = new System.Drawing.Size(365, 35);
-            this.txtPer_Telefono.TabIndex = 443;
+            this.txtPer_Telefono.TabIndex = 396;
             this.txtPer_Telefono.Texts = "";
             this.txtPer_Telefono.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_Telefono.UnderlinedStyle = false;
@@ -250,11 +253,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label10.Location = new System.Drawing.Point(275, 500);
+            this.label10.Location = new System.Drawing.Point(217, 396);
             this.label10.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(81, 22);
-            this.label10.TabIndex = 455;
+            this.label10.TabIndex = 408;
             this.label10.Text = "Teléfono";
             // 
             // txtPer_CorreoElectronico
@@ -268,7 +271,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_CorreoElectronico.CleanCompleted = false;
             this.txtPer_CorreoElectronico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_CorreoElectronico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_CorreoElectronico.Location = new System.Drawing.Point(716, 445);
+            this.txtPer_CorreoElectronico.Location = new System.Drawing.Point(658, 341);
             this.txtPer_CorreoElectronico.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_CorreoElectronico.Multiline = false;
             this.txtPer_CorreoElectronico.Name = "txtPer_CorreoElectronico";
@@ -278,7 +281,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_CorreoElectronico.PlaceholderText = "";
             this.txtPer_CorreoElectronico.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtPer_CorreoElectronico.Size = new System.Drawing.Size(365, 35);
-            this.txtPer_CorreoElectronico.TabIndex = 442;
+            this.txtPer_CorreoElectronico.TabIndex = 395;
             this.txtPer_CorreoElectronico.Texts = "";
             this.txtPer_CorreoElectronico.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_CorreoElectronico.UnderlinedStyle = false;
@@ -289,11 +292,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label7.Location = new System.Drawing.Point(713, 409);
+            this.label7.Location = new System.Drawing.Point(655, 305);
             this.label7.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(159, 22);
-            this.label7.TabIndex = 454;
+            this.label7.TabIndex = 407;
             this.label7.Text = "Correo Electronico";
             // 
             // txtPer_FechaNacimiento
@@ -308,7 +311,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_FechaNacimiento.Enabled = false;
             this.txtPer_FechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_FechaNacimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_FechaNacimiento.Location = new System.Drawing.Point(278, 445);
+            this.txtPer_FechaNacimiento.Location = new System.Drawing.Point(220, 341);
             this.txtPer_FechaNacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_FechaNacimiento.Multiline = false;
             this.txtPer_FechaNacimiento.Name = "txtPer_FechaNacimiento";
@@ -318,7 +321,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_FechaNacimiento.PlaceholderText = "";
             this.txtPer_FechaNacimiento.Require = JNControls.Controles.JNTexBox.TrueFalse.False;
             this.txtPer_FechaNacimiento.Size = new System.Drawing.Size(365, 35);
-            this.txtPer_FechaNacimiento.TabIndex = 452;
+            this.txtPer_FechaNacimiento.TabIndex = 405;
             this.txtPer_FechaNacimiento.Texts = "";
             this.txtPer_FechaNacimiento.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_FechaNacimiento.UnderlinedStyle = false;
@@ -329,11 +332,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label8.Location = new System.Drawing.Point(275, 409);
+            this.label8.Location = new System.Drawing.Point(217, 305);
             this.label8.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(179, 22);
-            this.label8.TabIndex = 453;
+            this.label8.TabIndex = 406;
             this.label8.Text = "Fecha de Nacimiento";
             // 
             // txtPer_ApellidoMaterno
@@ -347,7 +350,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_ApellidoMaterno.CleanCompleted = false;
             this.txtPer_ApellidoMaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_ApellidoMaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_ApellidoMaterno.Location = new System.Drawing.Point(716, 358);
+            this.txtPer_ApellidoMaterno.Location = new System.Drawing.Point(658, 254);
             this.txtPer_ApellidoMaterno.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_ApellidoMaterno.Multiline = false;
             this.txtPer_ApellidoMaterno.Name = "txtPer_ApellidoMaterno";
@@ -357,7 +360,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_ApellidoMaterno.PlaceholderText = "";
             this.txtPer_ApellidoMaterno.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtPer_ApellidoMaterno.Size = new System.Drawing.Size(365, 35);
-            this.txtPer_ApellidoMaterno.TabIndex = 440;
+            this.txtPer_ApellidoMaterno.TabIndex = 393;
             this.txtPer_ApellidoMaterno.Texts = "";
             this.txtPer_ApellidoMaterno.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_ApellidoMaterno.UnderlinedStyle = false;
@@ -368,11 +371,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label5.Location = new System.Drawing.Point(713, 322);
+            this.label5.Location = new System.Drawing.Point(655, 218);
             this.label5.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 22);
-            this.label5.TabIndex = 451;
+            this.label5.TabIndex = 404;
             this.label5.Text = "Apellido Materno";
             // 
             // txtPer_ApellidoPaterno
@@ -386,7 +389,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_ApellidoPaterno.CleanCompleted = false;
             this.txtPer_ApellidoPaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_ApellidoPaterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_ApellidoPaterno.Location = new System.Drawing.Point(278, 358);
+            this.txtPer_ApellidoPaterno.Location = new System.Drawing.Point(220, 254);
             this.txtPer_ApellidoPaterno.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_ApellidoPaterno.Multiline = false;
             this.txtPer_ApellidoPaterno.Name = "txtPer_ApellidoPaterno";
@@ -396,7 +399,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_ApellidoPaterno.PlaceholderText = "";
             this.txtPer_ApellidoPaterno.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtPer_ApellidoPaterno.Size = new System.Drawing.Size(365, 35);
-            this.txtPer_ApellidoPaterno.TabIndex = 439;
+            this.txtPer_ApellidoPaterno.TabIndex = 392;
             this.txtPer_ApellidoPaterno.Texts = "";
             this.txtPer_ApellidoPaterno.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_ApellidoPaterno.UnderlinedStyle = false;
@@ -407,11 +410,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label6.Location = new System.Drawing.Point(275, 322);
+            this.label6.Location = new System.Drawing.Point(217, 218);
             this.label6.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 22);
-            this.label6.TabIndex = 450;
+            this.label6.TabIndex = 403;
             this.label6.Text = "Apellido Paterno";
             // 
             // txtPer_SegundoNombre
@@ -425,7 +428,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_SegundoNombre.CleanCompleted = false;
             this.txtPer_SegundoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_SegundoNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_SegundoNombre.Location = new System.Drawing.Point(716, 270);
+            this.txtPer_SegundoNombre.Location = new System.Drawing.Point(658, 166);
             this.txtPer_SegundoNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_SegundoNombre.Multiline = false;
             this.txtPer_SegundoNombre.Name = "txtPer_SegundoNombre";
@@ -435,7 +438,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_SegundoNombre.PlaceholderText = "";
             this.txtPer_SegundoNombre.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtPer_SegundoNombre.Size = new System.Drawing.Size(365, 35);
-            this.txtPer_SegundoNombre.TabIndex = 438;
+            this.txtPer_SegundoNombre.TabIndex = 391;
             this.txtPer_SegundoNombre.Texts = "";
             this.txtPer_SegundoNombre.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_SegundoNombre.UnderlinedStyle = false;
@@ -446,11 +449,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label3.Location = new System.Drawing.Point(713, 234);
+            this.label3.Location = new System.Drawing.Point(655, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 22);
-            this.label3.TabIndex = 449;
+            this.label3.TabIndex = 402;
             this.label3.Text = "Segundo Nombre";
             // 
             // txtPer_PrimerNombre
@@ -464,7 +467,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_PrimerNombre.CleanCompleted = false;
             this.txtPer_PrimerNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_PrimerNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_PrimerNombre.Location = new System.Drawing.Point(278, 270);
+            this.txtPer_PrimerNombre.Location = new System.Drawing.Point(220, 166);
             this.txtPer_PrimerNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_PrimerNombre.Multiline = false;
             this.txtPer_PrimerNombre.Name = "txtPer_PrimerNombre";
@@ -474,7 +477,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_PrimerNombre.PlaceholderText = "";
             this.txtPer_PrimerNombre.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtPer_PrimerNombre.Size = new System.Drawing.Size(365, 35);
-            this.txtPer_PrimerNombre.TabIndex = 437;
+            this.txtPer_PrimerNombre.TabIndex = 390;
             this.txtPer_PrimerNombre.Texts = "";
             this.txtPer_PrimerNombre.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_PrimerNombre.UnderlinedStyle = false;
@@ -485,11 +488,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label4.Location = new System.Drawing.Point(275, 234);
+            this.label4.Location = new System.Drawing.Point(217, 130);
             this.label4.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 22);
-            this.label4.TabIndex = 448;
+            this.label4.TabIndex = 401;
             this.label4.Text = "Primer Nombre";
             // 
             // txtPer_Identidad
@@ -503,7 +506,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_Identidad.CleanCompleted = false;
             this.txtPer_Identidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPer_Identidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPer_Identidad.Location = new System.Drawing.Point(716, 184);
+            this.txtPer_Identidad.Location = new System.Drawing.Point(658, 80);
             this.txtPer_Identidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtPer_Identidad.Multiline = false;
             this.txtPer_Identidad.Name = "txtPer_Identidad";
@@ -513,7 +516,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtPer_Identidad.PlaceholderText = "";
             this.txtPer_Identidad.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtPer_Identidad.Size = new System.Drawing.Size(365, 35);
-            this.txtPer_Identidad.TabIndex = 436;
+            this.txtPer_Identidad.TabIndex = 389;
             this.txtPer_Identidad.Texts = "";
             this.txtPer_Identidad.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtPer_Identidad.UnderlinedStyle = false;
@@ -524,11 +527,11 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label2.Location = new System.Drawing.Point(713, 148);
+            this.label2.Location = new System.Drawing.Point(655, 44);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 22);
-            this.label2.TabIndex = 447;
+            this.label2.TabIndex = 400;
             this.label2.Text = "Identidad";
             // 
             // txtEnc_Ocupacion
@@ -542,7 +545,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtEnc_Ocupacion.CleanCompleted = false;
             this.txtEnc_Ocupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnc_Ocupacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEnc_Ocupacion.Location = new System.Drawing.Point(278, 184);
+            this.txtEnc_Ocupacion.Location = new System.Drawing.Point(220, 80);
             this.txtEnc_Ocupacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtEnc_Ocupacion.Multiline = false;
             this.txtEnc_Ocupacion.Name = "txtEnc_Ocupacion";
@@ -552,7 +555,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txtEnc_Ocupacion.PlaceholderText = "";
             this.txtEnc_Ocupacion.Require = JNControls.Controles.JNTexBox.TrueFalse.True;
             this.txtEnc_Ocupacion.Size = new System.Drawing.Size(365, 35);
-            this.txtEnc_Ocupacion.TabIndex = 435;
+            this.txtEnc_Ocupacion.TabIndex = 388;
             this.txtEnc_Ocupacion.Texts = "";
             this.txtEnc_Ocupacion.TypeDate = JNControls.Controles.JNTexBox.Estados.Ninguno;
             this.txtEnc_Ocupacion.UnderlinedStyle = false;
@@ -563,20 +566,33 @@ namespace Gestion.Colegial.UI.Forms.Empleados
             this.txt.BackColor = System.Drawing.Color.Transparent;
             this.txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txt.Location = new System.Drawing.Point(275, 148);
+            this.txt.Location = new System.Drawing.Point(217, 44);
             this.txt.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(96, 22);
-            this.txt.TabIndex = 446;
+            this.txt.TabIndex = 399;
             this.txt.Text = "Ocupacion";
             // 
-            // jnCard2
+            // cbEsActivo
             // 
-            this.jnCard2.Location = new System.Drawing.Point(211, 836);
-            this.jnCard2.Name = "jnCard2";
-            this.jnCard2.Padding = new System.Windows.Forms.Padding(15);
-            this.jnCard2.Size = new System.Drawing.Size(528, 518);
-            this.jnCard2.TabIndex = 459;
+            this.cbEsActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEsActivo.AutoSize = true;
+            this.cbEsActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.cbEsActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.cbEsActivo.Location = new System.Drawing.Point(870, 628);
+            this.cbEsActivo.Name = "cbEsActivo";
+            this.cbEsActivo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cbEsActivo.Size = new System.Drawing.Size(88, 26);
+            this.cbEsActivo.TabIndex = 411;
+            this.cbEsActivo.Text = "Estado";
+            this.cbEsActivo.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(793, 660);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(231, 104);
+            this.panel1.TabIndex = 412;
             // 
             // Add
             // 
@@ -596,7 +612,6 @@ namespace Gestion.Colegial.UI.Forms.Empleados
 
         #endregion
 
-        private JNControls.Controles.JNCard jnCard2;
         private System.Windows.Forms.DateTimePicker dtpPer_FechaNacimiento;
         private JNControls.Controles.JNTexBox txtPer_Sexo;
         private System.Windows.Forms.Label label12;
@@ -620,5 +635,7 @@ namespace Gestion.Colegial.UI.Forms.Empleados
         private System.Windows.Forms.Label label2;
         private JNControls.Controles.JNTexBox txtEnc_Ocupacion;
         private System.Windows.Forms.Label txt;
+        private System.Windows.Forms.CheckBox cbEsActivo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

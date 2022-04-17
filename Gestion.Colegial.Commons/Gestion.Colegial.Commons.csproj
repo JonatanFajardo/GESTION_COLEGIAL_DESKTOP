@@ -59,6 +59,7 @@
     <Compile Include="Entities\app\tbEncargados.cs" />
     <Compile Include="Entities\app\tbEncargados_tbAlumnos.cs" />
     <Compile Include="Entities\app\tbEstados.cs" />
+    <Compile Include="Entities\app\tbEventos.cs" />
     <Compile Include="Entities\app\tbHorarioAlumnos.cs" />
     <Compile Include="Entities\app\tbHorarioProfesores.cs" />
     <Compile Include="Entities\app\tbHoras.cs" />
@@ -179,6 +180,11 @@
     <Compile Include="Entities\dbo\PR_tbEstados_InsertResult.cs" />
     <Compile Include="Entities\dbo\PR_tbEstados_ListResult.cs" />
     <Compile Include="Entities\dbo\PR_tbEstados_UpdateResult.cs" />
+    <Compile Include="Entities\dbo\PR_tbEventos_DetailResult.cs" />
+    <Compile Include="Entities\dbo\PR_tbEventos_FindResult.cs" />
+    <Compile Include="Entities\dbo\PR_tbEventos_InsertResult.cs" />
+    <Compile Include="Entities\dbo\PR_tbEventos_ListResult.cs" />
+    <Compile Include="Entities\dbo\PR_tbEventos_UpdateResult.cs" />
     <Compile Include="Entities\dbo\PR_tbHorarioAlumnos_DeleteResult.cs" />
     <Compile Include="Entities\dbo\PR_tbHorarioAlumnos_DetailResult.cs" />
     <Compile Include="Entities\dbo\PR_tbHorarioAlumnos_FindResult.cs" />

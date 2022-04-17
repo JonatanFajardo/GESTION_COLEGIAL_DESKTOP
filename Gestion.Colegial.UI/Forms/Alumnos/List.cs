@@ -1,7 +1,5 @@
-﻿using Gestion.Colegial.Business.Helpers.Alert;
-using Gestion.Colegial.Business.Helpers.Export;
+﻿using Gestion.Colegial.Business.Helpers.Export;
 using Gestion.Colegial.Business.Helpers.ExportCustom;
-using Gestion.Colegial.Business.Messagebox;
 using Gestion.Colegial.Business.Services;
 using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
@@ -67,7 +65,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
             };
 
             // Peticion de la data
-            Answer data = await CargosServices.List();
+            Answer data = await AlumnosServices.List();
             if (!data.Access)
             {
                 dataGridViewJN1.Columns.Clear();
@@ -119,7 +117,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         #region FuncionalidadesDGV
         private void jnButton1_Click(object sender, EventArgs e)
         {
-            ///var obj = CargosServices.List("");
+            ///var obj = AlumnosServices.List("");
             PdfCustom.DataSource(this.Text, dataGridViewJN1);
         }
 
@@ -127,7 +125,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         {
             //string[] ignore = new string[] { "Editar", "Detalle", "Eliminar" };
             Excel excel = new Excel();
-            ///var obj = CargosServices.List("");
+            ///var obj = AlumnosServices.List("");
             ////excel.DataSource(obj);
         }
 
@@ -154,42 +152,30 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         /// <param name="e">Evento.</param>
         public async override void CellContentDGV(DataGridViewCellEventArgs e)
         {
+            //// Editamos registro.
+            //if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
+            //{
+            //    // Objeto con la data que se selecciono.
+            //    int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+            //    Add add = new Add(this, identifier);
+            //    add.Show();
+            //}
 
-            // Editamos registro.
-            if (dataGridViewJN1.Rows[e.RowIndex].Cells[" "].Selected)
-            {
-                // Objeto con la data que se selecciono.
-                int id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value;
-                //Add add = new Add(this, id);
-                //add.Show();
-
-                tbCargos objCargos = new tbCargos()
-                {
-                    Car_Id = Convert.ToInt32(dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value),
-                    Car_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString()
-                };
-            }
-
-            // Eliminamos registro.
-            if (dataGridViewJN1.Rows[e.RowIndex].Cells["  "].Selected)
-            {
-                Warning.ShowDialog("Desea eliminar esta fila?");
-                if (Warning.isOk())
-                {
-                    tbCargos objCargos = new tbCargos()
-                    {
-                        Car_Id = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value,
-                        //Mda_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
-                    };
-                    Boolean resultService = await CargosServices.Remove(objCargos.Car_Id);
-                    DataGridViewFill();
-                    if (resultService)
-                    {
-                        Alert.Show(Alert.enmType.Error, "No se ha podido eliminar la fila.", "Error");
-                    }
-                }
-            }
-
+            //// Eliminamos registro.
+            //if (dataGridViewJN1.Rows[e.RowIndex].Cells["  "].Selected)
+            //{
+            //    Warning.ShowDialog("Desea eliminar esta fila?");
+            //    if (Warning.isOk())
+            //    {
+            //        int identifier = (Int32)dataGridViewJN1.Rows[e.RowIndex].Cells[0].Value;
+            //        Boolean resultService = await AlumnosServices.Remove(objAlumnos.Car_Id);
+            //        DataGridViewFill();
+            //        if (resultService)
+            //        {
+            //            Alert.Show(Alert.enmType.Error, "No se ha podido eliminar la fila.", "Error");
+            //        }
+            //    }
+            //}
         }
 
 
@@ -225,8 +211,8 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         //    {
 
         //    }
-        //    System.Collections.Generic.List<tbCargos> lista = new System.Collections.Generic.List<tbCargos>();
-        //    lista.Add(new tbCargos()
+        //    System.Collections.Generic.List<tbAlumnos> lista = new System.Collections.Generic.List<tbAlumnos>();
+        //    lista.Add(new tbAlumnos()
         //    {
         //        //mda_Descripcion = 
         //    });

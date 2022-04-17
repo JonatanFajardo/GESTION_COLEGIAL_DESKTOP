@@ -347,12 +347,6 @@
     <Compile Include="Forms\Modalidades\Detail.Designer.cs">
       <DependentUpon>Detail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Modalidades\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Modalidades\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Modalidades\List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -612,9 +606,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modalidades\Detail.resx">
       <DependentUpon>Detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Modalidades\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modalidades\List.resx">
       <DependentUpon>List.cs</DependentUpon>

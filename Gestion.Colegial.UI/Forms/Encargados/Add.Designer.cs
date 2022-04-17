@@ -133,7 +133,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(3649, 31);
+            this.pictureBox10.Location = new System.Drawing.Point(4284, 31);
             // 
             // txtPer_Sexo
             // 
@@ -587,7 +587,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             this.cbEsActivo.AutoSize = true;
             this.cbEsActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.cbEsActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.cbEsActivo.Location = new System.Drawing.Point(831, 601);
+            this.cbEsActivo.Location = new System.Drawing.Point(894, 603);
             this.cbEsActivo.Name = "cbEsActivo";
             this.cbEsActivo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cbEsActivo.Size = new System.Drawing.Size(88, 26);
