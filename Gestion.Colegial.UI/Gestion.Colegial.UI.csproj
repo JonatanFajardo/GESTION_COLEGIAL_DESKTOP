@@ -335,6 +335,24 @@
     <Compile Include="Forms\Matricula\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Eventos\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Eventos\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Eventos\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Eventos\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Eventos\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Eventos\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Modalidades\Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -599,6 +617,15 @@
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Matricula\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Eventos\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Eventos\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Eventos\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Modalidades\Add.resx">

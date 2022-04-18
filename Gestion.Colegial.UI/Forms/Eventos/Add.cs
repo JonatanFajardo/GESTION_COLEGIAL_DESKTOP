@@ -2,21 +2,21 @@
 using Gestion.Colegial.Business.Helpers.Alert;
 using Gestion.Colegial.Business.Messagebox;
 using Gestion.Colegial.Business.Services;
-using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
 using Gestion.Colegial.UI.FormsBase;
 using Gestion.Colegial.UI.Helpers.Controles;
+using GESTION_COLEGIAL.Entities.Entities;
 using System;
 using System.Windows.Forms;
 
-namespace Gestion.Colegial.UI.Forms.Modalidades
+namespace Gestion.Colegial.UI.Forms.Eventos
 {
     public partial class Add : Add_Base
     {
         // Instancia que contiene la data local y privadamente.
-        private static tbModalidades send = new tbModalidades();
+        private static tbEventos send = new tbEventos();
         // Instancia del formularkio principal de la seccion list.
-        private Gestion.Colegial.UI.Forms.Modalidades.List _list;
+        private Gestion.Colegial.UI.Forms.Eventos.List _list;
 
         private int _id;
 
@@ -39,11 +39,14 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
         //Pide los datos a la db y los llena.
         private async void FillControls(int id)
         {
-            Answer ServiceInsert = await ModalidadesServices.ListOne(id);
+            Answer ServiceInsert = await EventosServices.ListOne(id);
             if (!ServiceInsert.Access)
             {
-                PR_tbModalidades_FindResult Entity = ServiceInsert.Data;
-                txtDescripcion.Texts = Entity.Mda_Descripcion;
+                PR_tbEventos_FindResult Entity = ServiceInsert.Data;
+                even_Nombre.Texts = Entity.even_Nombre;
+                even_Nombre.Texts = Entity.even_Informacion;
+                even_Nombre.Texts = Entity.even_Fecha.ToString();
+                even_Nombre.Texts = Entity.even_Hora.ToString();
             }
             else
                 MessageBox.Show(ServiceInsert.Message);
@@ -55,8 +58,8 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             this.Show();
 
             // Se asigna valores a titulo del formulario segun su accion.
-            string Registrar = "Registrar Modalidades";
-            string Modificar = "Modificar Modalidades";
+            string Registrar = "Registrar Eventos";
+            string Modificar = "Modificar Eventos";
             if (_id.Equals(0))
             {
                 label1.Text = Registrar;
@@ -81,13 +84,16 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             }
 
             // Condicion que indica el tipo de envio que se hara.
-            send.Mda_Id = _id;
-            send.Mda_Descripcion = txtDescripcion.Texts;
+            send.even_Id = _id;
+            send.even_Nombre = even_Nombre.Texts;
+            send.even_Informacion = even_Informacion.Texts;
+            send.even_Fecha = even_Fecha.Value;
+            send.even_Hora = TimeSpan.Parse(even_Hora.Value.ToString());
 
             if (_id.Equals(0))
             {
-                send.Mda_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
-                Boolean respond = await ModalidadesServices.Add(send);
+                send.even_UsuarioRegistra = GlobalVariable.Usuario.Usu_Id;
+                Boolean respond = await EventosServices.Add(send);
                 if (respond)
                     goto Error;
 
@@ -99,8 +105,8 @@ namespace Gestion.Colegial.UI.Forms.Modalidades
             }
             else
             {
-                send.Mda_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
-                Boolean respond = await ModalidadesServices.Edit(send);
+                send.even_UsuarioModifica = GlobalVariable.Usuario.Usu_Id;
+                Boolean respond = await EventosServices.Edit(send);
                 if (respond)
                     goto Error;
 

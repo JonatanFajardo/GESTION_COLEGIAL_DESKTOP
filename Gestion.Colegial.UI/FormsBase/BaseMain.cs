@@ -24,7 +24,7 @@ namespace Gestion.Colegial.UI.FormsBase
             {
                 new SideBar() { Item = "Inicio" },
                 new SideBar() { Item = "Personas", SubItem = new[] { "Estudiantes", "Encargados", "Docentes", "Parentescos", "Cargos" } },
-                new SideBar() { Item = "Horario", SubItem = new[] { "Horario Alumnos", "Horario Profesores", "Horas", "Dias" } },
+                new SideBar() { Item = "Horario", SubItem = new[] {"Eventos", "Horario Alumnos", "Horario Profesores", "Horas", "Dias" } },
                 new SideBar() { Item = "Cursos", SubItem = new[] { "Cursos Niveles", "Cursos Nombres", "Duraciones", "Materias", "Modalidades", "Niveles Educativos", "Parciales", "Secciones", "Semestres" } },
                 new SideBar() { Item = "Logistica" }
 
@@ -89,7 +89,7 @@ namespace Gestion.Colegial.UI.FormsBase
                         OpenChildForm(new Forms.Matricula.List());
                         break;
                     case "Modalidades":
-                        OpenChildForm(new Forms.Modalidades.List());
+                        OpenChildForm(new Gestion.Colegial.UI.Forms.Eventos.List());
                         break;
                     case "NivelesEducativos":
                         OpenChildForm(new Forms.NivelesEducativos.List());
@@ -138,6 +138,9 @@ namespace Gestion.Colegial.UI.FormsBase
                         break;
                     case "Encargados":
                         OpenChildForm(new Forms.Encargados.List());
+                        break;
+                    case "Eventos":
+                        OpenChildForm(new Forms.Eventos.List());
                         break;
                 }
 
@@ -403,7 +406,7 @@ namespace Gestion.Colegial.UI.FormsBase
         }
         private void jnButton1_Click(object sender, EventArgs e)
         {
-            Forms.Modalidades.List lis = new Forms.Modalidades.List();
+            Gestion.Colegial.UI.Forms.Eventos.List lis = new Gestion.Colegial.UI.Forms.Eventos.List();
             lis.Show();
         }
 
