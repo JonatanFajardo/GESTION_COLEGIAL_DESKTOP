@@ -127,7 +127,7 @@ namespace Gestion.Colegial.UI.FormsBase
             this.btnMaximiza.FlatAppearance.BorderSize = 0;
             this.btnMaximiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximiza.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximiza.Image")));
-            this.btnMaximiza.Location = new System.Drawing.Point(32, -4);
+            this.btnMaximiza.Location = new System.Drawing.Point(124, 0);
             this.btnMaximiza.Margin = new System.Windows.Forms.Padding(4);
             this.btnMaximiza.Name = "btnMaximiza";
             this.btnMaximiza.Size = new System.Drawing.Size(32, 32);
@@ -230,7 +230,7 @@ namespace Gestion.Colegial.UI.FormsBase
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(156, 63);
+            this.label6.Location = new System.Drawing.Point(89, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 20);
             this.label6.TabIndex = 3;
@@ -241,7 +241,7 @@ namespace Gestion.Colegial.UI.FormsBase
             this.lblYear.AutoSize = true;
             this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblYear.ForeColor = System.Drawing.Color.White;
-            this.lblYear.Location = new System.Drawing.Point(156, 29);
+            this.lblYear.Location = new System.Drawing.Point(89, 29);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(45, 20);
             this.lblYear.TabIndex = 2;
@@ -253,7 +253,7 @@ namespace Gestion.Colegial.UI.FormsBase
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(95, 63);
+            this.label4.Location = new System.Drawing.Point(28, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 1;
@@ -264,7 +264,7 @@ namespace Gestion.Colegial.UI.FormsBase
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(95, 29);
+            this.label3.Location = new System.Drawing.Point(28, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 0;

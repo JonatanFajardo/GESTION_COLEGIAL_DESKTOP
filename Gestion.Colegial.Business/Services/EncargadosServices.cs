@@ -2,7 +2,6 @@
 using Gestion.Colegial.Business.Utilities;
 using Gestion.Colegial.Commons.Entities;
 using Gestion.Colegial.Commons.Extensions;
-using Gestion.Colegial.DataAccess.Repositories.app;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -29,7 +28,7 @@ namespace Gestion.Colegial.Business.Services
                 //Configuramos datatable.
                 DataTable result = new DataTable();
                 result = ApiResult.ToList().ToDataTable();
-                result.Columns[0].ColumnName = "Enc_Id";
+                result.Columns[0].ColumnName = "Id";
                 result.Columns[1].ColumnName = "Identidad";
                 result.Columns[2].ColumnName = "Encargado";
                 result.Columns[3].ColumnName = "Telefono";
@@ -90,7 +89,7 @@ namespace Gestion.Colegial.Business.Services
             }
             catch (Exception error)
             {
-               return ErrorLog.Incidents(error);
+                return ErrorLog.Incidents(error);
             }
         }
 
@@ -98,11 +97,11 @@ namespace Gestion.Colegial.Business.Services
         {
             try
             {
-            return await ApiRequests.Edit(ApiUrl.Encargados.Create, entity);
-        }
+                return await ApiRequests.Edit(ApiUrl.Encargados.Create, entity);
+            }
             catch (Exception error)
             {
-               return ErrorLog.Incidents(error);
+                return ErrorLog.Incidents(error);
             }
         }
 
@@ -110,11 +109,11 @@ namespace Gestion.Colegial.Business.Services
         {
             try
             {
-            return await ApiRequests.Delete(ApiUrl.Alumnos.Delete, identifier);
+                return await ApiRequests.Delete(ApiUrl.Alumnos.Delete, identifier);
             }
             catch (Exception error)
             {
-               return ErrorLog.Incidents(error);
+                return ErrorLog.Incidents(error);
             }
         }
 

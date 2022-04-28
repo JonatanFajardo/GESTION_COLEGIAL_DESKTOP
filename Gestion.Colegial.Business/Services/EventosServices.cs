@@ -29,10 +29,9 @@ namespace Gestion.Colegial.Business.Services
                 result = ApiResult.ToList().ToDataTable();
                 result.Columns[0].ColumnName = "Linea";
                 result.Columns[1].ColumnName = "Nombre";
-                result.Columns[2].ColumnName = "Descripción";
-                result.Columns[3].ColumnName = "Fecha";
-                result.Columns[4].ColumnName = "Hora";
-                result.Columns[5].ColumnName = "Concluido";
+                result.Columns[2].ColumnName = "Fecha";
+                result.Columns[3].ColumnName = "Hora";
+                result.Columns[4].ColumnName = "Concluido";
                 //Encapsulamos informacion de respuesta.
                 Answer answer = new Answer();
                 answer.Data = result;

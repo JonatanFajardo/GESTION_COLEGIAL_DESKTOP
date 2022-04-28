@@ -32,6 +32,8 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             this.jnPanel1.SuspendLayout();
             this.pnBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
+            this.pnLoading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // jnPanel1
@@ -41,6 +43,11 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             // txtBuscar
             // 
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
+            // 
+            // lblTituloForm
+            // 
+            this.lblTituloForm.Size = new System.Drawing.Size(244, 29);
+            this.lblTituloForm.Text = "Listado Encargados";
             // 
             // pnBackground
             // 
@@ -58,6 +65,8 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             this.jnPanel1.PerformLayout();
             this.pnBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
+            this.pnLoading.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
 
         }

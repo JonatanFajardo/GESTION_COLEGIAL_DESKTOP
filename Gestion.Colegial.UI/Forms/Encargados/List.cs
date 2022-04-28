@@ -77,7 +77,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             {
                 MessageBox.Show(data.Message);
             }
-            //pnLoading.Visible = false;
+            pnLoading.Visible = false;
         }
 
         /// <summary>
@@ -100,8 +100,8 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             }
             else
                 MessageBox.Show(data.Message);
-
             pnLoading.Visible = false;
+
         }
 
         /// Agregado de botones de accion.

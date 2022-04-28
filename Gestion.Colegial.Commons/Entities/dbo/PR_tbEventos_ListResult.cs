@@ -8,7 +8,6 @@ namespace GESTION_COLEGIAL.Entities.Entities
     {
         public int even_Id { get; set; }
         public string even_Nombre { get; set; }
-        public string even_Informacion { get; set; }
         public DateTime even_Fecha { get; set; }
         public TimeSpan even_Hora { get; set; }
         public bool even_Concluido { get; set; }
