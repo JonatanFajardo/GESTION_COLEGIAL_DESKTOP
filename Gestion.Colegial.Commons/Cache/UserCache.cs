@@ -1,7 +1,6 @@
 ﻿namespace Gestion.Colegial.Commons.Cache
 {
-    class UserCache
+    internal class UserCache
     {
-
     }
 }

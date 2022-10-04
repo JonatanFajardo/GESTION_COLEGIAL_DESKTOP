@@ -53,12 +53,9 @@ namespace Gestion.Colegial.Business.Helpers.Export
         //    SourceRange.Worksheet.ListObjects[TableName].TableStyle = TableStyleName;
         //}
 
-
-
         //En face Beta
         public void PrintDataGridView(DataGridView dataGridView)
         {
-
             if (dataGridView.Rows.Count > 0)
             {
                 Microsoft.Office.Interop.Excel.Application excelExport = new Microsoft.Office.Interop.Excel.Application();
@@ -71,21 +68,13 @@ namespace Gestion.Colegial.Business.Helpers.Export
                         if (hd == item)
                         {
                             continue;
-                            //MessageBox.Show(hd);
                         }
                         else
                         {
                             excelExport.Cells[1, i] = hd;
-
                         }
-
                     }
-
                 }
-
-
-
-
 
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
@@ -96,23 +85,6 @@ namespace Gestion.Colegial.Business.Helpers.Export
                 }
                 excelExport.Columns.AutoFit();
                 excelExport.Visible = true;
-
-
-                //foreach (DataGridViewColumn Columns in dataGridView.Columns)
-                //{
-                //    foreach (var header in ignoredHeader)
-                //    {
-                //        if (Columns.HeaderText != header)
-                //        {
-                //            MessageBox.Show(Columns.HeaderText);
-                //        }
-                //    }
-                //}
-
-                for (int i = 0; i < dataGridView.Rows.Count - 2; i++)
-                {
-
-                }
             }
         }
     }

@@ -10,7 +10,6 @@ namespace Gestion.Colegial.Business.Helpers
         public static string Path { set => _path = value; }
         public static string FolderName { set => _folderName = value; }
 
-
         /// <summary>
         /// Crea un nuevo folder en la ruta especificada.
         /// </summary>
@@ -33,7 +32,6 @@ namespace Gestion.Colegial.Business.Helpers
         //        return 2;
         //    }
         //}
-
 
         /// <summary>
         /// Crea un nuevo folder en la ruta especificada.
@@ -87,7 +85,5 @@ namespace Gestion.Colegial.Business.Helpers
             streamWriter.Close();
             return 0;
         }
-
-
     }
 }

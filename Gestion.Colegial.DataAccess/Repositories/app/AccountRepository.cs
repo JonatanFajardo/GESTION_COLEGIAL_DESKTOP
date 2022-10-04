@@ -37,10 +37,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 
             //    //return result;
             //}
-
-
         }
-
 
         public async Task<DataTable> List(tbUsuarios entity)
         {
@@ -52,6 +49,5 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             DataTable result = await Select(commandText, sqlParameters);
             return result;
         }
-
     }
 }

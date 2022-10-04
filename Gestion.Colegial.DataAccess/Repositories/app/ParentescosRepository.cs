@@ -48,6 +48,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
+
         public async Task<Boolean> Edit(tbParentescos entity)
         {
             const String commandText = "PR_tbParentescos_Update";

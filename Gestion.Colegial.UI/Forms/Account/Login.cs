@@ -38,7 +38,6 @@ namespace Gestion.Colegial.UI.Forms.Acount
 
         private void btnloginpcb_Click(object sender, EventArgs e)
         {
-
             guardar();
         }
 
@@ -54,12 +53,10 @@ namespace Gestion.Colegial.UI.Forms.Acount
 
         private void btnloginpcb_MouseEnter(object sender, EventArgs e)
         {
-
         }
 
         private void btnloginlbl_Enter(object sender, EventArgs e)
         {
-
         }
 
         private async void btnLog_Click(object sender, EventArgs e)
@@ -68,7 +65,6 @@ namespace Gestion.Colegial.UI.Forms.Acount
             {
                 Usu_Name = txtUser.Texts,
                 Usu_Contraseña = SecurityEncryptation.Encrypt(txtPassword.Texts)
-
             };
             // Evaluamos si existe el usuario en la db.
             Boolean result = await AccountServices.Autentication(entityAutentication);
@@ -93,7 +89,6 @@ namespace Gestion.Colegial.UI.Forms.Acount
                 }
 
                 //GlobalVariable.tbUsuario.
-
             }
             else
             {

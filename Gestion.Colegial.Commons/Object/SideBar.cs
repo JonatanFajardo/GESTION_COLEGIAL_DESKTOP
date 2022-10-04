@@ -4,6 +4,5 @@
     {
         public string Item { get; set; }
         public string[] SubItem { get; set; }
-
     }
 }

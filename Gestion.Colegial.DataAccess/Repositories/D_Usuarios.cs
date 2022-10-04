@@ -19,7 +19,6 @@
 
         //        if (reader.Read())
         //        {
-
         //            if (reader.GetInt32(0) == 1)
         //            {
         //                return validar = true;

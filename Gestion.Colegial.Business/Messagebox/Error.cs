@@ -7,6 +7,7 @@
             InitializeComponent();
             lblMensaje.Text = _mensaje;
         }
+
         public static void ShowDialog(string mensaje)
         {
             Error error = new Error(mensaje);
@@ -17,6 +18,5 @@
         {
             this.Close();
         }
-
     }
 }

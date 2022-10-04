@@ -4,6 +4,5 @@ namespace Gestion.Colegial.DataAccess.Clases
 {
     public class D_Matricula
     {
-
     }
 }

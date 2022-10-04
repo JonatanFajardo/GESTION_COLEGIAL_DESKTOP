@@ -12,7 +12,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-
 //[module:CLSCompliant(true)]
 namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
 {
@@ -21,12 +20,13 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
     /// <summary>
     /// Setup and implements logs for internal logging
     /// </summary>
-    class LogManager
+    internal class LogManager
     {
         /// <summary>
         /// Path to log file
         /// </summary>
         private String basepath;
+
         public String BasePath
         {
             get { return basepath; }
@@ -37,6 +37,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Header for log file name
         /// </summary>
         private String logheader;
+
         public String LogNameHeader
         {
             get { return logheader; }
@@ -123,7 +124,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
     /// <summary>
     /// Do the actual log writing using setup info in Log Manager class
     /// </summary>
-    class LogWriter
+    internal class LogWriter
     {
         /// <summary>
         /// Create standard log file name with "our" name format
@@ -226,10 +227,9 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 }
             }
         }
-
     }
 
-    #endregion
+    #endregion Supporting Classes
 
     /// <summary>
     /// Data Grid View Printer. Print functions for a datagridview, since MS
@@ -237,10 +237,17 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
     /// </summary>
     public class PDF
     {
-        public enum Alignment { NotSet, Left, Right, Center }
-        public enum Location { Header, Footer, Absolute }
-        public enum SizeType { CellSize, StringSize, Porportional }
-        public enum PrintLocation { All, FirstOnly, LastOnly, None }
+        public enum Alignment
+        { NotSet, Left, Right, Center }
+
+        public enum Location
+        { Header, Footer, Absolute }
+
+        public enum SizeType
+        { CellSize, StringSize, Porportional }
+
+        public enum PrintLocation
+        { All, FirstOnly, LastOnly, None }
 
         //---------------------------------------------------------------------
         // internal classes/structs
@@ -248,7 +255,8 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         #region Internal Classes
 
         // Identify the reason for a new page when tracking rows
-        enum paging { keepgoing, outofroom, datachange };
+        private enum paging
+        { keepgoing, outofroom, datachange };
 
         // Allow the user to provide images that will be printed as either logos in the
         // header and/or footer or watermarked as in printed behind the text.
@@ -275,9 +283,11 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     case Location.Header:
                         y = margins.Top;
                         break;
+
                     case Location.Footer:
                         y = pageheight - theImage.Height - margins.Bottom;
                         break;
+
                     default:
                         throw new ArgumentException(String.Format("Unkown value: {0}", ImageLocation));
                 }
@@ -288,15 +298,19 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     case Alignment.Left:
                         x = margins.Left;
                         break;
+
                     case Alignment.Center:
                         x = (int)(pagewidth / 2 - theImage.Width / 2) + margins.Left;
                         break;
+
                     case Alignment.Right:
                         x = (int)(pagewidth - theImage.Width) + margins.Left;
                         break;
+
                     case Alignment.NotSet:
                         x = ImageX;
                         break;
+
                     default:
                         throw new ArgumentException(String.Format("Unkown value: {0}", ImageAlignment));
                 }
@@ -310,7 +324,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         // handle wide-column printing - that is, lists of columns that extend
         // wider than one page width. Columns are broken up into "Page Sets" that
         // are printed one after another until all columns are printed.
-        class PageDef
+        private class PageDef
         {
             public PageDef(Margins m, int count, int pagewidth)
             {
@@ -336,8 +350,9 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 get { return pageWidth - margins.Left - margins.Right; }
             }
         }
-        IList<PageDef> pagesets;
-        int currentpageset = 0;
+
+        private IList<PageDef> pagesets;
+        private int currentpageset = 0;
 
         // class to hold settings for the PrintDialog presented to the user during
         // the print process
@@ -360,7 +375,8 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             public bool pagebreak = false;
             public bool splitrow = false;
         }
-        #endregion
+
+        #endregion Internal Classes
 
         //---------------------------------------------------------------------
         // global variables
@@ -368,45 +384,50 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         #region global variables
 
         // the data grid view we're printing
-        DataGridView dgv = null;
+        private DataGridView dgv = null;
 
         // print document
-        PrintDocument printDoc = null;
+        private PrintDocument printDoc = null;
 
-        // logging 
-        LogManager Logger = null;
+        // logging
+        private LogManager Logger = null;
 
         // print status items
-        Boolean EmbeddedPrinting = false;
-        List<rowdata> rowstoprint;
-        IList colstoprint;          // divided into pagesets for printing
-        int lastrowprinted = -1;
-        int currentrow = -1;
-        int fromPage = 0;
-        int toPage = -1;
-        const int maxPages = 2147483647;
+        private Boolean EmbeddedPrinting = false;
+
+        private List<rowdata> rowstoprint;
+        private IList colstoprint;          // divided into pagesets for printing
+        private int lastrowprinted = -1;
+        private int currentrow = -1;
+        private int fromPage = 0;
+        private int toPage = -1;
+        private const int maxPages = 2147483647;
 
         // page formatting options
-        int pageHeight = 0;
-        float staticheight = 0;
-        float rowstartlocation = 0;
-        int pageWidth = 0;
-        int printWidth = 0;
-        float rowheaderwidth = 0;
-        int CurrentPage = 0;
-        int totalpages;
-        PrintRange printRange;
+        private int pageHeight = 0;
+
+        private float staticheight = 0;
+        private float rowstartlocation = 0;
+        private int pageWidth = 0;
+        private int printWidth = 0;
+        private float rowheaderwidth = 0;
+        private int CurrentPage = 0;
+        private int totalpages;
+        private PrintRange printRange;
 
         // calculated values
         //private float headerHeight = 0;
         private float footerHeight = 0;
+
         private float pagenumberHeight = 0;
         private float colheaderheight = 0;
+
         //private List<float> rowheights;
         private List<float> colwidths;
+
         //private List<List<SizeF>> cellsizes;
 
-        #endregion
+        #endregion global variables
 
         //---------------------------------------------------------------------
         // properties - settable by user
@@ -417,10 +438,11 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
 
         /// <summary>
         /// Enable logging of of the print process. Default is to log to a file named
-        /// 'PDF_yyyymmdd.Log' in the current directory. Since logging may have 
+        /// 'PDF_yyyymmdd.Log' in the current directory. Since logging may have
         /// an impact on performance, it should be used for troubleshooting purposes only.
         /// </summary>
         protected Boolean enablelogging;
+
         public Boolean EnableLogging
         {
             get { return enablelogging; }
@@ -455,7 +477,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// OwnerDraw Event declaration. Callers can subscribe to this event to override the 
+        /// OwnerDraw Event declaration. Callers can subscribe to this event to override the
         /// cell drawing.
         /// </summary>
         public event CellOwnerDrawEventHandler OwnerDraw;
@@ -464,9 +486,8 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// provide an override for the print preview dialog "owner" field
         /// Note: Changed style for VS2005 compatibility
         /// </summary>
-        //public Form Owner
-        //{ get; set; }
         protected Form _Owner = null;
+
         public Form Owner
         {
             get { return _Owner; }
@@ -480,12 +501,12 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         //public Double PrintPreviewZoom
         //{ get; set; }
         protected Double _PrintPreviewZoom = 1.0;
+
         public Double PrintPreviewZoom
         {
             get { return _PrintPreviewZoom; }
             set { _PrintPreviewZoom = value; }
         }
-
 
         /// <summary>
         /// expose printer settings to allow access to calling program
@@ -499,6 +520,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// expose settings for the PrintDialog displayed to the user
         /// </summary>
         private PrintDialogSettingsClass printDialogSettings = new PrintDialogSettingsClass();
+
         public PrintDialogSettingsClass PrintDialogSettings
         {
             get { return printDialogSettings; }
@@ -508,6 +530,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Set Printer Name
         /// </summary>
         private String printerName;
+
         public String PrinterName
         {
             get { return printerName; }
@@ -528,6 +551,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// in the print preview dialog
         /// </summary>
         private Icon ppvIcon = null;
+
         public Icon PreviewDialogIcon
         {
             get { return ppvIcon; }
@@ -538,6 +562,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Allow caller to set print preview dialog
         /// </summary>
         private PrintPreviewDialog previewdialog = null;
+
         public PrintPreviewDialog PreviewDialog
         {
             get { return previewdialog; }
@@ -548,6 +573,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Flag to control whether or not we print the Page Header
         /// </summary>
         private Boolean printHeader = true;
+
         public Boolean PrintHeader
         {
             get { return printHeader; }
@@ -563,7 +589,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             {
                 float headerheight = 0;
 
-                // Add in title and subtitle heights - this is sensitive to 
+                // Add in title and subtitle heights - this is sensitive to
                 // wether or not titles are printed on the current page
                 // TitleHeight and SubTitleHeight have their respective spacing
                 // already included
@@ -584,6 +610,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Flag to control whether or not we print the Page Footer
         /// </summary>
         private Boolean printFooter = true;
+
         public Boolean PrintFooter
         {
             get { return printFooter; }
@@ -594,6 +621,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Flag to control whether or not we print the Column Header line
         /// </summary>
         private Boolean? printColumnHeaders;
+
         public Boolean? PrintColumnHeaders
         {
             get { return printColumnHeaders; }
@@ -605,6 +633,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Defaults to False to match previous functionality
         /// </summary>
         private Boolean? printRowHeaders = false;
+
         public Boolean? PrintRowHeaders
         {
             get { return printRowHeaders; }
@@ -617,6 +646,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// "Off" (i.e. false) to print cells/rows deeper than one page
         /// </summary>
         private Boolean keepRowsTogether = true;
+
         public Boolean KeepRowsTogether
         {
             get { return keepRowsTogether; }
@@ -624,31 +654,33 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// How much of a row must show on the current page before it is 
+        /// How much of a row must show on the current page before it is
         /// split when KeepRowsTogether is set to true.
         /// </summary>
         private float keeprowstogethertolerance = 15;
+
         public float KeepRowsTogetherTolerance
         {
             get { return keeprowstogethertolerance; }
             set { keeprowstogethertolerance = value; }
         }
 
-        #endregion
+        #endregion global properties
 
         // Title
         #region title properties
 
         // override flag
-        bool overridetitleformat = false;
+        private bool overridetitleformat = false;
 
         // formatted height of title
-        float titleheight = 0;
+        private float titleheight = 0;
 
         /// <summary>
         /// Title for this report. Default is empty.
         /// </summary>
         private String title;
+
         public String Title
         {
             get { return title; }
@@ -666,6 +698,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Name of the document. Default is report title (can be empty)
         /// </summary>
         private String docName;
+
         public String DocName
         {
             get { return docName; }
@@ -676,6 +709,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Font for the title. Default is Tahoma, 18pt.
         /// </summary>
         private Font titlefont;
+
         public Font TitleFont
         {
             get { return titlefont; }
@@ -686,6 +720,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Foreground color for the title. Default is Black
         /// </summary>
         private Color titlecolor;
+
         public Color TitleColor
         {
             get { return titlecolor; }
@@ -696,6 +731,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Allow override of the header cell format object
         /// </summary>
         private StringFormat titleformat;
+
         public StringFormat TitleFormat
         {
             get { return titleformat; }
@@ -703,8 +739,8 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Allow the user to override the title string alignment. Default value is 
-        /// Alignment - Near; 
+        /// Allow the user to override the title string alignment. Default value is
+        /// Alignment - Near;
         /// </summary>
         public StringAlignment TitleAlignment
         {
@@ -734,6 +770,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Control where in the document the title prints
         /// </summary>
         private PrintLocation titleprint = PrintLocation.All;
+
         public PrintLocation TitlePrint
         {
             get { return titleprint; }
@@ -764,6 +801,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Mandatory spacing between the grid and the footer
         /// </summary>
         private float titlespacing;
+
         public float TitleSpacing
         {
             get { return titlespacing; }
@@ -774,6 +812,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Title Block Background Color
         /// </summary>
         private Brush titlebackground;
+
         public Brush TitleBackground
         {
             get { return titlebackground; }
@@ -784,27 +823,29 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Title Block Border
         /// </summary>
         private Pen titleborder;
+
         public Pen TitleBorder
         {
             get { return titleborder; }
             set { titleborder = value; }
         }
 
-        #endregion
+        #endregion title properties
 
         // SubTitle
         #region subtitle properties
 
         // override flat
-        bool overridesubtitleformat = false;
+        private bool overridesubtitleformat = false;
 
         // formatted height of subtitle
-        float subtitleheight = 0;
+        private float subtitleheight = 0;
 
         /// <summary>
         /// SubTitle for this report. Default is empty.
         /// </summary>
         private String subtitle;
+
         public String SubTitle
         {
             get { return subtitle; }
@@ -815,6 +856,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Font for the subtitle. Default is Tahoma, 12pt.
         /// </summary>
         private Font subtitlefont;
+
         public Font SubTitleFont
         {
             get { return subtitlefont; }
@@ -825,6 +867,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Foreground color for the subtitle. Default is Black
         /// </summary>
         private Color subtitlecolor;
+
         public Color SubTitleColor
         {
             get { return subtitlecolor; }
@@ -835,6 +878,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Allow override of the header cell format object
         /// </summary>
         private StringFormat subtitleformat;
+
         public StringFormat SubTitleFormat
         {
             get { return subtitleformat; }
@@ -842,8 +886,8 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Allow the user to override the subtitle string alignment. Default value is 
-        /// Alignment - Near; 
+        /// Allow the user to override the subtitle string alignment. Default value is
+        /// Alignment - Near;
         /// </summary>
         public StringAlignment SubTitleAlignment
         {
@@ -873,6 +917,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Control where in the document the title prints
         /// </summary>
         private PrintLocation subtitleprint = PrintLocation.All;
+
         public PrintLocation SubTitlePrint
         {
             get { return subtitleprint; }
@@ -903,6 +948,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Mandatory spacing between the grid and the footer
         /// </summary>
         private float subtitlespacing;
+
         public float SubTitleSpacing
         {
             get { return subtitlespacing; }
@@ -913,6 +959,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Title Block Background Color
         /// </summary>
         private Brush subtitlebackground;
+
         public Brush SubTitleBackground
         {
             get { return subtitlebackground; }
@@ -923,24 +970,26 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Title Block Border
         /// </summary>
         private Pen subtitleborder;
+
         public Pen SubTitleBorder
         {
             get { return subtitleborder; }
             set { subtitleborder = value; }
         }
 
-        #endregion
+        #endregion subtitle properties
 
         // Footer
         #region footer properties
 
         // override flag
-        bool overridefooterformat = false;
+        private bool overridefooterformat = false;
 
         /// <summary>
         /// footer for this report. Default is empty.
         /// </summary>
         private String footer;
+
         public String Footer
         {
             get { return footer; }
@@ -951,6 +1000,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Font for the footer. Default is Tahoma, 10pt.
         /// </summary>
         private Font footerfont;
+
         public Font FooterFont
         {
             get { return footerfont; }
@@ -961,6 +1011,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Foreground color for the footer. Default is Black
         /// </summary>
         private Color footercolor;
+
         public Color FooterColor
         {
             get { return footercolor; }
@@ -971,6 +1022,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Allow override of the header cell format object
         /// </summary>
         private StringFormat footerformat;
+
         public StringFormat FooterFormat
         {
             get { return footerformat; }
@@ -978,8 +1030,8 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Allow the user to override the footer string alignment. Default value is 
-        /// Alignment - Center; 
+        /// Allow the user to override the footer string alignment. Default value is
+        /// Alignment - Center;
         /// </summary>
         public StringAlignment FooterAlignment
         {
@@ -1009,6 +1061,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Mandatory spacing between the grid and the footer
         /// </summary>
         private float footerspacing;
+
         public float FooterSpacing
         {
             get { return footerspacing; }
@@ -1019,6 +1072,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Control where in the document the title prints
         /// </summary>
         private PrintLocation footerprint = PrintLocation.All;
+
         public PrintLocation FooterPrint
         {
             get { return footerprint; }
@@ -1039,7 +1093,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     || ((PrintLocation.FirstOnly == FooterPrint) && (1 == CurrentPage))
                     || ((PrintLocation.LastOnly == FooterPrint) && (totalpages == CurrentPage)))
                 {
-                    // Add in footer text height 
+                    // Add in footer text height
                     footerheight += footerHeight + FooterSpacing;
                 }
 
@@ -1051,6 +1105,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Title Block Background Color
         /// </summary>
         private Brush footerbackground;
+
         public Brush FooterBackground
         {
             get { return footerbackground; }
@@ -1061,24 +1116,26 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Title Block Border
         /// </summary>
         private Pen footerborder;
+
         public Pen FooterBorder
         {
             get { return footerborder; }
             set { footerborder = value; }
         }
 
-        #endregion
+        #endregion footer properties
 
         // Page Numbering
         #region page number properties
 
         // override flag
-        bool overridepagenumberformat = false;
+        private bool overridepagenumberformat = false;
 
         /// <summary>
         /// Include page number in the printout. Default is true.
         /// </summary>
         private bool pageno = true;
+
         public bool PageNumbers
         {
             get { return pageno; }
@@ -1089,6 +1146,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Font for the page number, Default is Tahoma, 8pt.
         /// </summary>
         private Font pagenofont;
+
         public Font PageNumberFont
         {
             get { return pagenofont; }
@@ -1099,6 +1157,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Text color (foreground) for the page number. Default is Black
         /// </summary>
         private Color pagenocolor;
+
         public Color PageNumberColor
         {
             get { return pagenocolor; }
@@ -1109,6 +1168,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Allow override of the header cell format object
         /// </summary>
         private StringFormat pagenumberformat;
+
         public StringFormat PageNumberFormat
         {
             get { return pagenumberformat; }
@@ -1116,8 +1176,8 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Allow the user to override the page number string alignment. Default value is 
-        /// Alignment - Near; 
+        /// Allow the user to override the page number string alignment. Default value is
+        /// Alignment - Near;
         /// </summary>
         public StringAlignment PageNumberAlignment
         {
@@ -1148,6 +1208,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// of the page. Default is false: page numbers on the bottom of the page
         /// </summary>
         private bool pagenumberontop = false;
+
         public bool PageNumberInHeader
         {
             get { return pagenumberontop; }
@@ -1159,6 +1220,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// same line as the header / footer? Default is false;
         /// </summary>
         private bool pagenumberonseparateline = false;
+
         public bool PageNumberOnSeparateLine
         {
             get { return pagenumberonseparateline; }
@@ -1166,9 +1228,10 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Show the total page number as n of total 
+        /// Show the total page number as n of total
         /// </summary>
         private bool showtotalpagenumber = false;
+
         public bool ShowTotalPageNumber
         {
             get { return showtotalpagenumber; }
@@ -1179,6 +1242,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Text separating page number and total page number. Default is ' of '.
         /// </summary>
         private String pageseparator = " of ";
+
         public String PageSeparator
         {
             get { return pageseparator; }
@@ -1186,6 +1250,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         private String pagetext = "Page ";
+
         public String PageText
         {
             get { return pagetext; }
@@ -1193,6 +1258,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         private String parttext = " - Part ";
+
         public String PartText
         {
             get { return parttext; }
@@ -1203,6 +1269,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Control where in the document the title prints
         /// </summary>
         private PrintLocation pagenumberprint = PrintLocation.All;
+
         public PrintLocation PageNumberPrint
         {
             get { return pagenumberprint; }
@@ -1240,12 +1307,13 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             }
         }
 
-        #endregion
+        #endregion page number properties
 
-        // Header Cell Printing 
+        // Header Cell Printing
         #region header cell properties
 
         private DataGridViewCellStyle rowheaderstyle;
+
         public DataGridViewCellStyle RowHeaderCellStyle
         {
             get { return rowheaderstyle; }
@@ -1256,6 +1324,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Allow override of the row header cell format object
         /// </summary>
         private StringFormat rowheadercellformat = null;
+
         public StringFormat GetRowHeaderCellFormat(DataGridView grid)
         {
             // get default values from provided data grid view, but only
@@ -1279,6 +1348,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Defaults to one tab space
         /// </summary>
         private String rowheadercelldefaulttext = "\t";
+
         public String RowHeaderCellDefaultText
         {
             get { return rowheadercelldefaulttext; }
@@ -1290,6 +1360,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// </summary>
         private Dictionary<string, DataGridViewCellStyle> columnheaderstyles =
             new Dictionary<string, DataGridViewCellStyle>();
+
         public Dictionary<string, DataGridViewCellStyle> ColumnHeaderStyles
         {
             get { return columnheaderstyles; }
@@ -1299,6 +1370,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Allow override of the header cell format object
         /// </summary>
         private StringFormat columnheadercellformat = null;
+
         public StringFormat GetColumnHeaderCellFormat(DataGridView grid)
         {
             // get default values from provided data grid view, but only
@@ -1319,10 +1391,11 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
 
         /// <summary>
         /// Deprecated - use HeaderCellFormat
-        /// Allow the user to override the header cell string alignment. Default value is 
-        /// Alignment - Near; 
+        /// Allow the user to override the header cell string alignment. Default value is
+        /// Alignment - Near;
         /// </summary>
         private StringAlignment headercellalignment;
+
         public StringAlignment HeaderCellAlignment
         {
             get { return headercellalignment; }
@@ -1335,12 +1408,14 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// are: FormatFlags - NoWrap, LineLimit, NoClip
         /// </summary>
         private StringFormatFlags headercellformatflags;
+
         public StringFormatFlags HeaderCellFormatFlags
         {
             get { return headercellformatflags; }
             set { headercellformatflags = value; }
         }
-        #endregion
+
+        #endregion header cell properties
 
         // Individual Cell Printing
         #region cell properties
@@ -1349,6 +1424,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Allow override of the cell printing format
         /// </summary>
         private StringFormat cellformat = null;
+
         public StringFormat GetCellFormat(DataGridView grid)
         {
             // get default values from provided data grid view, but only
@@ -1369,10 +1445,11 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
 
         /// <summary>
         /// Deprecated - use GetCellFormat
-        /// Allow the user to override the cell string alignment. Default value is 
-        /// Alignment - Near; 
+        /// Allow the user to override the cell string alignment. Default value is
+        /// Alignment - Near;
         /// </summary>
         private StringAlignment cellalignment;
+
         public StringAlignment CellAlignment
         {
             get { return cellalignment; }
@@ -1385,6 +1462,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// are: FormatFlags - NoWrap, LineLimit, NoClip
         /// </summary>
         private StringFormatFlags cellformatflags;
+
         public StringFormatFlags CellFormatFlags
         {
             get { return cellformatflags; }
@@ -1395,7 +1473,9 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// allow the user to override the column width calcs with their own defaults
         /// </summary>
         private List<float> colwidthsoverride = new List<float>();
+
         private Dictionary<string, float> publicwidthoverrides = new Dictionary<string, float>();
+
         public Dictionary<string, float> ColumnWidths
         {
             get { return publicwidthoverrides; }
@@ -1406,6 +1486,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// </summary>
         private Dictionary<string, DataGridViewCellStyle> colstyles =
             new Dictionary<string, DataGridViewCellStyle>();
+
         public Dictionary<string, DataGridViewCellStyle> ColumnStyles
         {
             get { return colstyles; }
@@ -1416,17 +1497,20 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// </summary>
         private Dictionary<string, DataGridViewCellStyle> altrowcolstyles =
             new Dictionary<string, DataGridViewCellStyle>();
+
         public Dictionary<string, DataGridViewCellStyle> AlternatingRowColumnStyles
         {
             get { return altrowcolstyles; }
         }
 
         /// <summary>
-        /// Allow the user to set columns that appear on every pageset. Only used when 
+        /// Allow the user to set columns that appear on every pageset. Only used when
         /// the printout is wider than one page.
         /// </summary>
         private List<int> fixedcolumns = new List<int>();
+
         private List<string> fixedcolumnnames = new List<string>();
+
         public List<string> FixedColumns
         {
             get { return fixedcolumnnames; }
@@ -1436,6 +1520,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// List of columns to not display in the grid view printout.
         /// </summary>
         private List<String> hidecolumns = new List<string>();
+
         public List<String> HideColumns
         {
             get { return hidecolumns; }
@@ -1445,14 +1530,16 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Insert a page break when the value in this column changes
         /// </summary>
         private object oldvalue = null;
+
         private String breakonvaluechange;
+
         public String BreakOnValueChange
         {
             get { return breakonvaluechange; }
             set { breakonvaluechange = value; }
         }
 
-        #endregion
+        #endregion cell properties
 
         // Page Level Properties
         #region page level properties
@@ -1479,6 +1566,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// Deprecated. Please use the ColumnWidth property
         /// </summary>
         private bool porportionalcolumns = false;
+
         public bool PorportionalColumns
         {
             get { return porportionalcolumns; }
@@ -1493,9 +1581,10 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Center the table on the page. 
+        /// Center the table on the page.
         /// </summary>
         private Alignment tablealignment = Alignment.NotSet;
+
         public Alignment TableAlignment
         {
             get { return tablealignment; }
@@ -1503,11 +1592,14 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Change the default row height to either the height of the string or the size of 
+        /// Change the default row height to either the height of the string or the size of
         /// the cell. Added for image cell handling; set to CellHeight for image cells
         /// </summary>
-        public enum RowHeightSetting { DataHeight, CellHeight }
+        public enum RowHeightSetting
+        { DataHeight, CellHeight }
+
         private RowHeightSetting _rowheight = RowHeightSetting.DataHeight;
+
         public RowHeightSetting RowHeight
         {
             get { return _rowheight; }
@@ -1519,8 +1611,11 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// to the size of the grid cell or the size of the formatted data string.
         /// Set to CellWidth for image cells.
         /// </summary>
-        public enum ColumnWidthSetting { DataWidth, CellWidth, Porportional }
+        public enum ColumnWidthSetting
+        { DataWidth, CellWidth, Porportional }
+
         private ColumnWidthSetting _rowwidth = ColumnWidthSetting.CellWidth;
+
         public ColumnWidthSetting ColumnWidth
         {
             get { return _rowwidth; }
@@ -1534,10 +1629,11 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             }
         }
 
-        #endregion
+        #endregion page level properties
 
         // Utility Functions
         #region
+
         /// <summary>
         /// calculate the print preview window width to show the entire page
         /// </summary>
@@ -1572,7 +1668,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Given a row and column, get the current grid cell style, including our local 
+        /// Given a row and column, get the current grid cell style, including our local
         /// overrides
         /// </summary>
         /// <param name="row"></param>
@@ -1627,7 +1723,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             return i;
         }
 
-        #endregion
+        #endregion properties
 
         #endregion
 
@@ -1686,10 +1782,9 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             cellformatflags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
         }
 
-
         //---------------------------------------------------------------------
         //---------------------------------------------------------------------
-        // Primary Interface - Presents a dialog and then prints or previews the 
+        // Primary Interface - Presents a dialog and then prints or previews the
         // indicated data grid view
         //---------------------------------------------------------------------
         //---------------------------------------------------------------------
@@ -1741,7 +1836,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         //---------------------------------------------------------------------
         //---------------------------------------------------------------------
         // Alternative Interface. In order to set the print information correctly
-        // either the DisplayPrintDialog() routine must be called, OR the 
+        // either the DisplayPrintDialog() routine must be called, OR the
         // PrintDocument (and PrinterSettings) must be Handled through calling
         // PrintDialog separately.
         //
@@ -1752,7 +1847,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         //---------------------------------------------------------------------
 
         /// <summary>
-        /// Display a printdialog and return the result. Either this method or 
+        /// Display a printdialog and return the result. Either this method or
         /// the equivalent must be done prior to calling either of the PrintNoDisplay
         /// or PrintPreviewNoDisplay methods.
         /// </summary>
@@ -1842,15 +1937,14 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             PreviewDialog.ShowDialog();
         }
 
-
         //---------------------------------------------------------------------
         //---------------------------------------------------------------------
         // Print Process Interface Methods
         //---------------------------------------------------------------------
         //---------------------------------------------------------------------
 
-        // NOTE: This is retained only for backward compatibility, and should 
-        // not be used for printing grid views that might be larger than the 
+        // NOTE: This is retained only for backward compatibility, and should
+        // not be used for printing grid views that might be larger than the
         // input print area.
         public Boolean EmbeddedPrint(DataGridView dgv, Graphics g, Rectangle area)
         {
@@ -1967,7 +2061,6 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             e.HasMorePages = PrintPage(e.Graphics);
         }
 
-
         //---------------------------------------------------------------------
         //---------------------------------------------------------------------
         // Internal Methods
@@ -1977,11 +2070,11 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// <summary>
         /// Set up the print job. Save information from print dialog
         /// and print document for easy access. Also sets up the rows
-        /// and columns that will be printed. At this point, we're 
+        /// and columns that will be printed. At this point, we're
         /// collecting all columns in colstoprint. This will be broken
-        /// up into pagesets later on 
+        /// up into pagesets later on
         /// </summary>
-        void SetupPrint()
+        private void SetupPrint()
         {
             if (EnableLogging)
             {
@@ -2059,7 +2152,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 // Set the printable area: margins and pagewidth
                 //-----------------------------------------------------------------
 
-                // Set initial printer margins 
+                // Set initial printer margins
                 PrintMargins = printDoc.DefaultPageSettings.Margins;
 
                 // adjust for when the margins are less than the printer's hard x/y limits
@@ -2088,7 +2181,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             // Figure out which pages / rows to print
             //-----------------------------------------------------------------
 
-            // save print range 
+            // save print range
             printRange = printDoc.PrinterSettings.PrintRange;
             if (EnableLogging) Logger.LogInfoMsg(String.Format("PrintRange is {0}", printRange));
 
@@ -2126,7 +2219,6 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
 
             // Count the pages
             totalpages = Pagination();
-
         }
 
         /// <summary>
@@ -2155,12 +2247,11 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     colwidthsoverride.Add(publicwidthoverrides[col.Name]);
                 else
                     colwidthsoverride.Add(-1);
-
         }
 
         /// <summary>
         /// Determine the print range based on dialog selections and user input. The rows
-        /// and columns are sorted to ensure that the rows appear in their correct index 
+        /// and columns are sorted to ensure that the rows appear in their correct index
         /// order and the columns appear in DisplayIndex order to account for added columns
         /// and re-ordered columns.
         /// </summary>
@@ -2215,7 +2306,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 else
                 {
                     // set up sorted lists. the selectedcells method does not guarantee
-                    // that the cells will always be in left-right top-bottom order. 
+                    // that the cells will always be in left-right top-bottom order.
                     temprowstoprint = new SortedList(dgv.SelectedCells.Count);
                     tempcolstoprint = new SortedList(dgv.SelectedCells.Count);
 
@@ -2241,7 +2332,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 }
             }
             // if current page was selected, print visible columns for the
-            // displayed rows                
+            // displayed rows
             else if (PrintRange.CurrentPage == printRange)
             {
                 // create lists
@@ -2268,7 +2359,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 temprowstoprint = new SortedList(dgv.Rows.Count);
                 tempcolstoprint = new SortedList(dgv.Columns.Count);
 
-                // select all visible rows and all visible columns - but don't include the new 'data entry row' 
+                // select all visible rows and all visible columns - but don't include the new 'data entry row'
                 foreach (DataGridViewRow row in dgv.Rows) if (row.Visible && !row.IsNewRow) temprowstoprint.Add(row.Index, row);
 
                 // sort the columns into display order
@@ -2290,7 +2381,6 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
 
             if (EnableLogging) Logger.LogInfoMsg(String.Format("Grid Printout Range is {0} columns", colstoprint.Count));
             if (EnableLogging) Logger.LogInfoMsg(String.Format("Grid Printout Range is {0} rows", rowstoprint.Count));
-
         }
 
         /// <summary>
@@ -2319,7 +2409,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             format.FormatFlags = flags;
             format.Trimming = trim;
 
-            // Check on right-to-left flag. This is set at the grid level, but doesn't show up 
+            // Check on right-to-left flag. This is set at the grid level, but doesn't show up
             // as a cell format. Urgh.
             if ((null != dgv) && (RightToLeft.Yes == dgv.RightToLeft))
                 format.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
@@ -2428,8 +2518,8 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Recalculate row heights for cells whose width is greater than the set column width. 
-        /// Called when column widths are changed in order to flow text down the page instead of 
+        /// Recalculate row heights for cells whose width is greater than the set column width.
+        /// Called when column widths are changed in order to flow text down the page instead of
         /// accross.
         /// </summary>
         /// <param name="g">Graphics Context for measuring image columns</param>
@@ -2452,11 +2542,11 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     // get column style
                     DataGridViewCellStyle colstyle = GetStyle(((DataGridViewRow)rowstoprint[i].row), ((DataGridViewColumn)colstoprint[colindex]));
 
-                    // build the cell style and font 
+                    // build the cell style and font
                     buildstringformat(ref currentformat, colstyle, cellformat.Alignment, cellformat.LineAlignment,
                         cellformat.FormatFlags, cellformat.Trimming);
 
-                    // recalculate cell size using new width. This will flow data down the page and 
+                    // recalculate cell size using new width. This will flow data down the page and
                     // change the row height
                     SizeF size = calccellsize(g, cell, colstyle, newcolwidth, colwidthsoverride[colindex], currentformat);
 
@@ -2472,10 +2562,9 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             }
         }
 
-
         /// <summary>
-        /// Scan all the rows and columns to be printed and calculate the 
-        /// overall individual column width (based on largest column value), 
+        /// Scan all the rows and columns to be printed and calculate the
+        /// overall individual column width (based on largest column value),
         /// the header sizes, and determine all the row heights.
         /// </summary>
         /// <param name="g">The graphics context for all measurements</param>
@@ -2509,13 +2598,13 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 {
                     headercolstyle = columnheaderstyles[col.Name];
 
-                    // build the cell style and font 
+                    // build the cell style and font
                     buildstringformat(ref currentformat, headercolstyle, cellformat.Alignment, cellformat.LineAlignment,
                         cellformat.FormatFlags, cellformat.Trimming);
                 }
                 else if (col.HasDefaultCellStyle)
                 {
-                    // build the cell style and font 
+                    // build the cell style and font
                     buildstringformat(ref currentformat, headercolstyle, cellformat.Alignment, cellformat.LineAlignment,
                         cellformat.FormatFlags, cellformat.Trimming);
                 }
@@ -2618,14 +2707,14 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     col = (DataGridViewColumn)colstoprint[j];
 
                     //-------------------------------------------------------------
-                    // Build string format and cell style 
+                    // Build string format and cell style
                     //-------------------------------------------------------------
 
                     // get gridview style, and override if we have a set style for this column
                     StringFormat currentformat = null;
                     DataGridViewCellStyle colstyle = GetStyle(row, col); // = row.Cells[col.Index].InheritedStyle.Clone();
 
-                    // build the cell style and font 
+                    // build the cell style and font
                     buildstringformat(ref currentformat, colstyle, cellformat.Alignment, cellformat.LineAlignment,
                         cellformat.FormatFlags, cellformat.Trimming);
 
@@ -2673,7 +2762,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             pagesets.Add(new PageDef(PrintMargins, colstoprint.Count, pageWidth));
             int pset = 0;
 
-            // Account for row headers 
+            // Account for row headers
             pagesets[pset].coltotalwidth = rowheaderwidth;
 
             // account for 'fixed' columns - these appear on every pageset
@@ -2706,7 +2795,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 columnwidth = (colwidthsoverride[i] >= 0)
                     ? colwidthsoverride[i] : colwidths[i];
 
-                // See if the column width takes us off the page - Except for the 
+                // See if the column width takes us off the page - Except for the
                 // first column. This will prevent printing an empty page!! Otherwise,
                 // columns longer than the page width are printed on their own page
                 if (printWidth < (pagesets[pset].coltotalwidth + columnwidth) && i != 0)
@@ -2714,7 +2803,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     pagesets.Add(new PageDef(PrintMargins, colstoprint.Count, pageWidth));
                     pset++;
 
-                    // Account for row headers 
+                    // Account for row headers
                     pagesets[pset].coltotalwidth = rowheaderwidth;
 
                     // account for 'fixed' columns - these appear on every pageset
@@ -2736,7 +2825,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     }
                 }
 
-                // update page set definition 
+                // update page set definition
                 pagesets[pset].columnindex.Add(i);
                 pagesets[pset].colstoprint.Add(colstoprint[i]);
                 pagesets[pset].colwidths.Add(colwidths[i]);
@@ -2791,7 +2880,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 AdjustPageSets(g, pageset);
 
                 //-----------------------------------------------------------------
-                // Log Pagesets 
+                // Log Pagesets
                 //-----------------------------------------------------------------
                 if (EnableLogging)
                 {
@@ -2810,7 +2899,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// Adjust column widths for fixed and porportional columns, set the 
+        /// Adjust column widths for fixed and porportional columns, set the
         /// margins to enforce the selected tablealignment.
         /// </summary>
         /// <param name="g">The graphics context for all measurements</param>
@@ -2837,7 +2926,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 if (pageset.colwidthsoverride[i] < 0)
                     remainingcolwidth += pageset.colwidths[i];
 
-            // calculate the ratio for porportional columns, use 1 for 
+            // calculate the ratio for porportional columns, use 1 for
             // non-overridden columns or not porportional
             if ((porportionalcolumns || ColumnWidthSetting.Porportional == ColumnWidth) &&
                 0 < remainingcolwidth)
@@ -2863,7 +2952,6 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 RecalcRowHeights(g, pageset.columnindex[i], pageset.colwidths[i]);
 
                 pageset.coltotalwidth += pageset.colwidths[i];
-
             }
 
             //-----------------------------------------------------------------
@@ -2902,7 +2990,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             float pos = 0;
             paging newpage = paging.keepgoing;
 
-            //// if we're printing by pages, the total pages is the last page to 
+            //// if we're printing by pages, the total pages is the last page to
             //// print
             //if (toPage < maxPages)
             //    return toPage;
@@ -2981,7 +3069,6 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     // add in the page number height - doesn't matter at this point if it's printing on top or bottom
                     staticheight += PageNumberHeight;
 
-
                     // account for static space at the top of the page
                     pos += PrintMargins.Top + HeaderHeight + PageNumberHeight;
                 }
@@ -3016,8 +3103,8 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         }
 
         /// <summary>
-        /// This routine prints one page. It will skip non-printable pages if the user 
-        /// selected the "some pages" option on the print dialog. This is called during 
+        /// This routine prints one page. It will skip non-printable pages if the user
+        /// selected the "some pages" option on the print dialog. This is called during
         /// the Print event.
         /// </summary>
         /// <param name="g">Graphics object to print to</param>
@@ -3107,7 +3194,6 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     // if we're out of data (no partial rows and no more rows)
                     if ((0 == rowstartlocation) && lastrowprinted >= rowstoprint.Count - 1)
                         pagecomplete = true;
-
                 } while (!pagecomplete);
 
                 // log rows skipped
@@ -3213,7 +3299,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
 
             if (currentrow >= rowstoprint.Count)
             {
-                // indicate that we're done printing 
+                // indicate that we're done printing
                 continueprinting = false;
             }
 
@@ -3226,7 +3312,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     pagesets[currentpageset], rowstartlocation);
                 printpos += used;
 
-                // Now, start checking on whether or not to print the next row 
+                // Now, start checking on whether or not to print the next row
                 // (or if we even have a next row)
                 lastrowprinted++;
                 currentrow++;
@@ -3252,7 +3338,6 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 // if we're out of data (no partial rows and no more rows)
                 if ((0 == rowstartlocation) && lastrowprinted >= rowstoprint.Count - 1)
                     continueprinting = false;
-
             }
 
             // log rows skipped
@@ -3407,14 +3492,13 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// <param name="margins">The table's print margins</param>
         private void printfooter(Graphics g, ref float pos, PageDef pageset)
         {
-
             // print the footer
             printsection(g, ref pos, footer, footerfont, footercolor, footerformat,
                 overridefooterformat, pageset, footerbackground, footerborder);
         }
 
         /// <summary>
-        /// Print the column headers. Most printing format info is retrieved from the 
+        /// Print the column headers. Most printing format info is retrieved from the
         /// source DataGridView.
         /// </summary>
         /// <param name="g">Graphics Context to print within</param>
@@ -3539,14 +3623,14 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     // get DGV column style and see if we have an override for this column
                     StringFormat finalformat = null;
                     Font cellfont = null;
-                    DataGridViewCellStyle colstyle = GetStyle(row, col); // = row.Cells[col.Index].InheritedStyle.Clone(); 
+                    DataGridViewCellStyle colstyle = GetStyle(row, col); // = row.Cells[col.Index].InheritedStyle.Clone();
 
                     // set string format
                     buildstringformat(ref finalformat, colstyle, cellformat.Alignment, cellformat.LineAlignment,
                         cellformat.FormatFlags, cellformat.Trimming);
                     cellfont = colstyle.Font;
 
-                    // set overall print area for this individual cell 
+                    // set overall print area for this individual cell
                     RectangleF cellprintarea = new RectangleF(xcoord, pos, cellwidth,
                         rowheight);
 
@@ -3572,7 +3656,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// <param name="rectf"></param>
         /// <param name="style"></param>
         /// <returns></returns>
-        Boolean DrawOwnerDrawCell(Graphics g, int rowindex, int columnindex, RectangleF rectf,
+        private Boolean DrawOwnerDrawCell(Graphics g, int rowindex, int columnindex, RectangleF rectf,
             DataGridViewCellStyle style)
         {
             DGVCellDrawingEventArgs args = new DGVCellDrawingEventArgs(g, rectf, style,
@@ -3591,7 +3675,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// <param name="startlocation"></param>
         /// <param name="cellformat"></param>
         /// <param name="lines"></param>
-        void DrawCell(Graphics g, RectangleF cellprintarea, DataGridViewCellStyle style,
+        private void DrawCell(Graphics g, RectangleF cellprintarea, DataGridViewCellStyle style,
             DataGridViewCell cell, float startlocation, StringFormat cellformat, Pen lines)
         {
             // Draw the cell if it's not overridden by ownerdrawing
@@ -3613,7 +3697,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 // set clipping to current print area - i.e. our cell
                 g.SetClip(cellprintarea);
 
-                // define the *actual* print area based on the given startlocation. Offset the start by 
+                // define the *actual* print area based on the given startlocation. Offset the start by
                 // minus the start location, increase the print area height by the startlocation
                 RectangleF actualprint = new RectangleF(paddedcellprintarea.X, paddedcellprintarea.Y - startlocation,
                     paddedcellprintarea.Width, paddedcellprintarea.Height + startlocation);
@@ -3663,7 +3747,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// <param name="g"></param>
         /// <param name="checkboxcell"></param>
         /// <param name="rectf"></param>
-        void DrawCheckBoxCell(Graphics g, DataGridViewCheckBoxCell checkboxcell, RectangleF rectf)
+        private void DrawCheckBoxCell(Graphics g, DataGridViewCheckBoxCell checkboxcell, RectangleF rectf)
         {
             // create a non-printing graphics context in which to draw the checkbox control
             Image i = new Bitmap((int)rectf.Width, (int)rectf.Height);
@@ -3698,33 +3782,42 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 case DataGridViewContentAlignment.BottomCenter:
                     rectf.Y += y;
                     break;
+
                 case DataGridViewContentAlignment.BottomLeft:
                     rectf.X -= x;
                     rectf.Y += y;
                     break;
+
                 case DataGridViewContentAlignment.BottomRight:
                     rectf.X += x;
                     rectf.Y += y;
                     break;
+
                 case DataGridViewContentAlignment.MiddleCenter:
                     break;
+
                 case DataGridViewContentAlignment.MiddleLeft:
                     rectf.X -= x;
                     break;
+
                 case DataGridViewContentAlignment.MiddleRight:
                     rectf.X += x;
                     break;
+
                 case DataGridViewContentAlignment.TopCenter:
                     rectf.Y -= y;
                     break;
+
                 case DataGridViewContentAlignment.TopLeft:
                     rectf.X -= x;
                     rectf.Y -= y;
                     break;
+
                 case DataGridViewContentAlignment.TopRight:
                     rectf.X += x;
                     rectf.Y -= y;
                     break;
+
                 case DataGridViewContentAlignment.NotSet:
                     break;
             }
@@ -3743,7 +3836,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
         /// <param name="g"></param>
         /// <param name="imagecell"></param>
         /// <param name="rectf"></param>
-        void DrawImageCell(Graphics g, DataGridViewImageCell imagecell, RectangleF rectf)
+        private void DrawImageCell(Graphics g, DataGridViewImageCell imagecell, RectangleF rectf)
         {
             // image to draw
             Image img;
@@ -3776,7 +3869,7 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
             int dx = 0;
             int dy = 0;
 
-            // drawn normal size, clipped to cell 
+            // drawn normal size, clipped to cell
             if ((DataGridViewImageCellLayout.Normal == imagecell.ImageLayout) ||
                 (DataGridViewImageCellLayout.NotSet == imagecell.ImageLayout))
             {
@@ -3787,7 +3880,6 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                 // set destination width and height to clip to cell
                 if (0 > dx) rectf.Width = src.Width = img.Width; else src.Width = (int)rectf.Width;
                 if (0 > dy) rectf.Height = src.Height = img.Height; else src.Height = (int)rectf.Height;
-
             }
             else if (DataGridViewImageCellLayout.Stretch == imagecell.ImageLayout)
             {
@@ -3837,38 +3929,47 @@ namespace Gestion.Colegial.Business.Helpers.Export //AllocationRequest
                     if (0 > dy) rectf.Y -= dy; else src.Y = dy;
                     if (0 > dx) rectf.X -= dx / 2; else src.X = dx / 2;
                     break;
+
                 case DataGridViewContentAlignment.BottomLeft:
                     if (0 > dy) rectf.Y -= dy; else src.Y = dy;
                     src.X = 0;
                     break;
+
                 case DataGridViewContentAlignment.BottomRight:
                     if (0 > dy) rectf.Y -= dy; else src.Y = dy;
                     if (0 > dx) rectf.X -= dx; else src.X = dx;
                     break;
+
                 case DataGridViewContentAlignment.MiddleCenter:
                     if (0 > dy) rectf.Y -= dy / 2; else src.Y = dy / 2;
                     if (0 > dx) rectf.X -= dx / 2; else src.X = dx / 2;
                     break;
+
                 case DataGridViewContentAlignment.MiddleLeft:
                     if (0 > dy) rectf.Y -= dy / 2; else src.Y = dy / 2;
                     src.X = 0;
                     break;
+
                 case DataGridViewContentAlignment.MiddleRight:
                     if (0 > dy) rectf.Y -= dy / 2; else src.Y = dy / 2;
                     if (0 > dx) rectf.X -= dx; else src.X = dx;
                     break;
+
                 case DataGridViewContentAlignment.TopCenter:
                     src.Y = 0;
                     if (0 > dx) rectf.X -= dx / 2; else src.X = dx / 2;
                     break;
+
                 case DataGridViewContentAlignment.TopLeft:
                     src.Y = 0;
                     src.X = 0;
                     break;
+
                 case DataGridViewContentAlignment.TopRight:
                     src.Y = 0;
                     if (0 > dx) rectf.X -= dx; else src.X = dx;
                     break;
+
                 case DataGridViewContentAlignment.NotSet:
                     if (0 > dy) rectf.Y -= dy / 2; else src.Y = dy / 2;
                     if (0 > dx) rectf.X -= dx / 2; else src.X = dx / 2;

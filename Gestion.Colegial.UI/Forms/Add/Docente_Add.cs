@@ -7,7 +7,6 @@ namespace Gestion.Colegial.UI.Forms
 {
     public partial class Docente_Add : Add_Base
     {
-
         // /*===============================================
         //                 INSTANCIACIAS
         // ================================================*/
@@ -30,7 +29,6 @@ namespace Gestion.Colegial.UI.Forms
         //     docente.Send += new Docente.send(ejecuta);
         //     docente.Show();
         // }
-
 
         // public void ejecuta(List<string> date)
         // {
@@ -58,7 +56,7 @@ namespace Gestion.Colegial.UI.Forms
         //     //{
         //     //    validation = true;
         //     //}
-        //     return validation; 
+        //     return validation;
         // }
 
         // public Boolean Actualizar = false;
@@ -69,7 +67,7 @@ namespace Gestion.Colegial.UI.Forms
         //     string sex;
         //     sex = Logica.SexValidation(radioButton1, radioButton2);
 
-        //     Boolean validation = validateForm(sex); 
+        //     Boolean validation = validateForm(sex);
 
         //     if (validation == false)
         //     {
@@ -87,7 +85,7 @@ namespace Gestion.Colegial.UI.Forms
         //             objLogica.insert(objentity);
         //             docente.buscarTabla("");
         //             Logica.Limpiar(this, pnBackground);
-        //             Success.ShowDialog("Se Inserto el registro"); 
+        //             Success.ShowDialog("Se Inserto el registro");
         //         }
         //         catch (Exception error)
         //         {
@@ -103,7 +101,6 @@ namespace Gestion.Colegial.UI.Forms
 
         private void lblGuardar_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

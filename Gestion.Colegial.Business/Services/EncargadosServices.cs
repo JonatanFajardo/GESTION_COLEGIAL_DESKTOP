@@ -11,7 +11,6 @@ namespace Gestion.Colegial.Business.Services
 {
     public class EncargadosServices
     {
-
         #region Metodos
 
         private static EncargadosRepository objDato = new EncargadosRepository();
@@ -101,6 +100,5 @@ namespace Gestion.Colegial.Business.Services
         }
 
         #endregion Metodos
-
     }
 }

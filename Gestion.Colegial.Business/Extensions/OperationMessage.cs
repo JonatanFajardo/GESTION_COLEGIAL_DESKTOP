@@ -2,7 +2,6 @@
 {
     internal class OperationMessage
     {
-
         private static string _error = "Ocurrio un error inesperado en la operación.";
         private static string _ok = "La operacion se ha completado con éxito.";
         public static string Error { get => _error; }

@@ -4,11 +4,10 @@ using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms
 {
-    class DateExamples
+    internal class DateExamples
     {
         public static void llenarFormulario(Control vaciar)
         {
-
             int maxlenght = 0;
             Random randomNumbers = new Random();
             int ramNum;
@@ -33,6 +32,7 @@ namespace Gestion.Colegial.UI.Forms
             //    }
             //}
         }
+
         public static string GetNames()
         {
             Random randomLetters = new Random();
@@ -44,6 +44,7 @@ namespace Gestion.Colegial.UI.Forms
             numOfRamdom = randomLetters.Next(texto.Count);
             return texto[numOfRamdom].ToString();
         }
+
         public static int GetNumber(int num)
         {
             string n = "1";
@@ -55,6 +56,5 @@ namespace Gestion.Colegial.UI.Forms
             resultado = int.Parse(n);
             return resultado;
         }
-
     }
 }

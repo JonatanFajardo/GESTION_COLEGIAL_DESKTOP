@@ -13,7 +13,7 @@ namespace Gestion.Colegial.DataAccess.Clases
         //private DataTable table;
 
         ////====================================================//
-        ////                      METODOS   
+        ////                      METODOS
         ////====================================================//
         //public DataTable sear(string sear)
         //{
@@ -79,7 +79,6 @@ namespace Gestion.Colegial.DataAccess.Clases
         //}
         //public void update(E_Docente entity)
         //{
-
         //    try
         //    {
         //        table = new DataTable();
@@ -99,12 +98,9 @@ namespace Gestion.Colegial.DataAccess.Clases
         //    }
         //    catch (Exception error)
         //    {
-
         //        MessageBox.Show($"Error: Datos/Clases/D_Docente:Update :--: {error.Message}");
 
         //    }
         //}
-
-
     }
 }

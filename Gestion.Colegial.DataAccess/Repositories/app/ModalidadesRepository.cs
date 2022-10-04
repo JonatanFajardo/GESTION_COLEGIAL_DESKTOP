@@ -13,11 +13,12 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         //====================================================//
         //private Conexion conexion = new Conexion();
         private SqlDataReader reader;
+
         private DataTable table;
         //private SqlCommand cmd;
 
         //====================================================//
-        //                      METODOS   
+        //                      METODOS
         //====================================================//
 
         //public static Boolean Select(string commandText, dynamic parameters)
@@ -115,6 +116,5 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             Boolean result = await Update(commandText, sqlParameters);
             return result;
         }
-
     }
 }

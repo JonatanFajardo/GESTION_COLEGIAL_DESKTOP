@@ -6,18 +6,20 @@ namespace Gestion.Colegial.Business.Helpers.Alert
 {
     public partial class Alert : Form
     {
-        public Alert() { }
+        public Alert()
+        { }
 
         public Alert(string mensaje)
         {
             InitializeComponent();
-
         }
 
         #region Propiedades
+
         public enmType _alert;
 
         public enmType alert { get => _alert; set => _alert = value; }
+
         #endregion Propiedades
 
         #region Metodos
@@ -37,9 +39,7 @@ namespace Gestion.Colegial.Business.Helpers.Alert
             if (titulo != "")
             {
                 lblTitulo.Text = titulo;
-
             }
-
         }
 
         /// <summary>
@@ -56,46 +56,6 @@ namespace Gestion.Colegial.Business.Helpers.Alert
             lblTitulo.Text = title;
         }
 
-        private void AssingValues()
-        {
-
-        }
-
-        //private void MessageIfNull(string mensaje)
-        //{
-        //    string Success = "Rergistro almacenado correctamente.";
-        //    string Warnin = "";
-        //    string Error = "Error";
-        //    string Information = "";
-
-        //    string Mensaje = mensaje;
-        //    if (mensaje == "")
-        //    {
-        //        switch (enmtype)
-        //        {
-        //            case enmType.Success:
-        //            Mensaje = Success;
-
-        //            break;
-        //        case enmType.Warnin:
-        //           Mensaje = Warnin;
-
-        //            break;
-        //        case enmType.Error:
-        //           Mensaje = Error;
-
-        //            break;
-        //        case enmType.Information:
-        //                Mensaje = Information;
-        //            break;
-        //        }
-        //    }
-        //    else
-        //    {
-
-        //    }
-        //}
-
         /// <summary>
         /// Agrega estilos o acciones al alert segun el tipo recibido
         /// </summary>
@@ -105,27 +65,30 @@ namespace Gestion.Colegial.Business.Helpers.Alert
             switch (enmType)
             {
                 case enmType.Success:
-                    this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(115)))), ((int)(((byte)(142)))));
-                    this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(115)))), ((int)(((byte)(142)))));
+                    this.panel1.BackColor = System.Drawing.Color.FromArgb(37, 115, 142);
+                    this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(37, 115, 142);
 
                     break;
+
                 case enmType.Warnin:
-                    this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-                    this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+                    this.panel1.BackColor = System.Drawing.Color.FromArgb(252, 200, 0);
+                    this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(252, 200, 0);
 
                     break;
+
                 case enmType.Error:
-                    this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(11)))), ((int)(((byte)(0)))));
-                    this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(11)))), ((int)(((byte)(0)))));
+                    this.panel1.BackColor = System.Drawing.Color.FromArgb(179, 11, 0);
+                    this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(179, 11, 0);
 
                     break;
+
                 case enmType.Information:
                     break;
             }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="mensaje"></param>
         /// <param name="title"></param>
@@ -152,14 +115,17 @@ namespace Gestion.Colegial.Business.Helpers.Alert
                     msjTitle = "Exito";
                     msjBody = alertEntity.Success;
                     break;
+
                 case enmType.Warnin:
                     msjTitle = "Advertencia";
                     msjBody = alertEntity.Warnin;
                     break;
+
                 case enmType.Error:
                     msjTitle = "Error";
                     msjBody = alertEntity.Error;
                     break;
+
                 case enmType.Information:
                     msjTitle = "Información";
                     msjBody = alertEntity.Information;
@@ -170,21 +136,10 @@ namespace Gestion.Colegial.Business.Helpers.Alert
             alert.Show();
         }
 
-
-        ///// <summary>
-        ///// Muestra un mensaje con tan solo un objeto como parametro
-        ///// </summary>
-        ///// <param name="answer">objeto que se obtiene del business</param>
-        //public static void Show(Answer answer, string titulo = "")
-        //{
-        //    Alert alert = new Alert(answer, titulo);
-        //    alert.Show();
-        //}
-
         #endregion Metodos
 
-
         #region Enums
+
         public enum enmType
         {
             Success,
@@ -195,18 +150,18 @@ namespace Gestion.Colegial.Business.Helpers.Alert
 
         #endregion Enums
 
-
         #region Eventos
+
         public virtual void Aceptar()
         {
             this.Close();
         }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Aceptar();
         }
+
         #endregion Eventos
-
     }
-
 }

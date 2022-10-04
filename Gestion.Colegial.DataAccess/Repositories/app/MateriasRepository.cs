@@ -49,6 +49,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
+
         public async Task<Boolean> Edit(tbMaterias entity)
         {
             const String commandText = "PR_tbMaterias_Update";
@@ -58,7 +59,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Dur_Id", DbType = DbType.Int32, Value = entity.Dur_Id},
                 new SqlParameter(){ParameterName= "@Mat_EsActivo", DbType = DbType.Boolean, Value = entity.Mat_EsActivo},
                 new SqlParameter(){ParameterName= "@Mat_UsuarioModifica", DbType = DbType.Int32  , Value = entity.Mat_UsuarioModifica}
-
             };
             Boolean result = await Insert(commandText, sqlParameters);
             return result;

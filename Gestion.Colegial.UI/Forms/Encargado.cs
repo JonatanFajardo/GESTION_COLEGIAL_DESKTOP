@@ -9,7 +9,7 @@ namespace Gestion.Colegial.UI.Forms
             InitializeComponent();
             Init();
         }
-        public async override void Agregar()
+        public override void Agregar()
         {
 
         }

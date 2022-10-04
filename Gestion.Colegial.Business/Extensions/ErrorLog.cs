@@ -23,8 +23,6 @@ namespace Gestion.Colegial.Business.Extensions
 
         public static void Incidents(Answer answer)
         {
-
-
         }
     }
 }

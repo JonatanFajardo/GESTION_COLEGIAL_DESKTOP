@@ -11,6 +11,7 @@ namespace Gestion.Colegial.Business.Services
         #region Metodos
 
         private static AulasRepository objDato = new AulasRepository();
+
         public static async Task<DataTable> List(string sear)
         {
             var obj = await objDato.List(sear);
@@ -33,6 +34,5 @@ namespace Gestion.Colegial.Business.Services
         }
 
         #endregion Metodos
-
     }
 }

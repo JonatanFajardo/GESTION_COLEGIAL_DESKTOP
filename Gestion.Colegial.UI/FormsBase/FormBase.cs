@@ -97,7 +97,7 @@ namespace Gestion.Colegial.UI.FormsBase
         }
 
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private async void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             buscar();
         }

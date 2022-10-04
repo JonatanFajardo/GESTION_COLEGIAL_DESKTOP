@@ -9,14 +9,13 @@ namespace Gestion.Colegial.Business.Messagebox
         {
             InitializeComponent();
         }
+
         private void MessageBase_Load(object sender, EventArgs e)
         {
-
-
         }
+
         public virtual void Aceptar()
         {
-
         }
 
         private enmType _alert;
@@ -31,14 +30,9 @@ namespace Gestion.Colegial.Business.Messagebox
             Information
         }
 
-
-
-
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Aceptar();
         }
-
     }
 }

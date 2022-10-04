@@ -116,7 +116,7 @@ namespace Gestion.Colegial.UI.Forms
         //    }
         //}
 
-        //public async override void Agregar()
+        //public override void Agregar()
         //{
         //    Docente_Add form = new Docente_Add();
         //    IsOpenForm(form);
@@ -128,7 +128,7 @@ namespace Gestion.Colegial.UI.Forms
 
         //}
         ////== HACE LA BUSQUEDA
-        //private void txtBuscar_TextChanged(object sender, EventArgs e)
+        //private async void txtBuscar_TextChanged(object sender, EventArgs e)
         //{
         //    buscarTabla(txtBuscar.Text);
         //}

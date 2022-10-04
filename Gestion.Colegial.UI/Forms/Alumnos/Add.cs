@@ -1,27 +1,22 @@
-﻿using Gestion.Colegial.Business.Services;
-using Gestion.Colegial.Commons.Extensions;
-using Gestion.Colegial.UI.FormsBase;
+﻿using Gestion.Colegial.UI.FormsBase;
 
 namespace Gestion.Colegial.UI.Forms.Alumnos
 {
     public partial class Add : Add_Base
     {
         // Instancia del formulario principal de la seccion list.
-        Alumnos.List _list;
-        int _id;
+        private Alumnos.List _list;
 
-        public Add() { InitializeComponent(); }
+        private int _id;
+
+        public Add()
+        { InitializeComponent(); }
+
         public Add(int id, List list)
         {
             InitializeComponent();
             _id = id;
             _list = list;
-            //load(id);
         }
-
-        //private async void load(int id)
-        //{
-        //    Answer ServiceResult = await AlumnosServices.add
-        //}
     }
 }

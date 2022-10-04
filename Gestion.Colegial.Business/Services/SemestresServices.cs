@@ -13,6 +13,7 @@ namespace Gestion.Colegial.Business.Services
         #region Metodos
 
         private static SemestresRepository objDato = new SemestresRepository();
+
         public static async Task<Answer> List(string sear = "")
         {
             try
@@ -59,6 +60,5 @@ namespace Gestion.Colegial.Business.Services
         }
 
         #endregion Metodos
-
     }
 }

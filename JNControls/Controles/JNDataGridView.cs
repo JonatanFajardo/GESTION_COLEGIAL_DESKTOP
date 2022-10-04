@@ -27,7 +27,7 @@ namespace JNControls.Controles
             base.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(85, 85, 170);
             base.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
-            base.RowTemplate.DividerHeight = 1 / 3;//tamaño de linea row;
+            base.RowTemplate.DividerHeight = 1 / 3;
             base.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             base.GridColor = Color.FromArgb(210, 210, 210);//tamaño de linea row;
 

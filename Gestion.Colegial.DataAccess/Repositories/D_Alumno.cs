@@ -13,7 +13,7 @@ namespace Gestion.Colegial.DataAccess.Clases
         //private SqlCommand cmd;
 
         ////====================================================//
-        ////                      METODOS   
+        ////                      METODOS
         ////====================================================//
         //public DataTable sear(string sear)
         //{
@@ -52,7 +52,7 @@ namespace Gestion.Colegial.DataAccess.Clases
         //        cmd.Parameters.AddWithValue("@VAlu_Fecha_Nacimiento", entity.Alu_Fecha_Nacimiento);
         //        cmd.Parameters.AddWithValue("@VAlu_Sexo", entity.Alu_Sexo);
         //        cmd.ExecuteNonQuery();
-        //        cmd.Connection = conexion.CerrarConexion();     
+        //        cmd.Connection = conexion.CerrarConexion();
         //    }
         //    catch (Exception error)
         //    {
@@ -102,7 +102,5 @@ namespace Gestion.Colegial.DataAccess.Clases
         //        MessageBox.Show($"Error: Datos/Clases/D_Alumno:Delete :--: {error.Message}");
         //    }
         //}
-
-
     }
 }

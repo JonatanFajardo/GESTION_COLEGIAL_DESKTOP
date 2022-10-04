@@ -64,8 +64,5 @@ namespace Gestion.Colegial.Business.Services
         }
 
         #endregion Metodos
-
-
-
     }
 }

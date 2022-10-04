@@ -20,7 +20,7 @@ namespace Gestion.Colegial.UI.Forms
 
         }
 
-        public async override void Agregar()
+        public override void Agregar()
         {
             Estudiante_Add form = new Estudiante_Add();
             form.Show();

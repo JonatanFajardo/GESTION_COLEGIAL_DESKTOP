@@ -15,8 +15,6 @@
 
         public void Add(string sLog)
         {
-
-
         }
 
         //private string GetNameFile()
@@ -27,7 +25,5 @@
 
         //    return nombre;
         //}
-
-
     }
 }

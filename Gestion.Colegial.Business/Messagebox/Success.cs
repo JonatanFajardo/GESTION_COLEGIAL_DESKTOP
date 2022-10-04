@@ -7,6 +7,7 @@
             InitializeComponent();
             lblMensaje.Text = mensaje;
         }
+
         public Success(string mensaje, string title)
         {
             InitializeComponent();
@@ -19,6 +20,7 @@
             Success success = new Success(Mensaje);
             success.ShowDialog();
         }
+
         public static void ShowDialog(string Mensaje, string Titulo)
         {
             Success success = new Success(Mensaje, Titulo);

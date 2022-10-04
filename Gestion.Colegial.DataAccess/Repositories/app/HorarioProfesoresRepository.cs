@@ -53,7 +53,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             return result;
         }
 
-
         public async Task<Boolean> Edit(tbHorarioProfesores entity)
         {
             const String commandText = "PR_tbHorarioProfesores_Update";
@@ -69,7 +68,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             Boolean result = await Update(commandText, sqlParameters);
             return result;
         }
-
 
         public async Task<Boolean> Remove(int identifier)
         {

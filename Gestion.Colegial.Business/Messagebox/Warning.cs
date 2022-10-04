@@ -5,13 +5,15 @@ namespace Gestion.Colegial.Business.Messagebox
 {
     public partial class Warning : MessageBase
     {
-        static bool validar = false;
+        private static bool validar = false;
+
         public Warning(string _mensaje)
         {
             InitializeComponent();
             lblMensaje.Text = _mensaje;
             init();
         }
+
         //validar regresa true asi que asi validamos que se haga false de nuevo
         private void init()
         {
@@ -26,6 +28,7 @@ namespace Gestion.Colegial.Business.Messagebox
             this.DialogResult = DialogResult.OK;
             validar = true;
         }
+
         public static void ShowDialog(string mensaje)
         {
             Warning warning = new Warning(mensaje);
@@ -41,6 +44,5 @@ namespace Gestion.Colegial.Business.Messagebox
         {
             this.DialogResult = DialogResult.Cancel;
         }
-
     }
 }

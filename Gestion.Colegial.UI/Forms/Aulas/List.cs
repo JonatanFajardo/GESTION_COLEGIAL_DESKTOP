@@ -9,10 +9,8 @@ namespace Gestion.Colegial.UI.Forms.Aulas
             InitializeComponent();
         }
 
-        public async override void Agregar()
+        public override void Agregar()
         {
-
         }
-
     }
 }

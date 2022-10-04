@@ -2,8 +2,6 @@
 {
     public class ExtendedAlert : Alert
     {
-
-
         //public static string TypeMessage(enmType enmType)
         //{
         //    AlertEntity alertEntity = new AlertEntity();

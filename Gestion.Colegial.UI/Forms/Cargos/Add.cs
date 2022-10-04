@@ -14,17 +14,21 @@ namespace Gestion.Colegial.UI.Forms.Cargos
     {
         // Instancia que contiene la data local y privadamente.
         private static tbCargos send = new tbCargos();
+
         // Instancia del formularkio principal de la seccion list.
         private Cargos.List _list;
 
         private int _id;
 
-        public Add() { }
+        public Add()
+        { }
+
         public Add(List list)
         {
             InitializeComponent();
             _list = list;
         }
+
         public Add(List list, int id)
         {
             _list = list;
@@ -43,7 +47,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             }
             else
                 MessageBox.Show(ServiceInsert.Message);
-
         }
 
         public void load()
@@ -65,6 +68,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
                 this.Text = Modificar;
             }
         }
+
         //public void Send(int id, List list)
         //{
         //    Add add = new Add();
@@ -74,8 +78,7 @@ namespace Gestion.Colegial.UI.Forms.Cargos
         //    add.load();
         //}
 
-
-        public async override void OnClick()
+        public override async void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -117,18 +120,15 @@ namespace Gestion.Colegial.UI.Forms.Cargos
             }
             else
             {
-
             }
         }
 
         private void pnBackground_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void jnTexBox1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Add_Load(object sender, EventArgs e)
@@ -137,7 +137,6 @@ namespace Gestion.Colegial.UI.Forms.Cargos
 
         private void pnHeader_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

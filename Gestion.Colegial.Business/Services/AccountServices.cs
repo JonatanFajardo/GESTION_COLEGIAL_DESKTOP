@@ -38,8 +38,5 @@ namespace Gestion.Colegial.Business.Services
             var obj = await objDato.List(entity);
             return obj;
         }
-
-
-
     }
 }

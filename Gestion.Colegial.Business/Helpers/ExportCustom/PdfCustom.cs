@@ -22,7 +22,6 @@ namespace Gestion.Colegial.Business.Helpers.ExportCustom
             printer.FooterSpacing = 10;
             printer.PrintPreviewDataGridView(dgv);
             //printer.PrintDataGridView(dgv);
-
         }
     }
 }

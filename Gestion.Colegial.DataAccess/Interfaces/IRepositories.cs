@@ -19,7 +19,7 @@ namespace Gestion.Colegial.DataAccess.Interfaces
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        /// 
+        ///
 
         ///// <summary>
         ///// Busca un registro en base al identificador de este.
@@ -34,13 +34,16 @@ namespace Gestion.Colegial.DataAccess.Interfaces
         /// <param name="identifier"></param>
         /// <returns></returns>
         Task<DataTable> ListOne(int identifier);
+
         Task<Boolean> Add(T entity);
+
         /// <summary>
         /// Permite la modificacion de un registro.
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
         Task<Boolean> Edit(T entity);
+
         /// <summary>
         /// Permite la eliminacion de un registro.
         /// </summary>

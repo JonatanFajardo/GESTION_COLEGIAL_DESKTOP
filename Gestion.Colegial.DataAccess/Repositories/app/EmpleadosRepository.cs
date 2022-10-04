@@ -37,6 +37,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             DataTable result = await Details(identifier, commandText, sqlParameters);
             return result;
         }
+
         public async Task<Boolean> Add(tbEmpleados entity)
         {
             const String commandText = "PR_tbEmpleados_Insert";
@@ -81,7 +82,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                 new SqlParameter(){ParameterName= "@Per_EsActivo", DbType = DbType.Boolean, Value = entity.Per.Per_EsActivo },
                 new SqlParameter(){ParameterName= "@Per_Sexo", DbType = DbType.String, Value = entity.Per.Per_Sexo },
                 new SqlParameter(){ParameterName= "@Per_UsuarioModifica", DbType = DbType.Int32, Value = entity.Per.Per_UsuarioModifica }
-
             };
             Boolean result = await Update(commandText, sqlParameters);
             return result;

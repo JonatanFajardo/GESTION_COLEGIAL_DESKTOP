@@ -10,6 +10,7 @@ using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Alumnos
@@ -24,7 +25,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
             dataGridViewJN1.RowTemplate.DividerHeight = 1;
             dataGridViewJN1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewJN1.ColumnHeadersHeight = 45;
-            dataGridViewJN1.RowTemplate.DividerHeight = 1 / 3;//tamaño de linea row;
+            dataGridViewJN1.RowTemplate.DividerHeight = 1 / 3;
             dataGridViewJN1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             DataGridViewFill();
@@ -55,7 +56,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         /// <param name="buscar"></param>
         /// <param name="selected"></param>
         /// <param name="numberPagina"></param>
-        public async void DataGridViewFill(string buscar = "")
+        public async Task DataGridViewFill(string buscar = "")
         {
             // Cargamos DataGridView.
             ListResult listResult = new ListResult()
@@ -74,6 +75,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         }
 
         #region FuncionalidadesDGV
+
         private void jnButton1_Click(object sender, EventArgs e)
         {
             ///var obj = CargosServices.List("");
@@ -88,18 +90,19 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
             ////excel.DataSource(obj);
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private async void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            DataGridViewFill(txtBuscar.Text);
+            await DataGridViewFill(txtBuscar.Text);
         }
-        #endregion  FuncionalidadesDGV
+
+        #endregion FuncionalidadesDGV
 
         #region AccionesCRUD
 
         /// <summary>
         /// Agrega un nuevo registro.
         /// </summary>
-        //public async override void Agregar()
+        //public override void Agregar()
         //{
         //    Add add = new Add(this);
         //    ShowForm(add);
@@ -109,9 +112,8 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         /// Edita o elimina registros en funcion de lo seleccionado en el DGV.
         /// </summary>
         /// <param name="e">Evento.</param>
-        public async override void CellContentDGV(DataGridViewCellEventArgs e)
+        public override async void CellContentDGV(DataGridViewCellEventArgs e)
         {
-
             // Editamos registro.
             if (dataGridViewJN1.Rows[e.RowIndex].Cells[0].Selected)
             {
@@ -139,17 +141,14 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
                         //Mda_Descripcion = dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString()
                     };
                     Boolean resultService = await CargosServices.Remove(objCargos.Car_Id);
-                    DataGridViewFill();
+                    await DataGridViewFill();
                     if (resultService)
                     {
                         Alert.Show(Alert.enmType.Error, "No se ha podido eliminar la fila.", "Error");
                     }
                 }
             }
-
         }
-
-
 
         /// <summary>
         /// This method generates a DataTable.
@@ -172,20 +171,17 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         //    return table;
         //}
 
-
         //private void button2_Click(object sender, EventArgs e)
         //{
         //    dataGridViewJN1.DataSource = GetTable();
 
-
         //    for (int i = 0; i < dataGridViewJN1.ColumnCount; i++)
         //    {
-
         //    }
         //    System.Collections.Generic.List<tbCargos> lista = new System.Collections.Generic.List<tbCargos>();
         //    lista.Add(new tbCargos()
         //    {
-        //        //mda_Descripcion = 
+        //        //mda_Descripcion =
         //    });
         //    string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
         //    //pictureBox1.Image = Image.FromFile(path+"/Content/image");
@@ -196,6 +192,7 @@ namespace Gestion.Colegial.UI.Forms.Alumnos
         #endregion AccionesCRUD
 
         #region Eventos
+
         private void button1_Click(object sender, EventArgs e)
         {
             Boolean CamposVacios;

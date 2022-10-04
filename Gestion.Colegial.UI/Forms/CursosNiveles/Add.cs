@@ -12,10 +12,13 @@ namespace Gestion.Colegial.UI.Forms.CursosNiveles
     {
         // Instancia que contiene la data local y privadamente.
         private static tbCursosNiveles send = new tbCursosNiveles();
-        // Instancia del formulario principal de la seccion list.
-        CursosNiveles.List _list;
 
-        public Add() { InitializeComponent(); }
+        // Instancia del formulario principal de la seccion list.
+        private CursosNiveles.List _list;
+
+        public Add()
+        { InitializeComponent(); }
+
         public Add(List list)
         {
             InitializeComponent();
@@ -50,7 +53,7 @@ namespace Gestion.Colegial.UI.Forms.CursosNiveles
             add.load();
         }
 
-        public async override void OnClick()
+        public override async void OnClick()
         {
             var validation = Validation.CamposVacios(pnBackground);
             if (!validation)
@@ -92,9 +95,7 @@ namespace Gestion.Colegial.UI.Forms.CursosNiveles
             }
             else
             {
-
             }
         }
-
     }
 }

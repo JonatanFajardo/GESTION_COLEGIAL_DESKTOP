@@ -10,6 +10,7 @@ using Gestion.Colegial.UI.Helpers.Controles;
 using JNControls.Controles;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gestion.Colegial.UI.Forms.Encargados
@@ -24,7 +25,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             dataGridViewJN1.RowTemplate.DividerHeight = 1;
             dataGridViewJN1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewJN1.ColumnHeadersHeight = 45;
-            dataGridViewJN1.RowTemplate.DividerHeight = 1 / 3;//tamaño de linea row;
+            dataGridViewJN1.RowTemplate.DividerHeight = 1 / 3;
             dataGridViewJN1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             DataGridViewFill();
@@ -49,7 +50,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
         /// <param name="buscar"></param>
         /// <param name="selected"></param>
         /// <param name="numberPagina"></param>
-        public async void DataGridViewFill(string buscar = "")
+        public async Task DataGridViewFill(string buscar = "")
         {
             // Cargamos DataGridView.
             ListResult listResult = new ListResult()
@@ -82,9 +83,9 @@ namespace Gestion.Colegial.UI.Forms.Encargados
             ////excel.DataSource(obj);
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private async void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            DataGridViewFill(txtBuscar.Text);
+            await DataGridViewFill(txtBuscar.Text);
         }
         #endregion  FuncionalidadesDGV
 
@@ -93,7 +94,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
         /// <summary>
         /// Agrega un nuevo registro.
         /// </summary>
-        public async override void Agregar()
+        public override void Agregar()
         {
             Add add = new Add(this);
             ShowForm(add);
@@ -123,7 +124,7 @@ namespace Gestion.Colegial.UI.Forms.Encargados
                 {
                     int identifier = (int)dataGridViewJN1.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value;
                     Boolean resultService = await EncargadosServices.Remove(identifier);
-                    DataGridViewFill();
+                    await DataGridViewFill();
                     if (resultService)
                     {
                         Alert.Show(Alert.enmType.Error, "No se ha podido eliminar la fila.", "Error");

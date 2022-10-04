@@ -49,11 +49,11 @@ namespace Gestion.Colegial.Commons.Extensions
 
         public Answer()
         {
-
             Access = true;
             Message = "Ocurrio un error al intentar ingresar el registro.";
             RegistrationDate = DateTime.Now;
         }
+
         public void Incidents(Exception exception)
         {
             Message = exception.Message;
@@ -61,16 +61,12 @@ namespace Gestion.Colegial.Commons.Extensions
             //InnerException = exception.InnerException.Message;
             Access = true;
         }
+
         //public Answer()
         //{
         //    Access = false;
         //    Message = "Ocurrio un error al intentar ingresar el registro.";
         //    RegistrationDate = DateTime.Now;
         //}
-
     }
-
-
-
-
 }

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
-//using Gestion.Colegial.DataAccess.Clases;
 
+//using Gestion.Colegial.DataAccess.Clases;
 
 namespace Gestion.Colegial.Business.Services
 {
@@ -38,9 +38,7 @@ namespace Gestion.Colegial.Business.Services
                 if (item is RadioButton)
                 {
                     ((RadioButton)item).Checked = false;
-
                 }
-
             }
         }
 
@@ -65,7 +63,6 @@ namespace Gestion.Colegial.Business.Services
                 {
                     ((RadioButton)item).Checked = false;
                 }
-
             }
         }
 
@@ -93,7 +90,6 @@ namespace Gestion.Colegial.Business.Services
         /// <param name="TexBoxjn"></param>
         //public static async Task<Boolean> validarCamposVacios(Control TexBoxjn)
         //{
-
         //    Boolean validar = false;
         //    foreach (Control item in TexBoxjn.Controls)
         //    {
@@ -115,6 +111,4 @@ namespace Gestion.Colegial.Business.Services
         //    return validar;
         //}
     }
-
-
 }

@@ -37,6 +37,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             DataTable result = await Details(identifier, commandText, sqlParameters);
             return result;
         }
+
         public async Task<Boolean> Add(tbHoras entity)
         {
             const String commandText = "PR_tbHoras_Insert";
@@ -47,7 +48,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             Boolean result = await Insert(commandText, sqlParameters);
             return result;
         }
-
 
         public async Task<Boolean> Edit(tbHoras entity)
         {

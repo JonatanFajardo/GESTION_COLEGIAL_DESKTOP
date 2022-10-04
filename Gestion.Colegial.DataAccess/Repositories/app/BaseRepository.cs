@@ -65,7 +65,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             }
         }
 
-        
         protected static async Task<DataTable> Select(string commandText)
         {
             DataTable table = new DataTable();
@@ -90,7 +89,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
 
         protected static async Task<Boolean> Insert(string commandText, dynamic parameters)
         {
-
             try
             {
                 using (SqlConnection con = new SqlConnection(Connection.Sql))
@@ -112,7 +110,6 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             }
             catch (Exception e)
             {
-
                 throw;
             }
         }
@@ -131,7 +128,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
                     resultSql.Read();
                     if (resultSql.RecordsAffected < 1)
                         return true;
-                    
+
                     return false;
                 }
             }
@@ -172,6 +169,5 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
         {
             throw new NotImplementedException();
         }
-
     }
 }

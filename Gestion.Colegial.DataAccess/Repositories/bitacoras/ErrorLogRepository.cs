@@ -18,11 +18,6 @@
 
         //public static void Incidents(Answer answer)
         //{
-
-
         //}
-
     }
-
-
 }

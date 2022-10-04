@@ -37,6 +37,7 @@ namespace Gestion.Colegial.DataAccess.Repositories.app
             DataTable result = await Details(identifier, commandText, sqlParameters);
             return result;
         }
+
         public async Task<Boolean> Add(tbSecciones entity)
         {
             const String commandText = "PR_tbSecciones_Insert";
